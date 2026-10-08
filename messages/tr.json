@@ -1,0 +1,3080 @@
+{
+  "meta": {
+    "siteName": "Diyetiko",
+    "shortName": "Diyetiko",
+    "defaultTitle": "Diyetiko — İyi beslenme tabakta başlar",
+    "defaultDescription": "Yasak listesi değil, hayatına uyan bir plan. Tarifler, rehberler, hesaplayıcılar ve Diyetiko ile birebir beslenme danışmanlığı.",
+    "titleTemplate": "%s — Diyetiko"
+  },
+  "nav": {
+    "home": "Ana sayfa",
+    "recipes": "Tarifler",
+    "guides": "Rehberler",
+    "tools": "Araçlar",
+    "goal": "Hedefini bul",
+    "about": "Hakkımda",
+    "professionals": "Meslektaşlar",
+    "contact": "İletişim",
+    "menu": "Menü",
+    "close": "Kapat",
+    "skipToContent": "İçeriğe geç",
+    "primary": "Ana gezinme",
+    "whatsapp": "WhatsApp'tan yaz",
+    "apply": "Başvur"
+  },
+  "common": {
+    "readMore": "Devamını oku",
+    "seeAll": "Tümünü gör",
+    "back": "Geri",
+    "next": "İleri",
+    "continue": "Devam",
+    "skip": "Atla",
+    "start": "Başla",
+    "restart": "Baştan başla",
+    "send": "Gönder",
+    "sending": "Gönderiliyor",
+    "sent": "Gönderildi",
+    "save": "Kaydet",
+    "saving": "Kaydediliyor",
+    "saved": "Kaydedildi",
+    "cancel": "Vazgeç",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "copy": "Kopyala",
+    "copied": "Kopyalandı",
+    "print": "Yazdır",
+    "share": "Paylaş",
+    "loading": "Yükleniyor",
+    "optional": "isteğe bağlı",
+    "required": "zorunlu",
+    "or": "ya da",
+    "minutes": "{count} dk",
+    "servings": "{count, plural, one {# porsiyon} other {# porsiyon}}",
+    "kcal": "{value} kcal",
+    "grams": "{value} g",
+    "perServing": "porsiyon başına",
+    "example": "Örnek",
+    "pause": "Durdur",
+    "play": "Oynat",
+    "notMedicalAdvice": "Bilgilendirme amaçlıdır; tıbbi tavsiye değildir.",
+    "placeholderNotice": "Yer tutucu — diyetisyen tarafından doldurulacak",
+    "translationFallback": "Bu içerik henüz {language} diline çevrilmedi; {fallback} sürümünü görüyorsun.",
+    "external": "(yeni sekmede açılır)",
+    "close": "Kapat"
+  },
+  "macros": {
+    "protein": "Protein",
+    "carb": "Karbonhidrat",
+    "fat": "Yağ",
+    "fiber": "Lif",
+    "kcal": "Enerji",
+    "short": {
+      "protein": "P",
+      "carb": "K",
+      "fat": "Y"
+    }
+  },
+  "units": {
+    "g": "g",
+    "piece": "adet",
+    "slice": "dilim",
+    "tbsp": "yemek kaşığı",
+    "tsp": "tatlı kaşığı",
+    "cup": "su bardağı",
+    "glass": "bardak",
+    "handful": "avuç",
+    "bowl": "kase",
+    "clove": "diş",
+    "bunch": "demet",
+    "portion": "porsiyon",
+    "kcal": "kcal",
+    "kg": "kg",
+    "cm": "cm",
+    "liter": "L"
+  },
+  "meals": {
+    "breakfast": "Kahvaltı",
+    "snack_am": "Ara öğün",
+    "lunch": "Öğle",
+    "snack_pm": "İkindi",
+    "dinner": "Akşam",
+    "snack_late": "Gece ara öğünü",
+    "snack": "Ara öğün"
+  },
+  "diet": {
+    "vegetarian": "Vejetaryen",
+    "vegan": "Vegan",
+    "gluten_free": "Glutensiz",
+    "dairy_free": "Sütsüz",
+    "high_protein": "Yüksek protein",
+    "high_fiber": "Lif kaynağı",
+    "under_400": "400 kcal altı",
+    "quick": "20 dk ve altı",
+    "thresholds": {
+      "high_protein": "Enerjinin en az %20'si proteinden ve porsiyonda en az 15 g protein.",
+      "high_fiber": "Porsiyonda en az 6 g lif.",
+      "under_400": "Porsiyonda 400 kcal veya daha az.",
+      "quick": "Hazırlık + pişirme toplam 20 dakika veya daha kısa.",
+      "vegetarian": "Et ve balık içermez (malzeme verisinden hesaplanır).",
+      "vegan": "Hayvansal ürün içermez (malzeme verisinden hesaplanır).",
+      "gluten_free": "Gluten işaretli malzeme içermez. Çölyak için etiketleri ayrıca kontrol et.",
+      "dairy_free": "Süt ürünü içermez (malzeme verisinden hesaplanır)."
+    }
+  },
+  "lang": {
+    "label": "Dil",
+    "switchTo": "{language} diline geç",
+    "suggest": "Bu sayfanın {language} sürümü de var.",
+    "suggestAction": "{language} sürümüne geç",
+    "dismiss": "Burada kal"
+  },
+  "loader": {
+    "skip": "Geç",
+    "label": "Sayfa hazırlanıyor"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Diyetiko",
+      "lines": ["İyi beslenme", "tabakta", "başlar."],
+      "lead": "Yasak listesi değil, senin hayatına, saatlerine ve sofrana uyan bir plan. Ne yediğini anlamaya birlikte başlayalım.",
+      "ctaPrimary": "Hedefini bul",
+      "ctaSecondary": "WhatsApp'tan yaz",
+      "plateLabel": "Örnek tabak",
+      "plateCaption": "Örnek bir öğünün enerji dağılımı. Kişisel ihtiyaçlar farklıdır.",
+      "scrollHint": "Kaydır — tabak veriye dönüşsün",
+      "margin": "01 — Mutfak"
+    },
+    "marquee": {
+      "label": "Mevsimin malzemeleri",
+      "items": [
+        "nohut",
+        "limon",
+        "süzme yoğurt",
+        "ceviz",
+        "nar",
+        "bulgur",
+        "zeytinyağı",
+        "kırmızı mercimek",
+        "incir",
+        "yumurta",
+        "ıspanak",
+        "hamsi",
+        "domates",
+        "yulaf"
+      ]
+    },
+    "story": {
+      "eyebrow": "02 — Süreç",
+      "title": "Dört adım, tek bir fikir: plan sana uymalı, sen plana değil.",
+      "steps": [
+        {
+          "title": "Tanışma & analiz",
+          "body": "Ne yediğini, nasıl yaşadığını, neyi sevdiğini konuşuruz. Ölçümler de var; ama önce senin hikâyen.",
+          "meta": "Görüşme · ölçüm · alışkanlık haritası"
+        },
+        {
+          "title": "Planlama",
+          "body": "Sevdiğin yemeklerden, senin saatlerine uyan haftalık bir plan. Yasak listesi yok, anlaşılır porsiyonlar var.",
+          "meta": "Haftalık menü · alışveriş listesi · tarifler"
+        },
+        {
+          "title": "Takip",
+          "body": "Düzenli görüşmelerle planı hayatına göre ayarlarız. Kötü geçen bir hafta, planın bittiği anlamına gelmez.",
+          "meta": "Ölçüm takibi · plan güncellemeleri"
+        },
+        {
+          "title": "Sonuç",
+          "body": "Hedef bir sayı olabilir. Asıl hedef, plan bittiğinde de süren alışkanlıklar ve yemekle barışık bir ilişki.",
+          "meta": "Sürdürülebilir alışkanlıklar"
+        }
+      ]
+    },
+    "wizard": {
+      "eyebrow": "03 — Hedefini bul",
+      "title": "Seni buraya ne getirdi?",
+      "lead": "Birini seç; kalan dört soruyla birlikte sana uygun ilk adımları çıkaralım. Kayıt yok.",
+      "cta": "Tüm soruları gör"
+    },
+    "tools": {
+      "eyebrow": "04 — Araçlar",
+      "title": "Sayılar merak edildiğinde işe yarar.",
+      "lead": "Günlük enerji ihtiyacını hesapla ya da beş soruda nereden başlayacağını bul. Hepsi ücretsiz, kayıt yok.",
+      "calcTitle": "Enerji & makro hesaplayıcı",
+      "calcBody": "Bazal metabolizma, günlük ihtiyaç ve makro dağılımı — canlı olarak.",
+      "wizardTitle": "Hedefini bul",
+      "wizardBody": "Beş kısa soru. Sonunda sana uygun ilk üç adım.",
+      "open": "Aç",
+      "wizardValue": "5 soru",
+      "randomValue": "tek dokunuş",
+      "listValue": "yazdır · paylaş",
+      "calcValue": "BMR · TDEE · makro",
+      "footnote": "Kayıt yok, ücret yok. Hesaplamalar tarayıcında yapılır."
+    },
+    "recipes": {
+      "eyebrow": "05 — Tarifler",
+      "title": "Bu hafta mutfakta",
+      "lead": "Gerçek mutfak, gerçek süreler. Her tarifin besin değeri malzemelerinden hesaplanır."
+    },
+    "week": {
+      "eyebrow": "06 — Örnek hafta",
+      "title": "Bir haftalık menü neye benzer?",
+      "lead": "Kartı çevir, günün öğünlerini ve enerji dağılımını gör. Bu bir örnektir; senin planın sana göre hazırlanır.",
+      "flip": "Günü çevir",
+      "flipBack": "Geri çevir",
+      "total": "Gün toplamı",
+      "days": ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", "Pazar"]
+    },
+    "guides": {
+      "eyebrow": "07 — Rehberler",
+      "title": "Kısa, kaynaklı, işe yarar.",
+      "lead": "Beslenmeyle ilgili sık sorulanlar; abartısız ve kaynaklarıyla."
+    },
+    "faq": {
+      "eyebrow": "08 — Sorular",
+      "title": "Sık sorulanlar"
+    },
+    "contact": {
+      "eyebrow": "09 — İletişim",
+      "title": "Yaz, konuşalım.",
+      "lead": "İlk adım bir mesaj. Hedefini, sorunu ya da sadece merak ettiğini yaz; en kısa sürede dönüş yapılır."
+    },
+    "apply": {
+      "eyebrow": "Program başvurusu",
+      "title": "Kalıcı değişim zaman ister.",
+      "lead": "Programlar en az 3 ay sürer; 1 aylık hizmet verilmez. Kısa bir başvuru formuyla seni tanıyalım, sana uygun planı birlikte kuralım.",
+      "cta": "Başvur",
+      "note": "Yaklaşık 3 dakika · ücretsiz ön görüşme talebi değildir"
+    }
+  },
+  "faq": {
+    "items": [
+      {
+        "q": "Başlamak için belli bir kiloda olmam gerekir mi?",
+        "a": "Hayır. Beslenme danışmanlığı bir kilo eşiğiyle başlamaz; enerjini, sindirimini, düzenini ya da sadece mutfakla ilişkini iyileştirmek istemen yeterli."
+      },
+      {
+        "q": "Sevdiğim yemeklerden vazgeçmem gerekecek mi?",
+        "a": "Planlar yasak listesi üzerine kurulmaz. Sevdiğin yemekler, porsiyon ve sıklık üzerine konuşarak planın içinde yer alır."
+      },
+      {
+        "q": "Kronik bir hastalığım var ya da hamileyim. Yine de başvurabilir miyim?",
+        "a": "Evet, ancak bu durumlarda beslenme planı doktorunla uyum içinde hazırlanmalıdır. İlk görüşmede sağlık durumunu ve kullandığın ilaçları mutlaka paylaş."
+      },
+      {
+        "q": "Programım bana nasıl ulaşıyor?",
+        "a": "Programın, sana özel güvenli bir bağlantıyla telefonuna gelir. Hesap açman ya da giriş yapman gerekmez; istersen yazdırabilir ya da PDF olarak kaydedebilirsin."
+      },
+      {
+        "q": "Görüşmeler nasıl planlanıyor, ücretler nedir?",
+        "a": "Güncel görüşme seçenekleri ve ücret bilgisi için WhatsApp'tan ya da iletişim formundan yazabilirsin."
+      }
+    ]
+  },
+  "contact": {
+    "title": "İletişim",
+    "lead": "Hedefini, sorunu ya da merak ettiğini yaz. Mesajın yalnızca diyetisyen tarafından okunur.",
+    "channels": "Doğrudan ulaş",
+    "whatsapp": "WhatsApp",
+    "phone": "Telefon",
+    "instagram": "Instagram",
+    "email": "E-posta",
+    "address": "Adres",
+    "addressPlaceholder": "Adres bilgisi henüz eklenmedi.",
+    "formTitle": "Mesaj bırak",
+    "successTitle": "Mesajın ulaştı.",
+    "successBody": "Teşekkürler, {name}. En kısa sürede seçtiğin kanaldan dönüş yapılacak.",
+    "another": "Yeni mesaj yaz"
+  },
+  "form": {
+    "name": "Adın",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "message": "Mesajın",
+    "profession": "Unvanın / mesleğin",
+    "organization": "Kurum",
+    "preferred": "Nasıl dönüş yapalım?",
+    "preferredWhatsapp": "WhatsApp",
+    "preferredPhone": "Telefon",
+    "preferredEmail": "E-posta",
+    "consent": "Kişisel verilerimin, talebime dönüş yapılması amacıyla işlenmesini kabul ediyorum.",
+    "consentLink": "Aydınlatma metni",
+    "honeypot": "Bu alanı boş bırak",
+    "errors": {
+      "required": "Bu alan gerekli.",
+      "email": "Geçerli bir e-posta adresi yaz.",
+      "phone": "Geçerli bir telefon numarası yaz.",
+      "contact": "E-posta ya da telefondan en az birini yaz.",
+      "consent": "Devam etmek için onay gerekli.",
+      "tooLong": "Biraz daha kısa yazar mısın?",
+      "rateLimited": "Çok fazla deneme yapıldı. Lütfen biraz sonra tekrar dene.",
+      "generic": "Bir şeyler ters gitti. Lütfen tekrar dene ya da WhatsApp'tan yaz.",
+      "terms": "Devam etmek için bu koşulu onaylaman gerekiyor.",
+      "range": "Bu değer olağan aralığın dışında görünüyor.",
+      "invalid": "Geçerli bir sayı yaz."
+    }
+  },
+  "recipes": {
+    "title": "Tarifler",
+    "lead": "Filtrele, dolabındakilere göre ara ya da bugünün yemeğini zar atarak seç. Beğendiklerini kaydet, alışveriş listesine ekle.",
+    "count": "{count, plural, =0 {Tarif bulunamadı} one {# tarif} other {# tarif}}",
+    "modes": {
+      "all": "Tüm tarifler",
+      "fridge": "Dolapta ne var?",
+      "random": "Bugün ne yesem?",
+      "favorites": "Favorilerim"
+    },
+    "filters": {
+      "title": "Filtreler",
+      "meal": "Öğün",
+      "diet": "Beslenme",
+      "tags": "Özellik",
+      "kcal": "Porsiyon başına en fazla",
+      "time": "En fazla süre",
+      "search": "Tarif ara",
+      "clear": "Filtreleri temizle",
+      "any": "Fark etmez",
+      "show": "Filtreleri göster",
+      "hide": "Filtreleri gizle"
+    },
+    "fridge": {
+      "title": "Dolabında ne var?",
+      "lead": "Elindeki malzemeleri seç; en çok eşleşen tarifler öne gelsin.",
+      "search": "Malzeme ara",
+      "match": "{have}/{total} malzeme elinde",
+      "missing": "Eksik: {items}",
+      "empty": "Başlamak için birkaç malzeme seç.",
+      "clear": "Seçimi temizle",
+      "categories": {
+        "grains": "Tahıllar",
+        "legumes": "Baklagiller",
+        "dairy_egg": "Süt & yumurta",
+        "meat_fish": "Et & balık",
+        "vegetables": "Sebzeler",
+        "fruits": "Meyveler",
+        "nuts_seeds": "Kuruyemiş & tohum",
+        "fats": "Yağlar",
+        "other": "Diğer"
+      }
+    },
+    "random": {
+      "title": "Bugün ne yesem?",
+      "roll": "Zar at",
+      "again": "Bir daha",
+      "open": "Tarife git"
+    },
+    "favorites": {
+      "add": "Favorilere ekle",
+      "remove": "Favorilerden çıkar",
+      "empty": "Henüz favorin yok. Tariflerdeki kalbe dokunarak ekleyebilirsin; bu cihazda saklanır.",
+      "localNote": "Favoriler yalnızca bu cihazda saklanır."
+    },
+    "list": {
+      "add": "Listeye ekle",
+      "remove": "Listeden çıkar",
+      "open": "Alışveriş listesi ({count})",
+      "title": "Alışveriş listesi",
+      "lead": "Seçtiğin tariflerin malzemeleri, birleştirilmiş olarak.",
+      "empty": "Listen boş. Tariflerden \"Listeye ekle\" ile malzeme ekleyebilirsin.",
+      "recipes": "Tarifler",
+      "items": "Malzemeler",
+      "clear": "Listeyi temizle",
+      "shareText": "Alışveriş listem",
+      "copyList": "Listeyi kopyala"
+    },
+    "empty": "Bu filtrelerle eşleşen tarif yok. Birkaç filtreyi kaldırmayı dene.",
+    "card": {
+      "time": "{count} dk",
+      "open": "{title} tarifini aç"
+    }
+  },
+  "recipe": {
+    "ingredients": "Malzemeler",
+    "steps": "Hazırlanışı",
+    "step": "Adım {n}",
+    "stepOf": "{current} / {total}",
+    "tips": "Mutfak notu",
+    "servings": "Porsiyon",
+    "decrease": "Porsiyonu azalt",
+    "increase": "Porsiyonu artır",
+    "prep": "Hazırlık",
+    "cook": "Pişirme",
+    "total": "Toplam",
+    "nutrition": "Besin değerleri",
+    "nutritionNote": "Porsiyon başına, malzemelerden hesaplanan yaklaşık değerler.",
+    "optional": "isteğe bağlı",
+    "related": "Bunlar da olabilir",
+    "checked": "{count} / {total} malzeme hazır",
+    "backToRecipes": "Tüm tarifler",
+    "dataNote": "Besin değerleri yaklaşık değerlerdir ve doğrulama bekleyen bir besin veritabanından hesaplanır."
+  },
+  "guides": {
+    "title": "Rehberler",
+    "lead": "Kısa, kaynaklı ve günlük hayata çevrilebilir beslenme notları.",
+    "readingTime": "{count} dk okuma",
+    "sources": "Kaynaklar",
+    "categories": {
+      "all": "Hepsi",
+      "basics": "Temeller",
+      "habits": "Alışkanlıklar",
+      "labels": "Etiket okuma",
+      "kitchen": "Mutfak"
+    },
+    "back": "Tüm rehberler",
+    "progress": "Okuma ilerlemesi",
+    "reviewNote": "Bu rehber genel bilgilendirme içindir; kişisel durumun için bir sağlık profesyoneline danış."
+  },
+  "tools": {
+    "title": "Araçlar",
+    "lead": "Merak ettiğin sayılar, sade ve dürüst biçimde. Hesaplamalar tarayıcında yapılır; hiçbir veri gönderilmez.",
+    "calc": {
+      "title": "Enerji & makro hesaplayıcı",
+      "lead": "Mifflin-St Jeor denklemiyle bazal metabolizma hızı, aktivite düzeyinle günlük enerji ihtiyacı ve örnek bir makro dağılımı.",
+      "sex": "Hesaplama için biyolojik cinsiyet",
+      "female": "Kadın",
+      "male": "Erkek",
+      "sexNote": "Denklem yalnızca iki kategori içerir; sonuç her iki seçenekle de yaklaşık bir aralık verir.",
+      "age": "Yaş",
+      "height": "Boy",
+      "weight": "Kilo",
+      "activity": "Günlük hareket",
+      "goal": "Amaç",
+      "goals": {
+        "maintain": "Korumak",
+        "lose": "Yavaşça vermek",
+        "gain": "Yavaşça almak"
+      },
+      "activities": {
+        "sedentary": {
+          "label": "Çoğunlukla oturarak",
+          "hint": "Masa başı iş, az yürüyüş"
+        },
+        "light": {
+          "label": "Hafif hareketli",
+          "hint": "Haftada 1–3 gün hafif egzersiz"
+        },
+        "moderate": {
+          "label": "Orta hareketli",
+          "hint": "Haftada 3–5 gün egzersiz"
+        },
+        "active": {
+          "label": "Hareketli",
+          "hint": "Haftada 6–7 gün egzersiz"
+        },
+        "very_active": {
+          "label": "Çok hareketli",
+          "hint": "Fiziksel iş ya da günde iki antrenman"
+        }
+      },
+      "results": "Sonuçlar",
+      "bmr": "Bazal metabolizma",
+      "bmrHint": "Tam dinlenme hâlinde vücudunun harcadığı tahmini enerji.",
+      "tdee": "Günlük ihtiyaç",
+      "tdeeHint": "Hareket düzeyinle birlikte tahmini günlük enerji harcaman.",
+      "target": "Amaca göre öneri aralığı",
+      "targetHint": "Kilo vermek için bile bazal metabolizmanın altına inilmez; hızlı kayıp hedeflenmez.",
+      "floorNote": "Öneri aralığı bazal metabolizmanın altına inmeyecek şekilde sınırlandı.",
+      "perDay": "kcal / gün",
+      "macros": "Örnek makro dağılımı",
+      "macrosHint": "Protein kilo başına yaklaşık 1,2 g, yağ enerjinin yaklaşık %30'u, kalan karbonhidrat. Kişisel planında farklı olabilir.",
+      "bmi": "Beden kitle indeksi",
+      "bmiCategories": {
+        "under": "Zayıf aralık",
+        "normal": "Normal aralık",
+        "over": "Fazla kilolu aralık",
+        "obese": "Obez aralık"
+      },
+      "bmiLimits": "BKİ yalnızca boy ve kiloya bakar: kas kütlesini, yağ dağılımını, yaşı ve etnik farklılıkları hesaba katmaz. Sağlığın tek göstergesi değildir.",
+      "disclaimer": "Bu hesaplayıcı bilgilendirme amaçlıdır, tıbbi tavsiye değildir. Hamilelik, emzirme, kronik hastalık ya da yeme bozukluğu geçmişi varsa bir sağlık profesyoneline danış.",
+      "cta": "Kişisel bir plan için yaz",
+      "invalid": "Değerleri kontrol et: yaş 18–100, boy 120–230 cm, kilo 35–300 kg.",
+      "adultsOnly": "Hesaplayıcı yetişkinler içindir. Çocuk ve ergenlerde enerji ihtiyacı farklı hesaplanır.",
+      "years": "yaş"
+    }
+  },
+  "wizard": {
+    "title": "Hedefini bul",
+    "lead": "Beş kısa soru. Sonunda sana uygun ilk üç adımı ve bir sonraki adımı göreceksin. Kayıt yok; cevapların sen göndermedikçe hiçbir yere gitmez.",
+    "start": "Başlayalım",
+    "safety": {
+      "title": "Başlamadan önce",
+      "body": "Hamileysen ya da emziriyorsan, kronik bir hastalığın varsa veya yeme bozukluğu geçmişin varsa, bu araç yerine doğrudan bir sağlık profesyoneliyle konuş. Burada tıbbi durum sorulmaz.",
+      "ack": "Anladım, devam et"
+    },
+    "progress": "Adım {current} / {total}",
+    "keyboardHint": "Seçmek için 1–6, devam için Enter, geri için Esc",
+    "steps": {
+      "goal": {
+        "title": "Seni buraya ne getirdi?",
+        "options": {
+          "energy": "Daha enerjik hissetmek",
+          "weight_down": "Sürdürülebilir şekilde kilo vermek",
+          "weight_up": "Kilo ya da kas kazanmak",
+          "regular": "Düzenli beslenmek",
+          "sport": "Spor performansı",
+          "family": "Aile sofrasını düzenlemek"
+        }
+      },
+      "activity": {
+        "title": "Günlerin ne kadar hareketli?"
+      },
+      "habits": {
+        "title": "Hangileri sana tanıdık geliyor?",
+        "hint": "Birden fazla seçebilirsin. Yargı yok; sadece nereden başlayacağımızı bulmak için.",
+        "options": {
+          "skip_breakfast": "Kahvaltıyı sık atlarım",
+          "late_eating": "Akşamları geç ve çok yerim",
+          "snacking": "Gün içinde sık atıştırırım",
+          "eat_out": "Çoğunlukla dışarıda yerim",
+          "low_veg": "Sebze-meyve az tüketirim",
+          "sweet_drinks": "Şekerli içecekleri severim",
+          "low_water": "Su içmeyi unuturum",
+          "irregular": "Öğün saatlerim düzensiz"
+        }
+      },
+      "time": {
+        "title": "Yemek hazırlamaya günde ne kadar vaktin var?",
+        "options": {
+          "t15": "15 dakikadan az",
+          "t30": "15–30 dakika",
+          "t60": "30–60 dakika",
+          "t60plus": "Bir saatten fazla"
+        }
+      },
+      "stats": {
+        "title": "İstersen birkaç sayı",
+        "hint": "Tamamen isteğe bağlı. Doldurursan sonuçta kişisel bir enerji tahmini de görürsün.",
+        "skip": "Bu adımı atla"
+      }
+    },
+    "result": {
+      "eyebrow": "Sonuç",
+      "title": "İlk adımların hazır.",
+      "energy": "Tahmini günlük ihtiyacın",
+      "energyGeneric": "Örnek bir dengeli tabak",
+      "steps": "Başlamak için üç küçük adım",
+      "next": "Bir sonraki adım",
+      "whatsapp": "WhatsApp'tan bu sonuçla yaz",
+      "form": "Formla gönder",
+      "consentSave": "Cevaplarımın, bana dönüş yapılması amacıyla kaydedilmesini kabul ediyorum.",
+      "saved": "Gönderildi. En kısa sürede dönüş yapılacak.",
+      "restart": "Baştan başla",
+      "whatsappMessage": "Merhaba, sitenizdeki \"Hedefini bul\" aracını kullandım. Hedefim: {goal}. Hareket düzeyim: {activity}. Yemek için ayırabildiğim süre: {time}. Tanışmak isterim.",
+      "suggestions": {
+        "skip_breakfast": "Kahvaltıyı büyütmek yerine başlatmaya odaklan: bir yumurta, bir dilim tam tahıllı ekmek ve domates bile yeter.",
+        "late_eating": "Akşam yemeğini 30 dakika öne çekmeyi dene ve öğleden sonraya küçük, proteinli bir ara öğün ekle.",
+        "snacking": "Atıştırmayı yasaklama; planla. Günde bir iki sabit ara öğün (yoğurt, meyve, bir avuç kuruyemiş) belirle.",
+        "eat_out": "Dışarıda tabağın yarısını sebzeyle doldurmayı hedefle; yanına bir protein, küçük bir karbonhidrat.",
+        "low_veg": "Her öğüne bir sebze ekle: kahvaltıda domates-salatalık, öğlen salata, akşam bir kase sebze yemeği.",
+        "sweet_drinks": "Şekerli içeceklerden birini günde bir kez maden suyu ya da limonlu suyla değiştirerek başla.",
+        "low_water": "Masana görünür bir su şişesi koy ve her öğünle bir bardak su iç.",
+        "irregular": "Önce saatleri sabitle: gün içinde aşağı yukarı aynı saatlerde üç öğün, gerekiyorsa bir ara öğün.",
+        "default_1": "Tabağının yarısını sebze, dörtte birini protein, dörtte birini tam tahıl ile doldurmayı dene.",
+        "default_2": "Haftada iki gün, akşam yemeğini evde ve önceden planlayarak hazırla.",
+        "default_3": "Gün boyunca su içmeyi bir alışkanlığa bağla: her öğünden önce bir bardak."
+      }
+    }
+  },
+  "about": {
+    "title": "Hakkımda",
+    "eyebrow": "Diyetiko",
+    "lead": "Beslenme bir kurallar listesi değil; her gün verilen küçük kararlar. İşim, bu kararları senin hayatında kolaylaştırmak.",
+    "bioTitle": "Biyografi",
+    "bioPlaceholder": "Biyografi metni diyetisyen tarafından eklenecek.",
+    "credentialsTitle": "Eğitim & yetkinlikler",
+    "credentialsPlaceholder": "Diploma, üniversite ve sertifika bilgileri diyetisyen tarafından eklenecek.",
+    "principlesTitle": "Çalışma ilkeleri",
+    "principles": [
+      {
+        "title": "Yasak değil, plan",
+        "body": "Hiçbir yemek kötü değildir. Konuştuğumuz şey porsiyon, sıklık ve bağlam."
+      },
+      {
+        "title": "Kanıta dayalı",
+        "body": "Öneriler güncel bilimsel kılavuzlara dayanır; moda diyetlere değil."
+      },
+      {
+        "title": "Utandırmadan",
+        "body": "Beden, kilo ve alışkanlıklar hakkında yargısız konuşuruz."
+      },
+      {
+        "title": "Birlikte",
+        "body": "Gerektiğinde doktorun ve diğer sağlık profesyonelleriyle iş birliği yapılır."
+      }
+    ],
+    "portraitAlt": "Diyetisyen portresi için ayrılmış alan",
+    "cta": "Tanışalım"
+  },
+  "pros": {
+    "title": "Meslektaşlar için",
+    "eyebrow": "Sağlık profesyonelleri",
+    "lead": "Hekimler, diyetisyenler, psikologlar ve antrenörlerle ortak danışan takibi, yönlendirme ve iş birliği için.",
+    "approachTitle": "Yaklaşım",
+    "approach": [
+      {
+        "title": "Ortak dil",
+        "body": "Yönlendirilen danışan için hedefler ve sınırlar baştan netleştirilir; gerekirse kısa bir özet raporla geri bildirim verilir."
+      },
+      {
+        "title": "Kapsam içinde kalmak",
+        "body": "Tanı ve tedavi hekimin alanıdır. Beslenme planı, hekimin önerileriyle uyumlu hazırlanır."
+      },
+      {
+        "title": "Veri güvenliği",
+        "body": "Danışan verileri KVKK kapsamında özel nitelikli veri olarak korunur; yalnızca gerekli bilgi paylaşılır."
+      }
+    ],
+    "credentialsTitle": "Yetkinlikler",
+    "credentialsPlaceholder": "Mesleki kayıt, uzmanlık alanları ve üyelik bilgileri diyetisyen tarafından eklenecek.",
+    "formTitle": "İş birliği / yönlendirme",
+    "formLead": "Kısaca kendinden ve iş birliği fikrinden bahset. Danışan bilgisi paylaşma; ilk temas için yalnızca iletişim bilgisi yeterli.",
+    "successTitle": "Teşekkürler.",
+    "successBody": "Mesajın ulaştı; en kısa sürede dönüş yapılacak."
+  },
+  "legal": {
+    "reviewBanner": "Hukuki inceleme gerekli — bu metin yer tutucudur ve yayına alınmadan önce bir hukukçu tarafından hazırlanmalıdır.",
+    "privacy": {
+      "title": "Gizlilik politikası"
+    },
+    "kvkk": {
+      "title": "KVKK aydınlatma metni"
+    },
+    "cookies": {
+      "title": "Çerez politikası"
+    },
+    "placeholderBody": "Bu sayfanın metni henüz hazırlanmadı. Veri sorumlusu bilgileri, işlenen veri kategorileri, işleme amaçları, hukuki sebepler, aktarım, saklama süreleri ve ilgili kişinin hakları bu bölümde yer alacaktır.",
+    "cookiesFacts": "Teknik bilgi (geliştirici notu): Bu site reklam ya da analiz çerezi kullanmaz. Yalnızca dil tercihi (NEXT_LOCALE), dil önerisinin kapatılması ve yönetici oturumu için zorunlu çerezler kullanılır. Favoriler ve alışveriş listesi tarayıcının yerel belleğinde tutulur, sunucuya gönderilmez. Çerez tercihin (kabul / ret) bir yıl boyunca dm_consent çerezinde tutulur."
+  },
+  "footer": {
+    "tagline": "İyi beslenme tabakta başlar.",
+    "disclaimer": "Bu sitedeki içerikler genel bilgilendirme amaçlıdır; tıbbi tanı, tedavi ya da kişisel beslenme danışmanlığının yerine geçmez.",
+    "legal": "Yasal",
+    "explore": "Keşfet",
+    "reach": "Ulaş",
+    "rights": "© {year} Diyetiko",
+    "top": "Başa dön",
+    "signIn": "Giriş",
+    "clientLogin": "Danışan girişi",
+    "dietitianLogin": "Diyetisyen girişi"
+  },
+  "share": {
+    "preparedBy": "Hazırlayan: Diyetiko",
+    "for": "{name} için",
+    "day": "{n}. gün",
+    "total": "Gün toplamı",
+    "target": "Hedef",
+    "targets": "Günlük hedefler",
+    "notes": "Notlar",
+    "hydration": "Su & içecekler",
+    "print": "Yazdır / PDF",
+    "validUntil": "Bu bağlantı {date} tarihine kadar geçerli.",
+    "validForever": "Bu bağlantı süresizdir; diyetisyen dilediğinde iptal edebilir.",
+    "updated": "Son güncelleme: {date}",
+    "disclaimer": "Bu program sana özel hazırlanmıştır. Başkasıyla paylaşma; sağlık durumunda bir değişiklik olursa diyetisyenine haber ver.",
+    "questions": "Sorun mu var? WhatsApp'tan yaz",
+    "jumpTo": "Güne git",
+    "empty": "Bu gün için öğün eklenmemiş.",
+    "startsOn": "Başlangıç: {date}",
+    "invalidTitle": "Bu bağlantı artık geçerli değil.",
+    "invalidBody": "Süresi dolmuş, iptal edilmiş ya da hatalı yazılmış olabilir. Yeni bir bağlantı için diyetisyenine yaz.",
+    "pdfDisabled": "Bu program için yazdırma kapalı.",
+    "today": "Bugün"
+  },
+  "errors": {
+    "notFoundTitle": "Bu tabak boş.",
+    "notFoundBody": "Aradığın sayfa taşınmış ya da hiç var olmamış olabilir.",
+    "home": "Ana sayfaya dön",
+    "errorTitle": "Mutfakta bir şey ters gitti.",
+    "errorBody": "Beklenmeyen bir hata oluştu. Sayfayı yenilemeyi dene.",
+    "retry": "Tekrar dene"
+  },
+  "cursor": {
+    "drag": "Sürükle",
+    "goal": "Bu benim",
+    "recipe": "Pişirelim"
+  },
+  "admin": {
+    "brand": "Mutfak Masası",
+    "nav": {
+      "dashboard": "Özet",
+      "clients": "Danışanlar",
+      "explorer": "Danışan Gezgini",
+      "programs": "Programlar",
+      "recipes": "Tarifler",
+      "guides": "Rehberler",
+      "foods": "Besinler",
+      "leads": "Talepler",
+      "appointments": "Randevular",
+      "settings": "Ayarlar",
+      "site": "Siteyi aç",
+      "signOut": "Çıkış yap",
+      "command": "Komut paleti",
+      "theme": "Tema",
+      "light": "Açık",
+      "dark": "Koyu",
+      "messages": "Mesajlar",
+      "groups": {
+        "practice": "Muayenehane",
+        "planning": "Planlama",
+        "site": "Site"
+      },
+      "more": "Menü",
+      "collapse": "Menüyü daralt",
+      "expand": "Menüyü genişlet",
+      "search": "Ara…",
+      "day": "Gündüz",
+      "night": "Gece",
+      "install": "Uygulama olarak yükle",
+      "payments": "Ödemeler",
+      "help": "Nasıl kullanılır"
+    },
+    "login": {
+      "title": "Hoş geldin",
+      "lead": "Mutfak Masası yalnızca diyetisyen içindir.",
+      "email": "E-posta",
+      "password": "Şifre",
+      "submit": "Giriş yap",
+      "error": "E-posta ya da şifre hatalı.",
+      "rateLimited": "Çok fazla deneme. Biraz sonra tekrar dene.",
+      "mfaTitle": "Doğrulama kodu",
+      "mfaLead": "Kimlik doğrulama uygulamandaki 6 haneli kodu yaz.",
+      "mfaCode": "Kod",
+      "mfaSubmit": "Doğrula",
+      "mfaError": "Kod doğrulanamadı.",
+      "localHint": "Yerel demo modu: Supabase yapılandırılmadı.",
+      "surface": "Diyetisyen paneli",
+      "headline": "Danışanların ve programların tek masada.",
+      "backToSite": "Siteye dön",
+      "show": "Göster",
+      "hide": "Gizle",
+      "capsLock": "Caps Lock açık.",
+      "clientQuestion": "Danışan mısın?",
+      "clientLink": "Danışan girişi"
+    },
+    "common": {
+      "search": "Ara",
+      "new": "Yeni",
+      "add": "Ekle",
+      "save": "Kaydet",
+      "saved": "Kaydedildi",
+      "saving": "Kaydediliyor…",
+      "cancel": "Vazgeç",
+      "delete": "Sil",
+      "remove": "Kaldır",
+      "edit": "Düzenle",
+      "close": "Kapat",
+      "open": "Aç",
+      "back": "Geri",
+      "prev": "Önceki",
+      "next": "Sonraki",
+      "actions": "İşlemler",
+      "confirm": "Emin misin?",
+      "yes": "Evet",
+      "no": "Hayır",
+      "none": "—",
+      "empty": "Henüz kayıt yok.",
+      "all": "Tümü",
+      "filter": "Filtrele",
+      "export": "Dışa aktar",
+      "exportCsv": "CSV indir",
+      "exportPdf": "PDF / yazdır",
+      "undo": "Geri al",
+      "error": "İşlem tamamlanamadı.",
+      "created": "Oluşturuldu",
+      "updated": "Güncellendi",
+      "deleted": "Silindi",
+      "restored": "Geri alındı",
+      "published": "Yayında",
+      "draft": "Taslak",
+      "view": "Görünüm",
+      "cards": "Kartlar",
+      "table": "Tablo",
+      "today": "Bugün",
+      "upload": "Dosya yükle",
+      "uploading": "Yükleniyor…",
+      "dropHere": "Dosyayı buraya bırak ya da seç",
+      "language": "Dil",
+      "status": "Durum",
+      "createdAt": "Oluşturma",
+      "updatedAt": "Güncelleme",
+      "noResults": "Sonuç yok",
+      "required": "Gerekli",
+      "optional": "İsteğe bağlı",
+      "localMode": "Yerel demo modu",
+      "loading": "Yükleniyor…",
+      "errorTitle": "Sayfa yüklenemedi",
+      "errorBody": "Çoğu zaman geçici bir bağlantı sorunudur (internet ya da veritabanı). Bir kez daha denemek genellikle yeterli.",
+      "retry": "Tekrar dene"
+    },
+    "dashboard": {
+      "title": "Günaydın.",
+      "titleAfternoon": "İyi günler.",
+      "titleEvening": "İyi akşamlar.",
+      "activeClients": "Aktif danışan",
+      "newLeads": "Yeni talep",
+      "upcoming": "Yaklaşan randevu",
+      "checkinsDue": "Ölçüm zamanı gelen",
+      "checkinsHint": "Son ölçümü 14 günden eski aktif danışanlar",
+      "clientsTrend": "Danışan sayısı",
+      "leadsTrend": "Talepler",
+      "quick": "Hızlı işlemler",
+      "quickClient": "Yeni danışan",
+      "quickProgram": "Yeni program",
+      "quickRecipe": "Yeni tarif",
+      "quickAppointment": "Randevu ekle",
+      "upcomingList": "Bu hafta",
+      "latestLeads": "Son talepler",
+      "noUpcoming": "Bu hafta randevu yok.",
+      "noLeads": "Yeni talep yok.",
+      "activity": "Danışan paneli",
+      "noActivity": "Henüz panel hareketi yok.",
+      "activityKinds": {
+        "checkin": "günün kaydını girdi",
+        "diary": "günlüğüne öğün ekledi",
+        "message": "mesaj gönderdi"
+      },
+      "unread": "Okunmamış mesaj",
+      "summary": {
+        "appointments": "{count, plural, =0 {Bugün randevu yok} other {Bugün # randevu}}",
+        "unread": "{count, plural, =0 {Okunmamış mesaj yok} other {# okunmamış mesaj}}",
+        "attention": "{count, plural, =0 {Herkes yolunda} other {# danışan ilgini bekliyor}}"
+      },
+      "kpi": {
+        "activeClients": "Aktif danışan",
+        "weekAppointments": "Bu hafta randevu",
+        "newLeads": "Yeni talep",
+        "checkins": "Panel kaydı (7 gün)",
+        "vsLastWeek": "geçen haftaya göre",
+        "vsLastMonth": "geçen aya göre",
+        "vsPrevious": "önceki 7 güne göre",
+        "same": "değişmedi"
+      },
+      "agenda": {
+        "title": "Randevu akışı",
+        "today": "Bugün",
+        "tomorrow": "Yarın",
+        "now": "Şimdi",
+        "empty": "Bugün randevu yok.",
+        "emptyTomorrow": "Yarın randevu yok.",
+        "next": "Sıradaki: {when}",
+        "came": "Geldi",
+        "noShow": "Gelmedi",
+        "remind": "Hatırlat",
+        "remindLabel": "{name} için WhatsApp hatırlatması",
+        "mark": "Nasıl geçti?",
+        "minutes": "{n} dk",
+        "updated": "Randevu güncellendi",
+        "add": "Randevu ekle",
+        "all": "Tüm randevular",
+        "emptyDay": "Bu güne randevu yok."
+      },
+      "attention": {
+        "title": "İlgi bekleyenler",
+        "hint": "Okunmamış mesajlar, hedeften uzaklaşan kilo, sessizleşen panel, geciken ölçüm ya da randevu.",
+        "empty": "Herkes yolunda; bekleyen bir şey yok.",
+        "showAll": "Tümünü göster ({count})",
+        "showLess": "Daha az göster",
+        "reasons": {
+          "unread": "{count} okunmamış mesaj",
+          "driftAway": "Hedeften {kg} kg uzaklaştı",
+          "quiet": "{days} gündür kayıt yok",
+          "noConsent": "KVKK rızası eksik",
+          "overdueTasks": "{count} geciken görev",
+          "measureDue": "{days} gündür ölçüm yok",
+          "measureNever": "Hiç ölçüm yok",
+          "noAppointment": "Planlı randevu yok"
+        }
+      },
+      "goals": {
+        "title": "Hedefe yolculuk",
+        "hint": "Hedef kilosu girilmiş aktif danışanlar: ilk tartıdan bugüne.",
+        "empty": "Hedef kilosu girilmiş danışan yok.",
+        "left": "{kg} kg kaldı",
+        "reached": "Hedefe ulaştı",
+        "eta": "bu hızla ~{weeks} hafta"
+      },
+      "tasks": {
+        "title": "Görevler",
+        "placeholder": "Yeni görev ekle…",
+        "add": "Görev ekle",
+        "due": {
+          "none": "Tarihsiz",
+          "today": "Bugün",
+          "tomorrow": "Yarın",
+          "nextWeek": "Gelecek hafta",
+          "pick": "Tarih"
+        },
+        "overdue": "{days} gün gecikti",
+        "client": "Danışan",
+        "noClient": "Danışana bağlama",
+        "snooze": "Yarına ertele",
+        "markDone": "“{title}” tamamlandı olarak işaretle",
+        "markOpen": "“{title}” yeniden aç",
+        "empty": "Açık görev yok.",
+        "open": "{count} açık",
+        "recentlyDone": "Son 24 saatte bitenler",
+        "migration": "Görevler için veritabanı güncellemesi gerekiyor: supabase/migrations/20261001000005_tasks.sql dosyasını Supabase SQL Editor’da çalıştır.",
+        "share": "Danışan da görsün",
+        "shared": "Danışan görüyor",
+        "sharedDone": "Danışan tamamladı",
+        "sharedHint": "Bu görev danışanın panelinde görünür; danışan kendisi işaretler."
+      },
+      "hero": {
+        "next": "Sıradaki randevu",
+        "none": "Bugün başka randevu yok.",
+        "open": "Danışanı aç"
+      },
+      "inbox": {
+        "title": "Gelen kutusu",
+        "empty": "Okunmamış mesaj yok.",
+        "reply": "Yanıtla",
+        "placeholder": "Yanıtın…",
+        "send": "Gönder",
+        "sent": "Yanıt gönderildi",
+        "markRead": "Okundu say",
+        "open": "Konuşmayı aç",
+        "all": "Tüm mesajlar",
+        "fromClient": "Danışan"
+      },
+      "leads": {
+        "title": "Yeni talepler",
+        "empty": "Bekleyen yeni talep yok.",
+        "call": "Ara",
+        "whatsapp": "WhatsApp",
+        "contacted": "Görüşüldü",
+        "convert": "Danışan yap",
+        "converted": "Danışan kaydı oluşturuldu",
+        "updated": "Talep güncellendi",
+        "all": "Tüm talepler"
+      },
+      "birthdays": {
+        "title": "Doğum günleri",
+        "hint": "Önümüzdeki 7 gün",
+        "empty": "Önümüzdeki 7 günde doğum günü yok.",
+        "today": "Bugün",
+        "inDays": "{n} gün sonra",
+        "turns": "{age} yaşına giriyor",
+        "congratulate": "Kutla"
+      },
+      "clock": "Saat",
+      "money": {
+        "title": "Tahsilat",
+        "month": "Bu ay tahsil edilen",
+        "vsLast": "Geçen ay {amount}",
+        "lastNone": "Geçen ay kayıt yok",
+        "due": "Bekleyen alacak",
+        "nothingDue": "Bekleyen alacak yok",
+        "watch": "Konuşulacak paketler",
+        "empty": "Biten ya da ödemesi bekleyen paket yok.",
+        "migration": "Tahsilat kartı için veritabanı güncellemesi gerekiyor: supabase/migrations/20261002000006_practice.sql dosyasını Supabase SQL Editor’da çalıştır.",
+        "reason": {
+          "ending": "Son seans",
+          "endingWeek": "Bitiyor",
+          "done": "Paket bitti",
+          "unpaid": "{amount} kalan"
+        }
+      },
+      "range": {
+        "label": "Dönem",
+        "months": "{n} ay",
+        "weeks": "{n} hafta",
+        "year": "1 yıl"
+      },
+      "mix": {
+        "title": "Danışan dağılımı",
+        "total": "danışan",
+        "empty": "Henüz danışan yok."
+      },
+      "outcomes": {
+        "title": "Randevu katılımı",
+        "total": "randevu",
+        "done": "Geldi",
+        "noShow": "Gelmedi",
+        "cancelled": "İptal",
+        "empty": "Bu dönemde sonuçlanmış randevu yok.",
+        "rate": "Katılım oranı {rate} (iptaller hariç)."
+      },
+      "overview": "Genel bakış"
+    },
+    "clients": {
+      "title": "Danışanlar",
+      "new": "Yeni danışan",
+      "quickAdd": "Hızlı ekle",
+      "quickAddLead": "Ad ve iletişim yeterli; gerisini sonra tamamlarsın.",
+      "fullForm": "Tam form",
+      "searchPlaceholder": "Ad, e-posta, telefon ya da etiket",
+      "count": "{count, plural, one {# danışan} other {# danışan}}",
+      "status": {
+        "active": "Aktif",
+        "paused": "Ara verdi",
+        "completed": "Tamamladı",
+        "archived": "Arşiv"
+      },
+      "fields": {
+        "fullName": "Ad soyad",
+        "email": "E-posta",
+        "phone": "Telefon",
+        "birthDate": "Doğum tarihi",
+        "sex": "Cinsiyet",
+        "sexOptions": {
+          "female": "Kadın",
+          "male": "Erkek",
+          "other": "Belirtmek istemiyor / diğer"
+        },
+        "height": "Boy (cm)",
+        "goal": "Hedef",
+        "goalWeight": "Hedef kilo (kg)",
+        "activity": "Aktivite düzeyi",
+        "allergies": "Alerjiler / intoleranslar",
+        "medicalNotes": "Tıbbi notlar",
+        "medicalNotesHint": "Özel nitelikli veri. Paylaşım sayfalarında asla gösterilmez.",
+        "preferredLanguage": "Tercih ettiği dil",
+        "tags": "Etiketler",
+        "tagsHint": "Virgülle ayır",
+        "source": "Nereden geldi",
+        "consent": "KVKK açık rıza",
+        "consentGiven": "Açık rıza alındı",
+        "consentAt": "Rıza zamanı: {date}",
+        "consentMissing": "Açık rıza kaydı yok",
+        "consentRecord": "Rızayı şimdi kaydet",
+        "activityOptions": {
+          "sedentary": "Çoğunlukla oturarak",
+          "light": "Hafif hareketli",
+          "moderate": "Orta hareketli",
+          "active": "Hareketli",
+          "very_active": "Çok hareketli"
+        }
+      },
+      "tabs": {
+        "general": "Genel",
+        "measurements": "Ölçümler",
+        "programs": "Programlar",
+        "notes": "Notlar",
+        "files": "Dosyalar",
+        "appointments": "Randevular",
+        "tracking": "Takip",
+        "diary": "Günlük",
+        "messages": "Mesajlar",
+        "overview": "Özet",
+        "billing": "Paket & ödeme",
+        "labs": "Tahliller"
+      },
+      "age": "{age} yaş",
+      "lastMeasurement": "Son ölçüm",
+      "noMeasurement": "Ölçüm yok",
+      "softDelete": "Arşive taşı",
+      "softDeleted": "Danışan arşive taşındı",
+      "restore": "Arşivden çıkar",
+      "hardDelete": "Kalıcı olarak sil",
+      "hardDeleteTitle": "Kalıcı silme",
+      "hardDeleteBody": "Bu danışanın tüm ölçümleri, notları, dosyaları, programları ve paylaşım bağlantıları kalıcı olarak silinecek. Bu işlem geri alınamaz.",
+      "hardDeleteConfirm": "Onaylamak için danışanın adını yaz: {name}",
+      "deletedList": "Arşivdekiler",
+      "openExplorer": "Gezginde aç",
+      "export": "Danışan verisini dışa aktar",
+      "consentOk": "KVKK onaylı",
+      "consentNo": "KVKK eksik",
+      "overview": {
+        "journey": "Hedef yolculuğu",
+        "start": "Başlangıç",
+        "now": "Şimdi",
+        "goal": "Hedef",
+        "change": "Değişim",
+        "perWeek": "{kg} kg/hafta",
+        "trendHint": "Son 6 haftanın eğilimi · {n} tartı",
+        "eta": "Bu hızla tahmini varış: {date}",
+        "etaHint": "Eğilime dayalı bir yön; söz değil.",
+        "noTrend": "Eğilim için en az bir haftaya yayılan 3 tartı gerekir.",
+        "noGoal": "Hedef kilo girilmemiş.",
+        "noWeight": "Henüz tartı yok.",
+        "reached": "Hedefe ulaştı",
+        "left": "{kg} kg kaldı",
+        "weights": "Tartılar: muayene ve panel",
+        "clinical": "Klinik göstergeler",
+        "clinicalHint": "Kayıtlı ölçümlerden formülle hesaplanır; klinik değerlendirmenin yerini tutmaz.",
+        "bmi": "BKİ",
+        "healthyRange": "BKİ 18,5–24,9 için kilo",
+        "whtr": "Bel / boy",
+        "whr": "Bel / kalça",
+        "threshold": "eşik {value}",
+        "bands": {
+          "ok": "Eşiğin altında",
+          "raised": "Eşikte ya da üstünde",
+          "high": "Yüksek (≥ 0,6)"
+        },
+        "bmr": "Bazal metabolizma",
+        "tdee": "Günlük enerji",
+        "range": "Önerilen aralık · {goal}",
+        "goals": {
+          "lose": "kilo verme",
+          "gain": "kilo alma",
+          "maintain": "koruma"
+        },
+        "macros": "Örnek dağılım",
+        "missing": "Hesaplamak için eksik: {fields}",
+        "fields": {
+          "height": "boy",
+          "weight": "kilo",
+          "sex": "cinsiyet",
+          "birthDate": "doğum tarihi",
+          "activity": "aktivite düzeyi",
+          "waist": "bel ölçüsü",
+          "hip": "kalça ölçüsü"
+        },
+        "complete": "Bilgileri tamamla",
+        "adherence": "Son 4 hafta",
+        "logged": "28 günün {n} gününde kayıt",
+        "habitsAvg": "Alışkanlık",
+        "waterAvg": "Su",
+        "energyAvg": "Enerji",
+        "notOnPortal": "Danışan paneli açık değil; günlük takip verisi yok.",
+        "openPortal": "Paneli aç",
+        "legend": {
+          "none": "Kayıt yok",
+          "some": "Kayıt var",
+          "most": "Alışkanlıkların çoğu"
+        },
+        "dayLabel": "{day}: {state}",
+        "nextAppointment": "Sıradaki randevu",
+        "noAppointment": "Planlı randevu yok.",
+        "program": "Aktif program",
+        "noProgram": "Aktif program yok.",
+        "kcal": "{kcal} kcal hedef",
+        "lastMessage": "Son mesaj",
+        "noMessages": "Henüz mesaj yok.",
+        "pinned": "Sabitlenmiş not",
+        "latestNote": "Son not",
+        "noNotes": "Not yok.",
+        "allergies": "Alerji / intolerans",
+        "medical": "Tıbbi not var",
+        "quick": {
+          "measure": "Ölçüm ekle",
+          "note": "Not yaz",
+          "appointment": "Randevu ver",
+          "message": "Mesaj yaz",
+          "whatsapp": "WhatsApp",
+          "call": "Ara",
+          "email": "E-posta",
+          "report": "İlerleme raporu"
+        },
+        "bmiCategories": {
+          "under": "Zayıf aralık",
+          "normal": "Normal aralık",
+          "over": "Fazla kilolu aralık",
+          "obese": "Obez aralık"
+        }
+      },
+      "card": {
+        "weight": "Kilo",
+        "goal": "Hedef {kg} kg",
+        "noAppointment": "Randevu yok",
+        "noMeasurement": "Ölçüm yok",
+        "measuredToday": "Bugün ölçüldü",
+        "measuredAgo": "{days} gün önce ölçüldü",
+        "portal": "Danışan panelinde",
+        "unread": "{n} okunmamış mesaj"
+      }
+    },
+    "explorer": {
+      "title": "Danışan Gezgini",
+      "hint": "← → ile danışanlar arasında gezin",
+      "position": "{current} / {total}",
+      "empty": "Gezinecek aktif danışan yok.",
+      "openProfile": "Profili aç",
+      "goal": "Hedef",
+      "progress": "Hedefe ilerleme",
+      "latest": "Son ölçümler",
+      "activeProgram": "Aktif program",
+      "noProgram": "Aktif program yok",
+      "nextAppointment": "Sıradaki randevu",
+      "pinnedNote": "Sabitlenmiş not"
+    },
+    "measurements": {
+      "title": "Ölçümler",
+      "add": "Ölçüm ekle",
+      "date": "Tarih",
+      "weight": "Kilo (kg)",
+      "bodyFat": "Yağ oranı (%)",
+      "muscle": "Kas (kg)",
+      "waist": "Bel (cm)",
+      "hip": "Kalça (cm)",
+      "chest": "Göğüs (cm)",
+      "arm": "Kol (cm)",
+      "thigh": "Bacak (cm)",
+      "note": "Not",
+      "chart": "Grafik",
+      "metric": "Ölçü",
+      "progressToGoal": "Hedefe ilerleme",
+      "noGoal": "Hedef kilo girilmemiş",
+      "change": "Değişim",
+      "empty": "İlk ölçümü ekleyerek grafiği başlat.",
+      "start": "Başlangıç",
+      "current": "Şimdi",
+      "target": "Hedef",
+      "compare": {
+        "title": "Karşılaştır",
+        "from": "Önce",
+        "to": "Sonra",
+        "delta": "Fark",
+        "copy": "Özeti kopyala",
+        "copied": "Özet panoya kopyalandı",
+        "need2": "Karşılaştırma için en az iki ölçüm gerekir.",
+        "days": "{n} gün"
+      }
+    },
+    "notes": {
+      "title": "Notlar",
+      "placeholder": "Not yaz…",
+      "add": "Not ekle",
+      "pin": "Sabitle",
+      "unpin": "Sabitlemeyi kaldır",
+      "empty": "Henüz not yok."
+    },
+    "files": {
+      "title": "Dosyalar",
+      "empty": "Henüz dosya yok.",
+      "private": "Dosyalar özel bir alanda saklanır; bağlantılar kısa süreli imzalıdır.",
+      "tooLarge": "Dosya 10 MB'tan büyük olamaz.",
+      "badType": "Bu dosya türü desteklenmiyor.",
+      "shared": {
+        "title": "Mesajlarla paylaşılan dosyalar",
+        "lead": "Danışanın gönderdiği tahlil ve fotoğraflar ile senin gönderdiklerin.",
+        "toLabs": "Tahlil değerlerini işle",
+        "open": "Dosyayı aç",
+        "fromClient": "Danışan gönderdi",
+        "fromYou": "Sen gönderdin"
+      }
+    },
+    "appointments": {
+      "title": "Randevular",
+      "new": "Randevu ekle",
+      "client": "Danışan",
+      "lead": "Talep",
+      "when": "Tarih & saat",
+      "duration": "Süre (dk)",
+      "kind": "Tür",
+      "kinds": {
+        "in_person": "Yüz yüze",
+        "online": "Online",
+        "phone": "Telefon"
+      },
+      "statuses": {
+        "scheduled": "Planlandı",
+        "done": "Gerçekleşti",
+        "cancelled": "İptal",
+        "no_show": "Gelmedi"
+      },
+      "note": "Not",
+      "list": "Liste",
+      "calendar": "Takvim",
+      "empty": "Randevu yok.",
+      "week": "Hafta",
+      "prevWeek": "Önceki hafta",
+      "nextWeek": "Sonraki hafta",
+      "repeat": {
+        "label": "Tekrar",
+        "none": "Tekrarlama",
+        "weekly": "Her hafta",
+        "biweekly": "2 haftada bir",
+        "count": "Kaç randevu",
+        "hint": "{n, plural, other {Toplam # randevu oluşturulacak}}"
+      }
+    },
+    "leads": {
+      "title": "Talepler",
+      "kinds": {
+        "contact": "İletişim",
+        "wizard": "Hedefini bul",
+        "professional": "Meslektaş",
+        "application": "Başvuru"
+      },
+      "statuses": {
+        "new": "Yeni",
+        "contacted": "Dönüş yapıldı",
+        "converted": "Danışana dönüştü",
+        "archived": "Arşiv"
+      },
+      "convert": "Danışana dönüştür",
+      "converted": "Danışan oluşturuldu",
+      "markContacted": "Dönüş yapıldı olarak işaretle",
+      "archive": "Arşivle",
+      "consent": "Onay: {date} ({version})",
+      "wizardAnswers": "Sihirbaz cevapları",
+      "empty": "Talep yok.",
+      "reply": "Yanıtla",
+      "app": {
+        "duration": "Süre",
+        "format": "Biçim",
+        "start": "Başlangıç",
+        "termsAccepted": "En az 3 ay koşulunu kabul etti",
+        "person": "Kişi",
+        "goal": "Hedef",
+        "sex": "Cinsiyet",
+        "age": "Yaş",
+        "height": "Boy",
+        "weight": "Kilo",
+        "activity": "Hareket",
+        "health": "Sağlık",
+        "conditions": {
+          "diabetes": "Diyabet / insülin direnci",
+          "thyroid": "Tiroid",
+          "pcos": "PKOS",
+          "blood_pressure": "Yüksek tansiyon",
+          "cholesterol": "Kolesterol / trigliserit",
+          "digestive": "Sindirim sorunları",
+          "kidney": "Böbrek",
+          "pregnancy": "Gebelik / emzirme"
+        },
+        "none": "Belirtilmedi",
+        "medications": "İlaç / takviye",
+        "allergies": "Alerji",
+        "prior": "Daha önce diyetisyen",
+        "reach": "İletişim tercihi",
+        "preferred": "Kanal",
+        "time": "Zaman",
+        "channels": {
+          "whatsapp": "WhatsApp",
+          "phone": "Telefon",
+          "email": "E-posta"
+        },
+        "durations": {
+          "m3": "3 ay",
+          "m6": "6 ay",
+          "m12": "12 ay"
+        },
+        "formats": {
+          "online": "Online",
+          "in_person": "Yüz yüze",
+          "either": "Fark etmez"
+        },
+        "starts": {
+          "asap": "Hemen",
+          "month": "Bu ay içinde",
+          "later": "Daha sonra"
+        },
+        "goals": {
+          "energy": "Daha enerjik hissetmek",
+          "weight_down": "Sürdürülebilir şekilde kilo vermek",
+          "weight_up": "Kilo ya da kas kazanmak",
+          "regular": "Düzenli beslenmek",
+          "sport": "Spor performansı",
+          "family": "Aile sofrasını düzenlemek",
+          "health": "Bir sağlık durumuna uygun beslenmek"
+        },
+        "sexes": {
+          "female": "Kadın",
+          "male": "Erkek",
+          "other": "Belirtmek istemiyorum"
+        },
+        "activities": {
+          "sedentary": "Çoğunlukla oturarak",
+          "light": "Hafif hareketli",
+          "moderate": "Orta",
+          "active": "Hareketli",
+          "very_active": "Çok hareketli"
+        },
+        "yesNo": {
+          "yes": "Evet",
+          "no": "Hayır"
+        },
+        "times": {
+          "morning": "Sabah",
+          "afternoon": "Öğleden sonra",
+          "evening": "Akşam",
+          "any": "Fark etmez"
+        },
+        "conditionsLabel": "Durumlar",
+        "call": "Ara",
+        "email": "E-posta",
+        "phone": "Telefon",
+        "language": "Dil",
+        "sent": "Gönderildi",
+        "bmi": "BKİ",
+        "message": "Kendi notu"
+      }
+    },
+    "programs": {
+      "title": "Programlar",
+      "new": "Yeni program",
+      "templates": "Şablonlar",
+      "fromScratch": "Boş başla",
+      "fromTemplate": "Şablondan",
+      "duplicate": "Kopyala",
+      "saveAsTemplate": "Şablon olarak kaydet",
+      "assign": "Danışana ata",
+      "unassigned": "Atanmamış",
+      "template": "Şablon",
+      "titleField": "Program adı",
+      "language": "Program dili",
+      "startsOn": "Başlangıç",
+      "status": {
+        "draft": "Taslak",
+        "active": "Aktif",
+        "archived": "Arşiv"
+      },
+      "targets": "Günlük hedefler",
+      "targetKcal": "Enerji (kcal)",
+      "targetProtein": "Protein (g)",
+      "targetCarb": "Karbonhidrat (g)",
+      "targetFat": "Yağ (g)",
+      "notes": "Notlar",
+      "hydration": "Su & içecek önerileri",
+      "day": "{n}. gün",
+      "addDay": "Gün ekle",
+      "copyDay": "Günü kopyala",
+      "clearDay": "Günü temizle",
+      "addMeal": "Öğün ekle",
+      "addItem": "Ekle",
+      "searchFood": "Besin ya da tarif ara",
+      "foods": "Besinler",
+      "recipes": "Tarifler",
+      "custom": "Serbest satır",
+      "dragHint": "Sürükleyip bir öğüne bırak ya da tıkla",
+      "quantity": "Miktar",
+      "servings": "Porsiyon",
+      "dayTotal": "Gün toplamı",
+      "mealTotal": "Öğün toplamı",
+      "vsTarget": "hedefe göre",
+      "autosave": {
+        "idle": "Kaydedildi",
+        "saving": "Kaydediliyor…",
+        "error": "Kaydedilemedi — tekrar denenecek",
+        "dirty": "Değişiklik var"
+      },
+      "versions": "Sürümler",
+      "snapshot": "Sürüm kaydet",
+      "snapshotSaved": "Sürüm kaydedildi",
+      "restoreVersion": "Bu sürüme dön",
+      "noVersions": "Henüz sürüm yok.",
+      "empty": "Henüz program yok.",
+      "time": "Saat",
+      "mealNote": "Öğün notu",
+      "itemNote": "Not",
+      "deleteProgram": "Programı sil",
+      "deleteProgramBody": "Program, günleri, öğünleri ve tüm paylaşım bağlantıları silinecek.",
+      "dayCount": "{n, plural, one {# gün} other {# gün}}",
+      "overTarget": "Hedefin üstünde"
+    },
+    "share": {
+      "title": "Programı paylaş",
+      "create": "Bağlantı oluştur",
+      "expiry": "Geçerlilik",
+      "expiries": {
+        "d7": "7 gün",
+        "d30": "30 gün",
+        "d90": "90 gün",
+        "never": "Süresiz"
+      },
+      "showName": "Danışanın adını göster",
+      "showNameHint": "Yalnızca ilk ad gösterilir.",
+      "allowPdf": "Yazdırma / PDF izni",
+      "copy": "Bağlantıyı kopyala",
+      "copied": "Bağlantı kopyalandı",
+      "whatsapp": "WhatsApp",
+      "email": "E-posta",
+      "native": "Diğer uygulamalar",
+      "qr": "QR kod",
+      "revoke": "Bağlantıyı iptal et",
+      "revoked": "Bağlantı iptal edildi",
+      "revokedAt": "İptal: {date}",
+      "views": "{count, plural, =0 {Henüz görüntülenmedi} one {# görüntülenme} other {# görüntülenme}}",
+      "lastViewed": "Son görüntülenme: {date}",
+      "expiresAt": "Bitiş: {date}",
+      "noExpiry": "Süresiz",
+      "expired": "Süresi doldu",
+      "active": "Aktif",
+      "links": "Bağlantılar",
+      "noLinks": "Bu program için henüz bağlantı yok.",
+      "safety": "Paylaşım sayfası tıbbi notları, telefon, e-posta ve ölçümleri asla göstermez.",
+      "messageTemplate": "Merhaba{name}, beslenme programın hazır: {url}",
+      "subject": "Beslenme programın"
+    },
+    "cms": {
+      "recipesTitle": "Tarifler",
+      "guidesTitle": "Rehberler",
+      "newRecipe": "Yeni tarif",
+      "newGuide": "Yeni rehber",
+      "publish": "Yayınla",
+      "unpublish": "Yayından kaldır",
+      "published": "Yayında",
+      "draft": "Taslak",
+      "translationStatus": {
+        "draft": "Taslak",
+        "needs_review": "İnceleme bekliyor",
+        "reviewed": "İncelendi"
+      },
+      "reviewRule": "Arapça ve Fransızca içerikler, ana dili konuşan biri tarafından \"İncelendi\" olarak işaretlenmeden sitede gösterilmez.",
+      "title": "Başlık",
+      "slug": "Adres (slug)",
+      "summary": "Kısa açıklama",
+      "excerpt": "Özet",
+      "body": "Metin",
+      "bodyHint": "Paragraflar arasında boş satır bırak. \"## \" ile ara başlık.",
+      "steps": "Adımlar",
+      "stepsHint": "Her satır bir adım",
+      "tips": "Mutfak notu",
+      "prep": "Hazırlık (dk)",
+      "cook": "Pişirme (dk)",
+      "servings": "Porsiyon",
+      "mealTypes": "Öğün türleri",
+      "illustration": "Çizim",
+      "cover": "Kapak görseli",
+      "ingredients": "Malzemeler",
+      "addIngredient": "Malzeme ekle",
+      "grams": "Gram",
+      "unit": "Birim",
+      "optional": "İsteğe bağlı",
+      "computed": "Hesaplanan (porsiyon başına)",
+      "category": "Kategori",
+      "readingMin": "Okuma süresi (dk)",
+      "sources": "Kaynaklar",
+      "sourcesHint": "Her satır: Başlık | Yayıncı | URL",
+      "draftTranslation": "Taslak çeviri üret",
+      "draftTranslationHint": "Yalnızca herkese açık içerik için. Sonuç \"İnceleme bekliyor\" olarak kaydedilir.",
+      "translationUnavailable": "Taslak çeviri için ANTHROPIC_API_KEY tanımlı değil.",
+      "missingTranslation": "Bu dilde henüz içerik yok.",
+      "categoryOptions": {
+        "basics": "Temeller",
+        "habits": "Alışkanlıklar",
+        "labels": "Etiket okuma",
+        "kitchen": "Mutfak"
+      }
+    },
+    "foods": {
+      "title": "Besinler",
+      "new": "Yeni besin",
+      "per100": "100 g için",
+      "name": "Ad",
+      "category": "Kategori",
+      "kcal": "kcal",
+      "protein": "Protein",
+      "carb": "Karb.",
+      "fat": "Yağ",
+      "fiber": "Lif",
+      "flags": "İçerik işaretleri",
+      "flagOptions": {
+        "meat": "Et",
+        "fish": "Balık",
+        "dairy": "Süt ürünü",
+        "egg": "Yumurta",
+        "gluten": "Gluten",
+        "honey": "Bal"
+      },
+      "units": "Ölçü birimleri",
+      "unitsHint": "Örn. adet = 50 g",
+      "review": {
+        "needs_review": "Doğrulanmadı",
+        "verified": "Doğrulandı"
+      },
+      "source": "Kaynak",
+      "reviewNote": "Tohum verideki değerler yaklaşıktır. Her besin, güvenilir bir kaynakla (ör. ulusal besin kompozisyon veritabanı, kullanım koşullarına uygun olarak) doğrulanana kadar \"Doğrulanmadı\" olarak kalır.",
+      "categories": {
+        "grains": "Tahıllar",
+        "legumes": "Baklagiller",
+        "dairy_egg": "Süt & yumurta",
+        "meat_fish": "Et & balık",
+        "vegetables": "Sebzeler",
+        "fruits": "Meyveler",
+        "nuts_seeds": "Kuruyemiş & tohum",
+        "fats": "Yağlar",
+        "other": "Diğer"
+      }
+    },
+    "settings": {
+      "title": "Ayarlar",
+      "profile": "Profil",
+      "fullName": "Ad soyad",
+      "adminLanguage": "Panel dili",
+      "arabicDigits": "Arapça sayfalarda rakamlar",
+      "arabicDigitsOptions": {
+        "latn": "Latin (0123)",
+        "arab": "Arapça-Hint (٠١٢٣)"
+      },
+      "site": "Site içeriği",
+      "contactInfo": "İletişim bilgileri",
+      "socials": "Sosyal medya",
+      "seo": "SEO varsayılanları",
+      "images": "Marka görselleri",
+      "security": "Güvenlik",
+      "password": "Yeni şifre",
+      "passwordConfirm": "Yeni şifre (tekrar)",
+      "changePassword": "Şifreyi değiştir",
+      "mfa": "İki adımlı doğrulama (TOTP)",
+      "mfaEnable": "Etkinleştir",
+      "mfaDisable": "Kapat",
+      "mfaScan": "QR kodu kimlik doğrulama uygulamanla tara, sonra kodu gir.",
+      "mfaEnabled": "İki adımlı doğrulama açık",
+      "mfaUnavailable": "İki adımlı doğrulama yalnızca Supabase Auth ile kullanılabilir.",
+      "sections": {
+        "hero": "Ana sayfa girişi",
+        "about": "Hakkımda",
+        "faq": "Sık sorulanlar",
+        "credentials": "Yetkinlikler",
+        "contact": "İletişim"
+      },
+      "localeTabs": "İçerik dili",
+      "portrait": "Portre",
+      "logo": "Logo",
+      "ogImage": "Paylaşım görseli",
+      "heroLines": "Başlık satırları",
+      "heroLinesHint": "Her satır başlığın bir satırı olur (en fazla 4).",
+      "heroLead": "Giriş metni",
+      "bio": "Biyografi",
+      "credentialsHint": "Her satıra bir diploma/sertifika. Yalnızca belgelenmiş bilgiler.",
+      "faqHint": "Soru bir satırda, cevabı alt satırda; sorular arasında boş satır.",
+      "address": "Adres",
+      "mfaCode": "Doğrulama kodu",
+      "passwordHint": "En az 10 karakter",
+      "passwordMismatch": "Şifreler eşleşmiyor",
+      "whatsappHint": "Ülke koduyla, yalnızca rakam",
+      "notSaved": "Henüz kaydedilmedi"
+    },
+    "palette": {
+      "placeholder": "Bir komut yaz ya da ara…",
+      "navigate": "Git",
+      "create": "Oluştur",
+      "clients": "Danışanlar",
+      "empty": "Sonuç bulunamadı."
+    },
+    "audit": {
+      "title": "Erişim kaydı"
+    },
+    "portal": {
+      "title": "Danışan paneli",
+      "states": {
+        "none": "Davet edilmedi",
+        "invited": "Davet gönderildi",
+        "noConsent": "Rıza bekleniyor",
+        "active": "Aktif"
+      },
+      "hints": {
+        "none": "Davet linki oluşturup danışanına gönder. Link 7 gün geçerli ve tek kullanımlık; danışan kendi şifresini belirler.",
+        "invited": "Link {date} tarihine kadar geçerli. Danışan henüz hesabını oluşturmadı.",
+        "noConsent": "Danışan hesabını oluşturdu ama sağlık verileri için açık rıza vermedi ya da geri çekti; panelde veri girişi kapalı.",
+        "active": "Açık rıza: {date}"
+      },
+      "lastActivity": "Son hareket: {when}",
+      "noActivity": "Henüz hareket yok",
+      "createInvite": "Davet linki oluştur",
+      "newInvite": "Yeni davet linki",
+      "createReset": "Şifre sıfırlama linki",
+      "revoke": "Panel erişimini kapat",
+      "revokeTitle": "Panel erişimi kapatılsın mı?",
+      "revokeBody": "Danışanın giriş hesabı silinir ve açık linkler geçersiz olur. Girdiği kayıtlar (günlük, takip, mesajlar) sende kalır. İstersen daha sonra yeniden davet edebilirsin.",
+      "revoked": "Panel erişimi kapatıldı",
+      "linkReady": "Link hazır",
+      "linkOnce": "Güvenlik için link saklanmaz, yalnızca şimdi gösterilir. Kopyalamadan kapatırsan yeni link oluşturman gerekir.",
+      "copy": "Kopyala",
+      "copied": "Kopyalandı",
+      "whatsapp": "WhatsApp ile gönder",
+      "qr": "QR kod",
+      "hideQr": "QR kodu gizle",
+      "expires": "{date} tarihine kadar geçerli",
+      "purposeInvite": "Davet",
+      "purposeReset": "Şifre sıfırlama",
+      "errors": {
+        "noEmail": "Davet için önce Genel sekmesinde danışanın e-posta adresini kaydet.",
+        "alreadyLinked": "Bu danışanın zaten bir hesabı var.",
+        "notLinked": "Danışanın henüz hesabı yok.",
+        "notFound": "Danışan bulunamadı."
+      },
+      "tracking": {
+        "checkins": "Günlük kayıtlar",
+        "logged": "Kayıt (14 gün)",
+        "days": "{count} gün",
+        "avgWater": "Ort. su",
+        "lastWeight": "Son tartı",
+        "avgEnergy": "Ort. enerji",
+        "weightChart": "Danışanın kendi tartıları",
+        "noCheckins": "Danışan henüz kayıt girmedi.",
+        "table": {
+          "day": "Gün",
+          "weight": "Kilo",
+          "water": "Su",
+          "habits": "Alışkanlık",
+          "energy": "Enerji",
+          "note": "Not",
+          "activity": "Hareket"
+        },
+        "habits": "Alışkanlık hedefleri",
+        "habitsHint": "Danışan bu hedefleri her gün panelinde işaretler. Duraklatılan hedef panelde görünmez.",
+        "habitPlaceholder": "ör. 30 dk yürüyüş",
+        "habitLabel": "Yeni hedef",
+        "noHabits": "Henüz hedef yok.",
+        "pause": "Duraklat",
+        "resume": "Etkinleştir",
+        "paused": "Duraklatıldı",
+        "adherence": "Uyum, son 28 gün",
+        "adherenceValue": "{done}/{total} gün",
+        "energyLevels": ["Çok düşük", "Düşük", "Orta", "İyi", "Çok iyi"],
+        "notOnPortal": "Bu danışan paneli henüz kullanmıyor. Genel sekmesindeki “Danışan paneli” bölümünden davet edebilirsin.",
+        "activity": "Hareket (7 gün)",
+        "activityValue": "{min} dk",
+        "activityDays": "{count} gün hareketli",
+        "adherence7": "Programa uyum (7 gün)",
+        "adherenceMeals": "{planned} öğünün {logged} tanesi kayıtlı",
+        "adherenceNone": "Aktif program yok"
+      },
+      "diary": {
+        "title": "Beslenme günlüğü",
+        "range": "{from} – {to}",
+        "empty": "Bu aralıkta günlük kaydı yok.",
+        "dayTotal": "Gün toplamı",
+        "target": "hedef {value}",
+        "noValues": "{count, plural, one {# kalemin değeri yok} other {# kalemin değeri yok}}",
+        "photo": "Öğün fotoğrafı",
+        "openPhoto": "Fotoğrafı büyüt",
+        "prev": "Önceki 14 gün",
+        "next": "Sonraki 14 gün",
+        "freeText": "serbest metin"
+      },
+      "messages": {
+        "title": "Mesajlar",
+        "empty": "Henüz mesaj yok.",
+        "placeholder": "Yanıtını yaz…",
+        "send": "Gönder",
+        "inbox": "Mesajlar",
+        "inboxLead": "Danışanlarının panelden yazdıkları. Okunmamışlar üstte.",
+        "inboxEmpty": "Danışanlardan henüz mesaj yok.",
+        "unread": "{count} yeni",
+        "you": "Sen",
+        "about": "{meal} · {date}",
+        "sendHint": "Ctrl + Enter ile gönder",
+        "notOnPortal": "Danışan paneli kullanmadığı için mesajını göremez.",
+        "rateLimited": "Çok sık gönderim. Biraz sonra tekrar dene.",
+        "attachFile": "Dosya ekle (PDF ya da fotoğraf)",
+        "removeFile": "Dosyayı kaldır",
+        "openFile": "Dosyayı aç",
+        "fileTooLarge": "Dosya 10 MB’tan büyük olamaz.",
+        "fileType": "Yalnızca PDF ya da fotoğraf (JPG, PNG, WebP) gönderilebilir.",
+        "seen": "görüldü",
+        "file": "Dosya",
+        "search": "Danışan ara",
+        "all": "Tümü",
+        "unreadOnly": "Okunmamış",
+        "withFiles": "Dosyalı",
+        "newThread": "Yeni konuşma",
+        "pickClient": "Danışan seç…",
+        "choose": "Soldan bir konuşma seç ya da yeni bir konuşma başlat.",
+        "openClient": "Danışan dosyası",
+        "sharedFiles": "Paylaşılan dosyalar",
+        "back": "Konuşmalar",
+        "noMatch": "Bu filtreyle eşleşen konuşma yok.",
+        "noThread": "Henüz mesaj yok",
+        "migration": "Dosya gönderimi için veritabanı güncellemesi gerekiyor: supabase/migrations/20261005000009_uploads_activity.sql dosyasını Supabase SQL Editor’da çalıştır.",
+        "lastWeight": "Son kilo",
+        "nextAppointment": "Sıradaki randevu",
+        "portalOff": "Panel kullanmıyor",
+        "tabs": {
+          "diary": "Günlük",
+          "tracking": "Takip",
+          "labs": "Tahliller"
+        }
+      },
+      "notConfigured": "Sunucuda gizli Supabase anahtarı (SUPABASE_SECRET_KEY) tanımlı değil; danışan hesapları oluşturulamaz. KURULUM.md → Adım 5."
+    },
+    "billing": {
+      "title": "Paket & ödeme",
+      "migration": "Paket ve ödemeler için veritabanı güncellemesi gerekiyor: supabase/migrations/20261002000006_practice.sql dosyasını Supabase SQL Editor’da çalıştır.",
+      "current": "Şu anki paket",
+      "noOpen": "Açık paket yok",
+      "paidTotal": "Toplam ödenen",
+      "dueTotal": "Kalan alacak",
+      "settled": "Borç yok",
+      "packages": "Paketler",
+      "payments": "Ödemeler",
+      "newPackage": "Yeni paket",
+      "editPackage": "Paketi düzenle",
+      "recordPayment": "Ödeme kaydet",
+      "takePayment": "Ödeme al",
+      "noPackages": "Henüz paket yok. Satılan seans paketini ekle; “Geldi” işaretlenen her randevu otomatik düşer.",
+      "noPayments": "Henüz ödeme kaydı yok.",
+      "counted": "“Geldi” olarak işaretlenen randevular, o tarihte geçerli paketin seansından otomatik düşer.",
+      "name": "Paket adı",
+      "namePlaceholder": "ör. 8 seanslık takip",
+      "sessions": "Seans sayısı",
+      "sessionsHint": "boş bırakılırsa seans sayılmaz",
+      "startsOn": "Başlangıç",
+      "endsOn": "Bitiş",
+      "endsBeforeStart": "Bitiş, başlangıçtan önce olamaz",
+      "price": "Ücret",
+      "currency": "Para birimi",
+      "note": "Not",
+      "amount": "Tutar",
+      "paidOn": "Ödeme tarihi",
+      "method": "Ödeme yolu",
+      "methods": {
+        "transfer": "Havale/EFT",
+        "card": "Kart",
+        "cash": "Nakit",
+        "other": "Diğer"
+      },
+      "forPackage": "Paket",
+      "noPackage": "Pakete bağlı değil",
+      "used": "{used}/{total} seans",
+      "usedOpen": "{used} seans yapıldı",
+      "sessionsLeft": "{n, plural, =0 {Seans kalmadı} other {# seans kaldı}}",
+      "paid": "Ödenen",
+      "due": "Kalan",
+      "noPrice": "Ücret girilmedi",
+      "state": {
+        "active": "Aktif",
+        "ending": "Bitiyor",
+        "done": "Bitti",
+        "upcoming": "Başlamadı"
+      },
+      "closed": "Kapatıldı",
+      "close": "Kapat",
+      "reopen": "Yeniden aç",
+      "deleteConfirm": "Bu paket silinsin mi? Bağlı ödemeler kalır, paketsiz görünür.",
+      "deletePaymentConfirm": "Bu ödeme kaydı silinsin mi?",
+      "client": "Danışan",
+      "chooseClient": "Danışan seç",
+      "noPaymentsRange": "Bu tarih aralığında ödeme yok."
+    },
+    "labs": {
+      "title": "Tahliller",
+      "migration": "Tahliller için veritabanı güncellemesi gerekiyor: supabase/migrations/20261002000006_practice.sql dosyasını Supabase SQL Editor’da çalıştır.",
+      "add": "Tahlil sonucu ekle",
+      "addHint": "Rapordaki değerleri ve laboratuvarın kendi referans aralığını gir. Yalnızca doldurulan satırlar kaydedilir.",
+      "empty": "Henüz tahlil sonucu yok. Kan tahlili raporundaki değerleri ekle; her test için seyir ve referans aralığı burada görünür.",
+      "emptyShort": "Henüz tahlil yok.",
+      "outOfRange": "{n, plural, other {# değer aralık dışında}}",
+      "allInRange": "Son değerlerin hepsi referans aralığında.",
+      "homa": "Açlık şekeri × insülin / 405 · {date}",
+      "range": "Referans",
+      "history": "{n, plural, other {# sonuç}}",
+      "flag": {
+        "low": "Düşük",
+        "high": "Yüksek",
+        "ok": "Aralıkta"
+      },
+      "deleteConfirm": "Bu sonuç silinsin mi?",
+      "takenOn": "Tahlil tarihi",
+      "note": "Not",
+      "test": "Test",
+      "value": "Değer",
+      "unit": "Birim",
+      "refLow": "Ref. alt",
+      "refHigh": "Ref. üst",
+      "customName": "Test adı",
+      "addCustom": "Başka test ekle",
+      "filled": "{n, plural, =0 {Henüz değer girilmedi} other {# değer kaydedilecek}}",
+      "latestReport": "Son tahlil: {date}",
+      "tests": {
+        "glucose_fasting": "Açlık kan şekeri",
+        "hba1c": "HbA1c",
+        "insulin_fasting": "Açlık insülini",
+        "total_cholesterol": "Total kolesterol",
+        "ldl": "LDL kolesterol",
+        "hdl": "HDL kolesterol",
+        "triglycerides": "Trigliserit",
+        "tsh": "TSH",
+        "ft4": "Serbest T4",
+        "vitamin_b12": "B12 vitamini",
+        "vitamin_d": "D vitamini (25-OH)",
+        "ferritin": "Ferritin",
+        "iron": "Demir",
+        "hemoglobin": "Hemoglobin",
+        "alt": "ALT",
+        "ast": "AST",
+        "creatinine": "Kreatinin",
+        "uric_acid": "Ürik asit",
+        "crp": "CRP"
+      }
+    },
+    "report": {
+      "title": "İlerleme raporu",
+      "prepared": "{date} tarihinde hazırlandı",
+      "period": "{from} – {to}",
+      "start": "Başlangıç",
+      "now": "Şu an",
+      "goal": "Hedef",
+      "change": "Değişim",
+      "progress": "Hedefe ilerleme",
+      "weightTitle": "Kilo seyri",
+      "measurements": "Ölçümler",
+      "date": "Tarih",
+      "weight": "Kilo",
+      "bodyFat": "Yağ oranı",
+      "muscle": "Kas",
+      "waist": "Bel",
+      "hip": "Kalça",
+      "circumference": "Çevre ölçüleri",
+      "labs": "Tahlil sonuçları",
+      "latest": "Son",
+      "previous": "Önceki",
+      "range": "Referans",
+      "noData": "Henüz ölçüm yok.",
+      "print": "Yazdır / PDF",
+      "close": "Kapat",
+      "footer": "Bu rapor diyetisyeninizin kayıtlarından hazırlanmıştır; tıbbi tanı yerine geçmez."
+    },
+    "dateRange": {
+      "label": "Tarih aralığı",
+      "all": "Tüm zamanlar",
+      "1d": "Bugün",
+      "7d": "Son 7 gün",
+      "1m": "Son 1 ay",
+      "3m": "Son 3 ay",
+      "1y": "Son 1 yıl"
+    },
+    "payments": {
+      "title": "Ödemeler",
+      "count": "{count, plural, =0 {Kayıt yok} other {# ödeme kaydı}}",
+      "received": "Tahsil edilen",
+      "records": "Ödeme sayısı",
+      "clientsPaid": "{count, plural, =0 {Danışan yok} other {# danışandan}}",
+      "owed": "Bekleyen alacak",
+      "owedCount": "{count, plural, other {# açık pakette}}",
+      "owedTitle": "Bekleyen alacaklar",
+      "nothingOwed": "Açık paketlerde bekleyen ödeme yok.",
+      "list": "Ödeme kayıtları",
+      "searchPlaceholder": "Danışan, paket ya da not ara",
+      "emptyRange": "Bu filtrelerle eşleşen ödeme yok. Tarih aralığını genişletmeyi dene.",
+      "cols": {
+        "date": "Tarih",
+        "client": "Danışan",
+        "package": "Paket",
+        "method": "Ödeme yolu",
+        "amount": "Tutar"
+      },
+      "file": "odemeler"
+    },
+    "tabs": {
+      "label": "Sekmeler",
+      "new": "Yeni sekme",
+      "quickOpen": "Hızlı aç",
+      "close": "Sekmeyi kapat",
+      "closeOthers": "Diğer sekmeleri kapat",
+      "closeAfter": "Sonraki sekmeleri kapat",
+      "closeBefore": "Önceki sekmeleri kapat",
+      "closeAll": "Diğer tüm sekmeleri kapat",
+      "more": "Sekme seçenekleri"
+    },
+    "help": {
+      "title": "Panel nasıl kullanılır?",
+      "lead": "Her sayfa için resimli, adım adım anlatım. Menüden ve komut paletinden her zaman açılabilir.",
+      "eyebrow": "Kullanım rehberi",
+      "ui": {
+        "topics": "Konular",
+        "open": "Bu sayfayı aç",
+        "prev": "Önceki",
+        "next": "Sonraki",
+        "step": "{n}. adım",
+        "figure": "Şema",
+        "pageHelp": "Bu sayfa nasıl kullanılır?"
+      },
+      "topics": {
+        "dashboard": {
+          "title": "Özet",
+          "lead": "Muayenehanenin bugünkü hali tek ekranda: bekleyen işler, sayılar ve görevler.",
+          "steps": [
+            "Karşılama satırındaki simgeler bugün seni bekleyenleri gösterir. Üzerine gelince ne olduğu yazar, tıklayınca ilgili sayfa açılır.",
+            "Kutular danışan, randevu, tahsilat gibi temel sayıları verir.",
+            "Her grafiğin sağ üstündeki filtreyle dönemi değiştir (son 1 ay, 3 ay, tüm zamanlar gibi).",
+            "Görevler: yapılacakları yaz, tarih ver. Bir danışana bağlı görevde “Danışan da görsün”ü işaretlersen danışan kendi panelinde tikler; sende “Danışan tamamladı” yazar."
+          ]
+        },
+        "clients": {
+          "title": "Danışanlar",
+          "lead": "Tüm danışanların listesi. Bir danışana tıklayınca profili açılır.",
+          "steps": [
+            "Arama: ad, e-posta, telefon ya da etiket yaz; liste yazdıkça süzülür.",
+            "“Yeni danışan” tam formu açar. “Hızlı ekle” için ad ve iletişim yeterli; gerisini sonra tamamlarsın.",
+            "Bir karta tıkla, danışanın profili açılsın. Kartta son ölçüm ve KVKK onayı görünür.",
+            "Görünümü kart ya da tablo yap. Arşive taşıdıkların “Arşivdekiler”de durur ve geri alınabilir."
+          ]
+        },
+        "profile": {
+          "title": "Danışan profili",
+          "lead": "Bir danışana dair her şey sekmeler halinde: ölçümler, notlar, dosyalar, programlar, ödemeler ve danışanın kendi kayıtları.",
+          "steps": [
+            "Sekmeler arasında geçerek bölümleri aç. Bir bölüm ayrı sekmede kalsın istersen üstteki sekme şeridini kullan.",
+            "Ölçümler: her görüşmede kilo ve çevre ölçülerini gir; grafik ve hedefe ilerleme kendiliğinden güncellenir.",
+            "Takip ve mesajlar: danışanın günlük kaydı (su, enerji, hareket), beslenme günlüğü, “Programa uyum (7 gün)” ve gönderdiği tahliller burada.",
+            "Ödeme sekmesinde paket tanımla ve “Ödeme al” ile tahsilatı kaydet. Danışan paketini ve ödemelerini kendi panelinde görür; notlarını görmez."
+          ]
+        },
+        "invite": {
+          "title": "Danışanı panele davet et",
+          "lead": "Danışanın kendi paneline girebilmesi için ona tek kullanımlık bir davet linki verirsin.",
+          "steps": [
+            "Profilde “Davet linki oluştur”a bas. Link güvenlik için yalnızca o an gösterilir; kopyalamadan kapatırsan yenisini oluşturursun.",
+            "“WhatsApp ile gönder” linki hazır bir mesajla açar.",
+            "Danışan yanındaysa QR kodu telefonuyla okutabilir.",
+            "Şifresini unutana “Şifre sıfırlama linki” ver. “Panel erişimini kapat” giriş hesabını siler; girdiği kayıtlar sende kalır."
+          ]
+        },
+        "programs": {
+          "title": "Programlar",
+          "lead": "Beslenme programlarını burada hazırlar, şablon olarak saklar ve danışana atarsın.",
+          "steps": [
+            "Günler: “Gün ekle” ile gün oluştur, “Günü kopyala” ile benzer günleri çoğalt.",
+            "Günlük hedefler: enerji ve makro hedeflerini gir; gün toplamı hedefe göre gösterilir.",
+            "Öğünler: besin ya da tarif ara, sürükleyip öğüne bırak ya da tıkla; miktarı ayarla, not ekle.",
+            "Danışan programı yalnızca iki koşulda görür: program o danışana atanmış ve durumu “Aktif” olmalı. Taslak programlar danışana görünmez."
+          ]
+        },
+        "messages": {
+          "title": "Mesajlar",
+          "lead": "Tüm danışanlarla yazışmalar tek sayfada.",
+          "steps": [
+            "Soldaki listeden bir danışan seç; yazışma sağda açılır.",
+            "Yanıtını alttaki kutuya yaz ve gönder.",
+            "Ataş simgesiyle dosya gönder. Danışanın gönderdiği tahlil ve fotoğraflar yazışmada ve profilindeki dosyalarda görünür.",
+            "Okunmamış mesajı olan danışanlar listede işaretlidir; menüdeki sayı toplamı gösterir."
+          ]
+        },
+        "appointments": {
+          "title": "Randevular",
+          "lead": "Görüşmeleri planladığın takvim.",
+          "steps": [
+            "“Randevu ekle”: danışanı, tarih ve saati, süreyi ve türü seç.",
+            "Liste ya da takvim görünümü arasında geç; haftalar arasında oklarla gez.",
+            "Bir randevuya tıklayıp düzenle ya da durumunu güncelle. Yapıldı olarak işaretlenen görüşmeler danışanın paketindeki kullanılan seansa sayılır.",
+            "Planladığın randevu danışanın panelinde hemen görünür: Bugün sayfasında “Sıradaki görüşme” ve “Randevu & ödeme” sayfasında, “Takvime ekle” düğmesiyle."
+          ]
+        },
+        "payments": {
+          "title": "Ödemeler",
+          "lead": "Tahsilatların ve bekleyen alacakların özeti.",
+          "steps": [
+            "Tarih filtresiyle dönemi seç; tüm sayılar o döneme göre hesaplanır.",
+            "Kutular: tahsil edilen tutar, ödeme sayısı ve açık paketlerde bekleyen alacak.",
+            "Arama ile danışan, paket ya da nota göre kayıt bul.",
+            "Yeni ödeme, danışanın profilindeki Ödeme sekmesinden “Ödeme al” ile kaydedilir ve burada listelenir."
+          ]
+        },
+        "leads": {
+          "title": "Talepler",
+          "lead": "Sitedeki başvuru formundan gelenler buraya düşer.",
+          "steps": [
+            "Üstteki sekmeler ve tarih filtresiyle yeni, dönüş yapılan ve arşivdeki talepleri ayır.",
+            "“Danışana dönüştür” talebi tek adımda danışan kaydına çevirir.",
+            "Bir talebe tıkla: kişinin sihirbazdaki cevaplarını ve verdiği onayı görürsün.",
+            "Aradıktan sonra “Dönüş yapıldı olarak işaretle”; ilgilenmeyenleri “Arşivle”."
+          ]
+        },
+        "explorer": {
+          "title": "Danışan Gezgini",
+          "lead": "Aktif danışanları tek tek, kart kart gözden geçirmek için.",
+          "steps": [
+            "Oklarla ya da klavyede ← → tuşlarıyla danışanlar arasında gez.",
+            "Halka, danışanın hedefine ne kadar yaklaştığını gösterir.",
+            "Son ölçümler, aktif program, sıradaki randevu ve sabitlenmiş not aynı kartta.",
+            "“Profili aç” ile danışanın tam sayfasına geç."
+          ]
+        },
+        "content": {
+          "title": "Tarifler, rehberler, besinler",
+          "lead": "Sitede yayınlanan içerik ve programlarda kullandığın besin veritabanı.",
+          "steps": [
+            "Listeyi hepsi, yayında ya da taslak olarak süz.",
+            "“Yeni tarif” ya da “Yeni rehber” ile başla. Besinlerde 100 g için değerleri ve ölçü birimlerini girersin.",
+            "Bir satıra tıkla, düzenleyici açılsın. İçerik dili sekmeleriyle her dil için ayrı metin yazarsın.",
+            "“Yayınla” içeriği siteye çıkarır, “Yayından kaldır” geri alır. Arapça ve Fransızca içerik, ana dili konuşan biri “İncelendi” diye işaretlemeden yayınlanmaz."
+          ]
+        },
+        "settings": {
+          "title": "Ayarlar",
+          "lead": "Profilin, sitedeki bilgiler ve güvenlik.",
+          "steps": [
+            "Profil ve site içeriği: adın, biyografin, iletişim bilgilerin ve sosyal medya hesapların.",
+            "Panel dilini ve içerik dilini buradan seç.",
+            "Güvenlik: şifreni değiştir (en az 10 karakter).",
+            "İki adımlı doğrulamayı aç: QR kodu kimlik doğrulama uygulamanla tara, kodu gir. Danışan verisi tuttuğun için önerilir."
+          ]
+        },
+        "shortcuts": {
+          "title": "Kısayollar ve sekmeler",
+          "lead": "Panelde hızlı hareket etmenin yolları.",
+          "steps": [
+            "Sekmeler: üstteki + ile yeni sekme aç; birkaç danışanı ya da sayfayı aynı anda açık tut. Sekmeye sağ tıklayınca kapatma seçenekleri çıkar.",
+            "Ctrl K (Mac’te ⌘ K) komut paletini açar: sayfa, danışan ya da komut adı yaz.",
+            "Ctrl B menüyü daraltır ve genişletir; menüdeki okla da yapabilirsin.",
+            "Menünün altında gündüz / gece teması, panel dili ve “Uygulama olarak yükle” yer alır."
+          ]
+        }
+      },
+      "tour": {
+        "title": "İlk kez mi buradasın?",
+        "text": "Her sayfanın nasıl kullanıldığını ekran görüntüleriyle, adım adım gösteren kısa bir rehber var. İstediğin zaman menüdeki “Nasıl kullanılır”dan da açabilirsin.",
+        "start": "Rehberi başlat",
+        "later": "Şimdi değil",
+        "zoom": "Görseli büyüt"
+      }
+    }
+  },
+  "portal": {
+    "brand": "Danışan paneli",
+    "nav": {
+      "primary": "Panel menüsü",
+      "today": "Bugün",
+      "program": "Program",
+      "diary": "Günlük",
+      "progress": "İlerleme",
+      "messages": "Mesajlar",
+      "account": "Hesabım",
+      "logout": "Çıkış yap",
+      "site": "Siteye git",
+      "collapse": "Menüyü daralt",
+      "expand": "Menüyü genişlet",
+      "groups": {
+        "follow": "Takip",
+        "contact": "İletişim",
+        "tools": "Araçlar"
+      },
+      "care": "Randevu & ödeme",
+      "help": "Nasıl kullanılır",
+      "week": "Haftalık özet",
+      "files": "Dosyalarım",
+      "shopping": "Alışveriş listesi",
+      "calc": "Hesaplayıcılar",
+      "recipes": "Tarifler"
+    },
+    "greeting": {
+      "morning": "Günaydın, {name}.",
+      "day": "İyi günler, {name}.",
+      "evening": "İyi akşamlar, {name}."
+    },
+    "today": {
+      "streak": "{count, plural, one {# gündür kayıt tutuyorsun} other {# gündür kayıt tutuyorsun}}",
+      "checkin": "Günün kaydı",
+      "checkinHint": "Birkaç saniye sürer. Diyetisyenin bu kayıtları görür.",
+      "water": "Su",
+      "waterOf": "{value} / {goal} L",
+      "glassAdd": "Bir bardak ekle",
+      "glassRemove": "Bir bardak çıkar",
+      "glasses": "{count, plural, one {# bardak} other {# bardak}}",
+      "weight": "Kilo",
+      "weightHint": "Haftada 1–2 kez, sabah aç karnına tartılman yeterli.",
+      "weightSave": "Kaydet",
+      "weightSaved": "Kilon kaydedildi",
+      "habits": "Alışkanlıklar",
+      "habitsEmpty": "Diyetisyenin henüz alışkanlık hedefi eklemedi.",
+      "energy": "Enerjin nasıl?",
+      "energyLevels": ["Çok düşük", "Düşük", "Orta", "İyi", "Çok iyi"],
+      "saved": "Kaydedildi",
+      "planTitle": "Programında bugün",
+      "planDay": "{n}. gün",
+      "planEmpty": "Programın hazırlandığında burada göreceksin.",
+      "ateThis": "Yedim",
+      "logged": "Günlükte",
+      "ateToast": "{meal} günlüğe eklendi",
+      "totals": "Bugün yediklerin",
+      "openDiary": "Günlüğü aç",
+      "openProgram": "Programın tamamı",
+      "nextAppointment": "Sıradaki görüşme",
+      "noAppointment": "Planlanmış bir görüşme yok.",
+      "latestMessage": "Diyetisyeninden",
+      "noMessages": "Henüz mesaj yok.",
+      "unread": "{count, plural, one {# yeni mesaj} other {# yeni mesaj}}",
+      "openMessages": "Mesajlara git",
+      "saveFailed": "Kaydedilemedi, lütfen tekrar dene.",
+      "activity": "Hareket",
+      "activityHint": "Bugün ne kadar hareket ettin? Yürüyüş de sayılır.",
+      "activityMin": "{n} dk",
+      "activityKind": "Ne yaptın?",
+      "activityKinds": [
+        "Yürüyüş",
+        "Koşu",
+        "Ağırlık",
+        "Bisiklet",
+        "Yüzme",
+        "Pilates / yoga",
+        "Diğer"
+      ],
+      "energyShort": "Enerji",
+      "checkinMarks": "Bugün doldurdukların",
+      "markDone": "tamam",
+      "markOpen": "boş",
+      "waterLeft": "Hedefe {value} L kaldı",
+      "waterReached": "Günlük hedef tamam",
+      "glassShort": "Bardak",
+      "bottleAdd": "Yarım litrelik şişe ekle",
+      "bottleShort": "Şişe",
+      "weightLast": "Son kayıt {value} kg · {date}",
+      "weightLess": "0,1 kg azalt",
+      "weightMore": "0,1 kg artır",
+      "activityLess": "5 dakika azalt",
+      "activityMore": "5 dakika artır",
+      "planCount": "{done}/{total} öğün",
+      "planNext": "Sıradaki"
+    },
+    "appointmentKinds": {
+      "in_person": "Yüz yüze",
+      "online": "Online",
+      "phone": "Telefon"
+    },
+    "diary": {
+      "title": "Beslenme günlüğü",
+      "lead": "Ne yediğini öğün öğün yaz; diyetisyenin programınla karşılaştırır. Mükemmel olması gerekmiyor.",
+      "days": "Günler",
+      "prevWeek": "Önceki hafta",
+      "nextWeek": "Sonraki hafta",
+      "today": "Bugün",
+      "add": "Ekle",
+      "addTo": "{meal} için ekle",
+      "empty": "Henüz bir şey yok.",
+      "planned": "Programda",
+      "addPlanned": "Programdakini ekle",
+      "remove": "Kaldır",
+      "removeItem": "{name} kaldır",
+      "note": "Not",
+      "notePlaceholder": "Nasıldı? Dışarıda mı yedin?",
+      "noteSave": "Notu kaydet",
+      "time": "Saat",
+      "photo": "Fotoğraf",
+      "addPhoto": "Fotoğraf ekle",
+      "changePhoto": "Fotoğrafı değiştir",
+      "removePhoto": "Fotoğrafı kaldır",
+      "photoUploading": "Yükleniyor…",
+      "photoError": "Fotoğraf yüklenemedi. JPEG, PNG ya da WebP; en fazla 4 MB.",
+      "photoAlt": "{meal} fotoğrafı",
+      "unknownValues": "{count, plural, one {# kalemin besin değeri yok} other {# kalemin besin değeri yok}}",
+      "noValue": "değer yok",
+      "totalsTitle": "Günün toplamı",
+      "vsTarget": "hedef {value}",
+      "privacy": "Fotoğrafların ve notların yalnızca sana ve diyetisyenine görünür.",
+      "askAbout": "Bu öğünü diyetisyenine sor"
+    },
+    "add": {
+      "title": "Yiyecek ekle",
+      "search": "Besin ara",
+      "searchPlaceholder": "Örn. yumurta, yulaf, elma",
+      "noResults": "Bulunamadı.",
+      "notListed": "Aradığın listede yok mu?",
+      "writeIt": "Yazarak ekle",
+      "freePlaceholder": "Örn. ev yapımı börek, 1 dilim",
+      "freeHint": "Besin değeri hesaplanmaz; diyetisyenin görür.",
+      "amount": "Miktar",
+      "grams": "gram",
+      "back": "Geri",
+      "addButton": "Ekle",
+      "per100": "100 g: {kcal} kcal",
+      "categories": {
+        "grains": "Tahıllar",
+        "legumes": "Baklagiller",
+        "dairy_egg": "Süt & yumurta",
+        "meat_fish": "Et & balık",
+        "vegetables": "Sebzeler",
+        "fruits": "Meyveler",
+        "nuts_seeds": "Kuruyemiş & tohum",
+        "fats": "Yağlar",
+        "other": "Diğer"
+      },
+      "recent": "Son kullandıkların",
+      "decrease": "Azalt",
+      "increase": "Artır"
+    },
+    "program": {
+      "title": "Programım",
+      "empty": "Diyetisyenin programını hazırladığında burada göreceksin.",
+      "print": "Yazdır / PDF",
+      "updated": "Güncelleme: {date}"
+    },
+    "progress": {
+      "title": "İlerleme",
+      "lead": "Rakamlar yolculuğun yalnızca bir parçası; düzen ve nasıl hissettiğin de önemli.",
+      "weight": "Kilo",
+      "current": "Son kayıt",
+      "change": "Başlangıçtan beri",
+      "goal": "Hedef",
+      "selfReported": "Senin kaydın",
+      "clinic": "Görüşmede ölçülen",
+      "noWeight": "Kilo kaydı olduğunda grafik burada belirir.",
+      "chartTitle": "Kilo, son 90 gün",
+      "showTable": "Tablo olarak göster",
+      "showChart": "Grafik olarak göster",
+      "habits": "Alışkanlıklar, son 28 gün",
+      "habitRate": "%{value}",
+      "habitsEmpty": "Alışkanlık hedefi eklendiğinde burada görünür.",
+      "water": "Su, son 14 gün",
+      "avgWater": "Ortalama {liters} L",
+      "noWater": "Su kaydı yok.",
+      "measurements": "Görüşme ölçümleri",
+      "noMeasurements": "Henüz ölçüm yok.",
+      "table": {
+        "date": "Tarih",
+        "weight": "Kilo",
+        "waist": "Bel",
+        "hip": "Kalça",
+        "bodyFat": "Yağ %"
+      },
+      "streak": "Kayıt serisi",
+      "streakValue": "{count, plural, one {# gün} other {# gün}}",
+      "chartSummary": "{count, plural, one {# kilo kaydı} other {# kilo kaydı}}; son kayıt {value} kg",
+      "goalLine": "Hedef {value}",
+      "habitDays": "{done}/{total} gün",
+      "habitsNote": "Yalnızca kayıt girdiğin günler sayılır.",
+      "legendDone": "Yapıldı",
+      "legendMissed": "Yapılmadı",
+      "legendNoEntry": "Kayıt yok",
+      "noGoal": "Belirlenmedi",
+      "first": "İlk kayıt {date}",
+      "days": "Son {count} gün",
+      "rangeLabel": "Zaman aralığı"
+    },
+    "messages": {
+      "title": "Mesajlar",
+      "lead": "Sorularını ve notlarını yaz. Bu anlık bir sohbet değil; diyetisyenin uygun olduğunda yanıtlar.",
+      "emergency": "Acil bir sağlık durumunda 112'yi ara.",
+      "placeholder": "Mesajını yaz…",
+      "send": "Gönder",
+      "empty": "Henüz mesaj yok. İlk notunu yazabilirsin.",
+      "you": "Sen",
+      "dietitian": "Diyetisyenin",
+      "aboutMeal": "{meal} · {date}",
+      "error": "Mesaj gönderilemedi.",
+      "rateLimited": "Çok sık mesaj gönderdin. Biraz sonra tekrar dene.",
+      "tooLong": "En fazla 2000 karakter.",
+      "attached": "Şu öğün hakkında",
+      "detach": "Öğünü kaldır",
+      "sending": "Gönderiliyor…",
+      "sendHint": "Göndermek için Ctrl + Enter",
+      "today": "Bugün",
+      "yesterday": "Dün",
+      "seen": "Okundu",
+      "openMeal": "Günlükte aç",
+      "attachFile": "Dosya ekle (PDF ya da fotoğraf)",
+      "removeFile": "Dosyayı kaldır",
+      "openFile": "Dosyayı aç",
+      "fileTooLarge": "Dosya 10 MB’tan büyük olamaz.",
+      "fileType": "Yalnızca PDF ya da fotoğraf (JPG, PNG, WebP) gönderebilirsin.",
+      "quick": [
+        "Bir sorum var:",
+        "Bugün programa uyamadım, çünkü",
+        "Şunun yerine ne yiyebilirim:",
+        "Teşekkürler!"
+      ]
+    },
+    "account": {
+      "title": "Hesabım",
+      "profile": "Bilgilerin",
+      "name": "Ad soyad",
+      "email": "E-posta",
+      "dietitian": "Diyetisyenin",
+      "profileHint": "Bu bilgileri diyetisyenin günceller.",
+      "language": "Panel dili",
+      "password": "Şifre değiştir",
+      "newPassword": "Yeni şifre",
+      "confirmPassword": "Yeni şifre (tekrar)",
+      "passwordSaved": "Şifren değiştirildi",
+      "data": "Verilerin",
+      "export": "Verilerimi indir",
+      "exportHint": "Panelde tuttuğun tüm kayıtlar tek bir dosyada (JSON).",
+      "withdraw": "Açık rızamı geri çek",
+      "withdrawBody": "Rızanı geri çektiğinde panel kapanır ve yeni kayıt tutulamaz. Daha önceki kayıtların diyetisyeninde kalır; silinmesini ondan isteyebilirsin.",
+      "withdrawConfirm": "Evet, geri çek",
+      "cancel": "Vazgeç",
+      "logout": "Çıkış yap"
+    },
+    "auth": {
+      "loginTitle": "Danışan girişi",
+      "loginLead": "Diyetisyeninin gönderdiği bağlantıyla oluşturduğun hesapla giriş yap.",
+      "email": "E-posta",
+      "password": "Şifre",
+      "submit": "Giriş yap",
+      "invalid": "E-posta ya da şifre hatalı.",
+      "rateLimited": "Çok fazla deneme yapıldı. Birkaç dakika sonra tekrar dene.",
+      "closed": "Hesabın şu an kapalı. Diyetisyeninle iletişime geç.",
+      "forgot": "Şifreni mi unuttun?",
+      "forgotBody": "Diyetisyeninden yeni bir giriş bağlantısı iste; bağlantıyla yeni şifreni belirlersin.",
+      "whatsapp": "WhatsApp'tan yaz",
+      "backToSite": "Siteye dön",
+      "inviteTitle": "Merhaba {name},",
+      "inviteLead": "Danışan panelin hazır. Giriş için bir şifre belirle.",
+      "resetTitle": "Yeni şifre",
+      "resetLead": "{name}, yeni şifreni belirle.",
+      "account": "Hesabın: {email}",
+      "newPassword": "Şifre",
+      "confirmPassword": "Şifre (tekrar)",
+      "passwordHint": "En az 10 karakter.",
+      "mismatch": "Şifreler eşleşmiyor.",
+      "tooShort": "Şifre en az 10 karakter olmalı.",
+      "create": "Hesabımı oluştur",
+      "resetSubmit": "Şifremi kaydet",
+      "invalidLink": "Bu bağlantı geçersiz ya da süresi dolmuş.",
+      "invalidLinkBody": "Bağlantılar tek kullanımlıktır ve birkaç gün içinde sona erer. Diyetisyeninden yeni bir bağlantı iste.",
+      "exists": "Bu e-posta ile zaten bir hesap var. Giriş yapmayı dene.",
+      "failed": "Bir sorun oluştu, lütfen tekrar dene.",
+      "consentTitle": "Sağlık verilerin için açık rıza",
+      "consentBody": "Paneli kullandığında kilo, su tüketimi, alışkanlıklar, yediklerin, öğün fotoğrafların ve mesajların gibi sağlık verilerin, beslenme danışmanlığının yürütülmesi amacıyla diyetisyenin tarafından işlenir. Bu kayıtları yalnızca sen ve diyetisyenin görebilirsin. Rızanı istediğin zaman Hesabım bölümünden geri çekebilirsin.",
+      "consentCheck": "Sağlık verilerimin bu amaçla işlenmesine açık rıza veriyorum.",
+      "consentRequired": "Paneli kullanmak için açık rıza gerekli.",
+      "consentLegal": "Yer tutucu metin — hukuki inceleme gerekli.",
+      "kvkkLink": "KVKK aydınlatma metni",
+      "continue": "Devam et",
+      "consentLead": "Panele devam etmeden önce lütfen aşağıdaki metni oku.",
+      "asDietitian": "Bu tarayıcıda diyetisyen olarak giriş yapılmış. Burası danışanların giriş sayfası; danışan olarak giriş yaparsan diyetisyen oturumu kapanır.",
+      "toAdmin": "Diyetisyen paneline dön",
+      "loginHeadline": "Hedefine bir adım daha."
+    },
+    "inviteText": {
+      "invite": "Merhaba {name}, danışan panelin hazır. Bu bağlantıyla şifreni belirleyip giriş yapabilirsin (7 gün geçerli, tek kullanımlık): {url}",
+      "reset": "Merhaba {name}, panel şifreni yenilemek için bu bağlantıyı kullan (2 gün geçerli, tek kullanımlık): {url}"
+    },
+    "reminderText": {
+      "appointment": "Merhaba {name}, {day} saat {time} randevunu hatırlatmak istedim ({kind}). Görüşmek üzere! — {signature}"
+    },
+    "birthdayText": "Doğum günün kutlu olsun {name}! Sağlıklı, keyifli ve sana iyi gelen bir yıl dilerim. — {signature}",
+    "hub": {
+      "streak": "{count} gündür kayıt tutuyorsun",
+      "ring": "günün kaydı",
+      "ringParts": "Günün kaydında neler var",
+      "done": "tamam",
+      "parts": {
+        "water": "Su",
+        "habits": "Alışkanlık",
+        "energy": "Enerji",
+        "activity": "Hareket",
+        "meals": "Öğünler"
+      },
+      "doorsLabel": "Kısayollar",
+      "doors": {
+        "diary": "Öğün ekle",
+        "diaryHint": "Yediklerini yaz, fotoğraf ekle",
+        "ask": "Soru sor",
+        "askHint": "Diyetisyenine yaz",
+        "program": "Programım",
+        "programHint": "Bugünün ve haftanın planı",
+        "progress": "İlerlemem",
+        "progressHint": "Kilo, su, alışkanlıklar"
+      },
+      "yourDietitian": "Diyetisyenin",
+      "dietitian": "Diyetisyenin",
+      "unread": "{count} yeni",
+      "noMessages": "Henüz mesaj yok. İlk mesajı sen yazabilirsin.",
+      "replyPlaceholder": "Kısa bir not yaz…",
+      "send": "Gönder",
+      "sent": "Mesajın gönderildi",
+      "error": "Gönderilemedi. Tekrar dene.",
+      "rateLimited": "Çok sık gönderim. Biraz sonra tekrar dene.",
+      "sendFile": "Tahlil / dosya gönder",
+      "fileSent": "Dosyan gönderildi",
+      "fileTooLarge": "Dosya 10 MB’tan büyük olamaz.",
+      "fileType": "Yalnızca PDF ya da fotoğraf (JPG, PNG, WebP) gönderebilirsin.",
+      "sendWeek": "Haftamı gönder",
+      "weekSent": "Haftalık özetin gönderildi",
+      "weekEmpty": "Bu hafta henüz kayıt yok.",
+      "week": {
+        "title": "Haftalık özetim ({from} – {to})",
+        "days": "Kayıt tuttuğum gün: {count}/7",
+        "water": "Ortalama su: {litres} L",
+        "activity": "Hareket: {min} dk ({days} gün)",
+        "weight": "Kilo: {from} → {to} kg",
+        "weightOne": "Kilo: {kg} kg"
+      },
+      "nextAppointment": "Sıradaki görüşme",
+      "noAppointment": "Planlanmış görüşme yok.",
+      "addToCalendar": "Takvime ekle",
+      "icsTitle": "Diyetisyen görüşmesi – {name}",
+      "weekTitle": "Son 7 gün",
+      "weekHint": "Kayıt, su ve hareket. Bir güne dokun, günlüğünü aç.",
+      "openProgress": "İlerlemem",
+      "strip": {
+        "today": "Bugün",
+        "recorded": "kayıt var",
+        "empty": "kayıt yok",
+        "water": "su {litres} L",
+        "activity": "hareket {min} dk",
+        "min": "{min} dk",
+        "legendWater": "Su",
+        "legendDay": "Kayıt girilen gün",
+        "legendMove": "Hareket"
+      },
+      "noteTitle": "Diyetisyeninin notu",
+      "rail": {
+        "today": "Bugün",
+        "streak": "{count, plural, =0 {Bugün başla} =1 {1 gün} other {# gün üst üste}}",
+        "next": "Görüşme"
+      },
+      "tasks": {
+        "title": "Görevlerin",
+        "hint": "Diyetisyeninin senin için eklediği işler. İşaretlediğinde diyetisyenin görür.",
+        "open": "{count} açık",
+        "allDone": "Hepsi tamam",
+        "done": "Tamamlandı, diyetisyenin görecek",
+        "error": "Kaydedilemedi. Tekrar dene.",
+        "due": "Son gün: {date}",
+        "late": "Gecikti · {date}"
+      },
+      "welcome": {
+        "title": "Hoş geldin, {name}",
+        "lead": "Burası {dietitian} ile aranızdaki alan: yediklerin, günlük kaydın ve soruların burada. Yazdıklarını yalnızca diyetisyenin görür.",
+        "leadPlain": "Burası diyetisyeninle aranızdaki alan: yediklerin, günlük kaydın ve soruların burada. Yazdıklarını yalnızca diyetisyenin görür.",
+        "close": "Anladım",
+        "steps": {
+          "record": "Günün kaydını gir",
+          "recordText": "Su, enerji, hareket: birkaç saniye.",
+          "plan": "Programına bak",
+          "planText": "Bugünün öğünleri ve haftanın planı.",
+          "write": "Diyetisyenine yaz",
+          "writeText": "Soru sor, tahlilini gönder."
+        },
+        "guide": "Rehberi aç"
+      },
+      "tools": {
+        "title": "Araçlar",
+        "calc": "Hesaplayıcılar",
+        "calcText": "BKİ, günlük enerji, su",
+        "recipes": "Tarifler",
+        "recipesText": "Besin değerleriyle",
+        "shopping": "Alışveriş listesi",
+        "shoppingText": "Programından liste",
+        "guides": "Rehberler",
+        "guidesText": "Kısa, kaynaklı yazılar",
+        "week": "Haftalık özet",
+        "weekText": "Son 7 günün toplamı",
+        "files": "Dosyalarım",
+        "filesText": "Tahliller ve belgeler",
+        "care": "Randevu & ödeme",
+        "careText": "Görüşmeler ve paket"
+      },
+      "care": {
+        "title": "Randevu ve ödemeler",
+        "text": "Görüşmelerin, paketin ve ödemelerin.",
+        "open": "Aç"
+      },
+      "openWeek": "Haftalık özet"
+    },
+    "care": {
+      "title": "Randevu ve ödemeler",
+      "lead": "Diyetisyeninin senin için planladığı görüşmeler ve paketinin durumu.",
+      "dietitian": "Diyetisyenin",
+      "upcoming": "Yaklaşan görüşmeler",
+      "noUpcoming": "Planlanmış görüşme yok. Diyetisyenin randevu verdiğinde burada ve “Bugün” sayfasında görünür.",
+      "past": "Geçmiş görüşmeler",
+      "minutes": "{n} dk",
+      "addToCalendar": "Takvime ekle",
+      "icsTitle": "Diyetisyen görüşmesi – {name}",
+      "changeHint": "Saati değiştirmek ya da iptal etmek için diyetisyenine mesaj yaz.",
+      "status": {
+        "scheduled": "Planlı",
+        "done": "Yapıldı",
+        "cancelled": "İptal",
+        "no_show": "Gelinmedi"
+      },
+      "plan": "Paketin",
+      "noPlan": "Kayıtlı bir paket yok.",
+      "closed": "Kapandı",
+      "period": "{from} – {to}",
+      "since": "{from} tarihinden beri",
+      "sessions": "Seans",
+      "sessionsLabel": "{total} seansın {used} tanesi yapıldı",
+      "price": "Ücret",
+      "paid": "Ödenen",
+      "due": "Kalan",
+      "settled": "Yok",
+      "payments": "Ödemelerin",
+      "paymentsHint": "Bir kayıt eksik ya da yanlışsa diyetisyenine yaz.",
+      "methods": {
+        "transfer": "Havale/EFT",
+        "card": "Kart",
+        "cash": "Nakit",
+        "other": "Diğer"
+      }
+    },
+    "help": {
+      "title": "Panel nasıl kullanılır?",
+      "lead": "Her sayfanın ne işe yaradığı ve nasıl kullanıldığı, resimli ve adım adım. İstediğin zaman menüdeki “Nasıl kullanılır”dan geri dönebilirsin.",
+      "eyebrow": "Kullanım rehberi",
+      "ui": {
+        "topics": "Konular",
+        "open": "Bu sayfayı aç",
+        "prev": "Önceki",
+        "next": "Sonraki",
+        "step": "{n}. adım",
+        "figure": "Şema",
+        "pageHelp": "Bu sayfa nasıl kullanılır?"
+      },
+      "topics": {
+        "today": {
+          "title": "Bugün",
+          "lead": "Her gün ilk açacağın sayfa. Günün kaydını burada tutar, diyetisyenine buradan ulaşırsın. Diyetisyenin sana görev verdiyse onlar da burada, yanındaki tike dokunman yeter.",
+          "steps": [
+            "Günün kaydı: su için “Bardak” ya da “Şişe”ye dokun, alışkanlıkları tikle, enerjini ve hareketini seç, tartıldıysan kilonu yaz. Her dokunuş kendiliğinden kaydedilir.",
+            "Halka, bugünün kaydının ne kadarının dolduğunu gösterir. Yanındaki satırlar hangi parçanın eksik kaldığını söyler.",
+            "Programında bugün: sıradaki öğün işaretlidir. Yediğinde “Yedim”e dokun; öğün günlüğüne eklenir.",
+            "Diyetisyen kartı: son mesajını görür, kısa bir not yazar, tahlilini ya da bir dosyayı gönderir, “Haftamı gönder” ile haftanın özetini tek dokunuşla iletirsin."
+          ]
+        },
+        "program": {
+          "title": "Program",
+          "lead": "Diyetisyeninin senin için hazırladığı beslenme planı. Program ancak diyetisyenin onu etkinleştirdiğinde burada görünür.",
+          "steps": [
+            "Günler: üstteki günlerden birine dokunarak o günün planını aç. Bugün işaretli gelir.",
+            "Günlük hedefler: enerji, protein, karbonhidrat ve yağ hedeflerin burada yazar.",
+            "Öğünler: her öğünde ne yiyeceğin, miktarı ve varsa diyetisyeninin notu yer alır.",
+            "“Yazdır / PDF” ile planı kâğıda dökebilir ya da telefonuna kaydedebilirsin."
+          ]
+        },
+        "diary": {
+          "title": "Günlük",
+          "lead": "Ne yediğini öğün öğün yazdığın yer. Mükemmel olması gerekmez; diyetisyenin planınla karşılaştırır.",
+          "steps": [
+            "Gün seç: üstteki şeritten bir güne dokun. Geçmiş günleri de doldurabilirsin.",
+            "“Ekle” ile besin ya da tarif ara ve miktarını gir. Programdaki öğünü yediysen “Programdakini ekle” yeter.",
+            "Fotoğraf ve not: öğüne fotoğraf ekleyebilir, “dışarıda yedim” gibi kısa bir not düşebilirsin. Yalnızca sen ve diyetisyenin görür.",
+            "Günün toplamı: yediklerinin enerji ve besin değerleri hedefinle yan yana görünür."
+          ]
+        },
+        "progress": {
+          "title": "İlerleme",
+          "lead": "Kayıtlarının zaman içindeki hali. Rakamlar yolculuğun yalnızca bir parçası.",
+          "steps": [
+            "Özet kutuları: son kilon, başlangıçtan beri değişim ve hedefin.",
+            "Zaman aralığı: grafiğin kaç günü göstereceğini buradan seç.",
+            "Kilo grafiği: kendi kayıtların ve görüşmede ölçülenler birlikte çizilir. İstersen “Tablo olarak göster”.",
+            "Alışkanlıklar ve su: son haftalarda hangi gün neyi yaptığını kare kare görürsün."
+          ]
+        },
+        "week": {
+          "title": "Haftalık özet",
+          "lead": "Son yedi günün tek sayfada: kaç gün kayıt girdin, ne kadar su içtin, ne kadar hareket ettin.",
+          "steps": [
+            "Üstteki kutular haftanın toplamlarını verir: kayıt günü, ortalama su, hareket, kilo değişimi ve programa uyum.",
+            "Günlere göre: her günün suyu, kaydı ve hareketi. Bir güne dokununca o günün günlüğü açılır.",
+            "Gün gün tablosu: aynı bilgiler satır satır. Günün adına dokunarak günlüğüne geçebilirsin.",
+            "“Diyetisyenine yaz” ile haftan hakkında not düşebilirsin."
+          ]
+        },
+        "messages": {
+          "title": "Mesajlar",
+          "lead": "Diyetisyeninle yazıştığın yer. Anlık sohbet değildir; diyetisyenin uygun olduğunda yanıtlar. Acil bir sağlık durumunda 112’yi ara.",
+          "steps": [
+            "Mesajını alttaki kutuya yaz ve gönder.",
+            "Ataş simgesiyle tahlil sonucu ya da fotoğraf gönder (PDF, JPEG, PNG, WebP; en fazla 10 MB).",
+            "Hazır başlangıçlar: kutu boşken çıkan “Bir sorum var:” gibi düğmeler yazmaya başlamanı kolaylaştırır.",
+            "Diyetisyeninin yanıtları solda görünür; yeni mesaj geldiğinde menüde kırmızı bir işaret çıkar."
+          ]
+        },
+        "care": {
+          "title": "Randevu ve ödemeler",
+          "lead": "Diyetisyeninin senin için planladığı görüşmeler ve paketinin durumu. Bu sayfa yalnızca bilgi içindir.",
+          "steps": [
+            "Sıradaki görüşme en üstte: tarih, saat, tür ve süre. Saati değiştirmek için diyetisyenine mesaj yaz.",
+            "“Takvime ekle” görüşmeyi telefonunun ya da bilgisayarının takvimine kaydeder.",
+            "Paketin: kaç seansın kullanıldığı, ücret, ödenen ve kalan tutar.",
+            "Ödemeler: diyetisyeninin kaydettiği ödemelerin tarih ve tutarlarıyla listesi."
+          ]
+        },
+        "files": {
+          "title": "Dosyalarım",
+          "lead": "Diyetisyeninle paylaşılan tüm dosyalar, yazışmanın içinde aramadan tek listede.",
+          "steps": [
+            "“Dosya gönder” seni Mesajlar sayfasına götürür; oradaki ataşla tahlil ya da fotoğraf eklersin.",
+            "Gönderdiklerim: senin yolladığın tahliller ve fotoğraflar, en yenisi üstte.",
+            "Diyetisyenimden: diyetisyeninin sana gönderdiği belgeler.",
+            "Bir dosyaya dokununca açılır. Dosyaları yalnızca sen ve diyetisyenin görür."
+          ]
+        },
+        "shopping": {
+          "title": "Alışveriş listesi",
+          "lead": "Programındaki besinlerden hazırlanan liste. Markete giderken kullan.",
+          "steps": [
+            "Günler: listeye hangi günlerin girmesini istediğini seç. Yalnızca birkaç günlük alışveriş için diğerlerini kapat.",
+            "Liste: her besin bir kez yazılır; yanında toplam miktarı ya da programda kaç kez geçtiği görünür.",
+            "Aldığın ürüne dokun, işaretlensin. İşaretler bu cihazda kalır.",
+            "“Kopyala” listeyi not uygulamana ya da mesaja yapıştırman için alır; “Yazdır” kâğıda döker."
+          ]
+        },
+        "account": {
+          "title": "Hesabım",
+          "lead": "Bilgilerin, panel dilin, şifren ve verilerin.",
+          "steps": [
+            "Bilgilerin: ad ve e-postanı görürsün. Değişiklik gerekirse diyetisyenin günceller.",
+            "Panel dili: paneli Türkçe, İngilizce, Arapça ya da Fransızca kullanabilirsin.",
+            "Şifre değiştir: yeni şifreni iki kez yazıp kaydet.",
+            "Verilerin: tüm kayıtlarını tek dosya olarak indirebilir ya da açık rızanı geri çekebilirsin."
+          ]
+        }
+      },
+      "tour": {
+        "title": "İlk kez mi buradasın?",
+        "text": "Her sayfanın nasıl kullanıldığını ekran görüntüleriyle, adım adım gösteren kısa bir rehber var. İstediğin zaman menüdeki “Nasıl kullanılır”dan da açabilirsin.",
+        "start": "Rehberi başlat",
+        "later": "Şimdi değil",
+        "zoom": "Görseli büyüt"
+      }
+    },
+    "week": {
+      "title": "Haftalık özet",
+      "eyebrow": "Son 7 gün",
+      "lead": "Bu haftaki kayıtlarının toplamı. Buradaki her rakam senin girdiklerinden gelir.",
+      "stats": {
+        "days": "Kayıt günü",
+        "water": "Ortalama su",
+        "activity": "Hareket",
+        "weight": "Kilo değişimi",
+        "plan": "Programa uyum",
+        "habits": "Alışkanlık"
+      },
+      "daysHint": "kayıt girdiğin gün",
+      "waterHint": "su yazdığın günlerde",
+      "activityHint": "{days, plural, =0 {hareket yok} other {# günde}}",
+      "weightHint": "son kayıt {kg} kg",
+      "none": "kayıt yok",
+      "planHint": "{planned} öğünün {logged} tanesi günlükte",
+      "noPlan": "aktif program yok",
+      "habitsHint": "yapılan / hedeflenen",
+      "minutes": "{n} dk",
+      "strip": "Günlere göre",
+      "daily": "Gün gün",
+      "tell": "Diyetisyenine yaz",
+      "cols": {
+        "day": "Gün",
+        "water": "Su",
+        "energy": "Enerji",
+        "activity": "Hareket",
+        "meals": "Öğün kaydı"
+      }
+    },
+    "files": {
+      "title": "Dosyalarım",
+      "eyebrow": "Tahlil ve belgeler",
+      "lead": "Diyetisyeninle paylaştığın ve onun sana gönderdiği tüm dosyalar tek listede. Yalnızca sen ve diyetisyenin görür.",
+      "send": "Dosya gönder",
+      "groups": {
+        "mine": "Gönderdiklerim",
+        "theirs": "Diyetisyenimden"
+      },
+      "empty": {
+        "mine": "Henüz dosya göndermedin. Mesajlar sayfasındaki ataşla tahlil ya da fotoğraf gönderebilirsin.",
+        "theirs": "Diyetisyenin henüz dosya göndermedi."
+      },
+      "open": "Dosyayı aç"
+    },
+    "shopping": {
+      "title": "Alışveriş listesi",
+      "eyebrow": "Programından",
+      "lead": "Programındaki besinler tek listede. Günleri seç, aldıklarını işaretle.",
+      "days": "Günler",
+      "list": "Liste",
+      "times": "{count} kez",
+      "copy": "Kopyala",
+      "copied": "Liste kopyalandı",
+      "copyFailed": "Kopyalanamadı",
+      "print": "Yazdır",
+      "clear": "İşaretleri temizle",
+      "note": "İşaretler yalnızca bu cihazda tutulur. Tarifler tek satır olarak görünür; malzemeleri tarif sayfasındadır.",
+      "emptyDays": "Seçili günlerde besin yok.",
+      "empty": "Aktif bir programın olduğunda alışveriş listen burada hazırlanır."
+    },
+    "programToday": {
+      "next": "Sıradaki öğün",
+      "allDone": "Bugün",
+      "allDoneText": "Bugünün tüm öğünlerini kaydettin.",
+      "anytime": "Gün içinde",
+      "now": "Şimdi",
+      "inMinutes": "{n} dk sonra",
+      "inHours": "{h} sa {m} dk sonra",
+      "meals": "{total} öğünün {done} tanesi kayıtlı",
+      "log": "Yediklerimi işaretle",
+      "shopping": "Alışveriş listesi",
+      "energy": "Enerji",
+      "dayTitle": "Bugünün planı, hedefe göre",
+      "weekTitle": "Programın günleri",
+      "weekHint": "Her sütun o gün için planlanan enerji; koyu olan bugün.",
+      "emptyTitle": "Programın hazırlanıyor",
+      "emptySteps": [
+        "Diyetisyenin görüşmeden sonra programını hazırlar.",
+        "Program etkinleştiğinde burada gün gün görünür.",
+        "O zamana kadar günlüğünü ve günün kaydını tutabilirsin."
+      ],
+      "emptyDiary": "Günlüğe git",
+      "emptyAsk": "Diyetisyenine sor"
+    },
+    "insights": {
+      "journeyTitle": "Hedef yolculuğun",
+      "achievementsTitle": "Kilometre taşların",
+      "start": "Başlangıç",
+      "now": "Şimdi",
+      "goal": "Hedef",
+      "left": "{kg} kg kaldı",
+      "reached": "Hedefe ulaştın",
+      "pace": "Son haftalar",
+      "perWeek": "/ hafta",
+      "eta": "Bu hızla: {date}",
+      "etaHint": "Son altı haftanın kayıtlarından çıkan bir yön; söz değil.",
+      "badges": {
+        "earned": "kazanıldı",
+        "locked": "henüz değil",
+        "first": {
+          "title": "İlk kayıt",
+          "text": "İlk günün kaydı"
+        },
+        "streak7": {
+          "title": "7 gün seri",
+          "text": "Üst üste 7 gün kayıt"
+        },
+        "streak30": {
+          "title": "30 gün seri",
+          "text": "Üst üste 30 gün kayıt"
+        },
+        "water7": {
+          "title": "Su hedefi",
+          "text": "7 gün 2 litreye ulaş"
+        },
+        "move150": {
+          "title": "Hareketli hafta",
+          "text": "Haftada 150 dakika"
+        },
+        "kilo1": {
+          "title": "İlk kilo",
+          "text": "Hedefe doğru 1 kg"
+        },
+        "half": {
+          "title": "Yarı yol",
+          "text": "Hedefin yarısı"
+        },
+        "goal": {
+          "title": "Hedef",
+          "text": "Hedef kiloya ulaş"
+        }
+      }
+    },
+    "carePrep": {
+      "countdown": "Görüşmeye kalan süre",
+      "days": "gün",
+      "hours": "saat",
+      "minutes": "dakika",
+      "title": "Görüşmeye hazırlık",
+      "note": "İşaretler yalnızca bu cihazda tutulur.",
+      "items": {
+        "weigh": "Sabah aç karnına tartıl ve kaydet",
+        "diary": "Son üç günün günlüğünü doldur",
+        "questions": "Sormak istediklerini not al",
+        "labs": "Yeni tahlilin varsa Mesajlar’dan gönder",
+        "device": "Online görüşme için internetini ve kameranı dene"
+      }
+    },
+    "msgRail": {
+      "about": "Diyetisyenin",
+      "reply": "Mesajlara uygun olduğunda yanıt verir; anlık sohbet değildir.",
+      "next": "Sıradaki görüşme",
+      "noNext": "Planlanmış görüşme yok.",
+      "files": "Son dosyalar",
+      "noFiles": "Henüz dosya yok.",
+      "allFiles": "Tüm dosyalar",
+      "tips": "Ne yazabilirsin?",
+      "tipList": [
+        "Bir öğünle ilgili sorun",
+        "Dışarıda yemek için öneri",
+        "Tahlil sonucun",
+        "Programda zorlandığın bir gün"
+      ]
+    },
+    "theme": {
+      "title": "Tema",
+      "light": "Gündüz",
+      "dark": "Gece"
+    }
+  },
+  "apply": {
+    "eyebrow": "Başvuru",
+    "title": "Birlikte çalışalım",
+    "lead": "Dört kısa adım: program, sen, sağlık geçmişin ve iletişim. Başvurunu diyetisyen inceler ve seçtiğin kanaldan sana döner.",
+    "stepsLabel": "Başvuru adımları",
+    "steps": {
+      "programme": "Program",
+      "about": "Sen",
+      "health": "Sağlık",
+      "contact": "İletişim"
+    },
+    "rule": {
+      "eyebrow": "Koşul",
+      "title": "En az 3 ay.",
+      "body": "Beslenme alışkanlıkları birkaç haftada değişmez; bu yüzden 1 aylık program verilmez. Programlar 3, 6 ya da 12 aylıktır."
+    },
+    "how": {
+      "title": "Nasıl ilerler?",
+      "send": {
+        "title": "Başvurunu gönder",
+        "body": "Bilgilerin yalnızca diyetisyenin göreceği panele kaydedilir."
+      },
+      "review": {
+        "title": "Diyetisyen inceler",
+        "body": "Hedefin ve sağlık geçmişin birlikte değerlendirilir."
+      },
+      "meet": {
+        "title": "İlk görüşmeyi planlayın",
+        "body": "Seçtiğin kanaldan sana dönülür ve tanışma görüşmesi planlanır."
+      }
+    },
+    "programme": {
+      "title": "Programın",
+      "lead": "Ne kadar süre, hangi biçimde ve ne zaman başlamak istediğini seç.",
+      "duration": "Program süresi",
+      "format": "Görüşme biçimi",
+      "start": "Ne zaman başlamak istersin?"
+    },
+    "about": {
+      "title": "Seni tanıyalım",
+      "lead": "Hedefin ve temel bilgilerin. Ölçüler isteğe bağlıdır; bilmiyorsan boş bırakabilirsin.",
+      "goal": "Seni buraya ne getirdi?",
+      "goalNote": "Biraz daha anlatmak ister misin? (isteğe bağlı)",
+      "sex": "Cinsiyet",
+      "age": "Yaş",
+      "height": "Boy",
+      "weight": "Kilo",
+      "activity": "Gün içinde ne kadar hareketlisin?"
+    },
+    "health": {
+      "title": "Sağlık geçmişin",
+      "lead": "Planın güvenli olması için önemli. Hepsi isteğe bağlı.",
+      "conditions": "Tanı konmuş bir durum var mı?",
+      "medications": "Düzenli kullandığın ilaç ya da takviye (isteğe bağlı)",
+      "allergies": "Alerji ya da intolerans (isteğe bağlı)",
+      "prior": "Daha önce bir diyetisyenle çalıştın mı?",
+      "privacy": "Sağlık bilgilerin özel nitelikli kişisel veridir: yalnızca açık rızanla, başvurunu değerlendirmek için kullanılır ve yalnızca diyetisyen görür."
+    },
+    "contact": {
+      "title": "Sana nasıl ulaşalım?",
+      "lead": "Telefon ya da e-postadan en az birini yaz.",
+      "time": "Ne zaman aranmak istersin?",
+      "message": "Eklemek istediğin bir şey var mı? (isteğe bağlı)",
+      "terms": "Programların en az 3 ay sürdüğünü ve 1 aylık hizmet verilmediğini okudum, kabul ediyorum.",
+      "consent": "Başvurumda paylaştığım kişisel verilerimin ve sağlık bilgilerimin başvurumun değerlendirilmesi ve bana dönüş yapılması amacıyla işlenmesine açık rıza veriyorum."
+    },
+    "optional": "isteğe bağlı",
+    "minimum": "En az",
+    "noMonth": "1 aylık program yok — kalıcı değişim zaman ister.",
+    "durations": {
+      "m1": "1 ay",
+      "m3": "3 ay",
+      "m6": "6 ay",
+      "m12": "12 ay"
+    },
+    "durationHints": {
+      "m3": "Temel alışkanlıkları kurmak için.",
+      "m6": "Değişimi oturtmak ve sürdürmek için.",
+      "m12": "Uzun soluklu, mevsimden mevsime takip."
+    },
+    "formats": {
+      "online": "Online",
+      "in_person": "Yüz yüze",
+      "either": "Fark etmez"
+    },
+    "starts": {
+      "asap": "Hemen",
+      "month": "Bu ay içinde",
+      "later": "Daha sonra"
+    },
+    "goals": {
+      "energy": "Daha enerjik hissetmek",
+      "weight_down": "Sürdürülebilir şekilde kilo vermek",
+      "weight_up": "Kilo ya da kas kazanmak",
+      "regular": "Düzenli beslenmek",
+      "sport": "Spor performansı",
+      "family": "Aile sofrasını düzenlemek",
+      "health": "Bir sağlık durumuna uygun beslenmek"
+    },
+    "sexes": {
+      "female": "Kadın",
+      "male": "Erkek",
+      "other": "Belirtmek istemiyorum"
+    },
+    "activities": {
+      "sedentary": "Çoğunlukla oturarak",
+      "light": "Hafif hareketli",
+      "moderate": "Orta",
+      "active": "Hareketli",
+      "very_active": "Çok hareketli"
+    },
+    "conditions": {
+      "diabetes": "Diyabet / insülin direnci",
+      "thyroid": "Tiroid",
+      "pcos": "PKOS",
+      "blood_pressure": "Yüksek tansiyon",
+      "cholesterol": "Kolesterol / trigliserit",
+      "digestive": "Sindirim sorunları",
+      "kidney": "Böbrek",
+      "pregnancy": "Gebelik / emzirme"
+    },
+    "yesNo": {
+      "yes": "Evet",
+      "no": "Hayır"
+    },
+    "times": {
+      "morning": "Sabah",
+      "afternoon": "Öğleden sonra",
+      "evening": "Akşam",
+      "any": "Fark etmez"
+    },
+    "back": "Geri",
+    "next": "Devam",
+    "send": "Başvuruyu gönder",
+    "sent": {
+      "title": "Teşekkürler {name}, başvurun alındı.",
+      "body": "{duration} programı için başvurunu diyetisyen inceleyecek ve seçtiğin kanaldan sana dönecek.",
+      "whatsapp": "Beklemeden WhatsApp’tan yaz"
+    },
+    "summary": {
+      "title": "Gönderilecekler",
+      "programme": "Program",
+      "goal": "Hedef",
+      "health": "Sağlık",
+      "none": "Belirtilmedi",
+      "edit": "Düzenle"
+    },
+    "faq": {
+      "title": "Başvurmadan önce",
+      "items": [
+        {
+          "q": "Neden en az 3 ay?",
+          "a": "Beslenme alışkanlıkları birkaç haftada değişmez; planın hayatına oturması ve değişimin kalıcı hâle gelmesi zaman ister. Bu yüzden programlar 3, 6 ya da 12 aylıktır ve 1 aylık program verilmez."
+        },
+        {
+          "q": "Başvurudan sonra ne olur?",
+          "a": "Başvurunu diyetisyen inceler ve seçtiğin kanaldan (WhatsApp, telefon ya da e-posta) sana döner; ilk görüşme birlikte planlanır."
+        },
+        {
+          "q": "Sağlık bilgilerimi kim görür?",
+          "a": "Yalnızca diyetisyen. Sağlık soruları isteğe bağlıdır; paylaştıkların açık rızanla, başvurunu değerlendirmek için kullanılır ve yalnızca diyetisyenin göreceği panelde saklanır."
+        },
+        {
+          "q": "Online mı, yüz yüze mi?",
+          "a": "İkisi de mümkün. Formda tercihini seçebilir ya da “Fark etmez” diyebilirsin."
+        },
+        {
+          "q": "Formu yarıda bırakırsam?",
+          "a": "Aynı sekmede cevapların kaybolmaz; sayfayı yenilesen de devam edebilirsin. Sağlık bilgileri bu şekilde saklanmaz, onları yeniden seçmen gerekir."
+        }
+      ]
+    }
+  },
+  "cookies": {
+    "title": "Çerez tercihin",
+    "body": "Bu site yalnızca çalışması için gereken çerezleri kullanır (dil tercihi, oturum). Reklam ya da analiz çerezi yok. İsteğe bağlı bir şey eklenirse önce senin iznine bakılır; tercihini sitenin en altından istediğin zaman değiştirebilirsin.",
+    "accept": "Kabul et",
+    "reject": "Reddet",
+    "policy": "Çerez politikası",
+    "settings": "Çerez tercihleri"
+  },
+  "applyPrompt": {
+    "eyebrow": "Program başvurusu",
+    "title": "Birlikte çalışmaya hazır mısın?",
+    "lead": "Başlamadan önce bilmen gerekenler:",
+    "points": {
+      "minimum": {
+        "title": "En az 3 ay.",
+        "body": "1 aylık program verilmez; programlar 3, 6 ya da 12 aylıktır."
+      },
+      "format": {
+        "title": "Online ya da yüz yüze.",
+        "body": "Hangisi sana uyuyorsa."
+      },
+      "plan": {
+        "title": "Sana göre bir plan.",
+        "body": "Hayatına, saatlerine ve sofrana uyan; yasak listesi değil."
+      },
+      "quick": {
+        "title": "3 dakikalık başvuru.",
+        "body": "Bilgilerin yalnızca diyetisyenin göreceği panele kaydedilir."
+      }
+    },
+    "cta": "Başvur",
+    "later": "Daha sonra"
+  }
+}

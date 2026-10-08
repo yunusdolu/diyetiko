@@ -1,0 +1,8 @@
+.next
+node_modules
+.demo-data
+pnpm-lock.yaml
+supabase/.temp
+playwright-report
+test-results
+dashboard figma

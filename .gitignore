@@ -1,0 +1,21 @@
+node_modules
+.next
+out
+.env
+.env*.local
+.demo-data
+.demo-data-*
+next-env.d.ts
+*.tsbuildinfo
+playwright-report
+test-results
+e2e/.auth
+shots
+supabase/.temp
+supabase/.branches
+.vercel
+.next-*.log
+# a purchased dashboard template kept beside the project as a design reference only
+dashboard figma
+# the voice-over for the promo video: a working file, not part of the site
+promp ses dosyası

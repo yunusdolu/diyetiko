@@ -1,0 +1,10 @@
+allowBuilds:
+  '@parcel/watcher': true
+  '@swc/core': true
+  sharp: true
+  unrs-resolver: true
+  esbuild: true
+  supabase: false
+
+overrides:
+  source-map-js: '>=1.2.2'

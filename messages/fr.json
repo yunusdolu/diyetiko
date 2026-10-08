@@ -1,0 +1,3080 @@
+{
+  "meta": {
+    "siteName": "Diyetiko",
+    "shortName": "Diyetiko",
+    "defaultTitle": "Diyetiko — Bien manger commence dans l'assiette",
+    "defaultDescription": "Pas une liste d'interdits, un plan qui s'adapte à ta vie. Recettes, guides, calculateurs et accompagnement nutritionnel individuel avec le diététicien Diyetiko.",
+    "titleTemplate": "%s — Diyetiko"
+  },
+  "nav": {
+    "home": "Accueil",
+    "recipes": "Recettes",
+    "guides": "Guides",
+    "tools": "Outils",
+    "goal": "Trouver mon objectif",
+    "about": "À propos",
+    "professionals": "Professionnels",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Fermer",
+    "skipToContent": "Aller au contenu",
+    "primary": "Navigation principale",
+    "whatsapp": "Écrire sur WhatsApp",
+    "apply": "Candidater"
+  },
+  "common": {
+    "readMore": "Lire la suite",
+    "seeAll": "Tout voir",
+    "back": "Retour",
+    "next": "Suivant",
+    "continue": "Continuer",
+    "skip": "Passer",
+    "start": "Commencer",
+    "restart": "Recommencer",
+    "send": "Envoyer",
+    "sending": "Envoi",
+    "sent": "Envoyé",
+    "save": "Enregistrer",
+    "saving": "Enregistrement",
+    "saved": "Enregistré",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "copy": "Copier",
+    "copied": "Copié",
+    "print": "Imprimer",
+    "share": "Partager",
+    "loading": "Chargement",
+    "optional": "facultatif",
+    "required": "obligatoire",
+    "or": "ou",
+    "minutes": "{count} min",
+    "servings": "{count, plural, one {# portion} other {# portions}}",
+    "kcal": "{value} kcal",
+    "grams": "{value} g",
+    "perServing": "par portion",
+    "example": "Exemple",
+    "pause": "Pause",
+    "play": "Lecture",
+    "notMedicalAdvice": "À titre informatif ; ne remplace pas un avis médical.",
+    "placeholderNotice": "Texte provisoire — à compléter par le diététicien",
+    "translationFallback": "Ce contenu n'est pas encore disponible en {language} ; tu lis la version {fallback}.",
+    "external": "(s'ouvre dans un nouvel onglet)",
+    "close": "Fermer"
+  },
+  "macros": {
+    "protein": "Protéines",
+    "carb": "Glucides",
+    "fat": "Lipides",
+    "fiber": "Fibres",
+    "kcal": "Énergie",
+    "short": {
+      "protein": "P",
+      "carb": "G",
+      "fat": "L"
+    }
+  },
+  "units": {
+    "g": "g",
+    "piece": "pièce",
+    "slice": "tranche",
+    "tbsp": "c. à soupe",
+    "tsp": "c. à café",
+    "cup": "verre",
+    "glass": "verre",
+    "handful": "poignée",
+    "bowl": "bol",
+    "clove": "gousse",
+    "bunch": "botte",
+    "portion": "portion",
+    "kcal": "kcal",
+    "kg": "kg",
+    "cm": "cm",
+    "liter": "L"
+  },
+  "meals": {
+    "breakfast": "Petit-déjeuner",
+    "snack_am": "Collation",
+    "lunch": "Déjeuner",
+    "snack_pm": "Goûter",
+    "dinner": "Dîner",
+    "snack_late": "Collation du soir",
+    "snack": "Collation"
+  },
+  "diet": {
+    "vegetarian": "Végétarien",
+    "vegan": "Végétalien",
+    "gluten_free": "Sans gluten",
+    "dairy_free": "Sans lactose",
+    "high_protein": "Riche en protéines",
+    "high_fiber": "Source de fibres",
+    "under_400": "Moins de 400 kcal",
+    "quick": "20 min ou moins",
+    "thresholds": {
+      "high_protein": "Au moins 20 % de l'énergie apportée par les protéines et au moins 15 g de protéines par portion.",
+      "high_fiber": "Au moins 6 g de fibres par portion.",
+      "under_400": "400 kcal ou moins par portion.",
+      "quick": "Préparation + cuisson de 20 minutes ou moins au total.",
+      "vegetarian": "Sans viande ni poisson (déduit des données des ingrédients).",
+      "vegan": "Sans produit d'origine animale (déduit des données des ingrédients).",
+      "gluten_free": "Aucun ingrédient marqué comme contenant du gluten. En cas de maladie cœliaque, vérifie aussi les étiquettes.",
+      "dairy_free": "Sans produit laitier (déduit des données des ingrédients)."
+    }
+  },
+  "lang": {
+    "label": "Langue",
+    "switchTo": "Passer en {language}",
+    "suggest": "Cette page existe aussi en {language}.",
+    "suggestAction": "Voir la version {language}",
+    "dismiss": "Rester ici"
+  },
+  "loader": {
+    "skip": "Passer",
+    "label": "Préparation de la page"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Diyetiko",
+      "lines": ["Bien manger", "commence dans", "l'assiette."],
+      "lead": "Pas une liste d'interdits, mais un plan qui s'adapte à ta vie, à tes horaires et à ta table. Commençons par comprendre ce que tu manges — ensemble.",
+      "ctaPrimary": "Trouver mon objectif",
+      "ctaSecondary": "Écrire sur WhatsApp",
+      "plateLabel": "Assiette exemple",
+      "plateCaption": "Répartition énergétique d'un repas exemple. Les besoins individuels varient.",
+      "scrollHint": "Fais défiler — l'assiette devient donnée",
+      "margin": "01 — Cuisine"
+    },
+    "marquee": {
+      "label": "De saison",
+      "items": [
+        "pois chiches",
+        "citron",
+        "yaourt égoutté",
+        "noix",
+        "grenade",
+        "boulgour",
+        "huile d'olive",
+        "lentilles corail",
+        "figues",
+        "œufs",
+        "épinards",
+        "anchois",
+        "tomates",
+        "flocons d'avoine"
+      ]
+    },
+    "story": {
+      "eyebrow": "02 — Méthode",
+      "title": "Quatre étapes, une seule idée : le plan s'adapte à toi, pas l'inverse.",
+      "steps": [
+        {
+          "title": "Rencontre & bilan",
+          "body": "On parle de ce que tu manges, de ta façon de vivre et de ce que tu aimes. Il y a aussi des mesures — mais ton histoire passe d'abord.",
+          "meta": "Entretien · mesures · carte des habitudes"
+        },
+        {
+          "title": "Planification",
+          "body": "Un plan hebdomadaire construit avec des plats que tu aimes, adapté à tes horaires. Pas de liste d'interdits, des portions claires.",
+          "meta": "Menu de la semaine · liste de courses · recettes"
+        },
+        {
+          "title": "Suivi",
+          "body": "Des points réguliers pour ajuster le plan à ta vraie vie. Une semaine difficile ne signifie pas que le plan est terminé.",
+          "meta": "Suivi des mesures · mises à jour du plan"
+        },
+        {
+          "title": "Résultat",
+          "body": "L'objectif peut être un chiffre. Le vrai objectif, ce sont des habitudes qui durent après le plan, et une relation apaisée avec la nourriture.",
+          "meta": "Habitudes durables"
+        }
+      ]
+    },
+    "wizard": {
+      "eyebrow": "03 — Trouver mon objectif",
+      "title": "Qu’est-ce qui t’amène ici ?",
+      "lead": "Choisis une réponse ; avec quatre autres questions, on trouve tes premiers pas. Sans inscription.",
+      "cta": "Voir toutes les questions"
+    },
+    "tools": {
+      "eyebrow": "04 — Outils",
+      "title": "Les chiffres servent quand on est curieux.",
+      "lead": "Estime tes besoins énergétiques quotidiens ou trouve par où commencer en cinq questions. Gratuit, sans inscription.",
+      "calcTitle": "Calculateur énergie & macros",
+      "calcBody": "Métabolisme de base, besoins quotidiens et répartition des macros — en direct.",
+      "wizardTitle": "Trouver mon objectif",
+      "wizardBody": "Cinq questions courtes. Trois premiers pas adaptés.",
+      "open": "Ouvrir",
+      "wizardValue": "5 questions",
+      "randomValue": "un seul geste",
+      "listValue": "imprimer · partager",
+      "calcValue": "MB · DEJ · macros",
+      "footnote": "Sans inscription, gratuit. Les calculs se font dans ton navigateur."
+    },
+    "recipes": {
+      "eyebrow": "05 — Recettes",
+      "title": "En cuisine cette semaine",
+      "lead": "Vraies cuisines, vrais temps. Les valeurs nutritionnelles de chaque recette sont calculées à partir de ses ingrédients."
+    },
+    "week": {
+      "eyebrow": "06 — Semaine exemple",
+      "title": "À quoi ressemble une semaine de repas ?",
+      "lead": "Retourne une carte pour voir les repas du jour et la répartition de l'énergie. C'est un exemple ; ton plan est construit pour toi.",
+      "flip": "Retourner la journée",
+      "flipBack": "Revenir",
+      "total": "Total du jour",
+      "days": ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
+    },
+    "guides": {
+      "eyebrow": "07 — Guides",
+      "title": "Courts, sourcés, utiles.",
+      "lead": "Les questions fréquentes sur la nutrition, sans exagération et avec leurs sources."
+    },
+    "faq": {
+      "eyebrow": "08 — Questions",
+      "title": "Questions fréquentes"
+    },
+    "contact": {
+      "eyebrow": "09 — Contact",
+      "title": "Écris-moi, parlons-en.",
+      "lead": "Le premier pas, c'est un message. Parle de ton objectif, de ton problème ou simplement de ta curiosité ; tu recevras une réponse au plus vite."
+    },
+    "apply": {
+      "eyebrow": "Candidature au programme",
+      "title": "Un vrai changement prend du temps.",
+      "lead": "Les programmes durent au moins 3 mois ; aucune formule d’un mois. Présentez-vous en quelques minutes et construisons ensemble le bon plan.",
+      "cta": "Candidater",
+      "note": "Environ 3 minutes"
+    }
+  },
+  "faq": {
+    "items": [
+      {
+        "q": "Faut-il avoir un certain poids pour commencer ?",
+        "a": "Non. L'accompagnement nutritionnel ne commence pas à partir d'un seuil de poids ; vouloir améliorer ton énergie, ta digestion, ton rythme ou simplement ta relation à la cuisine suffit."
+      },
+      {
+        "q": "Devrai-je renoncer aux plats que j'aime ?",
+        "a": "Les plans ne reposent pas sur des listes d'interdits. Les plats que tu aimes restent dans le plan — on parle de portions, de fréquence et de contexte."
+      },
+      {
+        "q": "J'ai une maladie chronique ou je suis enceinte. Puis-je quand même consulter ?",
+        "a": "Oui, mais dans ces situations, le plan alimentaire doit être coordonné avec ton médecin. Partage ton état de santé et tes traitements dès le premier rendez-vous."
+      },
+      {
+        "q": "Comment mon programme me parvient-il ?",
+        "a": "Ton programme arrive sur ton téléphone via un lien privé et sécurisé. Pas de compte ni de connexion ; tu peux l'imprimer ou l'enregistrer en PDF."
+      },
+      {
+        "q": "Comment se déroulent les consultations et quels sont les tarifs ?",
+        "a": "Pour les options de consultation et les tarifs actuels, écris sur WhatsApp ou via le formulaire de contact."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "lead": "Écris au sujet de ton objectif, de ton problème ou de ce qui t'intrigue. Ton message est lu uniquement par le diététicien.",
+    "channels": "Contact direct",
+    "whatsapp": "WhatsApp",
+    "phone": "Téléphone",
+    "instagram": "Instagram",
+    "email": "E-mail",
+    "address": "Adresse",
+    "addressPlaceholder": "Adresse pas encore ajoutée.",
+    "formTitle": "Laisser un message",
+    "successTitle": "Ton message est bien arrivé.",
+    "successBody": "Merci, {name}. Tu recevras une réponse au plus vite par le canal choisi.",
+    "another": "Écrire un autre message"
+  },
+  "form": {
+    "name": "Ton prénom et nom",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "message": "Ton message",
+    "profession": "Ton titre / ta profession",
+    "organization": "Structure",
+    "preferred": "Comment te répondre ?",
+    "preferredWhatsapp": "WhatsApp",
+    "preferredPhone": "Téléphone",
+    "preferredEmail": "E-mail",
+    "consent": "J'accepte que mes données personnelles soient traitées afin de répondre à ma demande.",
+    "consentLink": "Notice d'information",
+    "honeypot": "Laisse ce champ vide",
+    "errors": {
+      "required": "Ce champ est obligatoire.",
+      "email": "Saisis une adresse e-mail valide.",
+      "phone": "Saisis un numéro de téléphone valide.",
+      "contact": "Indique au moins un e-mail ou un numéro de téléphone.",
+      "consent": "Ton accord est nécessaire pour continuer.",
+      "tooLong": "Peux-tu faire un peu plus court ?",
+      "rateLimited": "Trop de tentatives. Réessaie dans un moment.",
+      "generic": "Un problème est survenu. Réessaie ou écris sur WhatsApp.",
+      "terms": "Merci de confirmer cette condition pour continuer.",
+      "range": "Cette valeur semble hors de l’intervalle habituel.",
+      "invalid": "Saisissez un nombre valide."
+    }
+  },
+  "recipes": {
+    "title": "Recettes",
+    "lead": "Filtre, cherche selon ce que tu as dans le frigo ou lance le dé pour le repas du jour. Garde tes favoris et prépare ta liste de courses.",
+    "count": "{count, plural, =0 {Aucune recette} one {# recette} other {# recettes}}",
+    "modes": {
+      "all": "Toutes les recettes",
+      "fridge": "Qu'y a-t-il dans le frigo ?",
+      "random": "Que manger aujourd'hui ?",
+      "favorites": "Mes favoris"
+    },
+    "filters": {
+      "title": "Filtres",
+      "meal": "Repas",
+      "diet": "Régime",
+      "tags": "Caractéristiques",
+      "kcal": "Maximum par portion",
+      "time": "Temps maximum",
+      "search": "Chercher une recette",
+      "clear": "Effacer les filtres",
+      "any": "Peu importe",
+      "show": "Afficher les filtres",
+      "hide": "Masquer les filtres"
+    },
+    "fridge": {
+      "title": "Qu'as-tu dans ton frigo ?",
+      "lead": "Choisis les ingrédients que tu as ; les meilleures correspondances remontent.",
+      "search": "Chercher un ingrédient",
+      "match": "Tu as {have}/{total} ingrédients",
+      "missing": "Manque : {items}",
+      "empty": "Choisis quelques ingrédients pour commencer.",
+      "clear": "Effacer la sélection",
+      "categories": {
+        "grains": "Céréales",
+        "legumes": "Légumineuses",
+        "dairy_egg": "Laitages & œufs",
+        "meat_fish": "Viandes & poissons",
+        "vegetables": "Légumes",
+        "fruits": "Fruits",
+        "nuts_seeds": "Oléagineux & graines",
+        "fats": "Matières grasses",
+        "other": "Autres"
+      }
+    },
+    "random": {
+      "title": "Que manger aujourd'hui ?",
+      "roll": "Lancer le dé",
+      "again": "Relancer",
+      "open": "Voir la recette"
+    },
+    "favorites": {
+      "add": "Ajouter aux favoris",
+      "remove": "Retirer des favoris",
+      "empty": "Pas encore de favoris. Touche le cœur d'une recette ; ils sont gardés sur cet appareil.",
+      "localNote": "Les favoris sont stockés uniquement sur cet appareil."
+    },
+    "list": {
+      "add": "Ajouter à la liste",
+      "remove": "Retirer de la liste",
+      "open": "Liste de courses ({count})",
+      "title": "Liste de courses",
+      "lead": "Les ingrédients des recettes choisies, regroupés.",
+      "empty": "Ta liste est vide. Utilise « Ajouter à la liste » sur une recette.",
+      "recipes": "Recettes",
+      "items": "Ingrédients",
+      "clear": "Vider la liste",
+      "shareText": "Ma liste de courses",
+      "copyList": "Copier la liste"
+    },
+    "empty": "Aucune recette ne correspond à ces filtres. Essaie d'en retirer quelques-uns.",
+    "card": {
+      "time": "{count} min",
+      "open": "Ouvrir {title}"
+    }
+  },
+  "recipe": {
+    "ingredients": "Ingrédients",
+    "steps": "Préparation",
+    "step": "Étape {n}",
+    "stepOf": "{current} / {total}",
+    "tips": "Note de cuisine",
+    "servings": "Portions",
+    "decrease": "Moins de portions",
+    "increase": "Plus de portions",
+    "prep": "Préparation",
+    "cook": "Cuisson",
+    "total": "Total",
+    "nutrition": "Valeurs nutritionnelles",
+    "nutritionNote": "Par portion, valeurs approximatives calculées à partir des ingrédients.",
+    "optional": "facultatif",
+    "related": "À essayer aussi",
+    "checked": "{count} / {total} ingrédients prêts",
+    "backToRecipes": "Toutes les recettes",
+    "dataNote": "Les valeurs nutritionnelles sont approximatives et proviennent d'une base alimentaire en cours de vérification."
+  },
+  "guides": {
+    "title": "Guides",
+    "lead": "Des notes de nutrition courtes, sourcées et applicables au quotidien.",
+    "readingTime": "{count} min de lecture",
+    "sources": "Sources",
+    "categories": {
+      "all": "Tout",
+      "basics": "Bases",
+      "habits": "Habitudes",
+      "labels": "Étiquettes",
+      "kitchen": "Cuisine"
+    },
+    "back": "Tous les guides",
+    "progress": "Progression de lecture",
+    "reviewNote": "Ce guide est une information générale ; pour ta situation personnelle, parle à un professionnel de santé."
+  },
+  "tools": {
+    "title": "Outils",
+    "lead": "Les chiffres qui t'intriguent, simplement et honnêtement. Les calculs se font dans ton navigateur ; rien n'est envoyé.",
+    "calc": {
+      "title": "Calculateur énergie & macros",
+      "lead": "Métabolisme de base selon l'équation de Mifflin-St Jeor, besoins énergétiques quotidiens selon ton activité et un exemple de répartition des macros.",
+      "sex": "Sexe biologique pour l'équation",
+      "female": "Femme",
+      "male": "Homme",
+      "sexNote": "L'équation ne prévoit que deux catégories ; les deux options donnent une fourchette approximative.",
+      "age": "Âge",
+      "height": "Taille",
+      "weight": "Poids",
+      "activity": "Activité quotidienne",
+      "goal": "Objectif",
+      "goals": {
+        "maintain": "Maintenir",
+        "lose": "Perdre doucement",
+        "gain": "Prendre doucement"
+      },
+      "activities": {
+        "sedentary": {
+          "label": "Surtout assis",
+          "hint": "Travail de bureau, peu de marche"
+        },
+        "light": {
+          "label": "Légèrement actif",
+          "hint": "Exercice léger 1 à 3 jours par semaine"
+        },
+        "moderate": {
+          "label": "Modérément actif",
+          "hint": "Exercice 3 à 5 jours par semaine"
+        },
+        "active": {
+          "label": "Actif",
+          "hint": "Exercice 6 à 7 jours par semaine"
+        },
+        "very_active": {
+          "label": "Très actif",
+          "hint": "Travail physique ou deux entraînements par jour"
+        }
+      },
+      "results": "Résultats",
+      "bmr": "Métabolisme de base",
+      "bmrHint": "Énergie estimée dépensée par ton corps au repos complet.",
+      "tdee": "Besoins quotidiens",
+      "tdeeHint": "Dépense énergétique quotidienne estimée, activité comprise.",
+      "target": "Fourchette conseillée selon l'objectif",
+      "targetHint": "Même pour perdre du poids, la fourchette ne descend jamais sous ton métabolisme de base, et une perte rapide n'est jamais visée.",
+      "floorNote": "La fourchette a été limitée pour ne pas descendre sous ton métabolisme de base.",
+      "perDay": "kcal / jour",
+      "macros": "Exemple de répartition des macros",
+      "macrosHint": "Protéines environ 1,2 g par kg, lipides environ 30 % de l'énergie, glucides le reste. Ton plan personnel peut différer.",
+      "bmi": "Indice de masse corporelle",
+      "bmiCategories": {
+        "under": "Zone de maigreur",
+        "normal": "Zone de corpulence normale",
+        "over": "Zone de surpoids",
+        "obese": "Zone d'obésité"
+      },
+      "bmiLimits": "L'IMC ne tient compte que de la taille et du poids : il ignore la masse musculaire, la répartition des graisses, l'âge et les différences ethniques. Ce n'est pas l'unique indicateur de santé.",
+      "disclaimer": "Ce calculateur est informatif et ne remplace pas un avis médical. En cas de grossesse, d'allaitement, de maladie chronique ou d'antécédents de troubles alimentaires, parle à un professionnel de santé.",
+      "cta": "Écrire pour un plan personnalisé",
+      "invalid": "Vérifie les valeurs : âge 18–100, taille 120–230 cm, poids 35–300 kg.",
+      "adultsOnly": "Ce calculateur est destiné aux adultes. Les besoins des enfants et adolescents se calculent autrement.",
+      "years": "ans"
+    }
+  },
+  "wizard": {
+    "title": "Trouver mon objectif",
+    "lead": "Cinq questions courtes. À la fin, trois premiers pas et la suite. Sans inscription ; tes réponses ne vont nulle part tant que tu ne les envoies pas.",
+    "start": "C'est parti",
+    "safety": {
+      "title": "Avant de commencer",
+      "body": "Si tu es enceinte ou allaites, si tu as une maladie chronique ou des antécédents de troubles alimentaires, parle directement à un professionnel de santé plutôt que d'utiliser cet outil. Aucune question médicale n'est posée ici.",
+      "ack": "Compris, continuer"
+    },
+    "progress": "Étape {current} sur {total}",
+    "keyboardHint": "1–6 pour choisir, Entrée pour continuer, Échap pour revenir",
+    "steps": {
+      "goal": {
+        "title": "Qu'est-ce qui t'amène ici ?",
+        "options": {
+          "energy": "Me sentir plus en forme",
+          "weight_down": "Perdre du poids durablement",
+          "weight_up": "Prendre du poids ou du muscle",
+          "regular": "Manger plus régulièrement",
+          "sport": "Performance sportive",
+          "family": "Organiser la table familiale"
+        }
+      },
+      "activity": {
+        "title": "Tes journées sont-elles actives ?"
+      },
+      "habits": {
+        "title": "Lesquelles te parlent ?",
+        "hint": "Choisis-en autant que tu veux. Aucun jugement — c'est juste pour savoir par où commencer.",
+        "options": {
+          "skip_breakfast": "Je saute souvent le petit-déjeuner",
+          "late_eating": "Je mange tard et beaucoup le soir",
+          "snacking": "Je grignote souvent dans la journée",
+          "eat_out": "Je mange surtout à l'extérieur",
+          "low_veg": "Je mange peu de fruits et légumes",
+          "sweet_drinks": "J'aime les boissons sucrées",
+          "low_water": "J'oublie de boire de l'eau",
+          "irregular": "Mes horaires de repas sont irréguliers"
+        }
+      },
+      "time": {
+        "title": "Combien de temps as-tu pour cuisiner chaque jour ?",
+        "options": {
+          "t15": "Moins de 15 minutes",
+          "t30": "15 à 30 minutes",
+          "t60": "30 à 60 minutes",
+          "t60plus": "Plus d'une heure"
+        }
+      },
+      "stats": {
+        "title": "Quelques chiffres, si tu veux",
+        "hint": "Entièrement facultatif. Si tu les remplis, le résultat inclut une estimation énergétique personnelle.",
+        "skip": "Passer cette étape"
+      }
+    },
+    "result": {
+      "eyebrow": "Résultat",
+      "title": "Tes premiers pas sont prêts.",
+      "energy": "Tes besoins quotidiens estimés",
+      "energyGeneric": "Une assiette équilibrée exemple",
+      "steps": "Trois petits pas pour commencer",
+      "next": "Étape suivante",
+      "whatsapp": "Envoyer ce résultat sur WhatsApp",
+      "form": "Envoyer via le formulaire",
+      "consentSave": "J'accepte que mes réponses soient enregistrées afin d'être recontacté·e.",
+      "saved": "Envoyé. Tu recevras une réponse au plus vite.",
+      "restart": "Recommencer",
+      "whatsappMessage": "Bonjour, j'ai utilisé l'outil « Trouver mon objectif » de votre site. Mon objectif : {goal}. Mon niveau d'activité : {activity}. Temps disponible pour cuisiner : {time}. J'aimerais prendre contact.",
+      "suggestions": {
+        "skip_breakfast": "Commence le petit-déjeuner plutôt que de le rendre copieux : un œuf, une tranche de pain complet et une tomate suffisent.",
+        "late_eating": "Essaie d'avancer le dîner de 30 minutes et ajoute un petit goûter riche en protéines.",
+        "snacking": "N'interdis pas le grignotage ; planifie-le. Choisis une ou deux collations fixes par jour (yaourt, fruit, une poignée de noix).",
+        "eat_out": "À l'extérieur, vise une demi-assiette de légumes, une protéine et une petite portion de féculents.",
+        "low_veg": "Ajoute un légume à chaque repas : tomate-concombre au petit-déjeuner, salade à midi, un bol de légumes cuisinés le soir.",
+        "sweet_drinks": "Commence par remplacer une boisson sucrée par jour par de l'eau pétillante ou de l'eau citronnée.",
+        "low_water": "Garde une bouteille d'eau bien visible sur ton bureau et bois un verre à chaque repas.",
+        "irregular": "Fixe d'abord les horaires : trois repas à peu près aux mêmes heures, plus une collation si besoin.",
+        "default_1": "Essaie de remplir la moitié de ton assiette de légumes, un quart de protéines et un quart de céréales complètes.",
+        "default_2": "Deux jours par semaine, planifie le dîner à l'avance et cuisine-le à la maison.",
+        "default_3": "Associe l'eau à une habitude : un verre avant chaque repas."
+      }
+    }
+  },
+  "about": {
+    "title": "À propos",
+    "eyebrow": "Diyetiko",
+    "lead": "La nutrition n'est pas une liste de règles ; ce sont de petites décisions prises chaque jour. Mon travail, c'est de te les rendre plus faciles.",
+    "bioTitle": "Biographie",
+    "bioPlaceholder": "Biographie à ajouter par le diététicien.",
+    "credentialsTitle": "Formation & compétences",
+    "credentialsPlaceholder": "Diplôme, université et certifications à ajouter par le diététicien.",
+    "principlesTitle": "Principes",
+    "principles": [
+      {
+        "title": "Un plan, pas un interdit",
+        "body": "Aucun aliment n'est mauvais. On parle de portions, de fréquence et de contexte."
+      },
+      {
+        "title": "Fondé sur les preuves",
+        "body": "Les conseils suivent les recommandations scientifiques actuelles, pas les régimes à la mode."
+      },
+      {
+        "title": "Sans culpabiliser",
+        "body": "On parle du corps, du poids et des habitudes sans jugement."
+      },
+      {
+        "title": "Ensemble",
+        "body": "Si nécessaire, je travaille avec ton médecin et d'autres professionnels de santé."
+      }
+    ],
+    "portraitAlt": "Emplacement réservé au portrait du diététicien",
+    "cta": "Faisons connaissance"
+  },
+  "pros": {
+    "title": "Pour les professionnels",
+    "eyebrow": "Professionnels de santé",
+    "lead": "Médecins, diététiciens, psychologues et coachs : suivi partagé, orientation et collaboration.",
+    "approachTitle": "Approche",
+    "approach": [
+      {
+        "title": "Un langage commun",
+        "body": "Pour un patient orienté, objectifs et limites sont fixés dès le départ ; si besoin, un retour est fait sous forme de courte synthèse."
+      },
+      {
+        "title": "Rester dans son champ",
+        "body": "Le diagnostic et le traitement relèvent du médecin. Le plan alimentaire est construit en cohérence avec ses recommandations."
+      },
+      {
+        "title": "Protection des données",
+        "body": "Les données des patients sont protégées comme données sensibles au sens de la loi turque KVKK ; seul le nécessaire est partagé."
+      }
+    ],
+    "credentialsTitle": "Compétences",
+    "credentialsPlaceholder": "Inscription professionnelle, domaines d'expertise et affiliations à ajouter par le diététicien.",
+    "formTitle": "Collaboration / orientation",
+    "formLead": "Présente-toi brièvement ainsi que ton idée de collaboration. Ne partage pas d'informations sur un patient ; des coordonnées suffisent pour un premier contact.",
+    "successTitle": "Merci.",
+    "successBody": "Ton message est bien arrivé ; tu recevras une réponse au plus vite."
+  },
+  "legal": {
+    "reviewBanner": "Relecture juridique requise — ce texte est provisoire et doit être rédigé par un juriste avant la mise en ligne.",
+    "privacy": {
+      "title": "Politique de confidentialité"
+    },
+    "kvkk": {
+      "title": "Notice d'information KVKK"
+    },
+    "cookies": {
+      "title": "Politique relative aux cookies"
+    },
+    "placeholderBody": "Cette page n'est pas encore rédigée. Elle présentera le responsable du traitement, les catégories de données traitées, les finalités, les bases légales, les transferts, les durées de conservation et les droits des personnes concernées.",
+    "cookiesFacts": "Note technique (développeur) : ce site n'utilise aucun cookie publicitaire ni analytique. Seuls des cookies strictement nécessaires sont utilisés : préférence de langue (NEXT_LOCALE), fermeture de la suggestion de langue et session d'administration. Les favoris et la liste de courses restent dans le stockage local du navigateur et ne sont jamais envoyés au serveur. Votre choix (accepter / refuser) est conservé un an dans le cookie dm_consent."
+  },
+  "footer": {
+    "tagline": "Bien manger commence dans l'assiette.",
+    "disclaimer": "Les contenus de ce site sont des informations générales et ne remplacent ni un diagnostic, ni un traitement médical, ni un accompagnement nutritionnel personnalisé.",
+    "legal": "Mentions",
+    "explore": "Explorer",
+    "reach": "Contact",
+    "rights": "© {year} Diyetiko",
+    "top": "Haut de page",
+    "signIn": "Connexion",
+    "clientLogin": "Espace client",
+    "dietitianLogin": "Espace diététicien"
+  },
+  "share": {
+    "preparedBy": "Préparé par Diyetiko",
+    "for": "Pour {name}",
+    "day": "Jour {n}",
+    "total": "Total du jour",
+    "target": "Objectif",
+    "targets": "Objectifs quotidiens",
+    "notes": "Notes",
+    "hydration": "Eau & boissons",
+    "print": "Imprimer / PDF",
+    "validUntil": "Ce lien est valable jusqu'au {date}.",
+    "validForever": "Ce lien n'expire pas ; ton diététicien peut le révoquer à tout moment.",
+    "updated": "Dernière mise à jour : {date}",
+    "disclaimer": "Ce programme a été préparé pour toi. Ne le partage pas ; préviens ton diététicien si ta santé change.",
+    "questions": "Une question ? Écris sur WhatsApp",
+    "jumpTo": "Aller au jour",
+    "empty": "Aucun repas pour ce jour.",
+    "startsOn": "Début : {date}",
+    "invalidTitle": "Ce lien n'est plus valide.",
+    "invalidBody": "Il a peut-être expiré, été révoqué ou mal recopié. Demande un nouveau lien à ton diététicien.",
+    "pdfDisabled": "L'impression est désactivée pour ce programme.",
+    "today": "Aujourd'hui"
+  },
+  "errors": {
+    "notFoundTitle": "Cette assiette est vide.",
+    "notFoundBody": "La page que tu cherches a peut-être été déplacée, ou n'a jamais existé.",
+    "home": "Retour à l'accueil",
+    "errorTitle": "Un souci en cuisine.",
+    "errorBody": "Une erreur inattendue s'est produite. Essaie de recharger la page.",
+    "retry": "Réessayer"
+  },
+  "cursor": {
+    "drag": "Glisser",
+    "goal": "C’est moi",
+    "recipe": "On cuisine"
+  },
+  "admin": {
+    "brand": "Plan de travail",
+    "nav": {
+      "dashboard": "Vue d'ensemble",
+      "clients": "Patients",
+      "explorer": "Explorateur",
+      "programs": "Programmes",
+      "recipes": "Recettes",
+      "guides": "Guides",
+      "foods": "Aliments",
+      "leads": "Demandes",
+      "appointments": "Rendez-vous",
+      "settings": "Réglages",
+      "site": "Ouvrir le site",
+      "signOut": "Se déconnecter",
+      "command": "Palette de commandes",
+      "theme": "Thème",
+      "light": "Clair",
+      "dark": "Sombre",
+      "messages": "Messages",
+      "groups": {
+        "practice": "Cabinet",
+        "planning": "Planification",
+        "site": "Site"
+      },
+      "more": "Menu",
+      "collapse": "Réduire le menu",
+      "expand": "Déplier le menu",
+      "search": "Rechercher…",
+      "day": "Jour",
+      "night": "Nuit",
+      "install": "Installer comme application",
+      "payments": "Paiements",
+      "help": "Mode d’emploi"
+    },
+    "login": {
+      "title": "Bienvenue",
+      "lead": "Plan de travail est réservé au diététicien.",
+      "email": "E-mail",
+      "password": "Mot de passe",
+      "submit": "Se connecter",
+      "error": "E-mail ou mot de passe incorrect.",
+      "rateLimited": "Trop de tentatives. Réessaie plus tard.",
+      "mfaTitle": "Code de vérification",
+      "mfaLead": "Saisis le code à 6 chiffres de ton application d'authentification.",
+      "mfaCode": "Code",
+      "mfaSubmit": "Vérifier",
+      "mfaError": "Le code n'a pas pu être vérifié.",
+      "localHint": "Mode démo local : Supabase n'est pas configuré.",
+      "surface": "Espace diététicien",
+      "headline": "Clients et programmes à une seule table.",
+      "backToSite": "Retour au site",
+      "show": "Afficher",
+      "hide": "Masquer",
+      "capsLock": "Verr. Maj activé.",
+      "clientQuestion": "Vous êtes client ?",
+      "clientLink": "Espace client"
+    },
+    "common": {
+      "search": "Rechercher",
+      "new": "Nouveau",
+      "add": "Ajouter",
+      "save": "Enregistrer",
+      "saved": "Enregistré",
+      "saving": "Enregistrement…",
+      "cancel": "Annuler",
+      "delete": "Supprimer",
+      "remove": "Retirer",
+      "edit": "Modifier",
+      "close": "Fermer",
+      "open": "Ouvrir",
+      "back": "Retour",
+      "prev": "Précédent",
+      "next": "Suivant",
+      "actions": "Actions",
+      "confirm": "Tu es sûr ?",
+      "yes": "Oui",
+      "no": "Non",
+      "none": "—",
+      "empty": "Rien pour l'instant.",
+      "all": "Tout",
+      "filter": "Filtrer",
+      "export": "Exporter",
+      "exportCsv": "Télécharger en CSV",
+      "exportPdf": "PDF / imprimer",
+      "undo": "Annuler",
+      "error": "L'action n'a pas pu aboutir.",
+      "created": "Créé",
+      "updated": "Mis à jour",
+      "deleted": "Supprimé",
+      "restored": "Restauré",
+      "published": "Publié",
+      "draft": "Brouillon",
+      "view": "Affichage",
+      "cards": "Cartes",
+      "table": "Tableau",
+      "today": "Aujourd'hui",
+      "upload": "Téléverser un fichier",
+      "uploading": "Téléversement…",
+      "dropHere": "Dépose un fichier ici ou choisis-en un",
+      "language": "Langue",
+      "status": "Statut",
+      "createdAt": "Création",
+      "updatedAt": "Modification",
+      "noResults": "Aucun résultat",
+      "required": "Obligatoire",
+      "optional": "Facultatif",
+      "localMode": "Mode démo local",
+      "loading": "Chargement…",
+      "errorTitle": "La page n’a pas pu se charger",
+      "errorBody": "Le plus souvent, un problème de connexion passager (internet ou base de données). Réessayer suffit généralement.",
+      "retry": "Réessayer"
+    },
+    "dashboard": {
+      "title": "Bonjour.",
+      "titleAfternoon": "Bon après-midi.",
+      "titleEvening": "Bonsoir.",
+      "activeClients": "Patients actifs",
+      "newLeads": "Nouvelles demandes",
+      "upcoming": "Rendez-vous à venir",
+      "checkinsDue": "Suivis à faire",
+      "checkinsHint": "Patients actifs dont la dernière mesure date de plus de 14 jours",
+      "clientsTrend": "Patients",
+      "leadsTrend": "Demandes",
+      "quick": "Actions rapides",
+      "quickClient": "Nouveau patient",
+      "quickProgram": "Nouveau programme",
+      "quickRecipe": "Nouvelle recette",
+      "quickAppointment": "Ajouter un rendez-vous",
+      "upcomingList": "Cette semaine",
+      "latestLeads": "Dernières demandes",
+      "noUpcoming": "Aucun rendez-vous cette semaine.",
+      "noLeads": "Aucune nouvelle demande.",
+      "activity": "Espace client",
+      "noActivity": "Pas encore d’activité.",
+      "activityKinds": {
+        "checkin": "a rempli son bilan du jour",
+        "diary": "a ajouté un repas à son journal",
+        "message": "a envoyé un message"
+      },
+      "unread": "Messages non lus",
+      "summary": {
+        "appointments": "{count, plural, =0 {Aucun rendez-vous aujourd’hui} one {# rendez-vous aujourd’hui} other {# rendez-vous aujourd’hui}}",
+        "unread": "{count, plural, =0 {Aucun message non lu} one {# message non lu} other {# messages non lus}}",
+        "attention": "{count, plural, =0 {Tout le monde est sur la bonne voie} one {# client a besoin de toi} other {# clients ont besoin de toi}}"
+      },
+      "kpi": {
+        "activeClients": "Clients actifs",
+        "weekAppointments": "Rendez-vous cette semaine",
+        "newLeads": "Nouvelles demandes",
+        "checkins": "Suivis de l’espace (7 jours)",
+        "vsLastWeek": "par rapport à la semaine dernière",
+        "vsLastMonth": "par rapport au mois dernier",
+        "vsPrevious": "par rapport aux 7 jours précédents",
+        "same": "inchangé"
+      },
+      "agenda": {
+        "title": "Agenda",
+        "today": "Aujourd’hui",
+        "tomorrow": "Demain",
+        "now": "Maintenant",
+        "empty": "Aucun rendez-vous aujourd’hui.",
+        "emptyTomorrow": "Aucun rendez-vous demain.",
+        "next": "Prochain : {when}",
+        "came": "Venu",
+        "noShow": "Absent",
+        "remind": "Rappeler",
+        "remindLabel": "Rappel WhatsApp pour {name}",
+        "mark": "Comment ça s’est passé ?",
+        "minutes": "{n} min",
+        "updated": "Rendez-vous mis à jour",
+        "add": "Ajouter un rendez-vous",
+        "all": "Tous les rendez-vous",
+        "emptyDay": "Aucun rendez-vous ce jour-là."
+      },
+      "attention": {
+        "title": "À surveiller",
+        "hint": "Messages non lus, poids qui s’éloigne de l’objectif, espace silencieux, mesure ou rendez-vous en retard.",
+        "empty": "Tout le monde est sur la bonne voie ; rien en attente.",
+        "showAll": "Tout afficher ({count})",
+        "showLess": "Afficher moins",
+        "reasons": {
+          "unread": "{count, plural, one {# message non lu} other {# messages non lus}}",
+          "driftAway": "S’éloigne de l’objectif de {kg} kg",
+          "quiet": "Aucun suivi depuis {days} jours",
+          "noConsent": "Consentement KVKK manquant",
+          "overdueTasks": "{count, plural, one {# tâche en retard} other {# tâches en retard}}",
+          "measureDue": "Aucune mesure depuis {days} jours",
+          "measureNever": "Jamais mesuré",
+          "noAppointment": "Aucun rendez-vous prévu"
+        }
+      },
+      "goals": {
+        "title": "Vers l’objectif",
+        "hint": "Clients actifs avec un poids cible : de la première pesée à aujourd’hui.",
+        "empty": "Aucun client n’a de poids cible.",
+        "left": "encore {kg} kg",
+        "reached": "Objectif atteint",
+        "eta": "{weeks, plural, one {~# semaine} other {~# semaines}} à ce rythme"
+      },
+      "tasks": {
+        "title": "Tâches",
+        "placeholder": "Ajouter une tâche…",
+        "add": "Ajouter",
+        "due": {
+          "none": "Sans date",
+          "today": "Aujourd’hui",
+          "tomorrow": "Demain",
+          "nextWeek": "Semaine prochaine",
+          "pick": "Date"
+        },
+        "overdue": "{days, plural, one {# jour de retard} other {# jours de retard}}",
+        "client": "Client",
+        "noClient": "Sans client",
+        "snooze": "Reporter à demain",
+        "markDone": "Marquer « {title} » comme fait",
+        "markOpen": "Rouvrir « {title} »",
+        "empty": "Aucune tâche ouverte.",
+        "open": "{count} ouvertes",
+        "recentlyDone": "Terminées ces dernières 24 heures",
+        "migration": "Les tâches nécessitent une mise à jour de la base : exécute supabase/migrations/20261001000005_tasks.sql dans le SQL Editor de Supabase.",
+        "share": "Montrer au client",
+        "shared": "Visible par le client",
+        "sharedDone": "Fait par le client",
+        "sharedHint": "Cette tâche apparaît dans l’espace du client ; il la coche lui-même."
+      },
+      "hero": {
+        "next": "Prochain rendez-vous",
+        "none": "Plus rien de prévu aujourd’hui.",
+        "open": "Ouvrir la fiche"
+      },
+      "inbox": {
+        "title": "Boîte de réception",
+        "empty": "Aucun message non lu.",
+        "reply": "Répondre",
+        "placeholder": "Ta réponse…",
+        "send": "Envoyer",
+        "sent": "Réponse envoyée",
+        "markRead": "Marquer comme lu",
+        "open": "Ouvrir la conversation",
+        "all": "Tous les messages",
+        "fromClient": "Client"
+      },
+      "leads": {
+        "title": "Nouvelles demandes",
+        "empty": "Aucune nouvelle demande en attente.",
+        "call": "Appeler",
+        "whatsapp": "WhatsApp",
+        "contacted": "Contacté",
+        "convert": "Créer le client",
+        "converted": "Fiche client créée",
+        "updated": "Demande mise à jour",
+        "all": "Toutes les demandes"
+      },
+      "birthdays": {
+        "title": "Anniversaires",
+        "hint": "7 prochains jours",
+        "empty": "Aucun anniversaire dans les 7 prochains jours.",
+        "today": "Aujourd’hui",
+        "inDays": "{n, plural, one {dans # jour} other {dans # jours}}",
+        "turns": "fête ses {age} ans",
+        "congratulate": "Souhaiter"
+      },
+      "clock": "Heure",
+      "money": {
+        "title": "Encaissements",
+        "month": "Encaissé ce mois-ci",
+        "vsLast": "Mois dernier {amount}",
+        "lastNone": "Rien le mois dernier",
+        "due": "À encaisser",
+        "nothingDue": "Rien à encaisser",
+        "watch": "Forfaits à aborder",
+        "empty": "Aucun forfait terminé ou impayé.",
+        "migration": "La carte des encaissements nécessite une mise à jour de la base : exécutez supabase/migrations/20261002000006_practice.sql dans le SQL Editor de Supabase.",
+        "reason": {
+          "ending": "Dernière séance",
+          "endingWeek": "Se termine",
+          "done": "Forfait terminé",
+          "unpaid": "{amount} dû"
+        }
+      },
+      "range": {
+        "label": "Période",
+        "months": "{n} mois",
+        "weeks": "{n} sem.",
+        "year": "1 an"
+      },
+      "mix": {
+        "title": "Répartition des clients",
+        "total": "clients",
+        "empty": "Pas encore de client."
+      },
+      "outcomes": {
+        "title": "Présence aux rendez-vous",
+        "total": "rendez-vous",
+        "done": "Venu",
+        "noShow": "Absent",
+        "cancelled": "Annulé",
+        "empty": "Aucun rendez-vous terminé sur cette période.",
+        "rate": "Taux de présence {rate} (hors annulations)."
+      },
+      "overview": "Vue d’ensemble"
+    },
+    "clients": {
+      "title": "Patients",
+      "new": "Nouveau patient",
+      "quickAdd": "Ajout rapide",
+      "quickAddLead": "Un nom et un contact suffisent ; le reste plus tard.",
+      "fullForm": "Formulaire complet",
+      "searchPlaceholder": "Nom, e-mail, téléphone ou étiquette",
+      "count": "{count, plural, one {# patient} other {# patients}}",
+      "status": {
+        "active": "Actif",
+        "paused": "En pause",
+        "completed": "Terminé",
+        "archived": "Archivé"
+      },
+      "fields": {
+        "fullName": "Nom complet",
+        "email": "E-mail",
+        "phone": "Téléphone",
+        "birthDate": "Date de naissance",
+        "sex": "Sexe",
+        "sexOptions": {
+          "female": "Femme",
+          "male": "Homme",
+          "other": "Ne souhaite pas préciser / autre"
+        },
+        "height": "Taille (cm)",
+        "goal": "Objectif",
+        "goalWeight": "Poids visé (kg)",
+        "activity": "Niveau d'activité",
+        "allergies": "Allergies / intolérances",
+        "medicalNotes": "Notes médicales",
+        "medicalNotesHint": "Donnée sensible. Jamais affichée sur les pages de partage.",
+        "preferredLanguage": "Langue préférée",
+        "tags": "Étiquettes",
+        "tagsHint": "Séparées par des virgules",
+        "source": "Provenance",
+        "consent": "Consentement explicite KVKK",
+        "consentGiven": "Consentement explicite enregistré",
+        "consentAt": "Consentement : {date}",
+        "consentMissing": "Aucun consentement explicite enregistré",
+        "consentRecord": "Enregistrer le consentement",
+        "activityOptions": {
+          "sedentary": "Surtout assis",
+          "light": "Légèrement actif",
+          "moderate": "Modérément actif",
+          "active": "Actif",
+          "very_active": "Très actif"
+        }
+      },
+      "tabs": {
+        "general": "Général",
+        "measurements": "Mesures",
+        "programs": "Programmes",
+        "notes": "Notes",
+        "files": "Fichiers",
+        "appointments": "Rendez-vous",
+        "tracking": "Suivi",
+        "diary": "Journal",
+        "messages": "Messages",
+        "overview": "Aperçu",
+        "billing": "Forfaits & paiements",
+        "labs": "Analyses"
+      },
+      "age": "{age} ans",
+      "lastMeasurement": "Dernière mesure",
+      "noMeasurement": "Aucune mesure",
+      "softDelete": "Archiver",
+      "softDeleted": "Patient archivé",
+      "restore": "Désarchiver",
+      "hardDelete": "Supprimer définitivement",
+      "hardDeleteTitle": "Suppression définitive",
+      "hardDeleteBody": "Toutes les mesures, notes, fichiers, programmes et liens de partage de ce patient seront définitivement supprimés. Cette action est irréversible.",
+      "hardDeleteConfirm": "Saisis le nom du patient pour confirmer : {name}",
+      "deletedList": "Archivés",
+      "openExplorer": "Ouvrir dans l'explorateur",
+      "export": "Exporter les données du patient",
+      "consentOk": "Consentement KVKK",
+      "consentNo": "Consentement KVKK manquant",
+      "overview": {
+        "journey": "Vers l’objectif",
+        "start": "Départ",
+        "now": "Maintenant",
+        "goal": "Objectif",
+        "change": "Évolution",
+        "perWeek": "{kg} kg/semaine",
+        "trendHint": "Tendance des 6 dernières semaines · {n} pesées",
+        "eta": "À ce rythme, vers le {date}",
+        "etaHint": "Une direction tirée de la tendance, pas une promesse.",
+        "noTrend": "Une tendance demande 3 pesées réparties sur au moins une semaine.",
+        "noGoal": "Aucun poids cible.",
+        "noWeight": "Pas encore de pesée.",
+        "reached": "Objectif atteint",
+        "left": "encore {kg} kg",
+        "weights": "Pesées : cabinet et espace client",
+        "clinical": "Indicateurs cliniques",
+        "clinicalHint": "Calculés à partir des mesures enregistrées ; ne remplacent pas une évaluation clinique.",
+        "bmi": "IMC",
+        "healthyRange": "Poids pour un IMC de 18,5 à 24,9",
+        "whtr": "Taille / hauteur",
+        "whr": "Taille / hanches",
+        "threshold": "seuil {value}",
+        "bands": {
+          "ok": "Sous le seuil",
+          "raised": "Au seuil ou au-dessus",
+          "high": "Élevé (≥ 0,6)"
+        },
+        "bmr": "Métabolisme de base",
+        "tdee": "Dépense quotidienne",
+        "range": "Fourchette proposée · {goal}",
+        "goals": {
+          "lose": "perte de poids",
+          "gain": "prise de poids",
+          "maintain": "maintien"
+        },
+        "macros": "Exemple de répartition",
+        "missing": "Manque pour calculer : {fields}",
+        "fields": {
+          "height": "taille",
+          "weight": "poids",
+          "sex": "sexe",
+          "birthDate": "date de naissance",
+          "activity": "niveau d’activité",
+          "waist": "tour de taille",
+          "hip": "tour de hanches"
+        },
+        "complete": "Compléter la fiche",
+        "adherence": "4 dernières semaines",
+        "logged": "Suivi rempli {n} jours sur 28",
+        "habitsAvg": "Habitudes",
+        "waterAvg": "Eau",
+        "energyAvg": "Énergie",
+        "notOnPortal": "L’espace client n’est pas ouvert ; pas de suivi quotidien.",
+        "openPortal": "Ouvrir l’espace",
+        "legend": {
+          "none": "Rien",
+          "some": "Rempli",
+          "most": "La plupart des habitudes"
+        },
+        "dayLabel": "{day} : {state}",
+        "nextAppointment": "Prochain rendez-vous",
+        "noAppointment": "Aucun rendez-vous prévu.",
+        "program": "Programme actif",
+        "noProgram": "Aucun programme actif.",
+        "kcal": "objectif {kcal} kcal",
+        "lastMessage": "Dernier message",
+        "noMessages": "Pas encore de message.",
+        "pinned": "Note épinglée",
+        "latestNote": "Dernière note",
+        "noNotes": "Aucune note.",
+        "allergies": "Allergie / intolérance",
+        "medical": "Note médicale présente",
+        "quick": {
+          "measure": "Ajouter une mesure",
+          "note": "Écrire une note",
+          "appointment": "Rendez-vous",
+          "message": "Message",
+          "whatsapp": "WhatsApp",
+          "call": "Appeler",
+          "email": "E-mail",
+          "report": "Bilan de progression"
+        },
+        "bmiCategories": {
+          "under": "Zone de maigreur",
+          "normal": "Zone de corpulence normale",
+          "over": "Zone de surpoids",
+          "obese": "Zone d'obésité"
+        }
+      },
+      "card": {
+        "weight": "Poids",
+        "goal": "Objectif {kg} kg",
+        "noAppointment": "Pas de rendez-vous",
+        "noMeasurement": "Pas encore de mesure",
+        "measuredToday": "Mesuré aujourd’hui",
+        "measuredAgo": "Mesuré il y a {days} j",
+        "portal": "Sur l’espace client",
+        "unread": "{n} messages non lus"
+      }
+    },
+    "explorer": {
+      "title": "Explorateur de patients",
+      "hint": "← → pour passer d'un patient à l'autre",
+      "position": "{current} / {total}",
+      "empty": "Aucun patient actif à parcourir.",
+      "openProfile": "Ouvrir le profil",
+      "goal": "Objectif",
+      "progress": "Progression vers l'objectif",
+      "latest": "Dernières mesures",
+      "activeProgram": "Programme actif",
+      "noProgram": "Aucun programme actif",
+      "nextAppointment": "Prochain rendez-vous",
+      "pinnedNote": "Note épinglée"
+    },
+    "measurements": {
+      "title": "Mesures",
+      "add": "Ajouter une mesure",
+      "date": "Date",
+      "weight": "Poids (kg)",
+      "bodyFat": "Masse grasse (%)",
+      "muscle": "Muscle (kg)",
+      "waist": "Taille (cm)",
+      "hip": "Hanches (cm)",
+      "chest": "Poitrine (cm)",
+      "arm": "Bras (cm)",
+      "thigh": "Cuisse (cm)",
+      "note": "Note",
+      "chart": "Graphique",
+      "metric": "Mesure",
+      "progressToGoal": "Progression vers l'objectif",
+      "noGoal": "Aucun poids visé",
+      "change": "Évolution",
+      "empty": "Ajoute la première mesure pour démarrer le graphique.",
+      "start": "Départ",
+      "current": "Actuel",
+      "target": "Objectif",
+      "compare": {
+        "title": "Comparer",
+        "from": "Avant",
+        "to": "Après",
+        "delta": "Écart",
+        "copy": "Copier le résumé",
+        "copied": "Résumé copié",
+        "need2": "Il faut au moins deux mesures pour comparer.",
+        "days": "{n, plural, one {# jour} other {# jours}}"
+      }
+    },
+    "notes": {
+      "title": "Notes",
+      "placeholder": "Écrire une note…",
+      "add": "Ajouter",
+      "pin": "Épingler",
+      "unpin": "Désépingler",
+      "empty": "Aucune note."
+    },
+    "files": {
+      "title": "Fichiers",
+      "empty": "Aucun fichier.",
+      "private": "Les fichiers sont stockés en privé ; les liens sont signés et de courte durée.",
+      "tooLarge": "Un fichier ne peut pas dépasser 10 Mo.",
+      "badType": "Ce type de fichier n'est pas pris en charge.",
+      "shared": {
+        "title": "Fichiers partagés par messages",
+        "lead": "Les analyses et photos envoyées par le client, et ce que vous lui avez envoyé.",
+        "toLabs": "Saisir les valeurs",
+        "open": "Ouvrir le fichier",
+        "fromClient": "Envoyé par le client",
+        "fromYou": "Envoyé par vous"
+      }
+    },
+    "appointments": {
+      "title": "Rendez-vous",
+      "new": "Ajouter un rendez-vous",
+      "client": "Patient",
+      "lead": "Demande",
+      "when": "Date & heure",
+      "duration": "Durée (min)",
+      "kind": "Type",
+      "kinds": {
+        "in_person": "En cabinet",
+        "online": "En ligne",
+        "phone": "Téléphone"
+      },
+      "statuses": {
+        "scheduled": "Prévu",
+        "done": "Effectué",
+        "cancelled": "Annulé",
+        "no_show": "Absent"
+      },
+      "note": "Note",
+      "list": "Liste",
+      "calendar": "Calendrier",
+      "empty": "Aucun rendez-vous.",
+      "week": "Semaine",
+      "prevWeek": "Semaine précédente",
+      "nextWeek": "Semaine suivante",
+      "repeat": {
+        "label": "Répéter",
+        "none": "Ne se répète pas",
+        "weekly": "Chaque semaine",
+        "biweekly": "Toutes les 2 semaines",
+        "count": "Combien",
+        "hint": "{n, plural, one {# rendez-vous sera créé} other {# rendez-vous seront créés}}"
+      }
+    },
+    "leads": {
+      "title": "Demandes",
+      "kinds": {
+        "contact": "Contact",
+        "wizard": "Trouver mon objectif",
+        "professional": "Professionnel",
+        "application": "Candidature"
+      },
+      "statuses": {
+        "new": "Nouvelle",
+        "contacted": "Recontacté",
+        "converted": "Devenu patient",
+        "archived": "Archivée"
+      },
+      "convert": "Convertir en patient",
+      "converted": "Patient créé",
+      "markContacted": "Marquer comme recontacté",
+      "archive": "Archiver",
+      "consent": "Consentement : {date} ({version})",
+      "wizardAnswers": "Réponses de l'assistant",
+      "empty": "Aucune demande.",
+      "reply": "Répondre",
+      "app": {
+        "duration": "Durée",
+        "format": "Format",
+        "start": "Début",
+        "termsAccepted": "A accepté le minimum de 3 mois",
+        "person": "Personne",
+        "goal": "Objectif",
+        "sex": "Sexe",
+        "age": "Âge",
+        "height": "Taille",
+        "weight": "Poids",
+        "activity": "Activité",
+        "health": "Santé",
+        "conditions": {
+          "diabetes": "Diabète / insulinorésistance",
+          "thyroid": "Thyroïde",
+          "pcos": "SOPK",
+          "blood_pressure": "Hypertension",
+          "cholesterol": "Cholestérol / triglycérides",
+          "digestive": "Troubles digestifs",
+          "kidney": "Rein",
+          "pregnancy": "Grossesse / allaitement"
+        },
+        "none": "Non renseigné",
+        "medications": "Médicaments / compléments",
+        "allergies": "Allergies",
+        "prior": "Diététicien auparavant",
+        "reach": "Préférence de contact",
+        "preferred": "Canal",
+        "time": "Moment",
+        "channels": {
+          "whatsapp": "WhatsApp",
+          "phone": "Téléphone",
+          "email": "E-mail"
+        },
+        "durations": {
+          "m3": "3 mois",
+          "m6": "6 mois",
+          "m12": "12 mois"
+        },
+        "formats": {
+          "online": "En ligne",
+          "in_person": "En cabinet",
+          "either": "Peu importe"
+        },
+        "starts": {
+          "asap": "Tout de suite",
+          "month": "Ce mois-ci",
+          "later": "Plus tard"
+        },
+        "goals": {
+          "energy": "Avoir plus d’énergie",
+          "weight_down": "Perdre du poids durablement",
+          "weight_up": "Prendre du poids ou du muscle",
+          "regular": "Manger régulièrement",
+          "sport": "Performance sportive",
+          "family": "Organiser la table familiale",
+          "health": "Adapter l’alimentation à une pathologie"
+        },
+        "sexes": {
+          "female": "Femme",
+          "male": "Homme",
+          "other": "Je préfère ne pas répondre"
+        },
+        "activities": {
+          "sedentary": "Surtout assis",
+          "light": "Peu actif",
+          "moderate": "Modéré",
+          "active": "Actif",
+          "very_active": "Très actif"
+        },
+        "yesNo": {
+          "yes": "Oui",
+          "no": "Non"
+        },
+        "times": {
+          "morning": "Matin",
+          "afternoon": "Après-midi",
+          "evening": "Soir",
+          "any": "Peu importe"
+        },
+        "conditionsLabel": "Pathologies",
+        "call": "Appeler",
+        "email": "E-mail",
+        "phone": "Téléphone",
+        "language": "Langue",
+        "sent": "Envoyée",
+        "bmi": "IMC",
+        "message": "En ses mots"
+      }
+    },
+    "programs": {
+      "title": "Programmes",
+      "new": "Nouveau programme",
+      "templates": "Modèles",
+      "fromScratch": "Partir de zéro",
+      "fromTemplate": "À partir d'un modèle",
+      "duplicate": "Dupliquer",
+      "saveAsTemplate": "Enregistrer comme modèle",
+      "assign": "Attribuer à un patient",
+      "unassigned": "Non attribué",
+      "template": "Modèle",
+      "titleField": "Nom du programme",
+      "language": "Langue du programme",
+      "startsOn": "Début",
+      "status": {
+        "draft": "Brouillon",
+        "active": "Actif",
+        "archived": "Archivé"
+      },
+      "targets": "Objectifs quotidiens",
+      "targetKcal": "Énergie (kcal)",
+      "targetProtein": "Protéines (g)",
+      "targetCarb": "Glucides (g)",
+      "targetFat": "Lipides (g)",
+      "notes": "Notes",
+      "hydration": "Conseils eau & boissons",
+      "day": "Jour {n}",
+      "addDay": "Ajouter un jour",
+      "copyDay": "Copier le jour",
+      "clearDay": "Vider le jour",
+      "addMeal": "Ajouter un repas",
+      "addItem": "Ajouter",
+      "searchFood": "Chercher un aliment ou une recette",
+      "foods": "Aliments",
+      "recipes": "Recettes",
+      "custom": "Ligne libre",
+      "dragHint": "Glisse sur un repas ou clique",
+      "quantity": "Quantité",
+      "servings": "Portions",
+      "dayTotal": "Total du jour",
+      "mealTotal": "Total du repas",
+      "vsTarget": "par rapport à l'objectif",
+      "autosave": {
+        "idle": "Enregistré",
+        "saving": "Enregistrement…",
+        "error": "Échec — nouvel essai",
+        "dirty": "Modifications non enregistrées"
+      },
+      "versions": "Versions",
+      "snapshot": "Enregistrer une version",
+      "snapshotSaved": "Version enregistrée",
+      "restoreVersion": "Restaurer cette version",
+      "noVersions": "Aucune version.",
+      "empty": "Aucun programme.",
+      "time": "Heure",
+      "mealNote": "Note du repas",
+      "itemNote": "Note",
+      "deleteProgram": "Supprimer le programme",
+      "deleteProgramBody": "Le programme, ses jours, repas et tous ses liens de partage seront supprimés.",
+      "dayCount": "{n, plural, one {# jour} other {# jours}}",
+      "overTarget": "Au-dessus de l’objectif"
+    },
+    "share": {
+      "title": "Partager le programme",
+      "create": "Créer un lien",
+      "expiry": "Validité",
+      "expiries": {
+        "d7": "7 jours",
+        "d30": "30 jours",
+        "d90": "90 jours",
+        "never": "Sans limite"
+      },
+      "showName": "Afficher le prénom du patient",
+      "showNameHint": "Seul le prénom est affiché.",
+      "allowPdf": "Autoriser l'impression / PDF",
+      "copy": "Copier le lien",
+      "copied": "Lien copié",
+      "whatsapp": "WhatsApp",
+      "email": "E-mail",
+      "native": "Autres applications",
+      "qr": "QR code",
+      "revoke": "Révoquer le lien",
+      "revoked": "Lien révoqué",
+      "revokedAt": "Révoqué : {date}",
+      "views": "{count, plural, =0 {Pas encore consulté} one {# consultation} other {# consultations}}",
+      "lastViewed": "Dernière consultation : {date}",
+      "expiresAt": "Expire : {date}",
+      "noExpiry": "Sans limite",
+      "expired": "Expiré",
+      "active": "Actif",
+      "links": "Liens",
+      "noLinks": "Aucun lien pour ce programme.",
+      "safety": "La page de partage n'affiche jamais les notes médicales, le téléphone, l'e-mail ni les mesures.",
+      "messageTemplate": "Bonjour{name}, ton programme alimentaire est prêt : {url}",
+      "subject": "Ton programme alimentaire"
+    },
+    "cms": {
+      "recipesTitle": "Recettes",
+      "guidesTitle": "Guides",
+      "newRecipe": "Nouvelle recette",
+      "newGuide": "Nouveau guide",
+      "publish": "Publier",
+      "unpublish": "Dépublier",
+      "published": "Publié",
+      "draft": "Brouillon",
+      "translationStatus": {
+        "draft": "Brouillon",
+        "needs_review": "À relire",
+        "reviewed": "Relu"
+      },
+      "reviewRule": "Les contenus arabes et français ne s'affichent pas sur le site tant qu'un locuteur natif ne les a pas marqués « Relu ».",
+      "title": "Titre",
+      "slug": "Adresse (slug)",
+      "summary": "Description courte",
+      "excerpt": "Chapeau",
+      "body": "Texte",
+      "bodyHint": "Laisse une ligne vide entre les paragraphes. « ##  » pour un intertitre.",
+      "steps": "Étapes",
+      "stepsHint": "Une étape par ligne",
+      "tips": "Note de cuisine",
+      "prep": "Préparation (min)",
+      "cook": "Cuisson (min)",
+      "servings": "Portions",
+      "mealTypes": "Types de repas",
+      "illustration": "Illustration",
+      "cover": "Image de couverture",
+      "ingredients": "Ingrédients",
+      "addIngredient": "Ajouter un ingrédient",
+      "grams": "Grammes",
+      "unit": "Unité",
+      "optional": "Facultatif",
+      "computed": "Calculé (par portion)",
+      "category": "Catégorie",
+      "readingMin": "Temps de lecture (min)",
+      "sources": "Sources",
+      "sourcesHint": "Une par ligne : Titre | Éditeur | URL",
+      "draftTranslation": "Générer une traduction brouillon",
+      "draftTranslationHint": "Contenu public uniquement. Le résultat est enregistré comme « À relire ».",
+      "translationUnavailable": "ANTHROPIC_API_KEY n'est pas défini ; la traduction brouillon est indisponible.",
+      "missingTranslation": "Pas encore de contenu dans cette langue.",
+      "categoryOptions": {
+        "basics": "Bases",
+        "habits": "Habitudes",
+        "labels": "Étiquettes",
+        "kitchen": "Cuisine"
+      }
+    },
+    "foods": {
+      "title": "Aliments",
+      "new": "Nouvel aliment",
+      "per100": "pour 100 g",
+      "name": "Nom",
+      "category": "Catégorie",
+      "kcal": "kcal",
+      "protein": "Protéines",
+      "carb": "Gluc.",
+      "fat": "Lipides",
+      "fiber": "Fibres",
+      "flags": "Composition",
+      "flagOptions": {
+        "meat": "Viande",
+        "fish": "Poisson",
+        "dairy": "Produit laitier",
+        "egg": "Œuf",
+        "gluten": "Gluten",
+        "honey": "Miel"
+      },
+      "units": "Unités",
+      "unitsHint": "ex. pièce = 50 g",
+      "review": {
+        "needs_review": "Non vérifié",
+        "verified": "Vérifié"
+      },
+      "source": "Source",
+      "reviewNote": "Les valeurs initiales sont approximatives. Chaque aliment reste « Non vérifié » jusqu'à vérification auprès d'une source fiable (par ex. une base nationale de composition des aliments, selon ses conditions d'utilisation).",
+      "categories": {
+        "grains": "Céréales",
+        "legumes": "Légumineuses",
+        "dairy_egg": "Laitages & œufs",
+        "meat_fish": "Viandes & poissons",
+        "vegetables": "Légumes",
+        "fruits": "Fruits",
+        "nuts_seeds": "Oléagineux & graines",
+        "fats": "Matières grasses",
+        "other": "Autres"
+      }
+    },
+    "settings": {
+      "title": "Réglages",
+      "profile": "Profil",
+      "fullName": "Nom complet",
+      "adminLanguage": "Langue du panneau",
+      "arabicDigits": "Chiffres sur les pages arabes",
+      "arabicDigitsOptions": {
+        "latn": "Latins (0123)",
+        "arab": "Arabes orientaux (٠١٢٣)"
+      },
+      "site": "Contenu du site",
+      "contactInfo": "Coordonnées",
+      "socials": "Réseaux sociaux",
+      "seo": "SEO par défaut",
+      "images": "Images de marque",
+      "security": "Sécurité",
+      "password": "Nouveau mot de passe",
+      "passwordConfirm": "Nouveau mot de passe (confirmation)",
+      "changePassword": "Changer le mot de passe",
+      "mfa": "Vérification en deux étapes (TOTP)",
+      "mfaEnable": "Activer",
+      "mfaDisable": "Désactiver",
+      "mfaScan": "Scanne le QR code avec ton application d'authentification, puis saisis le code.",
+      "mfaEnabled": "Vérification en deux étapes activée",
+      "mfaUnavailable": "La vérification en deux étapes n'est disponible qu'avec Supabase Auth.",
+      "sections": {
+        "hero": "Introduction de l'accueil",
+        "about": "À propos",
+        "faq": "FAQ",
+        "credentials": "Compétences",
+        "contact": "Contact"
+      },
+      "localeTabs": "Langue du contenu",
+      "portrait": "Portrait",
+      "logo": "Logo",
+      "ogImage": "Image de partage",
+      "heroLines": "Lignes du titre",
+      "heroLinesHint": "Chaque ligne devient une ligne du titre (4 max).",
+      "heroLead": "Texte d’introduction",
+      "bio": "Biographie",
+      "credentialsHint": "Un diplôme/certificat par ligne. Uniquement des faits documentés.",
+      "faqHint": "Question sur une ligne, réponse en dessous ; ligne vide entre les questions.",
+      "address": "Adresse",
+      "mfaCode": "Code de vérification",
+      "passwordHint": "Au moins 10 caractères",
+      "passwordMismatch": "Les mots de passe ne correspondent pas",
+      "whatsappHint": "Chiffres uniquement, avec l’indicatif",
+      "notSaved": "Pas encore enregistré"
+    },
+    "palette": {
+      "placeholder": "Tape une commande ou cherche…",
+      "navigate": "Aller à",
+      "create": "Créer",
+      "clients": "Patients",
+      "empty": "Aucun résultat."
+    },
+    "audit": {
+      "title": "Journal d'accès"
+    },
+    "portal": {
+      "title": "Espace client",
+      "states": {
+        "none": "Pas invité",
+        "invited": "Invitation envoyée",
+        "noConsent": "Consentement en attente",
+        "active": "Actif"
+      },
+      "hints": {
+        "none": "Créez un lien d’invitation et envoyez-le au client. Il est valable 7 jours et à usage unique ; le client choisit son mot de passe.",
+        "invited": "Le lien est valable jusqu’au {date}. Le client n’a pas encore créé son compte.",
+        "noConsent": "Le client a créé son compte mais n’a pas donné (ou a retiré) son consentement explicite pour les données de santé ; la saisie est fermée.",
+        "active": "Consentement explicite : {date}"
+      },
+      "lastActivity": "Dernière activité : {when}",
+      "noActivity": "Pas encore d’activité",
+      "createInvite": "Créer un lien d’invitation",
+      "newInvite": "Nouveau lien d’invitation",
+      "createReset": "Lien de réinitialisation",
+      "revoke": "Fermer l’accès",
+      "revokeTitle": "Fermer l’accès à l’espace client ?",
+      "revokeBody": "Le compte du client est supprimé et les liens ouverts ne fonctionnent plus. Ce qu’il a saisi (journal, suivi, messages) reste chez vous. Vous pourrez l’inviter à nouveau plus tard.",
+      "revoked": "Accès fermé",
+      "linkReady": "Lien prêt",
+      "linkOnce": "Par sécurité, le lien n’est pas conservé : il n’est affiché que maintenant. Si vous fermez sans le copier, il faudra en créer un nouveau.",
+      "copy": "Copier",
+      "copied": "Copié",
+      "whatsapp": "Envoyer par WhatsApp",
+      "qr": "QR code",
+      "hideQr": "Masquer le QR code",
+      "expires": "Valable jusqu’au {date}",
+      "purposeInvite": "Invitation",
+      "purposeReset": "Réinitialisation",
+      "errors": {
+        "noEmail": "Enregistrez d’abord l’adresse e-mail du client dans l’onglet Général.",
+        "alreadyLinked": "Ce client a déjà un compte.",
+        "notLinked": "Ce client n’a pas encore de compte.",
+        "notFound": "Client introuvable."
+      },
+      "tracking": {
+        "checkins": "Bilans quotidiens",
+        "logged": "Bilans (14 jours)",
+        "days": "{count, plural, one {# jour} other {# jours}}",
+        "avgWater": "Eau (moy.)",
+        "lastWeight": "Dernière pesée",
+        "avgEnergy": "Énergie (moy.)",
+        "weightChart": "Pesées du client",
+        "noCheckins": "Le client n’a encore rien saisi.",
+        "table": {
+          "day": "Jour",
+          "weight": "Poids",
+          "water": "Eau",
+          "habits": "Habitudes",
+          "energy": "Énergie",
+          "note": "Note",
+          "activity": "Activité"
+        },
+        "habits": "Objectifs d’habitudes",
+        "habitsHint": "Le client les coche chaque jour dans son espace. Un objectif en pause y est masqué.",
+        "habitPlaceholder": "ex. 30 min de marche",
+        "habitLabel": "Nouvel objectif",
+        "noHabits": "Pas encore d’objectif.",
+        "pause": "Mettre en pause",
+        "resume": "Réactiver",
+        "paused": "En pause",
+        "adherence": "Régularité, 28 derniers jours",
+        "adherenceValue": "{done}/{total} jours",
+        "energyLevels": ["Très basse", "Basse", "Moyenne", "Bonne", "Très bonne"],
+        "notOnPortal": "Ce client n’utilise pas encore l’espace client. Invitez-le depuis « Espace client » dans l’onglet Général.",
+        "activity": "Activité (7 jours)",
+        "activityValue": "{min} min",
+        "activityDays": "{count, plural, one {# jour actif} other {# jours actifs}}",
+        "adherence7": "Programme suivi (7 jours)",
+        "adherenceMeals": "{logged} repas sur {planned} enregistrés",
+        "adherenceNone": "Pas de programme actif"
+      },
+      "diary": {
+        "title": "Journal alimentaire",
+        "range": "{from} – {to}",
+        "empty": "Aucune entrée sur cette période.",
+        "dayTotal": "Total du jour",
+        "target": "objectif {value}",
+        "noValues": "{count, plural, one {# aliment sans valeurs} other {# aliments sans valeurs}}",
+        "photo": "Photo du repas",
+        "openPhoto": "Agrandir la photo",
+        "prev": "14 jours précédents",
+        "next": "14 jours suivants",
+        "freeText": "texte libre"
+      },
+      "messages": {
+        "title": "Messages",
+        "empty": "Pas encore de message.",
+        "placeholder": "Votre réponse…",
+        "send": "Envoyer",
+        "inbox": "Messages",
+        "inboxLead": "Ce que vos clients ont écrit dans l’espace client. Non lus en premier.",
+        "inboxEmpty": "Aucun message de client pour le moment.",
+        "unread": "{count, plural, one {# nouveau} other {# nouveaux}}",
+        "you": "Vous",
+        "about": "{meal} · {date}",
+        "sendHint": "Ctrl + Entrée pour envoyer",
+        "notOnPortal": "Le client n’utilise pas l’espace client : il ne verra pas votre message.",
+        "rateLimited": "Trop de messages. Réessayez dans un instant.",
+        "attachFile": "Joindre un fichier (PDF ou photo)",
+        "removeFile": "Retirer le fichier",
+        "openFile": "Ouvrir le fichier",
+        "fileTooLarge": "Le fichier ne peut pas dépasser 10 Mo.",
+        "fileType": "Seuls un PDF ou une photo (JPG, PNG, WebP) peuvent être envoyés.",
+        "seen": "vu",
+        "file": "Fichier",
+        "search": "Chercher un client",
+        "all": "Tous",
+        "unreadOnly": "Non lus",
+        "withFiles": "Avec fichier",
+        "newThread": "Nouvelle conversation",
+        "pickClient": "Choisir un client…",
+        "choose": "Choisissez une conversation à gauche, ou commencez-en une.",
+        "openClient": "Dossier du client",
+        "sharedFiles": "Fichiers partagés",
+        "back": "Conversations",
+        "noMatch": "Aucune conversation ne correspond à ce filtre.",
+        "noThread": "Pas encore de message",
+        "migration": "L’envoi de fichiers nécessite une mise à jour de la base : exécutez supabase/migrations/20261005000009_uploads_activity.sql dans l’éditeur SQL de Supabase.",
+        "lastWeight": "Dernier poids",
+        "nextAppointment": "Prochain rendez-vous",
+        "portalOff": "N’utilise pas l’espace client",
+        "tabs": {
+          "diary": "Journal",
+          "tracking": "Suivi",
+          "labs": "Analyses"
+        }
+      },
+      "notConfigured": "La clé secrète Supabase (SUPABASE_SECRET_KEY) n’est pas définie sur le serveur : impossible de créer les comptes clients. Voir KURULUM.md → étape 5."
+    },
+    "billing": {
+      "title": "Forfaits & paiements",
+      "migration": "Les forfaits et paiements nécessitent une mise à jour de la base : exécutez supabase/migrations/20261002000006_practice.sql dans le SQL Editor de Supabase.",
+      "current": "Forfait en cours",
+      "noOpen": "Aucun forfait ouvert",
+      "paidTotal": "Total payé",
+      "dueTotal": "Reste dû",
+      "settled": "Rien à payer",
+      "packages": "Forfaits",
+      "payments": "Paiements",
+      "newPackage": "Nouveau forfait",
+      "editPackage": "Modifier le forfait",
+      "recordPayment": "Enregistrer un paiement",
+      "takePayment": "Encaisser",
+      "noPackages": "Aucun forfait pour l’instant. Ajoutez le forfait de séances acheté ; chaque rendez-vous marqué « Venu » est décompté automatiquement.",
+      "noPayments": "Aucun paiement enregistré.",
+      "counted": "Les rendez-vous marqués « Venu » sont décomptés automatiquement du forfait valable ce jour-là.",
+      "name": "Nom du forfait",
+      "namePlaceholder": "ex. suivi en 8 séances",
+      "sessions": "Nombre de séances",
+      "sessionsHint": "vide : séances non décomptées",
+      "startsOn": "Début",
+      "endsOn": "Fin",
+      "endsBeforeStart": "La fin ne peut pas précéder le début",
+      "price": "Prix",
+      "currency": "Devise",
+      "note": "Note",
+      "amount": "Montant",
+      "paidOn": "Date du paiement",
+      "method": "Moyen",
+      "methods": {
+        "transfer": "Virement",
+        "card": "Carte",
+        "cash": "Espèces",
+        "other": "Autre"
+      },
+      "forPackage": "Forfait",
+      "noPackage": "Sans forfait",
+      "used": "{used}/{total} séances",
+      "usedOpen": "{used} séances faites",
+      "sessionsLeft": "{n, plural, =0 {Plus de séance} one {# séance restante} other {# séances restantes}}",
+      "paid": "Payé",
+      "due": "Reste",
+      "noPrice": "Prix non renseigné",
+      "state": {
+        "active": "Actif",
+        "ending": "Se termine",
+        "done": "Terminé",
+        "upcoming": "Pas commencé"
+      },
+      "closed": "Clôturé",
+      "close": "Clôturer",
+      "reopen": "Rouvrir",
+      "deleteConfirm": "Supprimer ce forfait ? Ses paiements restent, sans forfait.",
+      "deletePaymentConfirm": "Supprimer ce paiement ?",
+      "client": "Client",
+      "chooseClient": "Choisir un client",
+      "noPaymentsRange": "Aucun paiement sur cette période."
+    },
+    "labs": {
+      "title": "Analyses",
+      "migration": "Les analyses nécessitent une mise à jour de la base : exécutez supabase/migrations/20261002000006_practice.sql dans le SQL Editor de Supabase.",
+      "add": "Ajouter des résultats",
+      "addHint": "Saisissez les valeurs et l’intervalle de référence du laboratoire figurant sur le compte rendu. Seules les lignes remplies sont enregistrées.",
+      "empty": "Aucun résultat pour l’instant. Ajoutez les valeurs d’un bilan sanguin ; l’évolution et l’intervalle de référence de chaque test s’affichent ici.",
+      "emptyShort": "Aucune analyse.",
+      "outOfRange": "{n, plural, one {# valeur hors intervalle} other {# valeurs hors intervalle}}",
+      "allInRange": "Toutes les dernières valeurs sont dans l’intervalle de référence.",
+      "homa": "Glycémie à jeun × insuline / 405 · {date}",
+      "range": "Référence",
+      "history": "{n, plural, one {# résultat} other {# résultats}}",
+      "flag": {
+        "low": "Bas",
+        "high": "Élevé",
+        "ok": "Normal"
+      },
+      "deleteConfirm": "Supprimer ce résultat ?",
+      "takenOn": "Date du prélèvement",
+      "note": "Note",
+      "test": "Test",
+      "value": "Valeur",
+      "unit": "Unité",
+      "refLow": "Réf. min",
+      "refHigh": "Réf. max",
+      "customName": "Nom du test",
+      "addCustom": "Ajouter un autre test",
+      "filled": "{n, plural, =0 {Aucune valeur saisie} one {# valeur sera enregistrée} other {# valeurs seront enregistrées}}",
+      "latestReport": "Dernière analyse : {date}",
+      "tests": {
+        "glucose_fasting": "Glycémie à jeun",
+        "hba1c": "HbA1c",
+        "insulin_fasting": "Insuline à jeun",
+        "total_cholesterol": "Cholestérol total",
+        "ldl": "Cholestérol LDL",
+        "hdl": "Cholestérol HDL",
+        "triglycerides": "Triglycérides",
+        "tsh": "TSH",
+        "ft4": "T4 libre",
+        "vitamin_b12": "Vitamine B12",
+        "vitamin_d": "Vitamine D (25-OH)",
+        "ferritin": "Ferritine",
+        "iron": "Fer sérique",
+        "hemoglobin": "Hémoglobine",
+        "alt": "ALAT",
+        "ast": "ASAT",
+        "creatinine": "Créatinine",
+        "uric_acid": "Acide urique",
+        "crp": "CRP"
+      }
+    },
+    "report": {
+      "title": "Bilan de progression",
+      "prepared": "Établi le {date}",
+      "period": "{from} – {to}",
+      "start": "Départ",
+      "now": "Actuel",
+      "goal": "Objectif",
+      "change": "Évolution",
+      "progress": "Progression vers l’objectif",
+      "weightTitle": "Évolution du poids",
+      "measurements": "Mesures",
+      "date": "Date",
+      "weight": "Poids",
+      "bodyFat": "Masse grasse",
+      "muscle": "Muscle",
+      "waist": "Taille",
+      "hip": "Hanches",
+      "circumference": "Tours",
+      "labs": "Analyses",
+      "latest": "Dernier",
+      "previous": "Précédent",
+      "range": "Référence",
+      "noData": "Aucune mesure pour l’instant.",
+      "print": "Imprimer / PDF",
+      "close": "Fermer",
+      "footer": "Établi à partir des dossiers de votre diététicien ; ne remplace pas un diagnostic médical."
+    },
+    "dateRange": {
+      "label": "Période",
+      "all": "Depuis le début",
+      "1d": "Aujourd’hui",
+      "7d": "7 derniers jours",
+      "1m": "Dernier mois",
+      "3m": "3 derniers mois",
+      "1y": "Dernière année"
+    },
+    "payments": {
+      "title": "Paiements",
+      "count": "{count, plural, =0 {Aucun enregistrement} one {# paiement enregistré} other {# paiements enregistrés}}",
+      "received": "Encaissé",
+      "records": "Nombre de paiements",
+      "clientsPaid": "{count, plural, =0 {Aucun client} one {de # client} other {de # clients}}",
+      "owed": "Reste à encaisser",
+      "owedCount": "{count, plural, one {sur # forfait ouvert} other {sur # forfaits ouverts}}",
+      "owedTitle": "Soldes en attente",
+      "nothingOwed": "Rien n’est dû sur les forfaits ouverts.",
+      "list": "Paiements enregistrés",
+      "searchPlaceholder": "Chercher un client, un forfait ou une note",
+      "emptyRange": "Aucun paiement ne correspond à ces filtres. Essayez une période plus large.",
+      "cols": {
+        "date": "Date",
+        "client": "Client",
+        "package": "Forfait",
+        "method": "Moyen",
+        "amount": "Montant"
+      },
+      "file": "paiements"
+    },
+    "tabs": {
+      "label": "Onglets",
+      "new": "Nouvel onglet",
+      "quickOpen": "Ouverture rapide",
+      "close": "Fermer l’onglet",
+      "closeOthers": "Fermer les autres onglets",
+      "closeAfter": "Fermer les onglets suivants",
+      "closeBefore": "Fermer les onglets précédents",
+      "closeAll": "Fermer tous les autres onglets",
+      "more": "Options des onglets"
+    },
+    "help": {
+      "title": "Comment utiliser l’interface",
+      "lead": "Une image et des étapes pour chaque page. Toujours accessible depuis le menu et la palette de commandes.",
+      "eyebrow": "Guide d’utilisation",
+      "ui": {
+        "topics": "Sujets",
+        "open": "Ouvrir cette page",
+        "prev": "Précédent",
+        "next": "Suivant",
+        "step": "Étape {n}",
+        "figure": "Schéma",
+        "pageHelp": "Comment utiliser cette page ?"
+      },
+      "topics": {
+        "dashboard": {
+          "title": "Vue d’ensemble",
+          "lead": "Votre cabinet aujourd’hui sur un écran : ce qui attend, les chiffres et vos tâches.",
+          "steps": [
+            "Les icônes de la ligne d’accueil montrent ce qui vous attend aujourd’hui. Survolez-les pour voir de quoi il s’agit ; cliquez pour ouvrir la page.",
+            "Les encadrés donnent les chiffres de base : patients, rendez-vous, encaissements.",
+            "Changez la période avec le filtre en haut à droite de chaque graphique (dernier mois, 3 mois, tout).",
+            "Tâches : notez ce qu’il faut faire et donnez une date. Sur une tâche liée à un patient, cochez « Montrer au client » : il la coche dans son espace et la vôtre indique « Fait par le client »."
+          ]
+        },
+        "clients": {
+          "title": "Patients",
+          "lead": "La liste de tous vos patients. Cliquez sur l’un d’eux pour ouvrir sa fiche.",
+          "steps": [
+            "Recherche : saisissez un nom, un e-mail, un téléphone ou une étiquette ; la liste se réduit à mesure.",
+            "« Nouveau patient » ouvre le formulaire complet. « Ajout rapide » ne demande qu’un nom et un contact.",
+            "Cliquez sur une carte pour ouvrir la fiche. La carte montre la dernière mesure et l’état du consentement.",
+            "Passez des cartes au tableau. Les patients archivés restent sous « Archivés » et peuvent être rétablis."
+          ]
+        },
+        "profile": {
+          "title": "Fiche patient",
+          "lead": "Tout sur un patient, en onglets : mesures, notes, fichiers, programmes, paiements et ses propres relevés.",
+          "steps": [
+            "Passez d’un onglet à l’autre pour ouvrir chaque partie. Pour en garder une ouverte à part, utilisez la barre d’onglets du haut.",
+            "Mesures : saisissez poids et tours à chaque rendez-vous ; le graphique et la progression vers l’objectif se mettent à jour seuls.",
+            "Suivi et messages : le relevé quotidien du patient (eau, énergie, activité), son journal alimentaire, « Programme suivi (7 jours) » et les analyses envoyées.",
+            "Dans l’onglet paiements, définissez un forfait et enregistrez les encaissements. Le patient voit son forfait et ses paiements dans son espace ; jamais vos notes."
+          ]
+        },
+        "invite": {
+          "title": "Inviter un patient",
+          "lead": "Pour ouvrir son espace à un patient, vous lui remettez un lien d’invitation à usage unique.",
+          "steps": [
+            "Dans la fiche, appuyez sur « Créer un lien d’invitation ». Par sécurité le lien n’est affiché qu’à ce moment ; fermé sans copie, il faut en créer un autre.",
+            "« Envoyer par WhatsApp » ouvre le lien dans un message tout prêt.",
+            "Si le patient est avec vous, il peut scanner le code QR avec son téléphone.",
+            "Mot de passe oublié : donnez un « lien de réinitialisation ». « Fermer l’accès » supprime le compte de connexion ; ses relevés restent chez vous."
+          ]
+        },
+        "programs": {
+          "title": "Programmes",
+          "lead": "Construisez ici les programmes alimentaires, gardez-les en modèles et attribuez-les aux patients.",
+          "steps": [
+            "Jours : créez-en un avec « Ajouter un jour », dupliquez les jours semblables avec « Copier le jour ».",
+            "Objectifs quotidiens : saisissez énergie et macronutriments ; le total du jour s’affiche en regard.",
+            "Repas : cherchez un aliment ou une recette, glissez-le sur un repas ou cliquez ; réglez la quantité, ajoutez une note.",
+            "Un patient ne voit un programme que si deux conditions sont réunies : il lui est attribué et son statut est « Actif ». Les brouillons ne lui sont jamais montrés."
+          ]
+        },
+        "messages": {
+          "title": "Messages",
+          "lead": "Vos échanges avec tous les patients sur une page.",
+          "steps": [
+            "Choisissez un patient dans la liste de gauche ; l’échange s’ouvre à droite.",
+            "Écrivez votre réponse dans la zone du bas et envoyez-la.",
+            "Le trombone envoie un fichier. Les analyses et photos envoyées par un patient apparaissent dans l’échange et parmi les fichiers de sa fiche.",
+            "Les patients ayant des messages non lus sont signalés dans la liste ; le nombre dans le menu en donne le total."
+          ]
+        },
+        "appointments": {
+          "title": "Rendez-vous",
+          "lead": "Le calendrier où vous planifiez vos consultations.",
+          "steps": [
+            "« Ajouter un rendez-vous » : choisissez le patient, la date et l’heure, la durée et le type.",
+            "Passez de la liste au calendrier ; parcourez les semaines avec les flèches.",
+            "Cliquez sur un rendez-vous pour le modifier ou changer son statut. Ceux marqués comme faits comptent comme séances utilisées du forfait.",
+            "Un rendez-vous planifié s’affiche aussitôt dans l’espace du patient : « Prochain rendez-vous » sur Aujourd’hui et sur « Rendez-vous & paiements », avec « Ajouter au calendrier »."
+          ]
+        },
+        "payments": {
+          "title": "Paiements",
+          "lead": "Le résumé de vos encaissements et de ce qui reste dû.",
+          "steps": [
+            "Choisissez la période avec le filtre de dates ; tous les chiffres la suivent.",
+            "Les encadrés : montant encaissé, nombre de paiements et reste dû sur les forfaits ouverts.",
+            "La recherche retrouve un enregistrement par patient, forfait ou note.",
+            "Un nouveau paiement s’enregistre depuis l’onglet paiements de la fiche du patient, puis figure ici."
+          ]
+        },
+        "leads": {
+          "title": "Demandes",
+          "lead": "Les candidatures envoyées depuis le formulaire du site arrivent ici.",
+          "steps": [
+            "Les onglets du haut et le filtre de dates séparent les demandes nouvelles, recontactées et archivées.",
+            "« Convertir en patient » transforme une demande en fiche patient en une étape.",
+            "Cliquez sur une demande pour voir les réponses de la personne et le consentement donné.",
+            "Après l’appel, « Marquer comme recontacté » ; « Archiver » celles sans suite."
+          ]
+        },
+        "explorer": {
+          "title": "Explorateur",
+          "lead": "Pour passer en revue vos patients actifs, une carte à la fois.",
+          "steps": [
+            "Passez d’un patient à l’autre avec les flèches ou les touches ← →.",
+            "L’anneau montre à quelle distance le patient est de son objectif.",
+            "Dernières mesures, programme actif, prochain rendez-vous et note épinglée sont sur la même carte.",
+            "« Ouvrir la fiche » mène à la page complète du patient."
+          ]
+        },
+        "content": {
+          "title": "Recettes, guides, aliments",
+          "lead": "Le contenu publié sur votre site et la base d’aliments utilisée dans les programmes.",
+          "steps": [
+            "Filtrez la liste : tout, publié ou brouillon.",
+            "Commencez par « Nouvelle recette » ou « Nouveau guide ». Pour les aliments, saisissez les valeurs pour 100 g et les unités.",
+            "Cliquez sur une ligne pour ouvrir l’éditeur. Les onglets de langue contiennent un texte par langue.",
+            "« Publier » met le contenu en ligne, « Dépublier » le retire. Le contenu arabe et français n’est publié qu’après avoir été marqué « Relu » par un locuteur natif."
+          ]
+        },
+        "settings": {
+          "title": "Réglages",
+          "lead": "Votre profil, ce que le site dit de vous, et la sécurité.",
+          "steps": [
+            "Profil et contenu du site : nom, biographie, coordonnées et réseaux sociaux.",
+            "Choisissez ici la langue de l’interface et la langue du contenu.",
+            "Sécurité : changez votre mot de passe (10 caractères minimum).",
+            "Activez la vérification en deux étapes : scannez le code QR avec votre application d’authentification et saisissez le code. Recommandé, puisque vous détenez des données de patients."
+          ]
+        },
+        "shortcuts": {
+          "title": "Raccourcis et onglets",
+          "lead": "Pour aller vite dans l’interface.",
+          "steps": [
+            "Onglets : ouvrez-en un avec le + en haut et gardez plusieurs patients ou pages ouverts. Clic droit sur un onglet pour les options de fermeture.",
+            "Ctrl K (⌘ K sur Mac) ouvre la palette de commandes : tapez une page, un patient ou une commande.",
+            "Ctrl B réduit et élargit le menu ; la flèche du menu fait de même.",
+            "En bas du menu : thème jour / nuit, langue et « Installer comme application »."
+          ]
+        }
+      },
+      "tour": {
+        "title": "Première visite ?",
+        "text": "Un court guide montre comment utiliser chaque page, captures d’écran à l’appui, pas à pas. Vous le retrouvez à tout moment sous « Mode d’emploi » dans le menu.",
+        "start": "Ouvrir le guide",
+        "later": "Plus tard",
+        "zoom": "Agrandir l’image"
+      }
+    }
+  },
+  "portal": {
+    "brand": "Espace client",
+    "nav": {
+      "primary": "Menu de l'espace",
+      "today": "Aujourd'hui",
+      "program": "Programme",
+      "diary": "Journal",
+      "progress": "Progrès",
+      "messages": "Messages",
+      "account": "Mon compte",
+      "logout": "Se déconnecter",
+      "site": "Aller au site",
+      "collapse": "Réduire le menu",
+      "expand": "Déplier le menu",
+      "groups": {
+        "follow": "Suivi",
+        "contact": "Contact",
+        "tools": "Outils"
+      },
+      "care": "Rendez-vous & paiements",
+      "help": "Mode d’emploi",
+      "week": "Résumé de la semaine",
+      "files": "Mes fichiers",
+      "shopping": "Liste de courses",
+      "calc": "Calculateurs",
+      "recipes": "Recettes"
+    },
+    "greeting": {
+      "morning": "Bonjour, {name}.",
+      "day": "Bon après-midi, {name}.",
+      "evening": "Bonsoir, {name}."
+    },
+    "today": {
+      "streak": "{count, plural, one {# jour de suivi} other {# jours de suivi}}",
+      "checkin": "Le point du jour",
+      "checkinHint": "Quelques secondes suffisent. Ta diététicienne ou ton diététicien voit ces saisies.",
+      "water": "Eau",
+      "waterOf": "{value} / {goal} L",
+      "glassAdd": "Ajouter un verre",
+      "glassRemove": "Retirer un verre",
+      "glasses": "{count, plural, one {# verre} other {# verres}}",
+      "weight": "Poids",
+      "weightHint": "Une ou deux fois par semaine, le matin à jeun, c'est suffisant.",
+      "weightSave": "Enregistrer",
+      "weightSaved": "Poids enregistré",
+      "habits": "Habitudes",
+      "habitsEmpty": "Aucune habitude n'a encore été ajoutée.",
+      "energy": "Comment est ton énergie ?",
+      "energyLevels": ["Très basse", "Basse", "Moyenne", "Bonne", "Très bonne"],
+      "saved": "Enregistré",
+      "planTitle": "Ton programme aujourd'hui",
+      "planDay": "Jour {n}",
+      "planEmpty": "Ton programme apparaîtra ici dès qu'il sera prêt.",
+      "ateThis": "J'ai mangé",
+      "logged": "Dans le journal",
+      "ateToast": "{meal} ajouté au journal",
+      "totals": "Ce que tu as mangé aujourd'hui",
+      "openDiary": "Ouvrir le journal",
+      "openProgram": "Tout le programme",
+      "nextAppointment": "Prochain rendez-vous",
+      "noAppointment": "Aucun rendez-vous prévu.",
+      "latestMessage": "De ton suivi",
+      "noMessages": "Pas encore de messages.",
+      "unread": "{count, plural, one {# nouveau message} other {# nouveaux messages}}",
+      "openMessages": "Aller aux messages",
+      "saveFailed": "Impossible d'enregistrer, réessaie.",
+      "activity": "Activité",
+      "activityHint": "Combien avez-vous bougé aujourd’hui ? La marche compte.",
+      "activityMin": "{n} min",
+      "activityKind": "Quelle activité ?",
+      "activityKinds": [
+        "Marche",
+        "Course",
+        "Musculation",
+        "Vélo",
+        "Natation",
+        "Pilates / yoga",
+        "Autre"
+      ],
+      "energyShort": "Énergie",
+      "checkinMarks": "Ce que vous avez rempli aujourd’hui",
+      "markDone": "fait",
+      "markOpen": "vide",
+      "waterLeft": "Encore {value} L pour l’objectif",
+      "waterReached": "Objectif du jour atteint",
+      "glassShort": "Verre",
+      "bottleAdd": "Ajouter une bouteille d’un demi-litre",
+      "bottleShort": "Bouteille",
+      "weightLast": "Dernière saisie {value} kg · {date}",
+      "weightLess": "0,1 kg de moins",
+      "weightMore": "0,1 kg de plus",
+      "activityLess": "5 minutes de moins",
+      "activityMore": "5 minutes de plus",
+      "planCount": "{done}/{total} repas",
+      "planNext": "Prochain"
+    },
+    "appointmentKinds": {
+      "in_person": "En personne",
+      "online": "En ligne",
+      "phone": "Téléphone"
+    },
+    "diary": {
+      "title": "Journal alimentaire",
+      "lead": "Note ce que tu manges, repas par repas ; il sera comparé à ton programme. Pas besoin d'être parfait.",
+      "days": "Jours",
+      "prevWeek": "Semaine précédente",
+      "nextWeek": "Semaine suivante",
+      "today": "Aujourd'hui",
+      "add": "Ajouter",
+      "addTo": "Ajouter au {meal}",
+      "empty": "Rien pour l'instant.",
+      "planned": "Au programme",
+      "addPlanned": "Ajouter depuis le programme",
+      "remove": "Retirer",
+      "removeItem": "Retirer {name}",
+      "note": "Note",
+      "notePlaceholder": "Comment c'était ? Au restaurant ?",
+      "noteSave": "Enregistrer la note",
+      "time": "Heure",
+      "photo": "Photo",
+      "addPhoto": "Ajouter une photo",
+      "changePhoto": "Changer la photo",
+      "removePhoto": "Supprimer la photo",
+      "photoUploading": "Envoi…",
+      "photoError": "La photo n'a pas pu être envoyée. JPEG, PNG ou WebP, 4 Mo maximum.",
+      "photoAlt": "Photo : {meal}",
+      "unknownValues": "{count, plural, one {# aliment sans valeurs nutritionnelles} other {# aliments sans valeurs nutritionnelles}}",
+      "noValue": "sans valeurs",
+      "totalsTitle": "Total du jour",
+      "vsTarget": "objectif {value}",
+      "privacy": "Tes photos et notes ne sont visibles que par toi et ton suivi.",
+      "askAbout": "Poser une question sur ce repas"
+    },
+    "add": {
+      "title": "Ajouter un aliment",
+      "search": "Rechercher un aliment",
+      "searchPlaceholder": "ex. œuf, avoine, pomme",
+      "noResults": "Aucun résultat.",
+      "notListed": "Pas dans la liste ?",
+      "writeIt": "L'écrire",
+      "freePlaceholder": "ex. börek maison, 1 part",
+      "freeHint": "Aucune valeur nutritionnelle n'est calculée ; ce sera visible dans ton suivi.",
+      "amount": "Quantité",
+      "grams": "grammes",
+      "back": "Retour",
+      "addButton": "Ajouter",
+      "per100": "100 g : {kcal} kcal",
+      "categories": {
+        "grains": "Céréales",
+        "legumes": "Légumineuses",
+        "dairy_egg": "Laitages & œufs",
+        "meat_fish": "Viande & poisson",
+        "vegetables": "Légumes",
+        "fruits": "Fruits",
+        "nuts_seeds": "Fruits secs & graines",
+        "fats": "Matières grasses",
+        "other": "Autre"
+      },
+      "recent": "Utilisés récemment",
+      "decrease": "Diminuer",
+      "increase": "Augmenter"
+    },
+    "program": {
+      "title": "Mon programme",
+      "empty": "Ton programme apparaîtra ici dès qu'il sera préparé.",
+      "print": "Imprimer / PDF",
+      "updated": "Mis à jour le {date}"
+    },
+    "progress": {
+      "title": "Progrès",
+      "lead": "Les chiffres ne sont qu'une partie du chemin ; la régularité et ton ressenti comptent aussi.",
+      "weight": "Poids",
+      "current": "Dernière saisie",
+      "change": "Depuis le début",
+      "goal": "Objectif",
+      "selfReported": "Ta saisie",
+      "clinic": "Mesuré en consultation",
+      "noWeight": "Le graphique apparaîtra ici dès qu'il y aura des pesées.",
+      "chartTitle": "Poids, 90 derniers jours",
+      "showTable": "Afficher en tableau",
+      "showChart": "Afficher en graphique",
+      "habits": "Habitudes, 28 derniers jours",
+      "habitRate": "{value} %",
+      "habitsEmpty": "Les habitudes apparaîtront ici une fois ajoutées.",
+      "water": "Eau, 14 derniers jours",
+      "avgWater": "Moyenne {liters} L",
+      "noWater": "Aucune saisie d'eau.",
+      "measurements": "Mesures en consultation",
+      "noMeasurements": "Pas encore de mesures.",
+      "table": {
+        "date": "Date",
+        "weight": "Poids",
+        "waist": "Taille",
+        "hip": "Hanches",
+        "bodyFat": "Masse grasse %"
+      },
+      "streak": "Série de suivi",
+      "streakValue": "{count, plural, one {# jour} other {# jours}}",
+      "chartSummary": "{count, plural, one {# pesée} other {# pesées}} ; dernière {value} kg",
+      "goalLine": "Objectif {value}",
+      "habitDays": "{done}/{total} jours",
+      "habitsNote": "Seuls les jours avec un bilan comptent.",
+      "legendDone": "Fait",
+      "legendMissed": "Pas fait",
+      "legendNoEntry": "Pas de bilan",
+      "noGoal": "Non défini",
+      "first": "Première pesée {date}",
+      "days": "{count} derniers jours",
+      "rangeLabel": "Période"
+    },
+    "messages": {
+      "title": "Messages",
+      "lead": "Écris tes questions et tes notes. Ce n'est pas une messagerie instantanée ; la réponse arrive dès que possible.",
+      "emergency": "En cas d'urgence médicale, appelle le numéro d'urgence (112).",
+      "placeholder": "Écris ton message…",
+      "send": "Envoyer",
+      "empty": "Pas encore de messages. Tu peux écrire le premier.",
+      "you": "Toi",
+      "dietitian": "Ton suivi",
+      "aboutMeal": "{meal} · {date}",
+      "error": "Le message n'a pas pu être envoyé.",
+      "rateLimited": "Beaucoup de messages en peu de temps. Réessaie un peu plus tard.",
+      "tooLong": "2000 caractères maximum.",
+      "attached": "À propos de ce repas",
+      "detach": "Retirer le repas",
+      "sending": "Envoi…",
+      "sendHint": "Ctrl + Entrée pour envoyer",
+      "today": "Aujourd'hui",
+      "yesterday": "Hier",
+      "seen": "Lu",
+      "openMeal": "Ouvrir dans le journal",
+      "attachFile": "Joindre un fichier (PDF ou photo)",
+      "removeFile": "Retirer le fichier",
+      "openFile": "Ouvrir le fichier",
+      "fileTooLarge": "Le fichier ne peut pas dépasser 10 Mo.",
+      "fileType": "Seuls un PDF ou une photo (JPG, PNG, WebP) peuvent être envoyés.",
+      "quick": [
+        "J’ai une question :",
+        "Je n’ai pas pu suivre le programme aujourd’hui car",
+        "Que puis-je manger à la place de",
+        "Merci !"
+      ]
+    },
+    "account": {
+      "title": "Mon compte",
+      "profile": "Tes informations",
+      "name": "Nom complet",
+      "email": "E-mail",
+      "dietitian": "Ton suivi",
+      "profileHint": "Ces informations sont tenues à jour par ton suivi.",
+      "language": "Langue de l'espace",
+      "password": "Changer le mot de passe",
+      "newPassword": "Nouveau mot de passe",
+      "confirmPassword": "Nouveau mot de passe (confirmation)",
+      "passwordSaved": "Ton mot de passe a été changé",
+      "data": "Tes données",
+      "export": "Télécharger mes données",
+      "exportHint": "Tout ce que tu as saisi dans l'espace, dans un seul fichier (JSON).",
+      "withdraw": "Retirer mon consentement",
+      "withdrawBody": "Si tu retires ton consentement, l'espace se ferme et plus aucune saisie n'est possible. Tes saisies précédentes restent chez ton suivi ; tu peux en demander la suppression.",
+      "withdrawConfirm": "Oui, retirer",
+      "cancel": "Annuler",
+      "logout": "Se déconnecter"
+    },
+    "auth": {
+      "loginTitle": "Connexion client",
+      "loginLead": "Connecte-toi avec le compte créé grâce au lien reçu.",
+      "email": "E-mail",
+      "password": "Mot de passe",
+      "submit": "Se connecter",
+      "invalid": "E-mail ou mot de passe incorrect.",
+      "rateLimited": "Trop de tentatives. Réessaie dans quelques minutes.",
+      "closed": "Ton compte est actuellement fermé. Contacte ton suivi.",
+      "forgot": "Mot de passe oublié ?",
+      "forgotBody": "Demande un nouveau lien de connexion ; il te permettra de choisir un nouveau mot de passe.",
+      "whatsapp": "Écrire sur WhatsApp",
+      "backToSite": "Retour au site",
+      "inviteTitle": "Bonjour {name},",
+      "inviteLead": "Ton espace client est prêt. Choisis un mot de passe pour te connecter.",
+      "resetTitle": "Nouveau mot de passe",
+      "resetLead": "{name}, choisis ton nouveau mot de passe.",
+      "account": "Ton compte : {email}",
+      "newPassword": "Mot de passe",
+      "confirmPassword": "Mot de passe (confirmation)",
+      "passwordHint": "Au moins 10 caractères.",
+      "mismatch": "Les mots de passe ne correspondent pas.",
+      "tooShort": "Le mot de passe doit contenir au moins 10 caractères.",
+      "create": "Créer mon compte",
+      "resetSubmit": "Enregistrer mon mot de passe",
+      "invalidLink": "Ce lien n'est pas valide ou a expiré.",
+      "invalidLinkBody": "Les liens sont à usage unique et expirent après quelques jours. Demande un nouveau lien.",
+      "exists": "Un compte existe déjà avec cet e-mail. Essaie de te connecter.",
+      "failed": "Un problème est survenu, réessaie.",
+      "consentTitle": "Consentement explicite pour tes données de santé",
+      "consentBody": "Lorsque tu utilises l'espace, des données de santé comme ton poids, ta consommation d'eau, tes habitudes, ce que tu manges, les photos de tes repas et tes messages sont traitées par ton suivi pour assurer l'accompagnement nutritionnel. Seuls toi et ton suivi pouvez voir ces saisies. Tu peux retirer ton consentement à tout moment depuis Mon compte.",
+      "consentCheck": "Je donne mon consentement explicite au traitement de mes données de santé dans ce but.",
+      "consentRequired": "Le consentement explicite est nécessaire pour utiliser l'espace.",
+      "consentLegal": "Texte provisoire — relecture juridique requise.",
+      "kvkkLink": "Avis KVKK",
+      "continue": "Continuer",
+      "consentLead": "Merci de lire le texte ci-dessous avant de continuer.",
+      "asDietitian": "Un diététicien est connecté sur ce navigateur. Ceci est la page de connexion des clients ; se connecter comme client ferme la session du diététicien.",
+      "toAdmin": "Retour à l’espace diététicien",
+      "loginHeadline": "Un pas de plus vers votre objectif."
+    },
+    "inviteText": {
+      "invite": "Bonjour {name}, ton espace client est prêt. Ce lien te permet de choisir ton mot de passe et de te connecter (valable 7 jours, usage unique) : {url}",
+      "reset": "Bonjour {name}, utilise ce lien pour choisir un nouveau mot de passe (valable 2 jours, usage unique) : {url}"
+    },
+    "reminderText": {
+      "appointment": "Bonjour {name}, petit rappel de ton rendez-vous le {day} à {time} ({kind}). À bientôt ! — {signature}"
+    },
+    "birthdayText": "Joyeux anniversaire, {name} ! Je te souhaite une année en bonne santé, joyeuse et qui te fait du bien. — {signature}",
+    "hub": {
+      "streak": "{count} jours d’affilée",
+      "ring": "la journée",
+      "ringParts": "Ce qui compose la journée",
+      "done": "fait",
+      "parts": {
+        "water": "Eau",
+        "habits": "Habitudes",
+        "energy": "Énergie",
+        "activity": "Activité",
+        "meals": "Repas"
+      },
+      "doorsLabel": "Raccourcis",
+      "doors": {
+        "diary": "Ajouter un repas",
+        "diaryHint": "Notez ce que vous mangez, ajoutez une photo",
+        "ask": "Poser une question",
+        "askHint": "Écrivez à votre diététicien",
+        "program": "Mon programme",
+        "programHint": "Aujourd’hui et la semaine",
+        "progress": "Ma progression",
+        "progressHint": "Poids, eau, habitudes"
+      },
+      "yourDietitian": "Votre diététicien",
+      "dietitian": "Votre diététicien",
+      "unread": "{count} nouveau(x)",
+      "noMessages": "Pas encore de message. Vous pouvez écrire le premier.",
+      "replyPlaceholder": "Écrivez un mot…",
+      "send": "Envoyer",
+      "sent": "Votre message est envoyé",
+      "error": "Envoi impossible. Réessayez.",
+      "rateLimited": "Trop d’envois. Réessayez dans un instant.",
+      "sendFile": "Envoyer une analyse / un fichier",
+      "fileSent": "Votre fichier est envoyé",
+      "fileTooLarge": "Le fichier ne peut pas dépasser 10 Mo.",
+      "fileType": "Seuls un PDF ou une photo (JPG, PNG, WebP) peuvent être envoyés.",
+      "sendWeek": "Envoyer ma semaine",
+      "weekSent": "Votre résumé de la semaine est envoyé",
+      "weekEmpty": "Rien d’enregistré cette semaine.",
+      "week": {
+        "title": "Ma semaine ({from} – {to})",
+        "days": "Jours enregistrés : {count}/7",
+        "water": "Eau en moyenne : {litres} L",
+        "activity": "Activité : {min} min ({days} jours)",
+        "weight": "Poids : {from} → {to} kg",
+        "weightOne": "Poids : {kg} kg"
+      },
+      "nextAppointment": "Prochain rendez-vous",
+      "noAppointment": "Aucun rendez-vous prévu.",
+      "addToCalendar": "Ajouter au calendrier",
+      "icsTitle": "Rendez-vous diététique – {name}",
+      "weekTitle": "7 derniers jours",
+      "weekHint": "Suivi, eau et activité. Touchez un jour pour ouvrir son journal.",
+      "openProgress": "Ma progression",
+      "strip": {
+        "today": "Auj.",
+        "recorded": "enregistré",
+        "empty": "rien",
+        "water": "eau {litres} L",
+        "activity": "activité {min} min",
+        "min": "{min} min",
+        "legendWater": "Eau",
+        "legendDay": "Jour avec relevé",
+        "legendMove": "Activité"
+      },
+      "noteTitle": "Un mot de votre diététicien",
+      "rail": {
+        "today": "Aujourd’hui",
+        "streak": "{count, plural, =0 {Commencez aujourd’hui} one {1 jour} other {# jours d’affilée}}",
+        "next": "Rendez-vous"
+      },
+      "tasks": {
+        "title": "Vos tâches",
+        "hint": "Ce que votre diététicien a ajouté pour vous. Quand vous cochez, il le voit.",
+        "open": "{count} à faire",
+        "allDone": "Tout est fait",
+        "done": "Fait — votre diététicien le verra",
+        "error": "Enregistrement impossible. Réessayez.",
+        "due": "Pour le {date}",
+        "late": "En retard · {date}"
+      },
+      "welcome": {
+        "title": "Bienvenue, {name}",
+        "lead": "Voici l’espace entre vous et {dietitian} : ce que vous mangez, votre suivi du jour et vos questions. Seul votre diététicien voit ce que vous écrivez.",
+        "leadPlain": "Voici l’espace entre vous et votre diététicien : ce que vous mangez, votre suivi du jour et vos questions. Seul votre diététicien voit ce que vous écrivez.",
+        "close": "Compris",
+        "steps": {
+          "record": "Remplissez la journée",
+          "recordText": "Eau, énergie, activité : quelques secondes.",
+          "plan": "Voyez votre programme",
+          "planText": "Les repas du jour et la semaine.",
+          "write": "Écrivez à votre diététicien",
+          "writeText": "Posez une question, envoyez une analyse."
+        },
+        "guide": "Ouvrir le guide"
+      },
+      "tools": {
+        "title": "Outils",
+        "calc": "Calculateurs",
+        "calcText": "IMC, énergie quotidienne, eau",
+        "recipes": "Recettes",
+        "recipesText": "Avec valeurs nutritionnelles",
+        "shopping": "Liste de courses",
+        "shoppingText": "D’après votre programme",
+        "guides": "Guides",
+        "guidesText": "Lectures courtes et sourcées",
+        "week": "Résumé de la semaine",
+        "weekText": "Vos 7 derniers jours",
+        "files": "Mes fichiers",
+        "filesText": "Analyses et documents",
+        "care": "Rendez-vous & paiements",
+        "careText": "Consultations et forfait"
+      },
+      "care": {
+        "title": "Rendez-vous et paiements",
+        "text": "Vos rendez-vous, votre forfait et vos paiements.",
+        "open": "Ouvrir"
+      },
+      "openWeek": "Résumé de la semaine"
+    },
+    "care": {
+      "title": "Rendez-vous et paiements",
+      "lead": "Les rendez-vous prévus par votre diététicien et l’état de votre forfait.",
+      "dietitian": "Votre diététicien",
+      "upcoming": "Rendez-vous à venir",
+      "noUpcoming": "Aucun rendez-vous prévu. Dès que votre diététicien en fixe un, il apparaît ici et sur la page « Aujourd’hui ».",
+      "past": "Rendez-vous passés",
+      "minutes": "{n} min",
+      "addToCalendar": "Ajouter au calendrier",
+      "icsTitle": "Rendez-vous diététique – {name}",
+      "changeHint": "Pour changer l’heure ou annuler, écrivez à votre diététicien.",
+      "status": {
+        "scheduled": "Prévu",
+        "done": "Fait",
+        "cancelled": "Annulé",
+        "no_show": "Manqué"
+      },
+      "plan": "Votre forfait",
+      "noPlan": "Aucun forfait enregistré.",
+      "closed": "Clos",
+      "period": "{from} – {to}",
+      "since": "Depuis le {from}",
+      "sessions": "Séances",
+      "sessionsLabel": "{used} séances sur {total} effectuées",
+      "price": "Tarif",
+      "paid": "Payé",
+      "due": "Reste",
+      "settled": "Rien",
+      "payments": "Vos paiements",
+      "paymentsHint": "Si un enregistrement manque ou est erroné, écrivez à votre diététicien.",
+      "methods": {
+        "transfer": "Virement",
+        "card": "Carte",
+        "cash": "Espèces",
+        "other": "Autre"
+      }
+    },
+    "help": {
+      "title": "Comment utiliser votre espace",
+      "lead": "À quoi sert chaque page et comment l’utiliser, en images et pas à pas. Vous pouvez y revenir à tout moment depuis « Mode d’emploi » dans le menu.",
+      "eyebrow": "Guide d’utilisation",
+      "ui": {
+        "topics": "Sujets",
+        "open": "Ouvrir cette page",
+        "prev": "Précédent",
+        "next": "Suivant",
+        "step": "Étape {n}",
+        "figure": "Schéma",
+        "pageHelp": "Comment utiliser cette page ?"
+      },
+      "topics": {
+        "today": {
+          "title": "Aujourd’hui",
+          "lead": "La page que vous ouvrez en premier chaque jour. Vous y tenez le relevé du jour et vous y joignez votre diététicien. Les tâches qu’il vous confie s’y affichent aussi : touchez la coche quand c’est fait.",
+          "steps": [
+            "Le relevé du jour : touchez « Verre » ou « Bouteille » pour l’eau, cochez vos habitudes, choisissez votre énergie et votre activité, notez votre poids si vous vous êtes pesé. Chaque geste est enregistré tout seul.",
+            "L’anneau montre quelle part du relevé du jour est remplie. Les lignes à côté indiquent ce qui manque.",
+            "Dans votre programme aujourd’hui : le prochain repas est signalé. Touchez « J’ai mangé » et le repas s’ajoute à votre journal.",
+            "La carte du diététicien : lisez son dernier message, écrivez une courte note, envoyez une analyse ou un fichier, ou envoyez le résumé de votre semaine en un geste."
+          ]
+        },
+        "program": {
+          "title": "Programme",
+          "lead": "Le plan alimentaire préparé pour vous. Il apparaît ici une fois activé par votre diététicien.",
+          "steps": [
+            "Jours : touchez un jour en haut pour ouvrir son plan. Aujourd’hui est déjà sélectionné.",
+            "Objectifs quotidiens : énergie, protéines, glucides et lipides.",
+            "Repas : quoi manger à chaque repas, en quelle quantité, et la note de votre diététicien s’il y en a une.",
+            "« Imprimer / PDF » met le plan sur papier ou l’enregistre sur votre téléphone."
+          ]
+        },
+        "diary": {
+          "title": "Journal",
+          "lead": "L’endroit où vous notez ce que vous avez mangé, repas par repas. Inutile d’être parfait ; votre diététicien compare avec votre programme.",
+          "steps": [
+            "Choisissez un jour dans la bande du haut. Vous pouvez aussi compléter les jours passés.",
+            "« Ajouter » recherche aliments et recettes ; indiquez la quantité. Si vous avez mangé le repas prévu, « Ajouter depuis le programme » suffit.",
+            "Photo et note : ajoutez une photo au repas ou une courte note comme « mangé dehors ». Seuls vous et votre diététicien les voyez.",
+            "Total du jour : l’énergie et les nutriments de ce que vous avez mangé, à côté de votre objectif."
+          ]
+        },
+        "progress": {
+          "title": "Progrès",
+          "lead": "Vos relevés dans le temps. Les chiffres ne sont qu’une partie du chemin.",
+          "steps": [
+            "Les encadrés : votre dernier poids, l’évolution depuis le début et votre objectif.",
+            "Période : choisissez le nombre de jours affichés par le graphique.",
+            "Courbe de poids : vos saisies et les mesures prises en consultation, ensemble. « Afficher en tableau » si vous préférez.",
+            "Habitudes et eau : ce que vous avez fait chaque jour ces dernières semaines, case par case."
+          ]
+        },
+        "week": {
+          "title": "Résumé de la semaine",
+          "lead": "Vos sept derniers jours sur une page : jours relevés, eau, activité.",
+          "steps": [
+            "Les encadrés du haut donnent les totaux : jours relevés, eau moyenne, activité, évolution du poids et suivi du programme.",
+            "Par jour : l’eau, le relevé et l’activité de chaque jour. Touchez un jour pour ouvrir son journal.",
+            "Jour après jour : les mêmes informations ligne par ligne. Touchez le nom d’un jour pour ouvrir son journal.",
+            "« Écrire à votre diététicien » permet de laisser une note sur votre semaine."
+          ]
+        },
+        "messages": {
+          "title": "Messages",
+          "lead": "L’endroit où vous écrivez à votre diététicien. Ce n’est pas une messagerie instantanée ; il répond quand il est disponible. En cas d’urgence médicale, appelez les secours.",
+          "steps": [
+            "Écrivez votre message dans la zone du bas et envoyez-le.",
+            "Le trombone envoie une analyse ou une photo (PDF, JPEG, PNG, WebP ; 10 Mo maximum).",
+            "Amorces prêtes : quand la zone est vide, des boutons comme « J’ai une question : » commencent le message pour vous.",
+            "Les réponses de votre diététicien s’affichent à gauche ; une marque rouge dans le menu signale un nouveau message."
+          ]
+        },
+        "care": {
+          "title": "Rendez-vous et paiements",
+          "lead": "Les rendez-vous prévus pour vous et l’état de votre forfait. Cette page est uniquement informative.",
+          "steps": [
+            "Le prochain rendez-vous est en haut : date, heure, type et durée. Pour changer l’heure, écrivez à votre diététicien.",
+            "« Ajouter au calendrier » enregistre le rendez-vous dans le calendrier de votre téléphone ou de votre ordinateur.",
+            "Votre forfait : séances utilisées, prix, montant payé et restant.",
+            "Paiements : les paiements enregistrés par votre diététicien, avec dates et montants."
+          ]
+        },
+        "files": {
+          "title": "Mes fichiers",
+          "lead": "Tous les fichiers partagés avec votre diététicien en une liste, sans fouiller la conversation.",
+          "steps": [
+            "« Envoyer un fichier » mène aux Messages ; le trombone y ajoute une analyse ou une photo.",
+            "Envoyés par moi : vos analyses et photos, les plus récentes en premier.",
+            "De mon diététicien : les documents qu’il vous a envoyés.",
+            "Touchez un fichier pour l’ouvrir. Seuls vous et votre diététicien y avez accès."
+          ]
+        },
+        "shopping": {
+          "title": "Liste de courses",
+          "lead": "Une liste tirée des aliments de votre programme, à emporter en courses.",
+          "steps": [
+            "Jours : choisissez les jours à inclure. Pour quelques jours de courses, désactivez les autres.",
+            "Liste : chaque aliment une fois, avec sa quantité totale ou le nombre de fois où il figure au programme.",
+            "Touchez ce que vous avez acheté pour le cocher. Les coches restent sur cet appareil.",
+            "« Copier » reprend la liste pour vos notes ou un message ; « Imprimer » la met sur papier."
+          ]
+        },
+        "account": {
+          "title": "Mon compte",
+          "lead": "Vos informations, la langue, votre mot de passe et vos données.",
+          "steps": [
+            "Vos informations : nom et e-mail. Si une correction est nécessaire, votre diététicien la fait.",
+            "Langue : utilisez l’espace en turc, anglais, arabe ou français.",
+            "Changer le mot de passe : saisissez le nouveau mot de passe deux fois et enregistrez.",
+            "Vos données : téléchargez tous vos relevés en un fichier, ou retirez votre consentement."
+          ]
+        }
+      },
+      "tour": {
+        "title": "Première visite ?",
+        "text": "Un court guide montre comment utiliser chaque page, captures d’écran à l’appui, pas à pas. Vous le retrouvez à tout moment sous « Mode d’emploi » dans le menu.",
+        "start": "Ouvrir le guide",
+        "later": "Plus tard",
+        "zoom": "Agrandir l’image"
+      }
+    },
+    "week": {
+      "title": "Résumé de la semaine",
+      "eyebrow": "7 derniers jours",
+      "lead": "Le total de vos relevés de la semaine. Chaque chiffre vient de ce que vous avez saisi.",
+      "stats": {
+        "days": "Jours relevés",
+        "water": "Eau moyenne",
+        "activity": "Activité",
+        "weight": "Évolution du poids",
+        "plan": "Programme suivi",
+        "habits": "Habitudes"
+      },
+      "daysHint": "jours avec un relevé",
+      "waterHint": "les jours où l’eau est notée",
+      "activityHint": "{days, plural, =0 {aucune activité} one {sur # jour} other {sur # jours}}",
+      "weightHint": "dernière saisie {kg} kg",
+      "none": "aucune saisie",
+      "planHint": "{logged} repas sur {planned} dans le journal",
+      "noPlan": "pas de programme actif",
+      "habitsHint": "faites / prévues",
+      "minutes": "{n} min",
+      "strip": "Par jour",
+      "daily": "Jour après jour",
+      "tell": "Écrire à votre diététicien",
+      "cols": {
+        "day": "Jour",
+        "water": "Eau",
+        "energy": "Énergie",
+        "activity": "Activité",
+        "meals": "Repas notés"
+      }
+    },
+    "files": {
+      "title": "Mes fichiers",
+      "eyebrow": "Analyses et documents",
+      "lead": "Tous les fichiers partagés avec votre diététicien et ceux qu’il vous a envoyés, en une liste. Seuls vous et votre diététicien les voyez.",
+      "send": "Envoyer un fichier",
+      "groups": {
+        "mine": "Envoyés par moi",
+        "theirs": "De mon diététicien"
+      },
+      "empty": {
+        "mine": "Vous n’avez pas encore envoyé de fichier. Utilisez le trombone de la page Messages pour envoyer une analyse ou une photo.",
+        "theirs": "Votre diététicien n’a pas encore envoyé de fichier."
+      },
+      "open": "Ouvrir le fichier"
+    },
+    "shopping": {
+      "title": "Liste de courses",
+      "eyebrow": "D’après votre programme",
+      "lead": "Les aliments de votre programme en une liste. Choisissez les jours et cochez ce que vous avez acheté.",
+      "days": "Jours",
+      "list": "Liste",
+      "times": "{count} fois",
+      "copy": "Copier",
+      "copied": "Liste copiée",
+      "copyFailed": "Copie impossible",
+      "print": "Imprimer",
+      "clear": "Effacer les coches",
+      "note": "Les coches restent sur cet appareil. Les recettes figurent sur une ligne ; leurs ingrédients sont sur la page de la recette.",
+      "emptyDays": "Aucun aliment pour les jours choisis.",
+      "empty": "Dès que vous aurez un programme actif, votre liste de courses sera préparée ici."
+    },
+    "programToday": {
+      "next": "Prochain repas",
+      "allDone": "Aujourd’hui",
+      "allDoneText": "Tous les repas du jour sont notés.",
+      "anytime": "Dans la journée",
+      "now": "Maintenant",
+      "inMinutes": "dans {n} min",
+      "inHours": "dans {h} h {m} min",
+      "meals": "{done} repas notés sur {total}",
+      "log": "Cocher ce que j’ai mangé",
+      "shopping": "Liste de courses",
+      "energy": "Énergie",
+      "dayTitle": "Le plan du jour face à vos objectifs",
+      "weekTitle": "Les jours du programme",
+      "weekHint": "Chaque colonne est l’énergie prévue ce jour-là ; la plus foncée est aujourd’hui.",
+      "emptyTitle": "Votre programme est en préparation",
+      "emptySteps": [
+        "Votre diététicien prépare le programme après le rendez-vous.",
+        "Une fois activé, il s’affiche ici jour par jour.",
+        "En attendant, tenez votre journal et votre relevé du jour."
+      ],
+      "emptyDiary": "Ouvrir le journal",
+      "emptyAsk": "Écrire à votre diététicien"
+    },
+    "insights": {
+      "journeyTitle": "Votre chemin vers l’objectif",
+      "achievementsTitle": "Vos étapes",
+      "start": "Départ",
+      "now": "Maintenant",
+      "goal": "Objectif",
+      "left": "encore {kg} kg",
+      "reached": "Objectif atteint",
+      "pace": "Dernières semaines",
+      "perWeek": "/ semaine",
+      "eta": "À ce rythme : {date}",
+      "etaHint": "Une tendance tirée des six dernières semaines, pas une promesse.",
+      "badges": {
+        "earned": "obtenu",
+        "locked": "pas encore",
+        "first": {
+          "title": "Premier relevé",
+          "text": "Votre premier relevé du jour"
+        },
+        "streak7": {
+          "title": "7 jours de suite",
+          "text": "7 jours consécutifs"
+        },
+        "streak30": {
+          "title": "30 jours de suite",
+          "text": "30 jours consécutifs"
+        },
+        "water7": {
+          "title": "Objectif eau",
+          "text": "2 litres atteints 7 jours"
+        },
+        "move150": {
+          "title": "Semaine active",
+          "text": "150 minutes en une semaine"
+        },
+        "kilo1": {
+          "title": "Premier kilo",
+          "text": "1 kg vers l’objectif"
+        },
+        "half": {
+          "title": "Mi-chemin",
+          "text": "La moitié du chemin"
+        },
+        "goal": {
+          "title": "Objectif",
+          "text": "Atteindre le poids visé"
+        }
+      }
+    },
+    "carePrep": {
+      "countdown": "Temps restant avant le rendez-vous",
+      "days": "jours",
+      "hours": "heures",
+      "minutes": "minutes",
+      "title": "Se préparer",
+      "note": "Les coches restent sur cet appareil.",
+      "items": {
+        "weigh": "Pesez-vous le matin et enregistrez",
+        "diary": "Complétez le journal des trois derniers jours",
+        "questions": "Notez vos questions",
+        "labs": "Envoyez toute nouvelle analyse depuis Messages",
+        "device": "En ligne : vérifiez la connexion et la caméra"
+      }
+    },
+    "msgRail": {
+      "about": "Votre diététicien",
+      "reply": "Il répond quand il est disponible ; ce n’est pas une messagerie instantanée.",
+      "next": "Prochain rendez-vous",
+      "noNext": "Aucun rendez-vous prévu.",
+      "files": "Derniers fichiers",
+      "noFiles": "Aucun fichier.",
+      "allFiles": "Tous les fichiers",
+      "tips": "Que pouvez-vous écrire ?",
+      "tipList": [
+        "Une question sur un repas",
+        "Un conseil pour manger dehors",
+        "Votre résultat d’analyse",
+        "Un jour difficile à suivre"
+      ]
+    },
+    "theme": {
+      "title": "Thème",
+      "light": "Jour",
+      "dark": "Nuit"
+    }
+  },
+  "apply": {
+    "eyebrow": "Candidature",
+    "title": "Travaillons ensemble",
+    "lead": "Quatre courtes étapes : le programme, vous, vos antécédents de santé et vos coordonnées. Le diététicien étudie votre candidature et vous recontacte par le canal choisi.",
+    "stepsLabel": "Étapes de la candidature",
+    "steps": {
+      "programme": "Programme",
+      "about": "Vous",
+      "health": "Santé",
+      "contact": "Contact"
+    },
+    "rule": {
+      "eyebrow": "Condition",
+      "title": "Au moins 3 mois.",
+      "body": "Les habitudes alimentaires ne changent pas en quelques semaines : il n’y a donc pas de programme d’un mois. Les programmes durent 3, 6 ou 12 mois."
+    },
+    "how": {
+      "title": "Et ensuite ?",
+      "send": {
+        "title": "Envoyez votre candidature",
+        "body": "Vos réponses sont enregistrées dans un espace que seul le diététicien voit."
+      },
+      "review": {
+        "title": "Le diététicien l’étudie",
+        "body": "Votre objectif et vos antécédents sont examinés ensemble."
+      },
+      "meet": {
+        "title": "Planifiez le premier rendez-vous",
+        "body": "Vous êtes recontacté par le canal choisi pour fixer un premier échange."
+      }
+    },
+    "programme": {
+      "title": "Votre programme",
+      "lead": "Choisissez la durée, le format et quand vous souhaitez commencer.",
+      "duration": "Durée du programme",
+      "format": "Format",
+      "start": "Quand souhaitez-vous commencer ?"
+    },
+    "about": {
+      "title": "Faisons connaissance",
+      "lead": "Votre objectif et quelques repères. Les mesures sont facultatives.",
+      "goal": "Qu’est-ce qui vous amène ?",
+      "goalNote": "Voulez-vous en dire plus ? (facultatif)",
+      "sex": "Sexe",
+      "age": "Âge",
+      "height": "Taille",
+      "weight": "Poids",
+      "activity": "Vos journées sont-elles actives ?"
+    },
+    "health": {
+      "title": "Vos antécédents de santé",
+      "lead": "Important pour un plan sûr. Tout est facultatif.",
+      "conditions": "Une pathologie diagnostiquée ?",
+      "medications": "Médicaments ou compléments réguliers (facultatif)",
+      "allergies": "Allergies ou intolérances (facultatif)",
+      "prior": "Avez-vous déjà suivi un diététicien ?",
+      "privacy": "Les données de santé sont des données sensibles : elles ne sont utilisées qu’avec votre consentement explicite, pour étudier votre candidature, et seul le diététicien les voit."
+    },
+    "contact": {
+      "title": "Comment vous joindre ?",
+      "lead": "Indiquez au moins un téléphone ou un e-mail.",
+      "time": "Quand souhaitez-vous être appelé ?",
+      "message": "Quelque chose à ajouter ? (facultatif)",
+      "terms": "J’ai lu que les programmes durent au moins 3 mois et qu’aucune formule d’un mois n’existe, et je l’accepte.",
+      "consent": "Je consens explicitement au traitement des données personnelles et de santé de ma candidature pour l’étudier et me recontacter."
+    },
+    "optional": "facultatif",
+    "minimum": "Minimum",
+    "noMonth": "Pas de programme d’un mois — un vrai changement prend du temps.",
+    "durations": {
+      "m1": "1 mois",
+      "m3": "3 mois",
+      "m6": "6 mois",
+      "m12": "12 mois"
+    },
+    "durationHints": {
+      "m3": "Pour poser les habitudes de base.",
+      "m6": "Pour ancrer le changement et le garder.",
+      "m12": "Un suivi au long cours, saison après saison."
+    },
+    "formats": {
+      "online": "En ligne",
+      "in_person": "En cabinet",
+      "either": "Peu importe"
+    },
+    "starts": {
+      "asap": "Tout de suite",
+      "month": "Ce mois-ci",
+      "later": "Plus tard"
+    },
+    "goals": {
+      "energy": "Avoir plus d’énergie",
+      "weight_down": "Perdre du poids durablement",
+      "weight_up": "Prendre du poids ou du muscle",
+      "regular": "Manger régulièrement",
+      "sport": "Performance sportive",
+      "family": "Organiser la table familiale",
+      "health": "Adapter l’alimentation à une pathologie"
+    },
+    "sexes": {
+      "female": "Femme",
+      "male": "Homme",
+      "other": "Je préfère ne pas répondre"
+    },
+    "activities": {
+      "sedentary": "Surtout assis",
+      "light": "Peu actif",
+      "moderate": "Modéré",
+      "active": "Actif",
+      "very_active": "Très actif"
+    },
+    "conditions": {
+      "diabetes": "Diabète / insulinorésistance",
+      "thyroid": "Thyroïde",
+      "pcos": "SOPK",
+      "blood_pressure": "Hypertension",
+      "cholesterol": "Cholestérol / triglycérides",
+      "digestive": "Troubles digestifs",
+      "kidney": "Rein",
+      "pregnancy": "Grossesse / allaitement"
+    },
+    "yesNo": {
+      "yes": "Oui",
+      "no": "Non"
+    },
+    "times": {
+      "morning": "Matin",
+      "afternoon": "Après-midi",
+      "evening": "Soir",
+      "any": "Peu importe"
+    },
+    "back": "Retour",
+    "next": "Continuer",
+    "send": "Envoyer la candidature",
+    "sent": {
+      "title": "Merci {name}, votre candidature est envoyée.",
+      "body": "Le diététicien étudiera votre candidature pour le programme de {duration} et vous recontactera par le canal choisi.",
+      "whatsapp": "Écrire sur WhatsApp en attendant"
+    },
+    "summary": {
+      "title": "Ce qui sera envoyé",
+      "programme": "Programme",
+      "goal": "Objectif",
+      "health": "Santé",
+      "none": "Non renseigné",
+      "edit": "Modifier"
+    },
+    "faq": {
+      "title": "Avant de candidater",
+      "items": [
+        {
+          "q": "Pourquoi au moins 3 mois ?",
+          "a": "Les habitudes alimentaires ne changent pas en quelques semaines ; un plan a besoin de temps pour s’intégrer à votre vie et pour que le changement dure. C’est pourquoi les programmes durent 3, 6 ou 12 mois et qu’il n’y a pas de programme d’un mois."
+        },
+        {
+          "q": "Que se passe-t-il après ma candidature ?",
+          "a": "Le diététicien l’étudie et vous recontacte par le canal choisi (WhatsApp, téléphone ou e-mail) ; le premier rendez-vous est fixé ensemble."
+        },
+        {
+          "q": "Qui voit mes informations de santé ?",
+          "a": "Seulement le diététicien. Les questions de santé sont facultatives ; vos réponses sont utilisées avec votre consentement explicite pour étudier votre candidature, et conservées dans un espace que seul le diététicien voit."
+        },
+        {
+          "q": "En ligne ou en cabinet ?",
+          "a": "Les deux sont possibles. Choisissez dans le formulaire, ou répondez « Peu importe »."
+        },
+        {
+          "q": "Et si je m’arrête en chemin ?",
+          "a": "Vos réponses restent dans cet onglet, même si vous rechargez la page. Les réponses de santé ne sont pas conservées ainsi ; vous les choisissez à nouveau."
+        }
+      ]
+    }
+  },
+  "cookies": {
+    "title": "Vos préférences de cookies",
+    "body": "Ce site n’utilise que les cookies nécessaires à son fonctionnement (langue, connexion). Aucun cookie publicitaire ou de mesure d’audience. Si quelque chose de facultatif est ajouté, votre choix sera respecté ; vous pouvez le modifier à tout moment en bas du site.",
+    "accept": "Accepter",
+    "reject": "Refuser",
+    "policy": "Politique de cookies",
+    "settings": "Préférences de cookies"
+  },
+  "applyPrompt": {
+    "eyebrow": "Candidature au programme",
+    "title": "Prêt à travailler ensemble ?",
+    "lead": "À savoir avant de commencer :",
+    "points": {
+      "minimum": {
+        "title": "Au moins 3 mois.",
+        "body": "Pas de programme d’un mois ; les programmes durent 3, 6 ou 12 mois."
+      },
+      "format": {
+        "title": "En ligne ou en cabinet.",
+        "body": "Comme cela vous convient."
+      },
+      "plan": {
+        "title": "Un plan pour vous.",
+        "body": "Adapté à votre vie, vos horaires et votre table — pas une liste d’interdits."
+      },
+      "quick": {
+        "title": "Une candidature en 3 minutes.",
+        "body": "Vos réponses sont enregistrées dans un espace que seul le diététicien voit."
+      }
+    },
+    "cta": "Candidater",
+    "later": "Plus tard"
+  }
+}
