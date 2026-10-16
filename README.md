@@ -39,7 +39,7 @@ With no Supabase variables the app runs on a **local backend**: real Postgres 17
 WASM) running the same migrations and RLS policies as production, with demo data, persisted in
 `.demo-data/`. Admin login:
 
-- e-mail `muzahim@local.test`
+- e-mail `creasiv@local.test`
 - password `mutfak-demo-2026`
 
 (override with `LOCAL_ADMIN_EMAIL` / `LOCAL_ADMIN_PASSWORD`). A demo **client** account is linked
@@ -64,11 +64,11 @@ unless `ALLOW_LOCAL_BACKEND=1` (used only to run the e2e suite against `next sta
 | Command                                              | What it does                                                                                                                                                                                        |
 | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `pnpm dev` / `pnpm build` / `pnpm start`             | Next.js                                                                                                                                                                                             |
-| `pnpm dev:local`                                     | Dev server on the local demo backend even when `.env.local` holds Supabase credentials (used by the e2e suite)                                                                                      |
+| `pnpm dev:local`                                     | Dev server on the local demo backend even when `.env.local` holds Supabase credentials                                                                                                              |
 | `pnpm typecheck` · `pnpm lint` · `pnpm format`       | TypeScript strict · ESLint · Prettier                                                                                                                                                               |
 | `pnpm test`                                          | Vitest: nutrition math, program totals, slug/Turkish casing, seed integrity, **RLS proof**                                                                                                          |
 | `pnpm db:test`                                       | Only the database tests (RLS proof + the pgTAP file through a shim)                                                                                                                                 |
-| `pnpm test:e2e`                                      | Playwright tests (starts `pnpm dev:local` if nothing is running; refuses to run against a server on the real Supabase project)                                                                      |
+| `pnpm test:e2e`                                      | Playwright tests on their own server, `scripts/e2e-server.mjs` (:3100, local backend, `e2e/.sandbox` rebuilt from the seed every run) — `pnpm dev` keeps running; never the real Supabase project   |
 | `node scripts/gen-seed.ts`                           | Regenerates `supabase/seed.sql` + `supabase/local/demo.sql` from `lib/content/seed/*`                                                                                                               |
 | `node scripts/gen-og.mjs`                            | Renders `public/og/og-<locale>.png` from `/dev/og` (needs `pnpm dev`)                                                                                                                               |
 | `node scripts/screenshots.mjs`                       | Screenshots by path/locale/width (`--login` admin, `--portal` demo client, `--portalLocale=ar`); used for design review                                                                             |
@@ -83,7 +83,7 @@ In Git Bash on Windows, prefix scripts that take URL paths with `MSYS_NO_PATHCON
 
 The dev server compiles from the files on every start: Turbopack's on-disk dev cache is switched
 off (`experimental.turbopackFileSystemCacheForDev: false` in `next.config.ts`). `pnpm dev` and
-`pnpm dev:local` share one `.next/dev`, and a compilation restored from disk after a hard stop was
+`pnpm dev:local` share one `.next/dev` (the e2e server builds into `.next/e2e`), and a compilation restored from disk after a hard stop was
 served older on the server than in the browser — seen as "a tree hydrated but some attributes
 didn't match". If a page ever looks like an older version of itself, stop the server and delete
 `.next/dev`.

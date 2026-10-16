@@ -12,7 +12,7 @@ that contradicts it is a bug; changing it requires a written reason in the chang
 The site's story is _food → data → health_. Every page starts in the kitchen (warm paper, big
 serif, drawn ingredients), passes through the measurement bench (mono numerals, hairline rules,
 nutrition-label layouts) and ends somewhere human and calm (deep green, plain sentences, a way to
-talk to Muzahim).
+talk to the dietitian).
 
 One object carries the whole story: **the plate.** A plate is a circle; a circle is a chart. The
 hero plate is filled with drawn ingredients, follows the pointer like it is being slid across a

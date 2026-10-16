@@ -1,3 +1,4 @@
+import { goalJourney as sharedJourney } from '@/lib/admin/signals';
 import { addDays, WATER_GOAL_ML } from './logic';
 
 /*
@@ -20,51 +21,31 @@ export interface GoalJourney {
   eta: string | null;
 }
 
-const dayNumber = (iso: string) => Date.parse(`${iso}T12:00:00Z`) / 864e5;
-
-/** Least-squares slope of weight over time, in kg per week; null with fewer than 3 entries. */
-export function weeklyPace(points: WeightEntry[], today: string, windowDays = 42): number | null {
-  const from = addDays(today, -windowDays);
-  const xs = points.filter((p) => p.day >= from && p.day <= today);
-  if (xs.length < 3) return null;
-  const t0 = dayNumber(xs[0]!.day);
-  const n = xs.length;
-  const mx = xs.reduce((a, p) => a + (dayNumber(p.day) - t0), 0) / n;
-  const my = xs.reduce((a, p) => a + p.kg, 0) / n;
-  let num = 0;
-  let den = 0;
-  for (const p of xs) {
-    const dx = dayNumber(p.day) - t0 - mx;
-    num += dx * (p.kg - my);
-    den += dx * dx;
-  }
-  if (!den) return null;
-  return Math.round((num / den) * 7 * 100) / 100;
-}
-
 /**
  * From the first weight to the goal: how far along, the recent pace, and the day that pace
- * arrives — only when the weight is moving toward the goal and would get there within two years.
+ * arrives. The very same reading as the dietitian's panel (`goalJourney` in lib/admin/signals:
+ * one weight per day with the clinic scale first, the trend over the six weeks before the latest
+ * weigh-in, no date beyond two years or when the weight moves away) — so the client and the
+ * dietitian never see two different forecasts.
  */
 export function goalJourney(
-  points: WeightEntry[],
+  points: (WeightEntry & { source?: 'self' | 'clinic' })[],
   goal: number | null,
   today: string,
 ): GoalJourney | null {
-  if (goal == null || !points.length) return null;
-  const sorted = [...points].sort((a, b) => a.day.localeCompare(b.day));
-  const start = sorted[0]!.kg;
-  const now = sorted[sorted.length - 1]!.kg;
-  const span = start - goal;
-  const share = span === 0 ? 1 : Math.max(0, Math.min(1, (start - now) / span));
-  const pace = weeklyPace(sorted, today);
-  let eta: string | null = null;
-  const left = goal - now;
-  if (pace != null && Math.abs(pace) >= 0.05 && left !== 0 && Math.sign(pace) === Math.sign(left)) {
-    const days = Math.ceil((left / pace) * 7);
-    if (days > 0 && days <= 730) eta = addDays(today, days);
-  }
-  return { start, now, goal, share, pace, eta };
+  const j = sharedJourney(
+    points.map((p) => ({ day: p.day, kg: p.kg, source: p.source ?? 'self' })),
+    goal,
+  );
+  if (!j) return null;
+  return {
+    start: j.start.kg,
+    now: j.current.kg,
+    goal: j.goal,
+    share: j.progress,
+    pace: j.trend ? Math.round(j.trend.perWeek * 100) / 100 : null,
+    eta: j.etaDays != null ? addDays(today, j.etaDays) : null,
+  };
 }
 
 export interface BadgeState {

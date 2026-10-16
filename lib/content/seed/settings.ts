@@ -5,10 +5,12 @@
  */
 export const seedSettings = {
   contact: {
-    phoneE164: '+905370506733',
-    phoneDisplay: '0537 050 67 33',
-    whatsapp: '905370506733',
-    instagram: 'muzahim_k',
+    name: 'Creasiv',
+    phoneE164: '+905468666740',
+    phoneDisplay: '0546 866 67 40',
+    whatsapp: '905468666740',
+    instagram: 'creasivcom',
+    instagramVerified: true,
     email: null as string | null,
     address: null as string | null,
   },

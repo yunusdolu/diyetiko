@@ -283,7 +283,9 @@
     "formTitle": "Laisser un message",
     "successTitle": "Ton message est bien arrivé.",
     "successBody": "Merci, {name}. Tu recevras une réponse au plus vite par le canal choisi.",
-    "another": "Écrire un autre message"
+    "another": "Écrire un autre message",
+    "name": "Nom",
+    "verified": "Compte certifié"
   },
   "form": {
     "name": "Ton prénom et nom",
@@ -740,7 +742,6 @@
       "mfaCode": "Code",
       "mfaSubmit": "Vérifier",
       "mfaError": "Le code n'a pas pu être vérifié.",
-      "localHint": "Mode démo local : Supabase n'est pas configuré.",
       "surface": "Espace diététicien",
       "headline": "Clients et programmes à une seule table.",
       "backToSite": "Retour au site",
@@ -799,7 +800,6 @@
       "noResults": "Aucun résultat",
       "required": "Obligatoire",
       "optional": "Facultatif",
-      "localMode": "Mode démo local",
       "loading": "Chargement…",
       "errorTitle": "La page n’a pas pu se charger",
       "errorBody": "Le plus souvent, un problème de connexion passager (internet ou base de données). Réessayer suffit généralement.",
@@ -844,9 +844,12 @@
         "newLeads": "Nouvelles demandes",
         "checkins": "Suivis de l’espace (7 jours)",
         "vsLastWeek": "par rapport à la semaine dernière",
-        "vsLastMonth": "par rapport au mois dernier",
         "vsPrevious": "par rapport aux 7 jours précédents",
-        "same": "inchangé"
+        "same": "inchangé",
+        "joinedThisMonth": "arrivés ce mois-ci",
+        "noneJoined": "personne de nouveau ce mois-ci",
+        "arrivedThisWeek": "reçues cette semaine",
+        "noneArrived": "aucune nouvelle cette semaine"
       },
       "agenda": {
         "title": "Agenda",
@@ -1626,7 +1629,11 @@
       "passwordHint": "Au moins 10 caractères",
       "passwordMismatch": "Les mots de passe ne correspondent pas",
       "whatsappHint": "Chiffres uniquement, avec l’indicatif",
-      "notSaved": "Pas encore enregistré"
+      "notSaved": "Pas encore enregistré",
+      "contactName": "Nom du contact",
+      "contactNameHint": "Affiché au-dessus des coordonnées sur le site.",
+      "instagramVerified": "Compte Instagram certifié (badge bleu)",
+      "instagramVerifiedHint": "À activer seulement si le compte Instagram est réellement certifié ; le badge apparaît à côté du nom d’utilisateur."
     },
     "palette": {
       "placeholder": "Tape une commande ou cherche…",
@@ -2553,7 +2560,8 @@
         "scheduled": "Prévu",
         "done": "Fait",
         "cancelled": "Annulé",
-        "no_show": "Manqué"
+        "no_show": "Manqué",
+        "past": "Passé"
       },
       "plan": "Votre forfait",
       "noPlan": "Aucun forfait enregistré.",
@@ -2573,7 +2581,9 @@
         "card": "Carte",
         "cash": "Espèces",
         "other": "Autre"
-      }
+      },
+      "ended": "Terminé",
+      "noPayments": "Aucun paiement enregistré pour l’instant."
     },
     "help": {
       "title": "Comment utiliser votre espace",

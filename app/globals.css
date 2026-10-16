@@ -792,6 +792,7 @@ html[data-noloader] .ink-loader {
   --color-a-accent: var(--a-accent);
   --color-a-accent-text: var(--a-accent-text);
   --color-a-danger: var(--a-danger);
+  --color-a-danger-text: var(--a-danger-text);
   --color-a-ok: var(--a-ok);
   --color-a-chart: var(--a-chart);
   --color-a-warn: var(--a-warn);
@@ -806,6 +807,7 @@ html[data-noloader] .ink-loader {
   --a-accent: #0f1b17;
   --a-accent-text: #f3eee4;
   --a-danger: #b23114;
+  --a-danger-text: #ffffff;
   --a-ok: #24604c;
   /* chart series: validated (dataviz validator) — chroma + lightness band + 3:1 vs surface */
   --a-chart: #2e7d4f;
@@ -836,6 +838,8 @@ html[data-noloader] .ink-loader {
   --a-accent: #d8f24a;
   --a-accent-text: #0f1b17;
   --a-danger: #ff7a5c;
+  /* white on the night coral reads at 2.6:1; ink at 7:1 */
+  --a-danger-text: #0f1b17;
   --a-ok: #d8f24a;
   --a-chart: #7fa126;
   --a-glow: rgb(216 242 74 / 0.09);
@@ -1219,6 +1223,20 @@ html[data-vt-theme] *::after {
   color: var(--a-accent-text);
 }
 .admin-root[data-theme='dark'] [role='tablist'].bg-paper-2 button[role='tab'] > span.bg-ink {
+  background: var(--a-accent);
+}
+/* …and the underlined tabs (a client's sections): ink text and an ink underline vanish on night */
+.admin-root[data-theme='dark'] [role='tablist'].border-b {
+  border-color: var(--a-border);
+}
+.admin-root[data-theme='dark'] [role='tablist'].border-b button[role='tab'] {
+  color: var(--a-muted);
+}
+.admin-root[data-theme='dark'] [role='tablist'].border-b button[role='tab']:hover,
+.admin-root[data-theme='dark'] [role='tablist'].border-b button[role='tab'][aria-selected='true'] {
+  color: var(--a-text);
+}
+.admin-root[data-theme='dark'] [role='tablist'].border-b button[role='tab'] > span.bg-ink {
   background: var(--a-accent);
 }
 

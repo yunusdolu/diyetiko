@@ -1,4 +1,7 @@
 import { expect, test } from '@playwright/test';
+import { seedSettings } from '../../lib/content/seed/settings';
+
+const { contact } = seedSettings;
 
 const HOMES = [
   { path: '/', lang: 'tr', dir: 'ltr' },
@@ -18,8 +21,16 @@ for (const home of HOMES) {
     await expect(page.locator('h1').first()).toBeVisible();
     // hreflang alternates for all four locales + x-default
     await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(5);
-    // the floating WhatsApp button points at the real number
-    await expect(page.locator('a[href^="https://wa.me/905370506733"]').first()).toBeAttached();
+    // the floating WhatsApp button points at the practice's number (seed: the sandbox's data)
+    await expect(
+      page.locator(`a[href^="https://wa.me/${contact.whatsapp}"]`).first(),
+    ).toBeAttached();
+    // the footer names whom the details belong to, and the handle carries the verified tick
+    const footer = page.locator('footer');
+    await expect(footer.getByText(contact.name, { exact: true })).toBeVisible();
+    const ig = footer.locator(`a[href="https://instagram.com/${contact.instagram}"]`);
+    await expect(ig).toContainText(`@${contact.instagram}`);
+    await expect(ig.locator('svg[role="img"]')).toHaveCount(contact.instagramVerified ? 1 : 0);
     expect(errors).toEqual([]);
   });
 }

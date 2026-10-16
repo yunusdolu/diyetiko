@@ -345,7 +345,10 @@ export function Thread({
         </AnimatePresence>
         {/* one-tap openers: they fill the box, the client finishes the sentence */}
         {!body && !file && (
-          <div className="-mx-0.5 scrollbar-none flex gap-1.5 overflow-x-auto px-2 pt-1.5 pb-2">
+          <div
+            data-openers
+            className="-mx-0.5 scrollbar-none flex gap-1.5 overflow-x-auto px-2 pt-1.5 pb-2"
+          >
             {(t.raw('quick') as string[]).map((q) => (
               <button
                 key={q}

@@ -22,6 +22,8 @@ export interface OverviewTile {
   /** against the previous period of the same length; null when there is nothing to compare */
   delta: number | null;
   deltaLabel: string;
+  /** what a zero delta reads as (default: "no change") */
+  same?: string;
   /** oldest first; `at` is the period's first day (YYYY-MM-DD) */
   series: { at: string; count: number }[];
   unit: 'month' | 'week';
@@ -109,7 +111,7 @@ export function OverviewCard({ title, tiles }: { title: string; tiles: OverviewT
                     <AdminTicker value={x.value} />
                   </span>
                   <span className="pb-1 max-sm:mt-1.5 max-sm:block max-sm:pb-0">
-                    <Delta value={x.delta} same={t('kpi.same')} />
+                    <Delta value={x.delta} same={x.same ?? t('kpi.same')} />
                     <span className="mt-0.5 block text-[0.6875rem] text-a-muted sm:text-[0.75rem]">
                       {x.deltaLabel}
                     </span>

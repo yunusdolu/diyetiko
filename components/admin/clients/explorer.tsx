@@ -237,14 +237,18 @@ export function ClientExplorer({
               <Panel title={t('latest')}>
                 {c.latest ? (
                   <dl className="grid grid-cols-3 gap-3 text-center">
-                    {[
-                      [tm('weight'), c.latest.w],
-                      [tm('bodyFat'), c.latest.f],
-                      [tm('waist'), c.latest.waist],
-                    ].map(([k, v]) => (
-                      <div key={String(k)} className="rounded-[12px] bg-a-surface-2 px-2 py-3">
+                    {(
+                      [
+                        [tm('weight'), c.latest.w],
+                        [tm('bodyFat'), c.latest.f],
+                        [tm('waist'), c.latest.waist],
+                      ] as const
+                    ).map(([k, v]) => (
+                      <div key={k} className="rounded-[12px] bg-a-surface-2 px-2 py-3">
                         <dt className="text-[0.6875rem] text-a-muted">{k}</dt>
-                        <dd className="mt-1 num-wide text-[1.25rem]">{v ?? '—'}</dd>
+                        <dd className="mt-1 num-wide text-[1.25rem]">
+                          {v != null ? format.number(v, { maximumFractionDigits: 1 }) : '—'}
+                        </dd>
                       </div>
                     ))}
                   </dl>

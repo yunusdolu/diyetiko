@@ -283,7 +283,9 @@
     "formTitle": "Mesaj bırak",
     "successTitle": "Mesajın ulaştı.",
     "successBody": "Teşekkürler, {name}. En kısa sürede seçtiğin kanaldan dönüş yapılacak.",
-    "another": "Yeni mesaj yaz"
+    "another": "Yeni mesaj yaz",
+    "name": "Ad",
+    "verified": "Onaylı hesap"
   },
   "form": {
     "name": "Adın",
@@ -740,7 +742,6 @@
       "mfaCode": "Kod",
       "mfaSubmit": "Doğrula",
       "mfaError": "Kod doğrulanamadı.",
-      "localHint": "Yerel demo modu: Supabase yapılandırılmadı.",
       "surface": "Diyetisyen paneli",
       "headline": "Danışanların ve programların tek masada.",
       "backToSite": "Siteye dön",
@@ -799,7 +800,6 @@
       "noResults": "Sonuç yok",
       "required": "Gerekli",
       "optional": "İsteğe bağlı",
-      "localMode": "Yerel demo modu",
       "loading": "Yükleniyor…",
       "errorTitle": "Sayfa yüklenemedi",
       "errorBody": "Çoğu zaman geçici bir bağlantı sorunudur (internet ya da veritabanı). Bir kez daha denemek genellikle yeterli.",
@@ -844,9 +844,12 @@
         "newLeads": "Yeni talep",
         "checkins": "Panel kaydı (7 gün)",
         "vsLastWeek": "geçen haftaya göre",
-        "vsLastMonth": "geçen aya göre",
         "vsPrevious": "önceki 7 güne göre",
-        "same": "değişmedi"
+        "same": "değişmedi",
+        "joinedThisMonth": "bu ay katılan",
+        "noneJoined": "bu ay yeni katılan yok",
+        "arrivedThisWeek": "bu hafta gelen",
+        "noneArrived": "bu hafta yeni talep yok"
       },
       "agenda": {
         "title": "Randevu akışı",
@@ -1626,7 +1629,11 @@
       "passwordHint": "En az 10 karakter",
       "passwordMismatch": "Şifreler eşleşmiyor",
       "whatsappHint": "Ülke koduyla, yalnızca rakam",
-      "notSaved": "Henüz kaydedilmedi"
+      "notSaved": "Henüz kaydedilmedi",
+      "contactName": "İletişim adı",
+      "contactNameHint": "Sitedeki iletişim bilgilerinin üstünde görünür.",
+      "instagramVerified": "Instagram hesabı onaylı (mavi tik)",
+      "instagramVerifiedHint": "Yalnızca Instagram hesabın gerçekten onaylıysa aç; tik, kullanıcı adının yanında görünür."
     },
     "palette": {
       "placeholder": "Bir komut yaz ya da ara…",
@@ -2553,7 +2560,8 @@
         "scheduled": "Planlı",
         "done": "Yapıldı",
         "cancelled": "İptal",
-        "no_show": "Gelinmedi"
+        "no_show": "Gelinmedi",
+        "past": "Geçti"
       },
       "plan": "Paketin",
       "noPlan": "Kayıtlı bir paket yok.",
@@ -2573,7 +2581,9 @@
         "card": "Kart",
         "cash": "Nakit",
         "other": "Diğer"
-      }
+      },
+      "ended": "Süresi doldu",
+      "noPayments": "Henüz kayıtlı bir ödeme yok."
     },
     "help": {
       "title": "Panel nasıl kullanılır?",

@@ -316,8 +316,8 @@ export async function pulse(uid: string, today = todayISO()): Promise<Pulse> {
       tx.query<{ week: string; count: number }>(
         `select to_char(w, 'YYYY-MM-DD') as week,
                 (select count(*)::int from appointments a
-                  where a.starts_at >= w and a.starts_at < w + interval '7 days' and a.status in ('scheduled', 'done')) as count
-           from generate_series(date_trunc('week', now()) - interval '7 weeks', date_trunc('week', now()), interval '7 days') w
+                  where a.starts_at + interval '3 hours' >= w and a.starts_at + interval '3 hours' < w + interval '7 days' and a.status in ('scheduled', 'done')) as count
+           from generate_series(date_trunc('week', now() + interval '3 hours') - interval '7 weeks', date_trunc('week', now() + interval '3 hours'), interval '7 days') w
           order by w`,
       ),
     ]);

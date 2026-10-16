@@ -92,7 +92,7 @@ export default async function ProgressPage() {
   const measured = [...measurements].reverse();
   const ti = await getTranslations('portal.insights');
   const journey = goalJourney(
-    allPoints.map((p) => ({ day: p.day, kg: p.kg })),
+    allPoints.map((p) => ({ day: p.day, kg: p.kg, source: p.source })),
     goal,
     today,
   );

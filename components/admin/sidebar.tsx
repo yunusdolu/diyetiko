@@ -44,7 +44,6 @@ export interface SidebarProps {
   email: string;
   locale: Locale;
   theme: 'light' | 'dark';
-  localMode: boolean;
   onSearch: () => void;
   /** `from`: where the switch was pressed — the day/night change spreads out from there */
   onPreference: (kind: 'locale' | 'theme', value: string, from?: { x: number; y: number }) => void;
@@ -451,22 +450,6 @@ function UserFooter({ email }: { email: string }) {
   );
 }
 
-function LocalModeNote() {
-  const t = useTranslations('admin.common');
-  const { collapsed } = useSidebar();
-  return (
-    <p
-      aria-hidden={collapsed || undefined}
-      className={cn(
-        'rounded-md mx-[18px] overflow-hidden bg-[color-mix(in_srgb,var(--foreground)_6%,transparent)] px-2 text-[11px] leading-[23px] font-medium whitespace-nowrap text-[var(--muted-foreground)]',
-        collapsed ? cn('mb-0 h-0', SIDEBAR_FADE.hidden) : cn('mb-1 h-[23px]', SIDEBAR_FADE.shown),
-      )}
-    >
-      {t('localMode')}
-    </p>
-  );
-}
-
 // ---- desktop -----------------------------------------------------------------------------------
 
 export function DesktopSidebar({
@@ -499,7 +482,6 @@ export function DesktopSidebar({
         <SidebarHeader>
           <BrandRows />
         </SidebarHeader>
-        {props.localMode && <LocalModeNote />}
         <SidebarNav>
           <Navigation pathname={props.pathname} newLeads={props.newLeads} unread={props.unread} />
         </SidebarNav>
@@ -569,7 +551,6 @@ export function MobileDrawer({
                       <Glyph d="M6 6l12 12M18 6L6 18" />
                     </D.Close>
                   </SidebarHeader>
-                  {props.localMode && <LocalModeNote />}
                   <SidebarNav>
                     <Navigation
                       pathname={props.pathname}

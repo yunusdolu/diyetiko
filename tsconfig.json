@@ -16,15 +16,30 @@
     "jsx": "react-jsx",
     "incremental": true,
     "allowImportingTsExtensions": true,
-    "plugins": [{ "name": "next" }],
-    "paths": { "@/*": ["./*"] }
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts"
+    ".next/dev/types/**/*.ts",
+    ".next/e2e/types/**/*.ts",
+    ".next/e2e/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules", ".demo-data", "playwright-report", "test-results", "dashboard figma"]
+  "exclude": [
+    "node_modules",
+    ".demo-data",
+    "e2e/.sandbox",
+    "playwright-report",
+    "test-results",
+    "dashboard figma"
+  ]
 }

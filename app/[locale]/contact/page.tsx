@@ -8,6 +8,7 @@ import { ContactForm } from '@/components/site/contact-form';
 import { PageHeader } from '@/components/site/page-header';
 import { Placeholder } from '@/components/site/placeholder';
 import { ChatIcon } from '@/components/site/whatsapp-fab';
+import { InstagramHandle } from '@/components/site/instagram-handle';
 import { DrawUnderline, ExternalButton } from '@/components/ui/motion-link';
 
 export const revalidate = 3600;
@@ -57,6 +58,12 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             </ExternalButton>
           </div>
           <dl className="mt-8 grid grid-cols-[auto_1fr] items-center gap-x-6 gap-y-3 border-t-2 border-ink pt-5 text-ui">
+            {contact.name && (
+              <>
+                <dt className="font-semibold">{t('name')}</dt>
+                <dd className="font-semibold">{contact.name}</dd>
+              </>
+            )}
             <dt className="font-semibold">{t('phone')}</dt>
             <dd>
               <a href={`tel:${contact.phoneE164}`} className="group/draw tap-44 num" dir="ltr">
@@ -72,7 +79,11 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                 className="group/draw tap-44"
                 dir="ltr"
               >
-                <DrawUnderline>@{contact.instagram}</DrawUnderline>
+                <InstagramHandle
+                  handle={contact.instagram}
+                  verified={contact.instagramVerified}
+                  verifiedLabel={t('verified')}
+                />
               </a>
             </dd>
             {contact.email && (

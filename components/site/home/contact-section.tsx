@@ -5,6 +5,7 @@ import { SectionTag } from '@/components/site/section';
 import { ContactForm } from '@/components/site/contact-form';
 import { ChatIcon } from '@/components/site/whatsapp-fab';
 import { ExternalButton } from '@/components/ui/motion-link';
+import { InstagramHandle } from '@/components/site/instagram-handle';
 import { DrawUnderline } from '@/components/ui/motion-link';
 
 /** Closing section: channels on one side, the form on the other. Hides the floating button. */
@@ -46,6 +47,12 @@ export async function ContactSection({
               {tc('whatsapp')}
             </ExternalButton>
             <dl className="grid max-w-md grid-cols-[auto_1fr] items-center gap-x-6 gap-y-3 border-t-2 border-ink pt-5 text-ui">
+              {contact.name && (
+                <>
+                  <dt className="font-semibold">{tc('name')}</dt>
+                  <dd className="font-semibold">{contact.name}</dd>
+                </>
+              )}
               <dt className="font-semibold">{tc('phone')}</dt>
               <dd>
                 <a href={`tel:${contact.phoneE164}`} className="group/draw tap-44 num" dir="ltr">
@@ -61,7 +68,11 @@ export async function ContactSection({
                   className="group/draw tap-44"
                   dir="ltr"
                 >
-                  <DrawUnderline>@{contact.instagram}</DrawUnderline>
+                  <InstagramHandle
+                    handle={contact.instagram}
+                    verified={contact.instagramVerified}
+                    verifiedLabel={tc('verified')}
+                  />
                 </a>
               </dd>
               {contact.email && (

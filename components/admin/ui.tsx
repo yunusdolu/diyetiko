@@ -62,7 +62,7 @@ export const Button = forwardRef<
         variant === 'secondary' &&
           'border border-a-border bg-a-surface text-a-text hover:bg-a-surface-2',
         variant === 'ghost' && 'text-a-text hover:bg-a-surface-2',
-        variant === 'danger' && 'bg-a-danger text-white hover:opacity-90',
+        variant === 'danger' && 'bg-a-danger text-a-danger-text hover:opacity-90',
         shown === 'error' && 'animate-shake',
         // a result reads at full strength even if the form has just emptied (disabled)
         busy && 'disabled:opacity-100',

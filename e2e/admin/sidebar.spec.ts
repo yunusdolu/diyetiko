@@ -1,5 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
 import tr from '../../messages/tr.json' with { type: 'json' };
+import { BASE_URL } from '../base';
 
 /** Go to a panel page and wait until it answers clicks (React has hydrated it). */
 async function open(page: import('@playwright/test').Page, url: string) {
@@ -35,8 +36,8 @@ const hydrated = (page: Page) =>
 test.beforeEach(async ({ context }) => {
   // every test starts expanded and in day mode
   await context.addCookies([
-    { name: 'admin_sidebar', value: 'expanded', url: 'http://localhost:3000' },
-    { name: 'admin_theme', value: 'light', url: 'http://localhost:3000' },
+    { name: 'admin_sidebar', value: 'expanded', url: BASE_URL },
+    { name: 'admin_theme', value: 'light', url: BASE_URL },
   ]);
 });
 
@@ -197,9 +198,7 @@ test('collapsed: the logo stays a link home, the button under it expands', async
   page,
   context,
 }) => {
-  await context.addCookies([
-    { name: 'admin_sidebar', value: 'collapsed', url: 'http://localhost:3000' },
-  ]);
+  await context.addCookies([{ name: 'admin_sidebar', value: 'collapsed', url: BASE_URL }]);
   await open(page, '/admin/clients');
   await expect.poll(() => width(page)).toBe(60);
   await page.locator('[data-slot="sidebar-header"] a').click();

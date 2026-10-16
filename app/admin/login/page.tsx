@@ -35,10 +35,7 @@ export default async function LoginPage({
       className="bg-paper text-ink"
       data-backend={mode}
     >
-      <LoginForm
-        initialMfa={step === 'mfa'}
-        localHint={mode === 'local' ? t('login.localHint') : null}
-      />
+      <LoginForm initialMfa={step === 'mfa'} />
     </AuthFrame>
   );
 }

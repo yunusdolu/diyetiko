@@ -19,6 +19,8 @@ import { cn, whatsappHref } from '@/lib/utils';
 import { ArrowIcon } from '@/components/ui/motion-button';
 import { MotionLink } from '@/components/ui/motion-link';
 import { DrawUnderline } from '@/components/ui/motion-link';
+import { InstagramHandle } from '@/components/site/instagram-handle';
+import type { SiteSettings } from '@/types/content';
 import { Ingredient } from './ingredients';
 import { LangSwitcher } from './lang-switcher';
 import { headerNav, primaryNav } from './nav-data';
@@ -54,11 +56,7 @@ export function BrandMark({ className }: { className?: string }) {
   );
 }
 
-export function Header({
-  contact,
-}: {
-  contact: { whatsapp: string; phoneDisplay: string; phoneE164: string; instagram: string };
-}) {
+export function Header({ contact }: { contact: SiteSettings['contact'] }) {
   const t = useTranslations('nav');
   const tm = useTranslations('meta');
   const [hidden, setHidden] = useState(false);
@@ -223,7 +221,7 @@ function MenuSheet({
 }: {
   open: boolean;
   onOpenChange: (o: boolean) => void;
-  contact: { whatsapp: string; phoneDisplay: string; phoneE164: string; instagram: string };
+  contact: SiteSettings['contact'];
 }) {
   const t = useTranslations('nav');
   const tc = useTranslations('contact');
@@ -361,6 +359,7 @@ function MenuSheet({
                     >
                       <p className="label text-sage">{tf('reach')}</p>
                       <ul className="space-y-3 text-lead">
+                        {contact.name && <li className="font-semibold">{contact.name}</li>}
                         <li>
                           <a
                             className="group/draw"
@@ -384,7 +383,11 @@ function MenuSheet({
                             rel="noopener noreferrer"
                             dir="ltr"
                           >
-                            <DrawUnderline>@{contact.instagram}</DrawUnderline>
+                            <InstagramHandle
+                              handle={contact.instagram}
+                              verified={contact.instagramVerified}
+                              verifiedLabel={tc('verified')}
+                            />
                           </a>
                         </li>
                       </ul>

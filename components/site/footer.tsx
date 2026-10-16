@@ -4,6 +4,7 @@ import { Link } from '@/lib/i18n/navigation';
 import { whatsappHref } from '@/lib/utils';
 import type { SiteSettings } from '@/types/content';
 import { DrawUnderline } from '@/components/ui/motion-link';
+import { InstagramHandle } from '@/components/site/instagram-handle';
 import { primaryNav } from './nav-data';
 import { BackToTop } from './back-to-top';
 import { CookieSettingsLink } from './cookie-consent';
@@ -86,6 +87,7 @@ export async function Footer({ contact }: { contact: SiteSettings['contact'] }) 
           <div>
             <p className="label text-sage">{t('reach')}</p>
             <ul className="mt-5 grid gap-2.5 text-ui">
+              {contact.name && <li className="font-semibold">{contact.name}</li>}
               <li>
                 <a
                   className="group/draw tap-44"
@@ -109,7 +111,11 @@ export async function Footer({ contact }: { contact: SiteSettings['contact'] }) 
                   rel="noopener noreferrer"
                   dir="ltr"
                 >
-                  <DrawUnderline>@{contact.instagram}</DrawUnderline>
+                  <InstagramHandle
+                    handle={contact.instagram}
+                    verified={contact.instagramVerified}
+                    verifiedLabel={tc('verified')}
+                  />
                 </a>
               </li>
               {contact.email && (

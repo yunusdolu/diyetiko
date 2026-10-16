@@ -19,3 +19,6 @@ supabase/.branches
 dashboard figma
 # the voice-over for the promo video: a working file, not part of the site
 promp ses dosyası
+
+# e2e: the test server's own database, rebuilt on every run
+e2e/.sandbox

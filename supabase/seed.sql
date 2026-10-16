@@ -1111,7 +1111,7 @@ Si ta digestion est sensible, commence par de petites portions, augmente douceme
   on conflict (article_id, locale) do nothing;
 
   insert into public.site_settings (key, owner_id, is_public, data) values
-    ('contact', v_owner, true, '{"phoneE164":"+905370506733","phoneDisplay":"0537 050 67 33","whatsapp":"905370506733","instagram":"muzahim_k","email":null,"address":null}'::jsonb),
+    ('contact', v_owner, true, '{"name":"Creasiv","phoneE164":"+905468666740","phoneDisplay":"0546 866 67 40","whatsapp":"905468666740","instagram":"creasivcom","instagramVerified":true,"email":null,"address":null}'::jsonb),
     ('images', v_owner, true, '{"portrait":null,"logo":null,"og":null}'::jsonb),
     ('seo', v_owner, true, '{"twitter":null}'::jsonb),
     ('numbers', v_owner, true, '{"arabicDigits":"latn"}'::jsonb)

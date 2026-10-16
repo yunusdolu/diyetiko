@@ -78,10 +78,14 @@ export interface FridgeFood {
 
 export interface SiteSettings {
   contact: {
+    /** who the site's contact details belong to, shown above them */
+    name: string;
     phoneE164: string;
     phoneDisplay: string;
     whatsapp: string;
     instagram: string;
+    /** the blue tick beside the handle — only when the account really is verified */
+    instagramVerified: boolean;
     email: string | null;
     address: string | null;
   };

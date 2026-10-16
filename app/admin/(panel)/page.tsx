@@ -82,19 +82,19 @@ export default async function DashboardPage() {
   ).length;
   const weekNow = last(beat.appointmentsByWeek)?.count ?? 0;
   const weekPrev = last(beat.appointmentsByWeek, 2)?.count ?? 0;
-  const clientsNow = last(d.clientsByMonth)?.count ?? 0;
-  const clientsPrev = last(d.clientsByMonth, 2)?.count ?? 0;
-  const leadsNow = last(d.leadsByWeek)?.count ?? 0;
-  const leadsPrev = last(d.leadsByWeek, 2)?.count ?? 0;
+  // active clients who joined this month; requests that arrived this week
+  const joined = (last(d.activeByMonth)?.count ?? 0) - (last(d.activeByMonth, 2)?.count ?? 0);
+  const arrived = last(d.leadsByWeek)?.count ?? 0;
   const checkins7 = sum(beat.checkins.slice(7));
   const checkinsPrev7 = sum(beat.checkins.slice(0, 7));
   const kpis = [
     {
       label: t('dashboard.kpi.activeClients'),
       value: d.activeClients,
-      delta: clientsNow - clientsPrev,
-      deltaLabel: t('dashboard.kpi.vsLastMonth'),
-      series: d.clientsByMonth.slice(-6).map((m) => m.count),
+      delta: joined,
+      deltaLabel: t('dashboard.kpi.joinedThisMonth'),
+      sameLabel: t('dashboard.kpi.noneJoined'),
+      series: d.activeByMonth.slice(-6).map((m) => m.count),
       href: '/admin/clients',
       icon: 'clients' as const,
       viz: 'line' as const,
@@ -112,8 +112,9 @@ export default async function DashboardPage() {
     {
       label: t('dashboard.kpi.newLeads'),
       value: d.newLeads,
-      delta: leadsNow - leadsPrev,
-      deltaLabel: t('dashboard.kpi.vsLastWeek'),
+      delta: arrived,
+      deltaLabel: t('dashboard.kpi.arrivedThisWeek'),
+      sameLabel: t('dashboard.kpi.noneArrived'),
       series: d.leadsByWeek.slice(-8).map((w) => w.count),
       href: '/admin/leads',
       icon: 'leads' as const,
@@ -139,9 +140,10 @@ export default async function DashboardPage() {
       icon: 'clients',
       href: '/admin/clients',
       value: d.activeClients,
-      delta: clientsNow - clientsPrev,
-      deltaLabel: t('dashboard.kpi.vsLastMonth'),
-      series: d.clientsByMonth.map((m) => ({ at: `${m.month}-01`, count: m.count })),
+      delta: joined,
+      deltaLabel: t('dashboard.kpi.joinedThisMonth'),
+      same: t('dashboard.kpi.noneJoined'),
+      series: d.activeByMonth.map((m) => ({ at: `${m.month}-01`, count: m.count })),
       unit: 'month',
       ranges: [3, 6, 12],
       initial: 6,
@@ -219,7 +221,7 @@ export default async function DashboardPage() {
         <div className="grid grid-cols-2 gap-3 sm:gap-4 xl:col-span-5 2xl:col-span-4">
           {kpis.map((k, i) => (
             <Rise key={k.href} i={i + 2}>
-              <KpiCard {...k} sameLabel={t('dashboard.kpi.same')} />
+              <KpiCard sameLabel={t('dashboard.kpi.same')} {...k} />
             </Rise>
           ))}
         </div>

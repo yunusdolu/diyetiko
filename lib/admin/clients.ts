@@ -467,6 +467,8 @@ export interface DashboardData {
   checkinsDue: { id: string; full_name: string; last: string | null }[];
   /** the last 12 months, oldest first */
   clientsByMonth: { month: string; count: number }[];
+  /** today's active clients by the month they joined, as a running total (ends at activeClients) */
+  activeByMonth: { month: string; count: number }[];
   /** the last 12 weeks, oldest first */
   leadsByWeek: { week: string; count: number }[];
   latestLeads: Lead[];
@@ -509,6 +511,12 @@ function applicationFacts(p: Record<string, unknown>, goalLabel: (key: string) =
   };
 }
 
+/**
+ * Sessions run in UTC; days, weeks and months on the dashboard are the practice's, in Istanbul
+ * (UTC+3 all year) — otherwise a request at 01:00 on a Monday counts towards the week before.
+ */
+const TR = `interval '3 hours'`;
+
 export async function dashboard(uid: string): Promise<DashboardData> {
   return asUser(uid, async (tx) => {
     // independent queries started together: pipelined on the connection (one round trip)
@@ -518,6 +526,7 @@ export async function dashboard(uid: string): Promise<DashboardData> {
       upcoming,
       checkinsDue,
       clientsByMonth,
+      activeByMonth,
       leadsByWeek,
       latestLeads,
       clientMix,
@@ -537,19 +546,26 @@ export async function dashboard(uid: string): Promise<DashboardData> {
         `select c.id, c.full_name, (select max(m.measured_at)::text from measurements m where m.client_id = c.id) as last
          from clients c
         where c.deleted_at is null and c.status = 'active'
-          and coalesce((select max(m.measured_at) from measurements m where m.client_id = c.id), c.created_at::date) < current_date - 14
+          and coalesce((select max(m.measured_at) from measurements m where m.client_id = c.id), (c.created_at + ${TR})::date) < (now() + ${TR})::date - 14
         order by last nulls first limit 8`,
       ),
       tx.query<{ month: string; count: number }>(
         `select to_char(m, 'YYYY-MM') as month,
-              (select count(*)::int from clients c where c.deleted_at is null and c.created_at < m + interval '1 month') as count
-         from generate_series(date_trunc('month', now()) - interval '11 months', date_trunc('month', now()), interval '1 month') m
+              (select count(*)::int from clients c where c.deleted_at is null and c.created_at + ${TR} < m + interval '1 month') as count
+         from generate_series(date_trunc('month', now() + ${TR}) - interval '11 months', date_trunc('month', now() + ${TR}), interval '1 month') m
+        order by m`,
+      ),
+      // a client's status has no history, so this reads who is active now by when they joined
+      tx.query<{ month: string; count: number }>(
+        `select to_char(m, 'YYYY-MM') as month,
+              (select count(*)::int from clients c where c.deleted_at is null and c.status = 'active' and c.created_at + ${TR} < m + interval '1 month') as count
+         from generate_series(date_trunc('month', now() + ${TR}) - interval '11 months', date_trunc('month', now() + ${TR}), interval '1 month') m
         order by m`,
       ),
       tx.query<{ week: string; count: number }>(
         `select to_char(w, 'YYYY-MM-DD') as week,
-              (select count(*)::int from leads x where x.created_at >= w and x.created_at < w + interval '7 days') as count
-         from generate_series(date_trunc('week', now()) - interval '11 weeks', date_trunc('week', now()), interval '7 days') w
+              (select count(*)::int from leads x where x.created_at + ${TR} >= w and x.created_at + ${TR} < w + interval '7 days') as count
+         from generate_series(date_trunc('week', now() + ${TR}) - interval '11 weeks', date_trunc('week', now() + ${TR}), interval '7 days') w
         order by w`,
       ),
       tx.query<Lead>(
@@ -578,6 +594,7 @@ export async function dashboard(uid: string): Promise<DashboardData> {
       upcoming,
       checkinsDue,
       clientsByMonth,
+      activeByMonth,
       leadsByWeek,
       latestLeads,
       clientMix,

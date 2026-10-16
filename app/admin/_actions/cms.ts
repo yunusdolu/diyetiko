@@ -99,10 +99,15 @@ export async function deleteFoodAction(id: string): Promise<ActionResult> {
 }
 
 const contactSchema = z.object({
+  name: z
+    .string()
+    .max(80)
+    .transform((v) => v.trim()),
   phoneE164: z.string().regex(/^\+[0-9]{8,15}$/),
   phoneDisplay: z.string().max(40),
   whatsapp: z.string().regex(/^[0-9]{8,15}$/),
   instagram: z.string().regex(/^[A-Za-z0-9._]{1,30}$/),
+  instagramVerified: z.boolean(),
   email: z.union([z.literal(''), z.email()]).transform((v) => v || null),
   address: z
     .string()

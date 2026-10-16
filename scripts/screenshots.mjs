@@ -90,7 +90,7 @@ async function session(kind) {
     await page.goto(base + home + '/login', { waitUntil: 'networkidle' });
     const email =
       kind === 'admin'
-        ? (process.env.LOCAL_ADMIN_EMAIL ?? 'muzahim@local.test')
+        ? (process.env.LOCAL_ADMIN_EMAIL ?? 'creasiv@local.test')
         : (process.env.LOCAL_CLIENT_EMAIL ?? 'danisan@local.test');
     const password =
       kind === 'admin'

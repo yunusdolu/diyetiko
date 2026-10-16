@@ -1,5 +1,6 @@
 import { expect, test, type Locator, type Page } from '@playwright/test';
 import tr from '../../messages/tr.json' with { type: 'json' };
+import { BASE_URL } from '../base';
 
 /*
  * The portal's day / night switch (DESIGN.md v1.39): the new theme opens as a circle from the sun
@@ -186,7 +187,7 @@ test('no portal page logs an error, by day or by night', async ({ browser }) => 
       viewport: { width: 1440, height: 900 },
       timezoneId: 'Europe/Istanbul',
     });
-    await ctx.addCookies([{ name: 'portal_theme', value: theme, url: 'http://localhost:3000' }]);
+    await ctx.addCookies([{ name: 'portal_theme', value: theme, url: BASE_URL }]);
     const page = await ctx.newPage();
     const errors: string[] = [];
     page.on('pageerror', (e) => errors.push(`${page.url()} · ${e.message.slice(0, 160)}`));

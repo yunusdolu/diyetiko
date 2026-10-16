@@ -73,7 +73,7 @@ export function MediaUpload({
           <button
             type="button"
             onClick={() => onChange(null)}
-            className="absolute -end-2 -top-2 grid size-6 place-items-center rounded-pill bg-a-danger text-white"
+            className="absolute -end-2 -top-2 grid size-6 place-items-center rounded-pill bg-a-danger text-a-danger-text"
             aria-label={t('remove')}
           >
             <svg viewBox="0 0 24 24" width="10" height="10" aria-hidden>

@@ -348,9 +348,9 @@ test('birthdays: the coming week, with wishes in the client’s language', async
     has: page.getByRole('heading', { name: td.birthdays.title }),
   });
   await expect(card).toBeVisible();
-  // demo data: Emre's birthday is two days after the demo database was built
+  // seed: Emre's birthday is two days after the database was built (rebuilt on every run)
   const row = card.locator('li').filter({ hasText: 'Emre Yıldız (demo)' });
-  test.skip((await row.count()) === 0, 'demo database built more than a week ago');
+  await expect(row).toBeVisible();
   const wa = row.getByRole('link', { name: td.birthdays.congratulate });
   const href = (await wa.getAttribute('href'))!;
   expect(href).toMatch(/^https:\/\/wa\.me\/905550000002\?text=/);

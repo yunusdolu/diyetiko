@@ -66,8 +66,9 @@ test('a note typed on the Today page reaches the thread; the week goes as a summ
 
 test('the next meeting downloads as a calendar file', async ({ page }) => {
   await page.goto('/panel');
+  // seed: the demo client meets the dietitian tomorrow at 10:00 (rebuilt on every run)
   const add = page.getByRole('button', { name: hub.addToCalendar });
-  test.skip(!(await add.count()), 'the demo client has no meeting ahead right now');
+  await expect(add).toBeVisible();
   const [download] = await Promise.all([page.waitForEvent('download'), add.click()]);
   expect(download.suggestedFilename()).toBe('randevu.ics');
   const stream = await download.createReadStream();

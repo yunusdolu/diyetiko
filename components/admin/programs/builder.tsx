@@ -682,7 +682,10 @@ function Library({
         />
       )}
       <p className="mt-2 px-1 text-[0.6875rem] text-a-muted">{t('dragHint')}</p>
-      <ul className="mt-2 max-h-[40dvh] space-y-1 overflow-y-auto overscroll-contain xl:max-h-[calc(100dvh-230px)]">
+      <ul
+        data-food-palette
+        className="mt-2 max-h-[40dvh] space-y-1 overflow-y-auto overscroll-contain xl:max-h-[calc(100dvh-230px)]"
+      >
         {tab === 'foods' &&
           shownFoods.map((f) => (
             <LibraryRow

@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test';
 import tr from '../../messages/tr.json' with { type: 'json' };
+import { BASE_URL } from '../base';
 
 /*
  * The site's prompts (components/site/prompts.ts), from a clean browser: the cookie choice after
@@ -39,9 +40,7 @@ test('cookie choice: reject is as easy as accept, remembered, and can be reopene
 });
 
 test('the programme invitation: after reading, "later" snoozes it', async ({ page, context }) => {
-  await context.addCookies([
-    { name: 'dm_consent', value: 'rejected', url: 'http://localhost:3000' },
-  ]);
+  await context.addCookies([{ name: 'dm_consent', value: 'rejected', url: BASE_URL }]);
   await page.goto('/');
   await page.waitForTimeout(800);
   await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight * 0.7));
@@ -58,9 +57,7 @@ test('the programme invitation: after reading, "later" snoozes it', async ({ pag
 });
 
 test('no invitation on the application page itself', async ({ page, context }) => {
-  await context.addCookies([
-    { name: 'dm_consent', value: 'rejected', url: 'http://localhost:3000' },
-  ]);
+  await context.addCookies([{ name: 'dm_consent', value: 'rejected', url: BASE_URL }]);
   await page.goto('/basvuru');
   await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
   await page.waitForTimeout(1500);

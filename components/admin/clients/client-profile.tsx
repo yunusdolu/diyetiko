@@ -141,7 +141,7 @@ export function ClientProfile({
   portal: ClientPortalData;
 }) {
   const t = useTranslations('admin.clients');
-  const tc = useTranslations('admin.common');
+  const tp = useTranslations('admin.programs');
   const format = useFormatter();
   const now = useNow();
   const [tab, setTab] = useState<Tab>(
@@ -192,7 +192,7 @@ export function ClientProfile({
               href={`/admin/programs?new=1&client=${client.id}`}
               className="inline-flex h-10 items-center rounded-[10px] bg-a-accent px-4 text-[0.875rem] font-semibold text-a-accent-text hover:opacity-90"
             >
-              {tc('new')} · {t('tabs.programs')}
+              {tp('new')}
             </Link>
           </>
         }
@@ -201,9 +201,12 @@ export function ClientProfile({
         <p className="-mt-3 mb-5 text-[0.8125rem] text-a-muted">
           {t('lastMeasurement')}:{' '}
           <span className="num">
-            {format.dateTime(new Date(last.measured_at), { dateStyle: 'medium' })}
+            {format.dateTime(new Date(`${last.measured_at}T12:00:00Z`), { dateStyle: 'medium' })}
           </span>{' '}
-          · <span className="num">{last.weight_kg} kg</span>
+          ·{' '}
+          <span className="num">
+            {format.number(last.weight_kg!, { maximumFractionDigits: 1 })} kg
+          </span>
         </p>
       )}
 
@@ -374,7 +377,7 @@ function Measurements({
   const def = METRICS.find((m) => m[0] === metric)!;
   const available = METRICS.filter(([k]) => measurements.some((m) => m[k] != null));
   const series = measurements.map((m) => ({
-    x: format.dateTime(new Date(m.measured_at), { day: 'numeric', month: 'short' }),
+    x: format.dateTime(new Date(`${m.measured_at}T12:00:00Z`), { day: 'numeric', month: 'short' }),
     y: m[metric],
   }));
   const goal = client.goal_weight_kg;

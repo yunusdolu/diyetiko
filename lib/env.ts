@@ -27,7 +27,7 @@ export const env = {
   databaseUrl: read('DATABASE_URL'),
   siteUrl: read('NEXT_PUBLIC_SITE_URL') ?? 'http://localhost:3000',
   ipHashSalt: read('IP_HASH_SALT') ?? 'dev-only-salt',
-  localAdminEmail: read('LOCAL_ADMIN_EMAIL') ?? 'muzahim@local.test',
+  localAdminEmail: read('LOCAL_ADMIN_EMAIL') ?? 'creasiv@local.test',
   localAdminPassword: read('LOCAL_ADMIN_PASSWORD') ?? 'mutfak-demo-2026',
   localClientEmail: read('LOCAL_CLIENT_EMAIL') ?? 'danisan@local.test',
   localClientPassword: read('LOCAL_CLIENT_PASSWORD') ?? 'danisan-demo-2026',

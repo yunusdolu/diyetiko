@@ -29,7 +29,7 @@ gerçek Postgres) çalışır: aynı tablolar, aynı güvenlik kuralları, sahte
 | Nereye            | Adres                       | Giriş                                      |
 | ----------------- | --------------------------- | ------------------------------------------ |
 | Site              | http://localhost:3000       | —                                          |
-| Diyetisyen paneli | http://localhost:3000/admin | `muzahim@local.test` / `mutfak-demo-2026`  |
+| Diyetisyen paneli | http://localhost:3000/admin | `creasiv@local.test` / `mutfak-demo-2026`  |
 | Danışan paneli    | http://localhost:3000/panel | `danisan@local.test` / `danisan-demo-2026` |
 
 Demo verisini sıfırlamak için: sunucuyu durdur (Ctrl+C), `.demo-data/pg` klasörünü sil, tekrar

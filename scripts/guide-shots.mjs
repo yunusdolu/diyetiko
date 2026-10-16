@@ -10,8 +10,9 @@
  * message key, so the same control is found in every language, or a selector), and the pin is put
  * on that control. A control that is not on screen simply gets no pin; the run prints which.
  *
- * Usage (local demo server on :3000, after `pnpm test:e2e` has created e2e/.auth/*.json):
- *   pnpm dev:local
+ * Usage — the test server on :3100 (fresh seed data), signed in once, then the pictures:
+ *   node scripts/e2e-server.mjs
+ *   E2E_BASE_URL=http://localhost:3100 pnpm exec playwright test e2e/auth.setup.ts --no-deps
  *   node scripts/guide-shots.mjs            # everything
  *   node scripts/guide-shots.mjs portal tr  # one scope / one language
  */
@@ -22,10 +23,14 @@ import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 const sharp = createRequire(require.resolve('next/package.json'))('sharp');
 
-const BASE = process.env.GUIDE_BASE ?? 'http://localhost:3000';
+const BASE = process.env.GUIDE_BASE ?? 'http://localhost:3100';
 const W = 1280;
 const H = 900;
 const DENIZ = '8c333d28-8e6c-5635-946c-1e3d9066554c'; // the demo client who uses the portal
+const MERT = '6b2010b0-cd81-5359-9d4b-1e6ef7957fb4'; // a demo client without a portal account
+const SAMPLE_PDF = Buffer.from(
+  '%PDF-1.4\n1 0 obj\n<< /Type /Catalog >>\nendobj\ntrailer\n<< >>\n%%EOF\n',
+);
 const [onlyScope, onlyLocale] = process.argv.slice(2);
 
 /** per step: anchors tried in order — "text:<message key>", "leaf:<key name>", "aria:<key>", "css:<selector>" */
@@ -33,6 +38,8 @@ const TOPICS = {
   portal: {
     today: {
       url: '/panel',
+      // taller than the rest: the programme card (step 3) sits below the first screen
+      height: 1480,
       pins: [
         ['css:#checkin h2'],
         ['css:a[href="#checkin"]'],
@@ -60,6 +67,8 @@ const TOPICS = {
     },
     progress: {
       url: '/panel/progress',
+      // the habits (step 4) sit below the first screen; the guide pans down to them
+      height: 1480,
       pins: [
         ['text:portal.progress.current'],
         ['aria:portal.progress.rangeLabel', 'css:main [role="tablist"]'],
@@ -81,7 +90,7 @@ const TOPICS = {
       pins: [
         ['css:main textarea'],
         ['aria:portal.messages.attachFile', 'leaf:attachFile'],
-        ['css:main form ~ div button', 'css:main [data-openers] button'],
+        ['css:main [data-openers] button'],
         ['css:main ol > li'],
       ],
     },
@@ -152,21 +161,24 @@ const TOPICS = {
       ],
     },
     invite: {
-      url: `/admin/clients/${DENIZ}?tab=general`,
+      // a client without a panel account, with a link just made: the WhatsApp button and the QR
+      // code appear only then (the sandbox's own invite, never a real client)
+      url: `/admin/clients/${MERT}?tab=general`,
       scrollTo: 'text:admin.portal.title',
+      click: ['text:admin.portal.createInvite', 'text:admin.portal.newInvite'],
       pins: [
-        [
-          'text:admin.portal.newInvite',
-          'text:admin.portal.createInvite',
-          'text:admin.portal.title',
-        ],
-        [],
-        [],
+        ['text:admin.portal.newInvite', 'text:admin.portal.createInvite'],
+        ['text:admin.portal.whatsapp'],
+        ['text:admin.portal.qr'],
         ['text:admin.portal.createReset', 'text:admin.portal.revoke'],
       ],
     },
     programs: {
       url: '/admin/programs',
+      // the status field (step 4) sits in the side column below the first screen; the food list
+      // fills the window's height, so it keeps the height it has on a 900 px screen
+      height: 1420,
+      style: '[data-food-palette]{max-height:670px!important}',
       open: 'main a[href^="/admin/programs/"]',
       pins: [
         ['text:admin.programs.addDay'],
@@ -187,7 +199,7 @@ const TOPICS = {
         ['css:main a[href*="/admin/messages?"]', 'css:main ul li'],
         ['css:main textarea'],
         ['leaf:attachFile'],
-        ['aria:admin.messages.newThread', 'leaf:newThread'],
+        ['css:[data-slot="sidebar"] a[href="/admin/messages"]', 'css:a[href="/admin/messages"]'],
       ],
     },
     appointments: {
@@ -237,6 +249,8 @@ const TOPICS = {
     },
     settings: {
       url: '/admin/settings',
+      // security and two-step sign-in (steps 3–4) are near the end of a long page
+      height: 2460,
       pins: [
         ['text:admin.settings.profile'],
         ['text:admin.settings.adminLanguage'],
@@ -276,7 +290,7 @@ const leaves = (obj, name, out = []) => {
   return out;
 };
 
-async function locate(page, messages, scope, anchor) {
+async function locate(page, messages, scope, anchor, h = H) {
   const kind = anchor.slice(0, anchor.indexOf(':'));
   const value = anchor.slice(anchor.indexOf(':') + 1);
   let candidates = [];
@@ -309,21 +323,21 @@ async function locate(page, messages, scope, anchor) {
       const big = box.width > 320 || box.height > 110;
       const x = big ? box.x + 18 : box.x + Math.min(box.width / 2, 14);
       const y = big ? box.y + 18 : box.y + box.height / 2;
-      if (x < 12 || x > W - 12 || y < 12 || y > H - 12) continue;
-      return [Math.round((x / W) * 1000) / 1000, Math.round((y / H) * 1000) / 1000];
+      if (x < 12 || x > W - 12 || y < 12 || y > h - 12) continue;
+      return [Math.round((x / W) * 1000) / 1000, Math.round((y / h) * 1000) / 1000];
     }
   }
   return null;
 }
 
 /** keep pins from sitting on top of each other */
-function spread(pins) {
+function spread(pins, h = H) {
   const placed = [];
   return pins.map((p) => {
     if (!p) return p;
     let [x, y] = p;
     for (let guard = 0; guard < 6; guard++) {
-      if (!placed.some(([px, py]) => Math.abs(px - x) * W < 26 && Math.abs(py - y) * H < 26)) break;
+      if (!placed.some(([px, py]) => Math.abs(px - x) * W < 26 && Math.abs(py - y) * h < 26)) break;
       x = Math.min(0.985, x + 30 / W);
     }
     placed.push([x, y]);
@@ -331,7 +345,39 @@ function spread(pins) {
   });
 }
 
+// fictional seed data only, and preparing the pictures writes (a sample file, an invite link):
+// never anywhere but the local demo backend
+const login = await (await fetch(`${BASE}/admin/login`)).text();
+if (!login.includes('data-backend="local"')) {
+  console.error(`refused: ${BASE} is not running the local demo backend`);
+  process.exit(1);
+}
+
 const browser = await chromium.launch();
+
+/** a file in the client's list, for the Files page's "open a file" step — once per database */
+async function prepare() {
+  const tr = JSON.parse(readFileSync('messages/tr.json', 'utf8'));
+  const ctx = await browser.newContext({ storageState: 'e2e/.auth/client.json' });
+  const page = await ctx.newPage();
+  await page.goto(`${BASE}/panel/files`);
+  await page.waitForLoadState('networkidle').catch(() => {});
+  if (!(await page.locator('main ul li a').count())) {
+    await page.goto(`${BASE}/panel/messages`);
+    await page
+      .locator('input[type="file"]')
+      .setInputFiles({ name: 'kan-tahlili.pdf', mimeType: 'application/pdf', buffer: SAMPLE_PDF });
+    await page.getByLabel(tr.portal.messages.placeholder).fill('Son tahlil sonuçlarım ekte.');
+    await page.getByRole('button', { name: tr.portal.messages.send }).click();
+    await page
+      .getByRole('link', { name: /kan-tahlili\.pdf/ })
+      .first()
+      .waitFor();
+  }
+  await ctx.close();
+}
+await prepare();
+
 const missing = [];
 let shots = 0;
 for (const scope of ['portal', 'admin']) {
@@ -366,7 +412,9 @@ for (const scope of ['portal', 'admin']) {
       const dir = `public/guide/${scope}/${locale}${theme === 'dark' ? '-dark' : ''}`;
       mkdirSync(dir, { recursive: true });
       for (const [topic, spec] of Object.entries(TOPICS[scope])) {
+        const h = spec.height ?? H;
         try {
+          await page.setViewportSize({ width: W, height: h });
           await page.goto(BASE + spec.url, { waitUntil: 'domcontentloaded' });
           await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => {});
           if (spec.open) {
@@ -376,11 +424,24 @@ for (const scope of ['portal', 'admin']) {
               await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => {});
             }
           }
-          // development chrome and the demo-mode note are not part of the product
+          // development chrome is not part of the product
           await page.addStyleTag({
             content:
-              'nextjs-portal,[data-nextjs-toast],[data-first-run],[data-slot="sidebar"]>p{display:none!important}*{caret-color:transparent!important}',
+              'nextjs-portal,[data-nextjs-toast],[data-first-run],[data-slot="sidebar"]>p{display:none!important}*{caret-color:transparent!important}' +
+              (spec.style ?? ''),
           });
+          if (spec.click) {
+            for (const a of spec.click) {
+              const text = at(messages, a.slice(5));
+              const el =
+                typeof text === 'string' ? page.getByText(text, { exact: true }).first() : null;
+              if (el && (await el.count())) {
+                await el.click();
+                await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => {});
+                break;
+              }
+            }
+          }
           if (spec.scrollTo) {
             const key = spec.scrollTo.slice(5);
             const text = at(messages, key);
@@ -395,13 +456,13 @@ for (const scope of ['portal', 'admin']) {
                 (box === document.scrollingElement ? window : box).scrollBy(0, top - 220);
               });
           }
-          await page.mouse.move(W - 4, H - 4);
+          await page.mouse.move(W - 4, h - 4);
           await page.waitForTimeout(1500);
           const pins = [];
           for (const [i, anchors] of spec.pins.entries()) {
             let pin = null;
             for (const a of anchors) {
-              pin = await locate(page, messages, scope, a);
+              pin = await locate(page, messages, scope, a, h);
               if (pin) break;
             }
             if (!pin) missing.push(`${scope}/${locale}/${theme}/${topic} step ${i + 1}`);
@@ -409,7 +470,7 @@ for (const scope of ['portal', 'admin']) {
           }
           const png = await page.screenshot({ type: 'png' });
           await sharp(png).webp({ quality: 74, effort: 5 }).toFile(`${dir}/${topic}.webp`);
-          pinsOut[`${scope}/${locale}/${theme}/${topic}`] = spread(pins);
+          pinsOut[`${scope}/${locale}/${theme}/${topic}`] = spread(pins, h);
           shots++;
         } catch (e) {
           missing.push(`${scope}/${locale}/${theme}/${topic}: ${String(e).slice(0, 120)}`);
@@ -421,13 +482,14 @@ for (const scope of ['portal', 'admin']) {
   }
 }
 await browser.close();
+// laid out the way Prettier writes it (one pin per line), so a new run passes `pnpm format`
+const pinLine = (p) => `    ${p ? `[${p[0]}, ${p[1]}]` : 'null'}`;
+const entries = Object.entries(pinsOut).sort(([a], [b]) => a.localeCompare(b));
 writeFileSync(
   pinsFile,
-  JSON.stringify(
-    Object.fromEntries(Object.entries(pinsOut).sort(([a], [b]) => a.localeCompare(b))),
-    null,
-    1,
-  ) + '\n',
+  `{\n${entries
+    .map(([k, pins]) => `  ${JSON.stringify(k)}: [\n${pins.map(pinLine).join(',\n')}\n  ]`)
+    .join(',\n')}\n}\n`,
 );
 console.log(`${shots} pictures`);
 console.log(missing.length ? `no pin / failed:\n${missing.join('\n')}` : 'every step has a pin');

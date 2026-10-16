@@ -87,7 +87,7 @@ export async function createLocalDatabase(
     const password = opts.adminPassword ?? env.localAdminPassword;
     await db.query(
       `insert into auth.users (id, email, encrypted_password, raw_user_meta_data)
-       values ($1, $2, $3, '{"full_name":"Diyetiko"}')`,
+       values ($1, $2, $3, '{"full_name":"Creasiv"}')`,
       [LOCAL_ADMIN_ID, email, hashPassword(password)],
     );
     const seed = readOptional(path.join(root, 'supabase', 'seed.sql'));

@@ -35,7 +35,6 @@ export function AdminShell({
   clients,
   locale,
   theme,
-  localMode,
   sidebar = 'expanded',
 }: {
   children: ReactNode;
@@ -46,7 +45,6 @@ export function AdminShell({
   clients: { id: string; full_name: string }[];
   locale: Locale;
   theme: 'light' | 'dark';
-  localMode: boolean;
   /** desktop rail state, from the cookie (so the server renders the right width) */
   sidebar?: 'expanded' | 'collapsed';
 }) {
@@ -179,7 +177,6 @@ export function AdminShell({
     email,
     locale,
     theme: themeNow,
-    localMode,
     onSearch: () => {
       setMenuOpen(false);
       setPaletteOpen(true);

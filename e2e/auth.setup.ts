@@ -1,6 +1,6 @@
 import { expect, test as setup } from '@playwright/test';
 
-const email = process.env.E2E_ADMIN_EMAIL ?? process.env.LOCAL_ADMIN_EMAIL ?? 'muzahim@local.test';
+const email = process.env.E2E_ADMIN_EMAIL ?? process.env.LOCAL_ADMIN_EMAIL ?? 'creasiv@local.test';
 const password =
   process.env.E2E_ADMIN_PASSWORD ?? process.env.LOCAL_ADMIN_PASSWORD ?? 'mutfak-demo-2026';
 

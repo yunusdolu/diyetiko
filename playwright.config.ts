@@ -1,10 +1,9 @@
 import { defineConfig, devices } from '@playwright/test';
-
-const baseURL = process.env.E2E_BASE_URL ?? 'http://localhost:3000';
+import { BASE_URL as baseURL } from './e2e/base';
 
 /**
- * Smoke tests. Runs against `pnpm dev` (local PGlite backend) unless E2E_BASE_URL points
- * elsewhere. Admin specs reuse one login (see e2e/auth.setup.ts) because login is rate-limited.
+ * Smoke tests. Runs against its own server on :3100 (scripts/e2e-server.mjs: the local demo
+ * backend, a database rebuilt from the seed on every run), unless E2E_BASE_URL points elsewhere. Admin specs reuse one login (see e2e/auth.setup.ts) because login is rate-limited.
  */
 export default defineConfig({
   testDir: './e2e',
@@ -49,9 +48,10 @@ export default defineConfig({
   webServer: process.env.E2E_BASE_URL
     ? undefined
     : {
-        command: 'pnpm dev:local',
+        command: 'node scripts/e2e-server.mjs',
         url: `${baseURL}/admin/login`,
-        reuseExistingServer: true,
+        // a fresh database every run; the everyday `pnpm dev` on :3000 keeps running
+        reuseExistingServer: false,
         timeout: 120_000,
       },
 });

@@ -3,7 +3,7 @@ import { getFormatter, getLocale, getTranslations } from 'next-intl/server';
 import { requireClient } from '@/lib/auth';
 import { intlLocale, isLocale } from '@/lib/i18n/config';
 import * as portal from '@/lib/portal/data';
-import { PORTAL_TZ } from '@/lib/portal/logic';
+import { PORTAL_TZ, todayISO } from '@/lib/portal/logic';
 import { cn } from '@/lib/utils';
 import { PortalCard as Card } from '@/components/portal/card';
 import { PortalHeader, PortalPage } from '@/components/portal/shell';
@@ -42,6 +42,7 @@ export default async function CarePage() {
     .filter((a) => !(a.status === 'scheduled' && new Date(a.startsAt) > now))
     .sort((a, b) => b.startsAt.localeCompare(a.startsAt))
     .slice(0, 8);
+  const today = todayISO(now);
   const who = profile?.dietitianName ?? t('dietitian');
 
   const dayFmt = new Intl.DateTimeFormat(il, { day: 'numeric', timeZone: PORTAL_TZ });
@@ -164,14 +165,11 @@ export default async function CarePage() {
                       <span
                         className={cn(
                           'shrink-0 rounded-pill px-2.5 py-1 text-[0.75rem] font-semibold',
-                          a.status === 'done'
-                            ? 'bg-ink text-paper'
-                            : a.status === 'scheduled'
-                              ? 'bg-citrus text-ink'
-                              : 'bg-paper-3 text-ink-70',
+                          a.status === 'done' ? 'bg-ink text-paper' : 'bg-paper-3 text-ink-70',
                         )}
                       >
-                        {t(`status.${a.status}`)}
+                        {/* the time has passed and the dietitian has not recorded how it went */}
+                        {a.status === 'scheduled' ? t('status.past') : t(`status.${a.status}`)}
                       </span>
                     </li>
                   );
@@ -195,9 +193,9 @@ export default async function CarePage() {
                     <li key={p.id} className="p-well p-4">
                       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
                         <h3 className="text-[1.0625rem] leading-tight font-bold">{p.name}</h3>
-                        {p.closed && (
+                        {(p.closed || (p.endsOn != null && p.endsOn < today)) && (
                           <span className="rounded-pill bg-paper-3 px-2.5 py-0.5 text-[0.75rem] font-semibold text-ink-70">
-                            {t('closed')}
+                            {p.closed ? t('closed') : t('ended')}
                           </span>
                         )}
                       </div>
@@ -265,21 +263,26 @@ export default async function CarePage() {
             )}
           </Card>
 
-          {billing && billing.payments.length > 0 && (
+          {/* with a package, the payments card is always there: an empty one says so */}
+          {billing && (billing.packages.length > 0 || billing.payments.length > 0) && (
             <Card title={t('payments')}>
-              <ul className="divide-y divide-ink/10">
-                {billing.payments.map((p) => (
-                  <li key={p.id} className="flex items-center gap-3 py-2.5">
-                    <span className="min-w-0 flex-1 text-[0.9375rem]">
-                      <span className="num font-semibold">{iso(p.paidOn)}</span>
-                      <span className="text-ink-60"> · {t(`methods.${p.method}`)}</span>
-                    </span>
-                    <span className="shrink-0 num text-[0.9375rem] font-bold">
-                      {money(p.amount, p.currency)}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              {billing.payments.length === 0 ? (
+                <p className="text-[0.9375rem] text-ink-60">{t('noPayments')}</p>
+              ) : (
+                <ul className="divide-y divide-ink/10">
+                  {billing.payments.map((p) => (
+                    <li key={p.id} className="flex items-center gap-3 py-2.5">
+                      <span className="min-w-0 flex-1 text-[0.9375rem]">
+                        <span className="num font-semibold">{iso(p.paidOn)}</span>
+                        <span className="text-ink-60"> · {t(`methods.${p.method}`)}</span>
+                      </span>
+                      <span className="shrink-0 num text-[0.9375rem] font-bold">
+                        {money(p.amount, p.currency)}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
               <p className="mt-3 text-[0.8125rem] text-ink-60">{t('paymentsHint')}</p>
             </Card>
           )}

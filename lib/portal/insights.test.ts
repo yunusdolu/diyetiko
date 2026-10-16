@@ -1,20 +1,8 @@
 import { describe, expect, it } from 'vitest';
-import { goalJourney, longestStreak, milestones, weeklyPace } from './insights';
+import { goalJourney as clinicJourney } from '@/lib/admin/signals';
+import { goalJourney, longestStreak, milestones } from './insights';
 
 const today = '2026-10-06';
-
-describe('weeklyPace', () => {
-  it('reads a steady loss as kg per week', () => {
-    const points = [0, 7, 14, 21].map((d, i) => ({
-      day: new Date(Date.parse('2026-09-15T12:00:00Z') + d * 864e5).toISOString().slice(0, 10),
-      kg: 80 - i * 0.5,
-    }));
-    expect(weeklyPace(points, today)).toBe(-0.5);
-  });
-  it('needs three entries', () => {
-    expect(weeklyPace([{ day: '2026-10-01', kg: 80 }], today)).toBeNull();
-  });
-});
 
 describe('goalJourney', () => {
   const points = [
@@ -40,6 +28,24 @@ describe('goalJourney', () => {
   it('is null without a goal or entries', () => {
     expect(goalJourney(points, null, today)).toBeNull();
     expect(goalJourney([], 70, today)).toBeNull();
+  });
+  it('reads exactly what the dietitian sees: clinic scale first, trend before the last weigh-in', () => {
+    // a home weight and a clinic weight on the same day, and the last entry three weeks ago
+    const mixed = [
+      { day: '2026-07-20', kg: 82, source: 'self' as const },
+      { day: '2026-08-03', kg: 81.2, source: 'self' as const },
+      { day: '2026-08-10', kg: 81.6, source: 'self' as const },
+      { day: '2026-08-10', kg: 80.9, source: 'clinic' as const },
+      { day: '2026-08-24', kg: 80.1, source: 'clinic' as const },
+      { day: '2026-09-14', kg: 79.4, source: 'self' as const },
+    ];
+    const portal = goalJourney(mixed, 74, today)!;
+    const clinic = clinicJourney(mixed, 74)!;
+    expect(portal.now).toBe(clinic.current.kg);
+    expect(portal.share).toBe(clinic.progress);
+    expect(portal.pace).toBeCloseTo(clinic.trend!.perWeek, 2);
+    const eta = new Date(Date.parse(`${today}T12:00:00Z`) + clinic.etaDays! * 864e5);
+    expect(portal.eta).toBe(eta.toISOString().slice(0, 10));
   });
 });
 

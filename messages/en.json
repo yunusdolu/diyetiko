@@ -283,7 +283,9 @@
     "formTitle": "Leave a message",
     "successTitle": "Your message arrived.",
     "successBody": "Thank you, {name}. You'll hear back through the channel you chose as soon as possible.",
-    "another": "Write another message"
+    "another": "Write another message",
+    "name": "Name",
+    "verified": "Verified account"
   },
   "form": {
     "name": "Your name",
@@ -740,7 +742,6 @@
       "mfaCode": "Code",
       "mfaSubmit": "Verify",
       "mfaError": "The code could not be verified.",
-      "localHint": "Local demo mode: Supabase is not configured.",
       "surface": "Dietitian’s panel",
       "headline": "Clients and programmes at one table.",
       "backToSite": "Back to the site",
@@ -799,7 +800,6 @@
       "noResults": "No results",
       "required": "Required",
       "optional": "Optional",
-      "localMode": "Local demo mode",
       "loading": "Loading…",
       "errorTitle": "The page could not load",
       "errorBody": "Usually a passing connection problem (internet or database). Trying once more is often enough.",
@@ -844,9 +844,12 @@
         "newLeads": "New leads",
         "checkins": "Portal check-ins (7 days)",
         "vsLastWeek": "vs last week",
-        "vsLastMonth": "vs last month",
         "vsPrevious": "vs the 7 days before",
-        "same": "no change"
+        "same": "no change",
+        "joinedThisMonth": "joined this month",
+        "noneJoined": "no one new this month",
+        "arrivedThisWeek": "arrived this week",
+        "noneArrived": "none new this week"
       },
       "agenda": {
         "title": "Schedule",
@@ -1626,7 +1629,11 @@
       "passwordHint": "At least 10 characters",
       "passwordMismatch": "Passwords do not match",
       "whatsappHint": "Digits only, with country code",
-      "notSaved": "Not saved yet"
+      "notSaved": "Not saved yet",
+      "contactName": "Contact name",
+      "contactNameHint": "Shown above the contact details on the site.",
+      "instagramVerified": "Instagram account is verified (blue tick)",
+      "instagramVerifiedHint": "Turn on only if the Instagram account really is verified; the tick appears beside the handle."
     },
     "palette": {
       "placeholder": "Type a command or search…",
@@ -2553,7 +2560,8 @@
         "scheduled": "Planned",
         "done": "Done",
         "cancelled": "Cancelled",
-        "no_show": "Missed"
+        "no_show": "Missed",
+        "past": "Past"
       },
       "plan": "Your package",
       "noPlan": "No package on record.",
@@ -2573,7 +2581,9 @@
         "card": "Card",
         "cash": "Cash",
         "other": "Other"
-      }
+      },
+      "ended": "Ended",
+      "noPayments": "No payments recorded yet."
     },
     "help": {
       "title": "How to use the portal",

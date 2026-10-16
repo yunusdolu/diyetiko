@@ -39,6 +39,8 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  // the e2e server (scripts/e2e-server.mjs) builds into its own folder beside `pnpm dev`
+  distDir: process.env.NEXT_DIST_DIR || '.next',
   reactStrictMode: true,
   poweredByHeader: false,
   typedRoutes: false,

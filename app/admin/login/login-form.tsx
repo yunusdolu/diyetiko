@@ -15,13 +15,7 @@ import type { ActionState } from '@/components/ui/status-icon';
  * Sign-in, then (when the account has a second factor) the six-digit code. The password can be
  * shown, Caps Lock is pointed out, and the code accepts a paste of all six digits.
  */
-export function LoginForm({
-  initialMfa,
-  localHint,
-}: {
-  initialMfa: boolean;
-  localHint: string | null;
-}) {
+export function LoginForm({ initialMfa }: { initialMfa: boolean }) {
   const t = useTranslations('admin.login');
   const [state, action, pending] = useActionState<LoginState, FormData>(loginAction, undefined);
   const [mfaState, mfaAction, mfaPending] = useActionState<LoginState, FormData>(
@@ -123,11 +117,6 @@ export function LoginForm({
             <MotionButton type="submit" size="lg" state={btn} disabled={pending} className="w-full">
               {t('submit')}
             </MotionButton>
-            {localHint && (
-              <p className="rounded-[12px] bg-paper-2 px-4 py-2.5 text-[0.8125rem] text-ink-70">
-                {localHint}
-              </p>
-            )}
             <p className="border-t border-ink/15 pt-5 text-[0.875rem] text-ink-70">
               {t('clientQuestion')}{' '}
               <PlainLink

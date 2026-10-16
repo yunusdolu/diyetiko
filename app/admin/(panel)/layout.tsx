@@ -3,7 +3,6 @@ import { cookies } from 'next/headers';
 import { ViewTransition, type ReactNode } from 'react';
 import { requireUser } from '@/lib/auth';
 import { asUser } from '@/lib/db';
-import { backend } from '@/lib/env';
 import type { Locale } from '@/lib/i18n/config';
 import { AdminShell } from '@/components/admin/shell';
 import { ViewTransitionGuard } from '@/components/motion/view-transition-guard';
@@ -35,7 +34,6 @@ export default async function PanelLayout({ children }: { children: ReactNode })
       clients={clients}
       locale={locale}
       theme={theme}
-      localMode={backend() === 'local'}
       sidebar={sidebar}
     >
       <ViewTransitionGuard />

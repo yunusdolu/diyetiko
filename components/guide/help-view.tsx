@@ -3,7 +3,14 @@
 import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
-import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type ReactNode,
+} from 'react';
 import PINS from '@/lib/guide/pins.json';
 import { ease } from '@/lib/motion';
 import { usePrefersReducedMotion } from '@/lib/motion/hooks';
@@ -303,8 +310,10 @@ export function HelpView({
 
 /**
  * A real picture of the page (scripts/guide-shots.mjs) with a numbered pin on the control each
- * step is about — the positions were measured on the page when the picture was taken. On a narrow
- * screen the picture keeps a readable size and pans; the step being read is brought into view.
+ * step is about — the positions were measured on the page when the picture was taken. The frame
+ * keeps one shape (1280 × 900); a page captured taller than that (its later steps sit lower) pans
+ * down to the step being read, and on a narrow screen the picture keeps a readable size and pans
+ * sideways the same way.
  * Without a picture (a new page not captured yet) the schematic stands in.
  */
 function Shot({
@@ -328,60 +337,72 @@ function Shot({
 }) {
   const [failed, setFailed] = useState(false);
   const box = useRef<HTMLDivElement>(null);
+  const frame = useRef<HTMLDivElement>(null);
   const pin = pins[active];
   const px = pin?.[0];
-  useEffect(() => {
+  const py = pin?.[1];
+  // sideways on a narrow screen (the outer box), down a tall picture (the frame)
+  const pan = useCallback(() => {
+    const behavior = reduced ? 'auto' : 'smooth';
     const el = box.current;
-    if (!el || px == null || el.scrollWidth <= el.clientWidth) return;
-    el.scrollTo({
-      left: px * el.scrollWidth - el.clientWidth / 2,
-      behavior: reduced ? 'auto' : 'smooth',
-    });
-  }, [px, reduced]);
+    if (el && px != null && el.scrollWidth > el.clientWidth)
+      el.scrollTo({ left: px * el.scrollWidth - el.clientWidth / 2, behavior });
+    const f = frame.current;
+    if (f && py != null && f.scrollHeight > f.clientHeight + 1)
+      f.scrollTo({ top: py * f.scrollHeight - f.clientHeight / 2, behavior });
+  }, [px, py, reduced]);
+  useEffect(pan, [pan]);
   if (failed) return <>{fallback}</>;
   return (
     <div
       ref={box}
       className="[scrollbar-width:thin] overflow-x-auto overscroll-x-contain rounded-[10px]"
     >
-      <div className="relative min-w-[36rem] md:min-w-0">
-        {/* eslint-disable-next-line @next/next/no-img-element -- pre-sized local captures; the pins are positioned over this exact box */}
-        <img
-          src={src}
-          alt={label}
-          width={1280}
-          height={900}
-          loading="lazy"
-          decoding="async"
-          onError={() => setFailed(true)}
-          className="block h-auto w-full rounded-[10px]"
-        />
-        {pins.slice(0, count).map((p, i) => {
-          if (!p) return null;
-          const on = i === active;
-          return (
-            <button
-              key={i}
-              type="button"
-              tabIndex={-1}
-              aria-hidden
-              onMouseEnter={() => onPick(i)}
-              onClick={() => onPick(i)}
-              style={{ left: `${p[0] * 100}%`, top: `${p[1] * 100}%` }}
-              className={cn(
-                'absolute grid size-6 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full text-[0.75rem] font-bold shadow-[0_2px_8px_rgb(0_0_0/0.35)] ring-2 ring-[var(--g-ring)] transition-[scale,background-color,color] duration-200',
-                on
-                  ? 'z-[2] scale-125 bg-[var(--g-pin-on)] text-[var(--g-pin-on-text)]'
-                  : 'z-[1] bg-[var(--g-pin)] text-[var(--g-pin-text)]',
-              )}
-            >
-              {on && !reduced && (
-                <span className="absolute inset-0 animate-ping rounded-full bg-[var(--g-pin-on)] opacity-60" />
-              )}
-              <span className="relative">{i + 1}</span>
-            </button>
-          );
-        })}
+      <div
+        ref={frame}
+        className="relative aspect-[1280/900] min-w-[36rem] overflow-y-hidden rounded-[10px] md:min-w-0"
+      >
+        <div className="relative">
+          {/* eslint-disable-next-line @next/next/no-img-element -- pre-sized local captures; the pins are positioned over this exact box */}
+          <img
+            src={src}
+            alt={label}
+            width={1280}
+            height={900}
+            loading="lazy"
+            decoding="async"
+            onError={() => setFailed(true)}
+            // a tall picture's height is known once it has loaded: bring the step into view then
+            onLoad={pan}
+            className="block h-auto w-full rounded-[10px]"
+          />
+          {pins.slice(0, count).map((p, i) => {
+            if (!p) return null;
+            const on = i === active;
+            return (
+              <button
+                key={i}
+                type="button"
+                tabIndex={-1}
+                aria-hidden
+                onMouseEnter={() => onPick(i)}
+                onClick={() => onPick(i)}
+                style={{ left: `${p[0] * 100}%`, top: `${p[1] * 100}%` }}
+                className={cn(
+                  'absolute grid size-6 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full text-[0.75rem] font-bold shadow-[0_2px_8px_rgb(0_0_0/0.35)] ring-2 ring-[var(--g-ring)] transition-[scale,background-color,color] duration-200',
+                  on
+                    ? 'z-[2] scale-125 bg-[var(--g-pin-on)] text-[var(--g-pin-on-text)]'
+                    : 'z-[1] bg-[var(--g-pin)] text-[var(--g-pin-text)]',
+                )}
+              >
+                {on && !reduced && (
+                  <span className="absolute inset-0 animate-ping rounded-full bg-[var(--g-pin-on)] opacity-60" />
+                )}
+                <span className="relative">{i + 1}</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

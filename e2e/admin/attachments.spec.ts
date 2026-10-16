@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test';
 import tr from '../../messages/tr.json' with { type: 'json' };
+import { BASE_URL } from '../base';
 
 /*
  * Files in messages and movement in the check-in (DESIGN.md v1.31): the client sends a lab report
@@ -76,7 +77,7 @@ test('a client sends a PDF; the dietitian opens it, answers with a file, and bot
   // nobody else gets it: the client cannot use the dietitian's route, a stranger gets nothing
   expect((await client.request.get(href)).status()).toBe(401);
   const stranger = await browser.newContext({ storageState: { cookies: [], origins: [] } });
-  expect((await stranger.request.get(`http://localhost:3000${href}`)).status()).toBe(401);
+  expect((await stranger.request.get(`${BASE_URL}${href}`)).status()).toBe(401);
   await stranger.close();
 
   // --- the dietitian answers with a picture -----------------------------------------------------

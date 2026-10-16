@@ -17,6 +17,7 @@ import {
 import { setAdminPreference } from '@/app/admin/_actions/auth';
 import type { SettingsBundle } from '@/lib/admin/cms';
 import { localeNames, locales, type Locale } from '@/lib/i18n/config';
+import { Switch } from '@/components/ui/checkbox';
 import { admin } from '@/lib/motion';
 import { cn } from '@/lib/utils';
 import {
@@ -34,10 +35,12 @@ import { MediaUpload } from './cms/media-upload';
 import { statusTone } from './cms/cms-list';
 
 type Contact = {
+  name: string;
   phoneE164: string;
   phoneDisplay: string;
   whatsapp: string;
   instagram: string;
+  instagramVerified: boolean;
   email: string | null;
   address: string | null;
 };
@@ -165,6 +168,13 @@ function ContactPanel({ contact }: { contact: Contact }) {
     <Panel title={t('contactInfo')}>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <Input
+          label={t('contactName')}
+          hint={t('contactNameHint')}
+          value={c.name}
+          onChange={(e) => setC({ ...c, name: e.target.value })}
+          className="sm:col-span-2"
+        />
+        <Input
           label={`${tf('phone')} (E.164)`}
           dir="ltr"
           value={c.phoneE164}
@@ -190,6 +200,14 @@ function ContactPanel({ contact }: { contact: Contact }) {
           value={c.instagram}
           onChange={(e) => setC({ ...c, instagram: e.target.value.replace(/^@/, '') })}
         />
+        <div className="sm:col-span-2">
+          <Switch
+            checked={c.instagramVerified}
+            onCheckedChange={(v) => setC({ ...c, instagramVerified: v })}
+            label={t('instagramVerified')}
+            description={t('instagramVerifiedHint')}
+          />
+        </div>
         <Input
           label={tf('email')}
           type="email"
