@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils';
 import type { ClientListItem, ClientStatus } from '@/types/admin';
 import { Avatar, Meter, Sparkline, Spotlight } from '@/components/admin/fx';
 import { Badge } from '@/components/admin/ui';
+import { PlanTrack } from '@/components/plans/plan-track';
 
 const STATUS_TONE: Record<ClientStatus, 'ok' | 'warn' | 'neutral'> = {
   active: 'ok',
@@ -141,6 +142,20 @@ export function ClientCard({
               )}
             </div>
             <Meter value={progress ?? 0} className="h-1.5" />
+          </div>
+        )}
+
+        {/* the plan: how far into its 3, 6 or 12 months */}
+        {c.plan && (
+          <div className="mt-4">
+            <PlanTrack
+              name={c.plan.name}
+              startsOn={c.plan.startsOn}
+              endsOn={c.plan.endsOn}
+              progress={c.plan.progress}
+              tone="admin"
+              compact
+            />
           </div>
         )}
 

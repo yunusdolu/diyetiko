@@ -4,7 +4,9 @@ import { requireClient } from '@/lib/auth';
 import { intlLocale, isLocale } from '@/lib/i18n/config';
 import * as portal from '@/lib/portal/data';
 import { PORTAL_TZ, todayISO } from '@/lib/portal/logic';
+import { currentPlan } from '@/lib/plans';
 import { cn } from '@/lib/utils';
+import { PlanTrack } from '@/components/plans/plan-track';
 import { PortalCard as Card } from '@/components/portal/card';
 import { PortalHeader, PortalPage } from '@/components/portal/shell';
 import { Countdown, PrepList } from '@/components/portal/care-extras';
@@ -43,6 +45,7 @@ export default async function CarePage() {
     .sort((a, b) => b.startsAt.localeCompare(a.startsAt))
     .slice(0, 8);
   const today = todayISO(now);
+  const plan = billing ? currentPlan(billing.packages, today) : null;
   const who = profile?.dietitianName ?? t('dietitian');
 
   const dayFmt = new Intl.DateTimeFormat(il, { day: 'numeric', timeZone: PORTAL_TZ });
@@ -191,19 +194,32 @@ export default async function CarePage() {
                   const used = p.sessionsTotal == null ? p.used : Math.min(p.used, p.sessionsTotal);
                   return (
                     <li key={p.id} className="p-well p-4">
-                      <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                        <h3 className="text-[1.0625rem] leading-tight font-bold">{p.name}</h3>
-                        {(p.closed || (p.endsOn != null && p.endsOn < today)) && (
-                          <span className="rounded-pill bg-paper-3 px-2.5 py-0.5 text-[0.75rem] font-semibold text-ink-70">
-                            {p.closed ? t('closed') : t('ended')}
-                          </span>
-                        )}
-                      </div>
-                      <p className="mt-1 text-[0.8125rem] text-ink-60">
-                        {p.endsOn
-                          ? t('period', { from: iso(p.startsOn), to: iso(p.endsOn) })
-                          : t('since', { from: iso(p.startsOn) })}
-                      </p>
+                      {/* the plan: the bar that fills with the days, as on Today */}
+                      {plan?.id === p.id ? (
+                        <PlanTrack
+                          name={p.name}
+                          startsOn={plan.startsOn}
+                          endsOn={plan.endsOn}
+                          progress={plan.progress}
+                          tone="portal"
+                        />
+                      ) : (
+                        <>
+                          <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                            <h3 className="text-[1.0625rem] leading-tight font-bold">{p.name}</h3>
+                            {(p.closed || (p.endsOn != null && p.endsOn < today)) && (
+                              <span className="rounded-pill bg-paper-3 px-2.5 py-0.5 text-[0.75rem] font-semibold text-ink-70">
+                                {p.closed ? t('closed') : t('ended')}
+                              </span>
+                            )}
+                          </div>
+                          <p className="mt-1 text-[0.8125rem] text-ink-60">
+                            {p.endsOn
+                              ? t('period', { from: iso(p.startsOn), to: iso(p.endsOn) })
+                              : t('since', { from: iso(p.startsOn) })}
+                          </p>
+                        </>
+                      )}
                       {p.sessionsTotal != null && (
                         <div className="mt-3.5">
                           <p className="flex justify-between text-[0.8125rem] font-semibold">

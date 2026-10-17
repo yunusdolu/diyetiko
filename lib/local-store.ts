@@ -102,3 +102,15 @@ export const FAVORITES_KEY = 'dm_favorites_v1';
 export function useChecked(recipeId: string) {
   return useStoredIds(`dm_checked_${recipeId}`);
 }
+
+/** One small value kept on this device (a view the person chose); `fallback` until then. */
+export function useStoredValue<T extends string>(key: string, fallback: T, allowed: readonly T[]) {
+  const raw = useSyncExternalStore(
+    (cb) => subscribe(key, cb),
+    () => read<string>(key, fallback),
+    () => fallback,
+  );
+  const value = (allowed as readonly string[]).includes(raw) ? (raw as T) : fallback;
+  const set = useCallback((v: T) => write(key, v), [key]);
+  return [value, set] as const;
+}

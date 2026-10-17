@@ -521,7 +521,7 @@ demo.push(`  insert into public.tasks (id, owner_id, client_id, title, due_on, d
 demo.push(`  insert into public.client_packages (id, owner_id, client_id, name, sessions_total, starts_on, ends_on) values
     (${q(uid('pkg:c5'))}, v_owner, ${q(uid('client:c5'))}, '4 seanslık takip (demo)', 4, current_date - 28, null),
     (${q(uid('pkg:c2'))}, v_owner, ${q(uid('client:c2'))}, '8 seanslık sporcu programı (demo)', 8, current_date - 10, null),
-    (${q(uid('pkg:c1'))}, v_owner, ${q(uid('client:c1'))}, 'Aylık online takip (demo)', null, current_date - 25, current_date + 5);
+    (${q(uid('pkg:c1'))}, v_owner, ${q(uid('client:c1'))}, '6 aylık plan (demo)', null, current_date - 47, (current_date - 47 + interval '6 months' - interval '1 day')::date);
 `);
 const labRows = (
   [

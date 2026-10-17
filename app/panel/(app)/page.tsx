@@ -15,7 +15,9 @@ import {
   todayISO,
   weekDigest,
 } from '@/lib/portal/logic';
+import { currentPlan } from '@/lib/plans';
 import { PortalCard as Card } from '@/components/portal/card';
+import { PlanTrack } from '@/components/plans/plan-track';
 import { CheckinCard } from '@/components/portal/checkin-card';
 import { DayTotals } from '@/components/portal/day-totals';
 import { ChevronIcon } from '@/components/portal/icons';
@@ -57,18 +59,29 @@ export default async function TodayPage() {
   const t = await getTranslations('portal');
   const now = new Date();
   const today = todayISO(now);
-  const [program, habits, checkins, diary, appointments, messages, features, profile, tasks] =
-    await Promise.all([
-      portal.getProgram(user.id),
-      portal.getHabits(user.id),
-      portal.getCheckins(user.id, addDays(today, -60), today),
-      portal.getDiary(user.id, today, today),
-      portal.getAppointments(user.id),
-      portal.getMessages(user.id, 30),
-      schemaFeatures(user.id),
-      portal.getProfile(user.id),
-      portal.getTasks(user.id),
-    ]);
+  const [
+    program,
+    habits,
+    checkins,
+    diary,
+    appointments,
+    messages,
+    features,
+    profile,
+    tasks,
+    billing,
+  ] = await Promise.all([
+    portal.getProgram(user.id),
+    portal.getHabits(user.id),
+    portal.getCheckins(user.id, addDays(today, -60), today),
+    portal.getDiary(user.id, today, today),
+    portal.getAppointments(user.id),
+    portal.getMessages(user.id, 30),
+    schemaFeatures(user.id),
+    portal.getProfile(user.id),
+    portal.getTasks(user.id),
+    portal.getBilling(user.id),
+  ]);
 
   const il = intlLocale(locale);
   const hour = Number(
@@ -112,6 +125,8 @@ export default async function TodayPage() {
     plannedMeals,
     loggedMeals: loggedSlots.length,
   });
+  // the 3/6/12-month plan the dietitian recorded: the bar that fills with the days
+  const plan = billing ? currentPlan(billing.packages, today) : null;
   const week = Array.from({ length: 7 }, (_, k) => {
     const day = addDays(today, k - 6);
     return { day, checkin: checkins.find((c) => c.day === day) ?? null };
@@ -137,6 +152,25 @@ export default async function TodayPage() {
       {/* Three sizes on one grid, as in the dietitian panel: large (two thirds), medium (half),
           small (a third). Tablets: two columns, large ones across both. Phones: one column. */}
       <div className="mt-4 grid grid-cols-1 gap-4 md:grid-flow-dense md:grid-cols-2 xl:grid-cols-12">
+        {plan && (
+          <Slot size="full" id="membership">
+            <Card
+              title={t('plan.title')}
+              action={<MoreLink href="/panel/care">{t('care.title')}</MoreLink>}
+            >
+              <PlanTrack
+                name={plan.name}
+                startsOn={plan.startsOn}
+                endsOn={plan.endsOn}
+                progress={plan.progress}
+                tone="portal"
+              />
+              {plan.progress.state === 'ended' && (
+                <p className="mt-3 text-[0.9375rem] text-ink-70">{t('plan.doneBody')}</p>
+              )}
+            </Card>
+          </Slot>
+        )}
         <Slot size="lg" id="checkin">
           <CheckinCard
             day={today}
@@ -241,7 +275,7 @@ function Slot({
   id,
   children,
 }: {
-  size: 'lg' | 'md' | 'sm';
+  size: 'full' | 'lg' | 'md' | 'sm';
   id?: string;
   children: React.ReactNode;
 }) {
@@ -249,11 +283,13 @@ function Slot({
     <div
       id={id}
       className={`min-w-0 scroll-mt-24 ${
-        size === 'lg'
-          ? 'md:col-span-2 xl:col-span-8'
-          : size === 'md'
-            ? 'xl:col-span-6'
-            : 'xl:col-span-4'
+        size === 'full'
+          ? 'md:col-span-2 xl:col-span-12'
+          : size === 'lg'
+            ? 'md:col-span-2 xl:col-span-8'
+            : size === 'md'
+              ? 'xl:col-span-6'
+              : 'xl:col-span-4'
       }`}
     >
       {children}

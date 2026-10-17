@@ -62,6 +62,31 @@
     "external": "(yeni sekmede açılır)",
     "close": "Kapat"
   },
+  "plan": {
+    "name": "{months} aylık plan",
+    "term": "{months} ay",
+    "period": "{from} – {to}",
+    "dayOf": "{day}. gün / {total}",
+    "weekOf": "{week}. hafta / {weeks}",
+    "monthOf": "{month}. ay / {months}",
+    "daysLeft": "{n} gün kaldı",
+    "weeksLeft": "{n} hafta kaldı",
+    "monthsLeft": "{n} ay kaldı",
+    "startsIn": "{n} gün sonra başlıyor",
+    "startsTomorrow": "Yarın başlıyor",
+    "ended": "Plan bitti",
+    "endedAgo": "{n} gün önce bitti",
+    "lastDay": "Son gün",
+    "share": "%{pct} tamamlandı",
+    "progressLabel": "Plan ilerlemesi: {total} günün {day}. günü",
+    "modes": {
+      "day": "Gün",
+      "week": "Hafta",
+      "month": "Ay"
+    },
+    "modesLabel": "İlerlemeyi göster",
+    "monthN": "{n}. ay"
+  },
   "macros": {
     "protein": "Protein",
     "carb": "Karbonhidrat",
@@ -1988,7 +2013,7 @@
           "steps": [
             "Arama: ad, e-posta, telefon ya da etiket yaz; liste yazdıkça süzülür.",
             "“Yeni danışan” tam formu açar. “Hızlı ekle” için ad ve iletişim yeterli; gerisini sonra tamamlarsın.",
-            "Bir karta tıkla, danışanın profili açılsın. Kartta son ölçüm ve KVKK onayı görünür.",
+            "Bir karta tıkla, danışanın profili açılsın. Kartta son ölçüm ve KVKK onayı görünür. Planı olan danışanın kartında planın kaçıncı ayında olduğu ve dolan çubuğu görünür.",
             "Görünümü kart ya da tablo yap. Arşive taşıdıkların “Arşivdekiler”de durur ve geri alınabilir."
           ]
         },
@@ -1999,7 +2024,7 @@
             "Sekmeler arasında geçerek bölümleri aç. Bir bölüm ayrı sekmede kalsın istersen üstteki sekme şeridini kullan.",
             "Ölçümler: her görüşmede kilo ve çevre ölçülerini gir; grafik ve hedefe ilerleme kendiliğinden güncellenir.",
             "Takip ve mesajlar: danışanın günlük kaydı (su, enerji, hareket), beslenme günlüğü, “Programa uyum (7 gün)” ve gönderdiği tahliller burada.",
-            "Ödeme sekmesinde paket tanımla ve “Ödeme al” ile tahsilatı kaydet. Danışan paketini ve ödemelerini kendi panelinde görür; notlarını görmez."
+            "Ödeme sekmesinde paket tanımla ve “Ödeme al” ile tahsilatı kaydet. Danışan paketini ve ödemelerini kendi panelinde görür; notlarını görmez. “Yeni paket”teki 3, 6 ve 12 ay şablonu bir plan başlatır; plan Özet’te ve danışanın kendi panelinde dolan bir çubuk olarak görünür."
           ]
         },
         "invite": {
@@ -2057,7 +2082,7 @@
           "lead": "Sitedeki başvuru formundan gelenler buraya düşer.",
           "steps": [
             "Üstteki sekmeler ve tarih filtresiyle yeni, dönüş yapılan ve arşivdeki talepleri ayır.",
-            "“Danışana dönüştür” talebi tek adımda danışan kaydına çevirir.",
+            "“Danışan yap” talebi danışan kaydına çevirir: açılan pencerede 3, 6 ya da 12 aylık planı ve başlangıç gününü seç. Başvuruda istenen süre hazır seçili gelir.",
             "Bir talebe tıkla: kişinin sihirbazdaki cevaplarını ve verdiği onayı görürsün.",
             "Aradıktan sonra “Dönüş yapıldı olarak işaretle”; ilgilenmeyenleri “Arşivle”."
           ]
@@ -2110,6 +2135,20 @@
         "later": "Şimdi değil",
         "zoom": "Görseli büyüt"
       }
+    },
+    "plans": {
+      "label": "Plan",
+      "none": "Plansız",
+      "noneHint": "Plan sonra “Paket & ödeme” sekmesinden de eklenebilir.",
+      "convertTitle": "Danışana çevir",
+      "convertLead": "{name} danışan olarak eklenecek. Bir plan seçersen danışan kartında ve danışanın kendi panelinde planın ilerlemesi görünür.",
+      "choose": "Plan",
+      "startsOn": "Başlangıç",
+      "confirm": "Danışan yap",
+      "presets": "Plan şablonu",
+      "presetsHint": "Seçince adı ve bitiş tarihi dolar; ücret ve seans istersen eklenir.",
+      "asked": "Başvuruda {term} istendi.",
+      "noneShort": "Sonra eklenebilir"
     }
   },
   "portal": {
@@ -2601,7 +2640,7 @@
       "topics": {
         "today": {
           "title": "Bugün",
-          "lead": "Her gün ilk açacağın sayfa. Günün kaydını burada tutar, diyetisyenine buradan ulaşırsın. Diyetisyenin sana görev verdiyse onlar da burada, yanındaki tike dokunman yeter.",
+          "lead": "Her gün ilk açacağın sayfa. Günün kaydını burada tutar, diyetisyenine buradan ulaşırsın. Diyetisyenin sana görev verdiyse onlar da burada, yanındaki tike dokunman yeter. Diyetisyenin bir plan başlattıysa planın en üstte gün gün dolan bir çubuk olarak durur; Gün, Hafta ya da Ay olarak bakabilirsin.",
           "steps": [
             "Günün kaydı: su için “Bardak” ya da “Şişe”ye dokun, alışkanlıkları tikle, enerjini ve hareketini seç, tartıldıysan kilonu yaz. Her dokunuş kendiliğinden kaydedilir.",
             "Halka, bugünün kaydının ne kadarının dolduğunu gösterir. Yanındaki satırlar hangi parçanın eksik kaldığını söyler.",
@@ -2665,7 +2704,7 @@
           "steps": [
             "Sıradaki görüşme en üstte: tarih, saat, tür ve süre. Saati değiştirmek için diyetisyenine mesaj yaz.",
             "“Takvime ekle” görüşmeyi telefonunun ya da bilgisayarının takvimine kaydeder.",
-            "Paketin: kaç seansın kullanıldığı, ücret, ödenen ve kalan tutar.",
+            "Paketin: planın varsa dolan çubuğu; seans, ücret, ödenen ve kalan tutar.",
             "Ödemeler: diyetisyeninin kaydettiği ödemelerin tarih ve tutarlarıyla listesi."
           ]
         },
@@ -2879,6 +2918,15 @@
       "title": "Tema",
       "light": "Gündüz",
       "dark": "Gece"
+    },
+    "plan": {
+      "title": "Planın",
+      "upcoming": "Planın {n} gün sonra başlıyor",
+      "upcomingTomorrow": "Planın yarın başlıyor",
+      "done": "Planını tamamladın",
+      "doneBody": "Bundan sonrası için diyetisyeninle konuş.",
+      "lastDay": "Bugün planının son günü",
+      "halfway": "Yolun yarısını geçtin"
     }
   },
   "apply": {

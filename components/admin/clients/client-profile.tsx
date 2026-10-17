@@ -57,6 +57,7 @@ import type { Billing, LabRow } from '@/lib/admin/practice';
 import { ProgressRing } from './progress-ring';
 import type { TaskRow } from '@/lib/admin/insights';
 import { goalJourney, type WeightSample } from '@/lib/admin/signals';
+import { planOfPackages } from '@/lib/plans';
 import type { ReminderTemplates } from '@/components/admin/dashboard/agenda';
 
 type Tab =
@@ -154,6 +155,9 @@ export function ClientProfile({
     ? Math.floor((now.getTime() - new Date(client.birth_date).getTime()) / (365.25 * 864e5))
     : null;
   const last = [...measurements].reverse().find((m) => m.weight_kg != null);
+  // the 3/6/12-month plan, in the header on every tab
+  const tplan = useTranslations('plan');
+  const plan = billing ? planOfPackages(billing.packages, portal.today) : null;
 
   const changeTab = (v: Tab) => {
     setTab(v);
@@ -176,6 +180,24 @@ export function ClientProfile({
             </Badge>
             {age != null && <span className="num">{t('age', { age })}</span>}
             <span>{localeNames[client.preferred_language]}</span>
+            {plan && (
+              <span className="inline-flex items-center gap-1.5">
+                <span aria-hidden className="size-1.5 rounded-full bg-a-chart" />
+                {plan.progress.term ? tplan('name', { months: plan.progress.term }) : plan.name}
+                {plan.progress.state === 'running' && (
+                  <span className="num text-a-muted">
+                    ·{' '}
+                    {tplan('monthOf', {
+                      month: plan.progress.month,
+                      months: plan.progress.months,
+                    })}
+                  </span>
+                )}
+                {plan.progress.state === 'ended' && (
+                  <span className="text-a-muted">· {tplan('ended')}</span>
+                )}
+              </span>
+            )}
             {client.deleted_at && <Badge tone="danger">{t('deletedList')}</Badge>}
           </span>
         }

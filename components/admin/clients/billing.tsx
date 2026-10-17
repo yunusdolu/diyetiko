@@ -14,6 +14,7 @@ import {
 } from '@/app/admin/_actions/practice';
 import type { Billing, PackageRow, PaymentRow } from '@/lib/admin/practice';
 import { CURRENCIES, PAYMENT_METHODS, type Currency } from '@/lib/admin/practice-logic';
+import { PLAN_TERMS, planEndsOn, planTerm, type PlanTerm } from '@/lib/plans';
 import { admin, ease } from '@/lib/motion';
 import { usePrefersReducedMotion } from '@/lib/motion/hooks';
 import { cn } from '@/lib/utils';
@@ -527,7 +528,38 @@ function PackageSheet({
 }) {
   const t = useTranslations('admin.billing');
   const tc = useTranslations('admin.common');
+  const tpl = useTranslations('admin.plans');
+  const tplan = useTranslations('plan');
   const { state, errors, run } = useSubmit(() => onOpenChange(false));
+  // the fields a plan template fills in (kept per opening of the sheet)
+  const [fields, setFields] = useState({
+    name: pkg?.name ?? '',
+    sessions: pkg ? String(pkg.sessions_total ?? '') : '8',
+    starts: pkg?.starts_on ?? today,
+    ends: pkg?.ends_on ?? '',
+  });
+  const [shown, setShown] = useState({ open, pkg });
+  if (shown.open !== open || shown.pkg !== pkg) {
+    setShown({ open, pkg });
+    setFields({
+      name: pkg?.name ?? '',
+      sessions: pkg ? String(pkg.sessions_total ?? '') : '8',
+      starts: pkg?.starts_on ?? today,
+      ends: pkg?.ends_on ?? '',
+    });
+  }
+  const term =
+    /^\d{4}-\d{2}-\d{2}$/.test(fields.starts) && fields.ends
+      ? planTerm(fields.starts, fields.ends)
+      : null;
+  const applyPlan = (months: PlanTerm) =>
+    setFields((f) => ({
+      ...f,
+      name: tplan('name', { months }),
+      // a plan runs on time, not on a number of sessions
+      sessions: '',
+      ends: planEndsOn(/^\d{4}-\d{2}-\d{2}$/.test(f.starts) ? f.starts : today, months),
+    }));
   return (
     <Sheet
       open={open}
@@ -542,11 +574,33 @@ function PackageSheet({
         }
         className="grid grid-cols-2 gap-4"
       >
+        <fieldset className="col-span-2">
+          <legend className="mb-2 text-[0.8125rem] font-semibold">{tpl('presets')}</legend>
+          <div role="radiogroup" aria-label={tpl('presets')} className="flex flex-wrap gap-2">
+            {PLAN_TERMS.map((m) => (
+              <button
+                key={m}
+                type="button"
+                role="radio"
+                aria-checked={term === m}
+                onClick={() => applyPlan(m)}
+                className={cn(
+                  'h-9 rounded-pill px-4 text-[0.8125rem] font-semibold transition-colors',
+                  term === m ? 'bg-a-text text-a-bg' : 'bg-a-surface-2 hover:text-a-text',
+                )}
+              >
+                {tplan('term', { months: m })}
+              </button>
+            ))}
+          </div>
+          <p className="mt-1.5 text-[0.75rem] text-a-muted">{tpl('presetsHint')}</p>
+        </fieldset>
         <Input
           name="name"
           label={t('name')}
           placeholder={t('namePlaceholder')}
-          defaultValue={pkg?.name}
+          value={fields.name}
+          onChange={(e) => setFields({ ...fields, name: e.target.value })}
           required
           maxLength={120}
           className="col-span-2"
@@ -560,7 +614,8 @@ function PackageSheet({
           inputMode="numeric"
           label={t('sessions')}
           hint={t('sessionsHint')}
-          defaultValue={pkg ? (pkg.sessions_total ?? '') : 8}
+          value={fields.sessions}
+          onChange={(e) => setFields({ ...fields, sessions: e.target.value })}
           className="col-span-2"
           error={errors.sessions_total && tc('error')}
         />
@@ -568,7 +623,8 @@ function PackageSheet({
           name="starts_on"
           type="date"
           label={t('startsOn')}
-          defaultValue={pkg?.starts_on ?? today}
+          value={fields.starts}
+          onChange={(e) => setFields({ ...fields, starts: e.target.value })}
           required
           error={errors.starts_on && tc('required')}
         />
@@ -577,7 +633,8 @@ function PackageSheet({
           type="date"
           label={t('endsOn')}
           hint={tc('optional')}
-          defaultValue={pkg?.ends_on ?? ''}
+          value={fields.ends}
+          onChange={(e) => setFields({ ...fields, ends: e.target.value })}
           error={errors.ends_on && t('endsBeforeStart')}
         />
         <Input

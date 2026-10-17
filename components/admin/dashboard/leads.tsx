@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useFormatter, useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { toast } from 'sonner';
-import { convertLeadAction, setLeadStatusAction } from '@/app/admin/_actions/clients';
+import { setLeadStatusAction } from '@/app/admin/_actions/clients';
 import { waNumber } from '@/lib/admin/signals';
 import { ease } from '@/lib/motion';
 import { usePrefersReducedMotion } from '@/lib/motion/hooks';
@@ -15,6 +15,7 @@ import type { Lead } from '@/types/admin';
 import { Avatar } from '@/components/admin/fx';
 import { Badge, EmptyState } from '@/components/admin/ui';
 import { useApplicationSummary } from '@/components/admin/application-details';
+import { ConvertSheet } from '@/components/admin/convert-sheet';
 import { WhatsAppIcon } from './agenda';
 
 const pill =
@@ -35,6 +36,7 @@ export function LeadsPanel({ leads }: { leads: Lead[] }) {
   const reduced = usePrefersReducedMotion();
   const [gone, setGone] = useState<Set<string>>(new Set());
   const [busy, setBusy] = useState<string | null>(null);
+  const [converting, setConverting] = useState<Lead | null>(null);
   const shown = leads.filter((l) => !gone.has(l.id));
 
   const contacted = async (l: Lead) => {
@@ -45,14 +47,6 @@ export function LeadsPanel({ leads }: { leads: Lead[] }) {
     setGone((g) => new Set(g).add(l.id));
     toast.success(t('updated'));
     router.refresh();
-  };
-  const convert = async (l: Lead) => {
-    setBusy(l.id);
-    const res = await convertLeadAction(l.id);
-    setBusy(null);
-    if (!res.ok || !res.data) return void toast.error(tc('error'));
-    toast.success(t('converted'));
-    router.push(`/admin/clients/${res.data.id}?tab=general`);
   };
 
   return (
@@ -150,7 +144,7 @@ export function LeadsPanel({ leads }: { leads: Lead[] }) {
                         <button
                           type="button"
                           disabled={busy === l.id}
-                          onClick={() => convert(l)}
+                          onClick={() => setConverting(l)}
                           className={`${pill} bg-a-accent text-a-accent-text hover:opacity-90 disabled:opacity-50`}
                         >
                           {t('convert')}
@@ -164,6 +158,7 @@ export function LeadsPanel({ leads }: { leads: Lead[] }) {
           </AnimatePresence>
         </ul>
       )}
+      <ConvertSheet lead={converting} onClose={() => setConverting(null)} />
     </section>
   );
 }

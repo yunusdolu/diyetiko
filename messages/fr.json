@@ -62,6 +62,31 @@
     "external": "(s'ouvre dans un nouvel onglet)",
     "close": "Fermer"
   },
+  "plan": {
+    "name": "Plan de {months} mois",
+    "term": "{months} mois",
+    "period": "{from} – {to}",
+    "dayOf": "Jour {day} sur {total}",
+    "weekOf": "Semaine {week} sur {weeks}",
+    "monthOf": "Mois {month} sur {months}",
+    "daysLeft": "{n, plural, one {# jour restant} other {# jours restants}}",
+    "weeksLeft": "{n, plural, one {# semaine restante} other {# semaines restantes}}",
+    "monthsLeft": "{n, plural, one {# mois restant} other {# mois restants}}",
+    "startsIn": "{n, plural, one {Commence dans # jour} other {Commence dans # jours}}",
+    "startsTomorrow": "Commence demain",
+    "ended": "Plan terminé",
+    "endedAgo": "{n, plural, one {Terminé il y a # jour} other {Terminé il y a # jours}}",
+    "lastDay": "Dernier jour",
+    "share": "{pct} % accompli",
+    "progressLabel": "Avancement du plan : jour {day} sur {total}",
+    "modes": {
+      "day": "Jours",
+      "week": "Semaines",
+      "month": "Mois"
+    },
+    "modesLabel": "Afficher par",
+    "monthN": "Mois {n}"
+  },
   "macros": {
     "protein": "Protéines",
     "carb": "Glucides",
@@ -1988,7 +2013,7 @@
           "steps": [
             "Recherche : saisissez un nom, un e-mail, un téléphone ou une étiquette ; la liste se réduit à mesure.",
             "« Nouveau patient » ouvre le formulaire complet. « Ajout rapide » ne demande qu’un nom et un contact.",
-            "Cliquez sur une carte pour ouvrir la fiche. La carte montre la dernière mesure et l’état du consentement.",
+            "Cliquez sur une carte pour ouvrir la fiche. La carte montre la dernière mesure et l’état du consentement. Un patient avec un plan affiche le mois où il en est, avec une barre qui se remplit.",
             "Passez des cartes au tableau. Les patients archivés restent sous « Archivés » et peuvent être rétablis."
           ]
         },
@@ -1999,7 +2024,7 @@
             "Passez d’un onglet à l’autre pour ouvrir chaque partie. Pour en garder une ouverte à part, utilisez la barre d’onglets du haut.",
             "Mesures : saisissez poids et tours à chaque rendez-vous ; le graphique et la progression vers l’objectif se mettent à jour seuls.",
             "Suivi et messages : le relevé quotidien du patient (eau, énergie, activité), son journal alimentaire, « Programme suivi (7 jours) » et les analyses envoyées.",
-            "Dans l’onglet paiements, définissez un forfait et enregistrez les encaissements. Le patient voit son forfait et ses paiements dans son espace ; jamais vos notes."
+            "Dans l’onglet paiements, définissez un forfait et enregistrez les encaissements. Le patient voit son forfait et ses paiements dans son espace ; jamais vos notes. Les modèles 3, 6 et 12 mois de « Nouveau forfait » lancent un plan ; il apparaît dans l’aperçu et dans l’espace du patient sous forme de barre qui se remplit."
           ]
         },
         "invite": {
@@ -2057,7 +2082,7 @@
           "lead": "Les candidatures envoyées depuis le formulaire du site arrivent ici.",
           "steps": [
             "Les onglets du haut et le filtre de dates séparent les demandes nouvelles, recontactées et archivées.",
-            "« Convertir en patient » transforme une demande en fiche patient en une étape.",
+            "« Convertir en patient » transforme la demande en fiche patient : dans la fenêtre qui s’ouvre, choisissez un plan de 3, 6 ou 12 mois et son premier jour. La durée demandée dans la candidature est déjà sélectionnée.",
             "Cliquez sur une demande pour voir les réponses de la personne et le consentement donné.",
             "Après l’appel, « Marquer comme recontacté » ; « Archiver » celles sans suite."
           ]
@@ -2110,6 +2135,20 @@
         "later": "Plus tard",
         "zoom": "Agrandir l’image"
       }
+    },
+    "plans": {
+      "label": "Plan",
+      "none": "Sans plan",
+      "noneHint": "Un plan peut aussi être ajouté plus tard dans l’onglet « Forfait & paiement ».",
+      "convertTitle": "Convertir en patient",
+      "convertLead": "{name} sera ajouté(e) comme patient. Si vous choisissez un plan, son avancement apparaît sur la fiche et dans l’espace du patient.",
+      "choose": "Plan",
+      "startsOn": "Début",
+      "confirm": "Convertir en patient",
+      "presets": "Modèle de plan",
+      "presetsHint": "Remplit le nom et le dernier jour ; ajoutez un prix ou des séances si besoin.",
+      "asked": "La demande indiquait {term}.",
+      "noneShort": "À ajouter plus tard"
     }
   },
   "portal": {
@@ -2601,7 +2640,7 @@
       "topics": {
         "today": {
           "title": "Aujourd’hui",
-          "lead": "La page que vous ouvrez en premier chaque jour. Vous y tenez le relevé du jour et vous y joignez votre diététicien. Les tâches qu’il vous confie s’y affichent aussi : touchez la coche quand c’est fait.",
+          "lead": "La page que vous ouvrez en premier chaque jour. Vous y tenez le relevé du jour et vous y joignez votre diététicien. Les tâches qu’il vous confie s’y affichent aussi : touchez la coche quand c’est fait. Si ton/ta diététicien(ne) a lancé un plan, il apparaît en haut comme une barre qui se remplit jour après jour ; affiche-le par jour, semaine ou mois.",
           "steps": [
             "Le relevé du jour : touchez « Verre » ou « Bouteille » pour l’eau, cochez vos habitudes, choisissez votre énergie et votre activité, notez votre poids si vous vous êtes pesé. Chaque geste est enregistré tout seul.",
             "L’anneau montre quelle part du relevé du jour est remplie. Les lignes à côté indiquent ce qui manque.",
@@ -2665,7 +2704,7 @@
           "steps": [
             "Le prochain rendez-vous est en haut : date, heure, type et durée. Pour changer l’heure, écrivez à votre diététicien.",
             "« Ajouter au calendrier » enregistre le rendez-vous dans le calendrier de votre téléphone ou de votre ordinateur.",
-            "Votre forfait : séances utilisées, prix, montant payé et restant.",
+            "Ton forfait : la barre de ton plan si tu en as un ; séances, prix, payé et reste dû.",
             "Paiements : les paiements enregistrés par votre diététicien, avec dates et montants."
           ]
         },
@@ -2879,6 +2918,15 @@
       "title": "Thème",
       "light": "Jour",
       "dark": "Nuit"
+    },
+    "plan": {
+      "title": "Ton plan",
+      "upcoming": "{n, plural, one {Ton plan commence dans # jour} other {Ton plan commence dans # jours}}",
+      "upcomingTomorrow": "Ton plan commence demain",
+      "done": "Tu as terminé ton plan",
+      "doneBody": "Parle de la suite avec ton/ta diététicien(ne).",
+      "lastDay": "C’est le dernier jour de ton plan",
+      "halfway": "Tu as passé la moitié du chemin"
     }
   },
   "apply": {

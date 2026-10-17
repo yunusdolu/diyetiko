@@ -194,11 +194,29 @@ export async function setLeadStatusAction(
   return { ok: true };
 }
 
-export async function convertLeadAction(id: string): Promise<ActionResult<{ id: string }>> {
+/** the plan picked when a request becomes a client: a term and its first day */
+const planChoice = z
+  .object({
+    months: z.union([z.literal(3), z.literal(6), z.literal(12)]),
+    startsOn: z.iso.date(),
+  })
+  .nullable();
+
+export async function convertLeadAction(
+  id: string,
+  rawPlan: unknown = null,
+): Promise<ActionResult<{ id: string }>> {
   const user = await requireUser();
+  const parsed = planChoice.safeParse(rawPlan);
+  if (!parsed.success) return { ok: false };
   const tg = await getTranslations('admin.leads.app.goals');
-  const clientId = await q.convertLead(user.id, id, (k) =>
-    tg.has(k as 'energy') ? tg(k as 'energy') : k,
+  const tp = await getTranslations('plan');
+  const plan = parsed.data;
+  const clientId = await q.convertLead(
+    user.id,
+    id,
+    (k) => (tg.has(k as 'energy') ? tg(k as 'energy') : k),
+    plan ? { ...plan, name: tp('name', { months: plan.months }) } : null,
   );
   revalidatePath('/admin', 'layout');
   return clientId ? { ok: true, data: { id: clientId } } : { ok: false };

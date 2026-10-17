@@ -31,6 +31,8 @@ import { Rise, Spotlight } from '@/components/admin/fx';
 import { Badge, Button, EmptyState } from '@/components/admin/ui';
 import type { Billing, LabRow } from '@/lib/admin/practice';
 import { labSeries } from '@/lib/admin/practice-logic';
+import { planOfPackages } from '@/lib/plans';
+import { PlanTrack } from '@/components/plans/plan-track';
 import { SessionTrack, useMoney } from './billing';
 import { testName } from './labs';
 
@@ -119,6 +121,8 @@ export function ClientOverview({
   const note = notes.find((n) => n.pinned) ?? notes[0];
   const phone = waNumber(client.phone);
 
+  const plan = billing ? planOfPackages(billing.packages, today) : null;
+  const tpl = useTranslations('admin.plans');
   return (
     <div className="space-y-4">
       {(client.allergies || client.medical_notes) && (
@@ -189,6 +193,21 @@ export function ClientOverview({
           </QuickAction>
         </div>
       </Rise>
+
+      {/* the plan (3, 6 or 12 months): the same bar the client sees on their Today */}
+      {plan && (
+        <Rise i={2}>
+          <Card title={tpl('label')}>
+            <PlanTrack
+              name={plan.name}
+              startsOn={plan.startsOn}
+              endsOn={plan.endsOn}
+              progress={plan.progress}
+              tone="admin"
+            />
+          </Card>
+        </Rise>
+      )}
 
       <div className="grid grid-cols-1 items-start gap-4 xl:grid-cols-12">
         {/* goal journey */}

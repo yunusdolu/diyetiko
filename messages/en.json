@@ -62,6 +62,31 @@
     "external": "(opens in a new tab)",
     "close": "Close"
   },
+  "plan": {
+    "name": "{months}-month plan",
+    "term": "{months} months",
+    "period": "{from} – {to}",
+    "dayOf": "Day {day} of {total}",
+    "weekOf": "Week {week} of {weeks}",
+    "monthOf": "Month {month} of {months}",
+    "daysLeft": "{n, plural, one {# day left} other {# days left}}",
+    "weeksLeft": "{n, plural, one {# week left} other {# weeks left}}",
+    "monthsLeft": "{n, plural, one {# month left} other {# months left}}",
+    "startsIn": "{n, plural, one {Starts in # day} other {Starts in # days}}",
+    "startsTomorrow": "Starts tomorrow",
+    "ended": "Plan ended",
+    "endedAgo": "{n, plural, one {Ended # day ago} other {Ended # days ago}}",
+    "lastDay": "Last day",
+    "share": "{pct}% done",
+    "progressLabel": "Plan progress: day {day} of {total}",
+    "modes": {
+      "day": "Days",
+      "week": "Weeks",
+      "month": "Months"
+    },
+    "modesLabel": "Show progress by",
+    "monthN": "Month {n}"
+  },
   "macros": {
     "protein": "Protein",
     "carb": "Carbohydrate",
@@ -1988,7 +2013,7 @@
           "steps": [
             "Search: type a name, e-mail, phone or tag; the list narrows as you type.",
             "“New client” opens the full form. “Quick add” needs only a name and a contact; complete the rest later.",
-            "Click a card to open the profile. The card shows the latest measurement and the consent status.",
+            "Click a card to open the profile. The card shows the latest measurement and the consent status. A client with a plan shows which month of it they are in, with a bar that fills.",
             "Switch between cards and table. Clients moved to the archive stay under “Archived” and can be restored."
           ]
         },
@@ -1999,7 +2024,7 @@
             "Move between the tabs to open each section. To keep one open separately, use the tab strip at the top.",
             "Measurements: enter weight and circumferences at each appointment; the chart and progress to goal update by themselves.",
             "Tracking and messages: the client’s daily record (water, energy, movement), food diary, “Plan followed (7 days)” and the lab reports they sent.",
-            "In the payments tab, define a package and record what you receive with “Take payment”. The client sees the package and payments in their panel; never your notes."
+            "In the payments tab, define a package and record what you receive with “Take payment”. The client sees the package and payments in their panel; never your notes. The 3, 6 and 12-month templates in “New package” start a plan; it shows on the overview and in the client’s own panel as a bar that fills."
           ]
         },
         "invite": {
@@ -2057,7 +2082,7 @@
           "lead": "Applications from the form on your site arrive here.",
           "steps": [
             "The tabs at the top and the date filter separate new, contacted and archived requests.",
-            "“Convert to client” turns a request into a client record in one step.",
+            "“Convert to client” turns the request into a client record: in the window that opens, choose a 3, 6 or 12-month plan and its first day. An application’s requested term is already selected.",
             "Click a request to see the person’s answers in the wizard and the consent they gave.",
             "After calling, “Mark as contacted”; “Archive” those who are not interested."
           ]
@@ -2110,6 +2135,20 @@
         "later": "Not now",
         "zoom": "Enlarge the picture"
       }
+    },
+    "plans": {
+      "label": "Plan",
+      "none": "No plan",
+      "noneHint": "A plan can also be added later in the “Package & payment” tab.",
+      "convertTitle": "Convert to client",
+      "convertLead": "{name} will be added as a client. If you choose a plan, its progress shows on the client card and in the client’s own panel.",
+      "choose": "Plan",
+      "startsOn": "Starts on",
+      "confirm": "Convert to client",
+      "presets": "Plan template",
+      "presetsHint": "Fills in the name and the last day; add a price or sessions if you like.",
+      "asked": "The application asked for {term}.",
+      "noneShort": "Add one later"
     }
   },
   "portal": {
@@ -2601,7 +2640,7 @@
       "topics": {
         "today": {
           "title": "Today",
-          "lead": "The page you open first each day. Keep the day’s record here and reach your dietitian from here. Tasks from your dietitian also appear here: tap the tick beside one when it is done.",
+          "lead": "The page you open first each day. Keep the day’s record here and reach your dietitian from here. Tasks from your dietitian also appear here: tap the tick beside one when it is done. If your dietitian started a plan for you, it sits at the top as a bar that fills day by day; read it by day, week or month.",
           "steps": [
             "The day’s record: tap “Glass” or “Bottle” for water, tick your habits, choose your energy and movement, and enter your weight if you weighed yourself. Every tap is saved by itself.",
             "The ring shows how much of today’s record is filled in. The rows beside it tell you which part is still missing.",
@@ -2665,7 +2704,7 @@
           "steps": [
             "The next meeting is on top: date, time, type and length. To change the time, message your dietitian.",
             "“Add to calendar” saves the meeting to the calendar on your phone or computer.",
-            "Your package: sessions used, price, paid and remaining.",
+            "Your package: the bar of your plan if you have one; sessions, price, paid and still due.",
             "Payments: the payments your dietitian recorded, with dates and amounts."
           ]
         },
@@ -2879,6 +2918,15 @@
       "title": "Theme",
       "light": "Day",
       "dark": "Night"
+    },
+    "plan": {
+      "title": "Your plan",
+      "upcoming": "{n, plural, one {Your plan starts in # day} other {Your plan starts in # days}}",
+      "upcomingTomorrow": "Your plan starts tomorrow",
+      "done": "You completed your plan",
+      "doneBody": "Talk to your dietitian about what comes next.",
+      "lastDay": "Today is the last day of your plan",
+      "halfway": "You are past halfway"
     }
   },
   "apply": {

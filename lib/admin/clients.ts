@@ -1,5 +1,7 @@
 import 'server-only';
 import { asUser, json, pgArray, type Tx } from '@/lib/db';
+import { currentPlan, planEndsOn, type PlanTerm } from '@/lib/plans';
+import { todayISO } from '@/lib/portal/logic';
 import type { ClientInput } from '@/lib/validators/admin';
 import type {
   Appointment,
@@ -34,8 +36,54 @@ export async function listClients(
   uid: string,
   opts: { deleted?: boolean } = {},
 ): Promise<ClientListItem[]> {
+  const [rows, plans] = await Promise.all([listRows(uid, opts), planRows(uid)]);
+  const today = todayISO();
+  return rows.map((c) => {
+    const plan = currentPlan(
+      plans.filter((p) => p.client_id === c.id),
+      today,
+    );
+    return {
+      ...c,
+      plan: plan
+        ? {
+            id: plan.id,
+            name: plan.name,
+            startsOn: plan.startsOn,
+            endsOn: plan.endsOn,
+            progress: plan.progress,
+          }
+        : null,
+    };
+  });
+}
+
+/** Every timed package (a plan) of every client; [] before the practice migration. */
+async function planRows(uid: string) {
+  try {
+    return await asUser(uid, (tx) =>
+      tx.query<{
+        id: string;
+        client_id: string;
+        name: string;
+        startsOn: string;
+        endsOn: string | null;
+        closed: boolean;
+      }>(
+        `select id, client_id, name, starts_on::text as "startsOn", ends_on::text as "endsOn",
+                closed_at is not null as closed
+           from client_packages where ends_on is not null`,
+      ),
+    );
+  } catch (e) {
+    if ((e as { code?: string })?.code === '42P01') return [];
+    throw e;
+  }
+}
+
+function listRows(uid: string, opts: { deleted?: boolean }) {
   return asUser(uid, (tx) =>
-    tx.query<ClientListItem>(
+    tx.query<Omit<ClientListItem, 'plan'>>(
       `select c.id, c.full_name, c.email, c.phone, c.status::text as status, c.tags, c.preferred_language::text as preferred_language,
               c.goal, c.goal_weight_kg, c.deleted_at, c.created_at, c.kvkk_consent_at,
               (select max(m.measured_at)::text from measurements m where m.client_id = c.id) as last_measured_at,
@@ -411,11 +459,21 @@ export async function setLeadStatus(uid: string, id: string, status: Lead['statu
   await asUser(uid, (tx) => tx.query(`update leads set status = $2 where id = $1`, [id, status]));
 }
 
+export interface PlanChoice {
+  months: PlanTerm;
+  /** first day of the plan */
+  startsOn: string;
+  /** the package's name, in the panel's language ("6 aylık plan") */
+  name: string;
+}
+
 export async function convertLead(
   uid: string,
   id: string,
   /** application goal keys → words, in the panel's language (the record keeps text, not codes) */
   goalLabel: (key: string) => string = (k) => k,
+  /** the plan the client starts with (a package from its first to its last day) */
+  plan: PlanChoice | null = null,
 ): Promise<string | null> {
   return asUser(uid, async (tx) => {
     const [lead] = await tx.query<Lead>(
@@ -451,11 +509,25 @@ export async function convertLead(
         a.weightKg,
         'Başvuru formundaki kilo (beyan)',
       ]);
+    if (plan) {
+      // the practice tables may not exist yet (migration …000006): then no plan, still a client
+      const [{ ok } = { ok: false }] = await tx.query<{ ok: boolean }>(
+        `select to_regclass('public.client_packages') is not null as ok`,
+      );
+      if (ok)
+        await tx.query(
+          `insert into client_packages (client_id, name, starts_on, ends_on) values ($1, $2, $3, $4)`,
+          [c!.id, plan.name, plan.startsOn, planEndsOn(plan.startsOn, plan.months)],
+        );
+    }
     await tx.query(
       `update leads set status = 'converted', converted_client_id = $2 where id = $1`,
       [id, c!.id],
     );
-    await audit(tx, uid, 'lead.convert', 'lead', id, { client: c!.id });
+    await audit(tx, uid, 'lead.convert', 'lead', id, {
+      client: c!.id,
+      ...(plan ? { plan: plan.months } : {}),
+    });
     return c!.id;
   });
 }

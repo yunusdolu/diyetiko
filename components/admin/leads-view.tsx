@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useFormatter, useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { toast } from 'sonner';
-import { convertLeadAction, setLeadStatusAction } from '@/app/admin/_actions/clients';
+import { setLeadStatusAction } from '@/app/admin/_actions/clients';
 import { localeNames } from '@/lib/i18n/config';
 import { admin } from '@/lib/motion';
 import { whatsappHref } from '@/lib/utils';
@@ -13,8 +13,8 @@ import type { Lead } from '@/types/admin';
 import { Badge, Button, EmptyState, PageTitle, Sheet } from '@/components/admin/ui';
 import { DateFilter, useDateRange } from '@/components/admin/date-filter';
 import { Tabs } from '@/components/ui/tabs';
-import type { ActionState } from '@/components/ui/status-icon';
 import { ApplicationDetails, useApplicationSummary } from './application-details';
+import { ConvertSheet } from './convert-sheet';
 
 export function LeadsView({ leads }: { leads: Lead[] }) {
   const t = useTranslations('admin.leads');
@@ -23,6 +23,7 @@ export function LeadsView({ leads }: { leads: Lead[] }) {
   const [status, setStatus] = useState<'all' | Lead['status']>('new');
   const [kind, setKind] = useState<'all' | Lead['kind']>('all');
   const [open, setOpen] = useState<Lead | null>(null);
+  const [converting, setConverting] = useState<Lead | null>(null);
   const summary = useApplicationSummary();
   const { range, setRange, within } = useDateRange();
   const shown = leads.filter(
@@ -109,17 +110,33 @@ export function LeadsView({ leads }: { leads: Lead[] }) {
           </AnimatePresence>
         </motion.ul>
       )}
-      <LeadSheet lead={open} onClose={() => setOpen(null)} />
+      <LeadSheet
+        lead={open}
+        onClose={() => setOpen(null)}
+        onConvert={(l) => {
+          setOpen(null);
+          setConverting(l);
+        }}
+      />
+      <ConvertSheet lead={converting} onClose={() => setConverting(null)} />
     </div>
   );
 }
 
-function LeadSheet({ lead, onClose }: { lead: Lead | null; onClose: () => void }) {
+function LeadSheet({
+  lead,
+  onClose,
+  onConvert,
+}: {
+  lead: Lead | null;
+  onClose: () => void;
+  /** becoming a client goes on in the plan sheet */
+  onConvert: (lead: Lead) => void;
+}) {
   const t = useTranslations('admin.leads');
   const tc = useTranslations('admin.common');
   const format = useFormatter();
   const router = useRouter();
-  const [state, setState] = useState<ActionState>('idle');
   if (!lead)
     return (
       <Sheet open={false} onOpenChange={onClose} title="">
@@ -132,18 +149,6 @@ function LeadSheet({ lead, onClose }: { lead: Lead | null; onClose: () => void }
     toast.success(tc('updated'));
     router.refresh();
     onClose();
-  };
-  const convert = async () => {
-    setState('loading');
-    const res = await convertLeadAction(lead.id);
-    if (res.ok && res.data) {
-      setState('success');
-      toast.success(t('converted'));
-      router.push(`/admin/clients/${res.data.id}`);
-    } else {
-      setState('error');
-      setTimeout(() => setState('idle'), 900);
-    }
   };
   const payload = Object.entries(lead.payload ?? {}).filter(([, v]) => v !== null && v !== '');
 
@@ -163,7 +168,7 @@ function LeadSheet({ lead, onClose }: { lead: Lead | null; onClose: () => void }
             <Button onClick={() => setStatus('contacted')}>{t('markContacted')}</Button>
           )}
           {!lead.converted_client_id && (
-            <Button variant="primary" state={state} onClick={convert}>
+            <Button variant="primary" onClick={() => onConvert(lead)}>
               {t('convert')}
             </Button>
           )}

@@ -52,6 +52,7 @@ export default async function PortalRootLayout({ children }: { children: ReactNo
           messages={pick(messages, [
             'portal',
             'common',
+            'plan',
             'macros',
             'units',
             'meals',

@@ -1,3 +1,4 @@
+import type { PlanProgress } from '@/lib/plans';
 import type { Locale } from '@/lib/i18n/config';
 
 export type ClientStatus = 'active' | 'paused' | 'completed' | 'archived';
@@ -51,6 +52,17 @@ export interface ClientListItem extends Pick<
   on_portal: boolean;
   /** client messages not yet read */
   unread: number;
+  /** the 3/6/12-month plan running (or next, or just ended); null without one */
+  plan: ClientPlan | null;
+}
+
+/** A client's plan as the lists show it (lib/plans.ts). */
+export interface ClientPlan {
+  id: string;
+  name: string;
+  startsOn: string;
+  endsOn: string;
+  progress: PlanProgress;
 }
 
 export interface Measurement {

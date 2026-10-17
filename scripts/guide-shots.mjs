@@ -39,7 +39,7 @@ const TOPICS = {
     today: {
       url: '/panel',
       // taller than the rest: the programme card (step 3) sits below the first screen
-      height: 1480,
+      height: 1720,
       pins: [
         ['css:#checkin h2'],
         ['css:a[href="#checkin"]'],

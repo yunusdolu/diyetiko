@@ -46,6 +46,7 @@ export default async function AdminRootLayout({ children }: { children: ReactNod
           messages={pick(messages, [
             'admin',
             'common',
+            'plan',
             'macros',
             'units',
             'meals',

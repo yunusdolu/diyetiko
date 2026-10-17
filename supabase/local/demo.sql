@@ -196,7 +196,7 @@ begin
   insert into public.client_packages (id, owner_id, client_id, name, sessions_total, starts_on, ends_on) values
     ('115ed2c5-f293-5256-9d66-e2c103bca7f2', v_owner, '6b2010b0-cd81-5359-9d4b-1e6ef7957fb4', '4 seanslık takip (demo)', 4, current_date - 28, null),
     ('6f2004ab-28f1-5b1e-bbf4-addad42d997b', v_owner, 'e0dfed6d-9351-53a5-9efd-6960f459309f', '8 seanslık sporcu programı (demo)', 8, current_date - 10, null),
-    ('060939cd-2d62-5037-894d-4c09726009df', v_owner, '8c333d28-8e6c-5635-946c-1e3d9066554c', 'Aylık online takip (demo)', null, current_date - 25, current_date + 5);
+    ('060939cd-2d62-5037-894d-4c09726009df', v_owner, '8c333d28-8e6c-5635-946c-1e3d9066554c', '6 aylık plan (demo)', null, current_date - 47, (current_date - 47 + interval '6 months' - interval '1 day')::date);
 
   insert into public.lab_results (id, owner_id, client_id, taken_on, test, value, unit) values
     ('3ed8f435-6984-5718-bef0-395d3d4afd6f', v_owner, '6b2010b0-cd81-5359-9d4b-1e6ef7957fb4', current_date + -90, 'glucose_fasting', 108, 'mg/dL'),

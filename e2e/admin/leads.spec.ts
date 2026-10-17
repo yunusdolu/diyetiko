@@ -47,8 +47,21 @@ test('the application from the public project: its details, then a client record
   await expect(sheet.getByText(tl.app.termsAccepted)).toBeVisible();
   await expect(sheet.getByText(tl.app.conditions.thyroid)).toBeVisible();
   await expect(sheet.getByText('170 cm')).toBeVisible();
-  // converting carries the application into the record
+  // converting carries the application into the record — and starts the plan it asked for
   await sheet.getByRole('button', { name: tl.convert }).click();
+  const plans = page.getByRole('dialog', { name: tr.admin.plans.convertTitle });
+  await expect(plans.getByRole('radio', { name: /^6 ay/ })).toHaveAttribute('aria-checked', 'true');
+  await expect(plans.getByText('Başvuruda 6 ay istendi.')).toBeVisible();
+  await plans.getByRole('button', { name: tr.admin.plans.confirm }).click();
   await expect(page).toHaveURL(/\/admin\/clients\/[0-9a-f-]{36}/);
   await expect(page.getByRole('heading', { name })).toBeVisible();
+  // the plan: in the header, on the overview as a bar on its first day, and on the client's card
+  await expect(page.getByText('6 aylık plan').first()).toBeVisible();
+  const bar = page.getByRole('meter', { name: /Plan ilerlemesi: 1\d{2}/ }).first();
+  await expect(bar).toBeVisible();
+  await expect(page.getByText(/^1\. gün \/ 18\d$/)).toBeVisible();
+  await page.goto('/admin/clients');
+  const card = page.locator('a[href^="/admin/clients/"]').filter({ hasText: name }).first();
+  await expect(card.getByText('6 aylık plan')).toBeVisible();
+  await expect(card.getByText('1. ay / 6')).toBeVisible();
 });
