@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
-import { requireClient } from '@/lib/auth';
+import { isDemoAccount, requireClient } from '@/lib/auth';
 import { isLocale } from '@/lib/i18n/config';
 import * as portal from '@/lib/portal/data';
 import {
@@ -62,9 +62,12 @@ export default async function AccountPage() {
           <ThemeChoice />
         </PortalCard>
 
-        <PortalCard title={t('password')}>
-          <PasswordForm />
-        </PortalCard>
+        {/* a shared demo login keeps its password (the action refuses it too) */}
+        {!isDemoAccount(user.email) && (
+          <PortalCard title={t('password')}>
+            <PasswordForm />
+          </PortalCard>
+        )}
 
         <PortalCard title={t('data')}>
           <p className="text-[0.9375rem] text-ink-70">{t('exportHint')}</p>

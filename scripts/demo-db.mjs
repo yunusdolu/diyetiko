@@ -11,6 +11,7 @@
 //   DATABASE_URL, NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SECRET_KEY   of the DEMO project
 //   DEMO_ACCOUNTS         the first e-mail is the shared dietitian login
 //   DEMO_ADMIN_PASSWORD   only used to create that login if it does not exist yet (never printed)
+//   DEMO_PORTAL_PASSWORD  optional: makes deniz@diyetiko.test a shared client-portal demo login
 //
 // It refuses to touch the production project named in .env.local.
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
@@ -151,6 +152,15 @@ try {
       step(`created the data-only portal client ${email}`);
     }
     portalIds[email] = id;
+  }
+  // The client portal demo: Deniz's account gets the shared password (DEMO_PORTAL_PASSWORD).
+  // Put that e-mail in DEMO_ACCOUNTS too, so nobody can change the password or delete the login.
+  const portalPw = env.DEMO_PORTAL_PASSWORD ?? '';
+  if (portalPw && !portalPw.includes('<')) {
+    if (portalPw.length < 8) fail('DEMO_PORTAL_PASSWORD needs at least 8 characters.');
+    const { error } = await auth.updateUserById(portalIds[portalEmail], { password: portalPw });
+    if (error) fail(`Could not set the password of ${portalEmail}: ${error.message}`);
+    step(`client portal demo login: ${portalEmail}`);
   }
 
   // 4. Everything visitors can change is rebuilt by ONE stored statement: empty the tables

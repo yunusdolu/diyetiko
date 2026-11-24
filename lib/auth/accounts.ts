@@ -27,6 +27,26 @@ async function admin() {
   });
 }
 
+/**
+ * A shared demo login (DEMO_ACCOUNTS) must stay as it is: a visitor of the demo panel could
+ * otherwise close its portal access (delete it) or redeem a new invite for it (new password)
+ * and lock everyone else out.
+ */
+async function isDemoUser(userId: string): Promise<boolean> {
+  if (env.demoAccounts.length === 0) return false;
+  let email = '';
+  if (backend() === 'local') {
+    const [row] = await asService((tx) =>
+      tx.query<{ email: string | null }>(`select email from auth.users where id = $1`, [userId]),
+    );
+    email = row?.email ?? '';
+  } else {
+    const { data } = await (await admin()).auth.admin.getUserById(userId);
+    email = data.user?.email ?? '';
+  }
+  return email !== '' && env.demoAccounts.includes(email.toLowerCase());
+}
+
 export async function createClientAccount(
   email: string,
   password: string,
@@ -65,6 +85,7 @@ export async function createClientAccount(
 }
 
 export async function setAccountPassword(userId: string, password: string): Promise<boolean> {
+  if (await isDemoUser(userId)) return false;
   if (backend() === 'local') {
     const { hashPassword } = await import('@/lib/db/pglite');
     const rows = await asService((tx) =>
@@ -85,6 +106,7 @@ export async function setAccountPassword(userId: string, password: string): Prom
  * The client record is unlinked (FK on delete set null); diary data stays with the practice.
  */
 export async function deleteAccount(userId: string): Promise<boolean> {
+  if (await isDemoUser(userId)) return false;
   if (backend() === 'local') {
     const [p] = await asService((tx) =>
       tx.query<{ role: string }>(`select role::text as role from public.profiles where id = $1`, [
