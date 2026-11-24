@@ -10,6 +10,7 @@ import {
 } from '@/app/panel/_actions';
 import { localeNames, locales, type Locale } from '@/lib/i18n/config';
 import { cn, whatsappHref } from '@/lib/utils';
+import { withTimeout } from '@/lib/with-timeout';
 import { Field } from '@/components/ui/field';
 import { MotionButton } from '@/components/ui/motion-button';
 
@@ -27,8 +28,17 @@ export function LoginForm({
 }) {
   const t = useTranslations('portal.auth');
   const tl = useTranslations('lang');
-  const [state, action, pending] = useActionState<PortalLoginState, FormData>(
-    portalLoginAction,
+  const tf = useTranslations('form.errors');
+  // a lost request must not leave the button spinning forever (lib/with-timeout.ts)
+  const [state, action, pending] = useActionState<
+    PortalLoginState | { error: 'timeout' },
+    FormData
+  >(
+    (prev, form) =>
+      withTimeout<PortalLoginState | { error: 'timeout' }>(
+        portalLoginAction(prev?.error === 'timeout' ? undefined : prev, form),
+        { error: 'timeout' },
+      ),
     undefined,
   );
   const [switching, startSwitch] = useTransition();
@@ -83,7 +93,7 @@ export function LoginForm({
         />
         {state?.error && (
           <p role="alert" className="text-ui font-semibold text-paprika-deep">
-            {t(state.error)}
+            {state.error === 'timeout' ? tf('generic') : t(state.error)}
           </p>
         )}
         <div>

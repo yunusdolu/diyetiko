@@ -64,6 +64,14 @@ const nextConfig: NextConfig = {
         ]
       : [],
   },
+  async redirects() {
+    // Browsers and bots ask for /favicon.ico on their own. Without this the path falls into the
+    // [locale] segment and fails with a 500 ("static to dynamic at runtime"). The icon is app/icon.svg.
+    return [
+      { source: '/favicon.ico', destination: '/icon.svg', permanent: false },
+      { source: '/favicon.png', destination: '/icon.svg', permanent: false },
+    ];
+  },
   async headers() {
     return [
       // Public pages: static CSP. /admin and /p get a nonce CSP from proxy.ts instead.

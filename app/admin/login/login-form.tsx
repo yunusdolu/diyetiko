@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { useActionState, useEffect, useRef, useState } from 'react';
 import { loginAction, verifyMfaAction, type LoginState } from '../_actions/auth';
 import { ease } from '@/lib/motion';
+import { withTimeout } from '@/lib/with-timeout';
 import { cn } from '@/lib/utils';
 import { Field } from '@/components/ui/field';
 import { MotionButton } from '@/components/ui/motion-button';
@@ -17,9 +18,14 @@ import type { ActionState } from '@/components/ui/status-icon';
  */
 export function LoginForm({ initialMfa }: { initialMfa: boolean }) {
   const t = useTranslations('admin.login');
-  const [state, action, pending] = useActionState<LoginState, FormData>(loginAction, undefined);
+  const tc = useTranslations('admin.common');
+  // a lost request must not leave the button spinning forever (lib/with-timeout.ts)
+  const [state, action, pending] = useActionState<LoginState, FormData>(
+    (prev, form) => withTimeout(loginAction(prev, form), { error: 'timeout' }),
+    undefined,
+  );
   const [mfaState, mfaAction, mfaPending] = useActionState<LoginState, FormData>(
-    verifyMfaAction,
+    (prev, form) => withTimeout(verifyMfaAction(prev, form), { error: 'timeout', mfa: true }),
     undefined,
   );
   const mfa = initialMfa || state?.mfa || mfaState?.mfa;
@@ -42,11 +48,13 @@ export function LoginForm({ initialMfa }: { initialMfa: boolean }) {
   const message =
     error === 'rateLimited'
       ? t('rateLimited')
-      : error === 'mfa'
-        ? t('mfaError')
-        : error
-          ? t('error')
-          : null;
+      : error === 'timeout'
+        ? tc('errorBody')
+        : error === 'mfa'
+          ? t('mfaError')
+          : error
+            ? t('error')
+            : null;
 
   return (
     <div>

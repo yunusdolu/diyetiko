@@ -10,7 +10,8 @@ import { rateLimit } from '@/lib/rate-limit';
 
 const credentials = z.object({ email: z.email().max(254), password: z.string().min(1).max(200) });
 
-export type LoginState = { error?: 'invalid' | 'rateLimited' | 'mfa'; mfa?: boolean } | undefined;
+export type LoginState =
+  { error?: 'invalid' | 'rateLimited' | 'mfa' | 'timeout'; mfa?: boolean } | undefined;
 
 export async function loginAction(_prev: LoginState, form: FormData): Promise<LoginState> {
   if (!(await rateLimit('login', 900, 8))) return { error: 'rateLimited' };
