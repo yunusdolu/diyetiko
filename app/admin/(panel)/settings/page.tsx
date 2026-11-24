@@ -1,7 +1,7 @@
 import type { ComponentProps } from 'react';
 import { getTranslations } from 'next-intl/server';
 import { getSettings } from '@/lib/admin/cms';
-import { requireUser } from '@/lib/auth';
+import { isDemoAccount, requireUser } from '@/lib/auth';
 import { backend } from '@/lib/env';
 import { loadMessages } from '@/lib/i18n/messages';
 import { locales } from '@/lib/i18n/config';
@@ -45,6 +45,7 @@ export default async function SettingsPage() {
       }
       defaults={defaults}
       supabase={backend() === 'supabase'}
+      demo={isDemoAccount(user.email)}
     />
   );
 }

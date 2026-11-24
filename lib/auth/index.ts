@@ -3,7 +3,7 @@ import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { cache } from 'react';
 import { asUser } from '@/lib/db';
-import { backend } from '@/lib/env';
+import { backend, env } from '@/lib/env';
 import {
   LOCAL_SESSION_COOKIE,
   createLocalSession,
@@ -30,6 +30,11 @@ export interface PortalStatus {
   locale: 'tr' | 'en' | 'ar' | 'fr';
   consented: boolean;
   active: boolean;
+}
+
+/** A shared demo login (DEMO_ACCOUNTS): its password and second factor stay as they are. */
+export function isDemoAccount(email: string): boolean {
+  return email !== '' && env.demoAccounts.includes(email.toLowerCase());
 }
 
 async function roleOf(userId: string): Promise<Role | null> {

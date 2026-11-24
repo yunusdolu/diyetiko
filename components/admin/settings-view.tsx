@@ -89,12 +89,15 @@ export function SettingsView({
   images,
   defaults,
   supabase,
+  demo = false,
 }: {
   settings: SettingsBundle;
   contact: Contact;
   images: Images;
   defaults: Defaults;
   supabase: boolean;
+  /** shared demo login: no password change, no second factor (the actions refuse it too) */
+  demo?: boolean;
 }) {
   const t = useTranslations('admin.settings');
   return (
@@ -107,7 +110,7 @@ export function SettingsView({
       <SiteContent settings={settings} defaults={defaults} />
       <div className="grid grid-cols-1 gap-5 xl:grid-cols-2">
         <ImagesPanel images={images} />
-        <SecurityPanel supabase={supabase} />
+        {!demo && <SecurityPanel supabase={supabase} />}
       </div>
     </div>
   );

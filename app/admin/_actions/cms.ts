@@ -3,7 +3,7 @@
 import { revalidatePath } from 'next/cache';
 import { z } from 'zod';
 import * as cms from '@/lib/admin/cms';
-import { forgetFactors, requireUser } from '@/lib/auth';
+import { forgetFactors, isDemoAccount, requireUser } from '@/lib/auth';
 import { backend } from '@/lib/env';
 import { locales, type Locale } from '@/lib/i18n/config';
 import { articleInput, foodInput, recipeInput } from '@/lib/validators/admin';
@@ -187,6 +187,7 @@ export async function saveProfileAction(raw: unknown): Promise<ActionResult> {
 
 export async function changePasswordAction(password: string): Promise<ActionResult> {
   const user = await requireUser();
+  if (isDemoAccount(user.email)) return { ok: false, error: 'demo' };
   if (password.length < 10 || password.length > 200) return { ok: false, error: 'length' };
   if (backend() === 'local') {
     const { hashPassword } = await import('@/lib/db/pglite');
@@ -210,7 +211,8 @@ export async function changePasswordAction(password: string): Promise<ActionResu
 export async function enrollMfaAction(): Promise<
   ActionResult<{ factorId: string; qr: string; secret: string }>
 > {
-  await requireUser();
+  const user = await requireUser();
+  if (isDemoAccount(user.email)) return { ok: false, error: 'demo' };
   if (backend() !== 'supabase') return { ok: false, error: 'unavailable' };
   const { createSupabaseServerClient } = await import('@/lib/supabase/server');
   const supabase = await createSupabaseServerClient();
@@ -224,6 +226,7 @@ export async function verifyMfaEnrollmentAction(
   code: string,
 ): Promise<ActionResult> {
   const user = await requireUser();
+  if (isDemoAccount(user.email)) return { ok: false, error: 'demo' };
   if (backend() !== 'supabase' || !/^\d{6}$/.test(code)) return { ok: false };
   const { createSupabaseServerClient } = await import('@/lib/supabase/server');
   const supabase = await createSupabaseServerClient();

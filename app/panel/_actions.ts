@@ -4,7 +4,13 @@ import { revalidatePath } from 'next/cache';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { z } from 'zod';
-import { getPortalStatus, requireClient, signInWithPassword, signOut } from '@/lib/auth';
+import {
+  getPortalStatus,
+  isDemoAccount,
+  requireClient,
+  signInWithPassword,
+  signOut,
+} from '@/lib/auth';
 import { setAccountPassword } from '@/lib/auth/accounts';
 import { backend } from '@/lib/env';
 import { PORTAL_LOCALE_COOKIE, isLocale, type Locale } from '@/lib/i18n/config';
@@ -252,6 +258,7 @@ export async function markMessagesReadAction(): Promise<void> {
 // ---------------------------------------------------------------------------
 export async function changePortalPasswordAction(pw: string, pw2: string): Promise<Result> {
   const { user } = await requireClient();
+  if (isDemoAccount(user.email)) return { ok: false, error: 'failed' };
   if (!password.safeParse(pw).success) return { ok: false, error: 'tooShort' };
   if (pw !== pw2) return { ok: false, error: 'mismatch' };
   if (!(await rateLimit('portal-password', 900, 5))) return { ok: false, error: 'rateLimited' };

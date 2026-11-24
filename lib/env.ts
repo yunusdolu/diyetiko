@@ -34,6 +34,14 @@ export const env = {
   localDataDir: read('LOCAL_DATA_DIR') ?? '.demo-data',
   previewUnreviewed: read('PREVIEW_UNREVIEWED_TRANSLATIONS') === '1',
   anthropicApiKey: read('ANTHROPIC_API_KEY'),
+  /**
+   * Shared demo logins (comma-separated e-mails). Everyone signs in with the same account, so
+   * nobody may change its password or add a second factor and lock the others out.
+   */
+  demoAccounts: (read('DEMO_ACCOUNTS') ?? '')
+    .split(',')
+    .map((e) => e.trim().toLowerCase())
+    .filter(Boolean),
 };
 
 /** The role inside a legacy Supabase JWT key ("anon" / "service_role"), if it is one. */
