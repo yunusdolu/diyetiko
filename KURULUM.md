@@ -292,13 +292,20 @@ Herkesin girip paneli denediği ayrı bir kopya: kendi Supabase projesi ve kendi
 - Ayarlar `.env.demo.local` dosyasında (git'e girmez). Vercel'deki `diyetiko-demo` projesine
   aynı değerler girildi; `DEMO_ACCOUNTS` ortak hesabın e-postasıdır. Bu hesap şifre
   değiştiremez ve iki adımlı doğrulama açamaz; Ayarlar'daki Güvenlik bölümü ona görünmez.
-- Ziyaretçiler veriyi dağıtırsa her şeyi baştan yükle (danışanlar, programlar, tarifler, ayarlar):
+- Demo verisi = `supabase/local/demo.sql` + yoğun bir muayenehane görüntüsü için
+  `supabase/demo/extra.sql` (15 danışan, okunmamış mesajlar, görevler, haftalık randevular,
+  talepler, ödemeler, tahliller, programlar). Tüm tarihler "bugün"e göre yazılır.
+- Demo veritabanı kendini toparlar (pg_cron): **her gece 03:00'te** (Türkiye) her şey baştan
+  yüklenir, **her saat** son 3 günün en yeni danışan mesajları yeniden "okunmamış" olur (biri
+  gelen kutusunu açınca rozetler herkes için silinmesin diye).
+- Hemen sıfırlamak istersen (danışanlar, programlar, tarifler, ayarlar):
 
   ```bash
   node scripts/demo-db.mjs --reset
   ```
 
-  Betik `.env.local`'deki canlı projeye bağlanmayı reddeder.
+  Betik `.env.local`'deki canlı projeye bağlanmayı reddeder. Migration, seed ya da demo verisi
+  değişince betiği bir kez çalıştır; gece sıfırlaması yeni dosyaları ancak o zaman kullanır.
 
 - Ücretsiz Supabase projesi 7 gün kullanılmazsa duraklar; `.github/workflows/supabase-keepalive.yml`
   her gün iki siteyi de yoklar. Çalışma başarısız olursa (GitHub e-posta atar) Supabase'te

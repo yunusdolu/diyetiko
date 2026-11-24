@@ -3,6 +3,10 @@
 //   node scripts/demo-db.mjs            first run: migrations, demo login, public content, demo practice
 //   node scripts/demo-db.mjs --reset    later: wipe everything visitors changed, load the demo data again
 //
+// It also schedules, inside the demo database (pg_cron), a nightly reset at 03:00 Türkiye and an
+// hourly job that marks the newest client messages unread again. Run it again after changing a
+// migration, the seed or the demo data, so the stored reset uses the new files.
+//
 // Reads .env.demo.local (or --env <file>):
 //   DATABASE_URL, NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SECRET_KEY   of the DEMO project
 //   DEMO_ACCOUNTS         the first e-mail is the shared dietitian login
@@ -64,6 +68,22 @@ if (dbRef && dbRef !== demoRef)
 
 const adminEmail = env.DEMO_ACCOUNTS.split(',')[0].trim().toLowerCase();
 const portalEmail = (env.DEMO_PORTAL_EMAIL || 'deniz@diyetiko.test').toLowerCase();
+// data-only portal accounts that supabase/demo/extra.sql links to its clients (by e-mail)
+const EXTRA_PORTAL_EMAILS = [
+  'emre',
+  'mert',
+  'camille',
+  'zeynep',
+  'can',
+  'ayse',
+  'burak',
+  'hakan',
+].map((n) => `${n}@diyetiko.test`);
+// newest client message of each thread from the last 3 days → unread again
+const UNREAD_REFRESH = `update public.messages set read_at = null
+  where read_at is not null and created_at > now() - interval '3 days'
+    and id in (select distinct on (client_id) id from public.messages
+               where author = 'client' order by client_id, created_at desc)`;
 const sql = postgres(env.DATABASE_URL, {
   prepare: false,
   max: 1,
@@ -114,44 +134,70 @@ try {
   if (others[0].n > 0)
     fail('Another dietitian account exists in this project; the demo login must be the only one.');
 
-  // 3. A portal client behind "Deniz Aksoy (demo)" so the Takip / Günlük / Mesajlar tabs have data.
-  //    No password: nobody signs in with it.
-  let portalUser = await userId(portalEmail);
-  if (!portalUser) {
-    const { data, error } = await auth.createUser({
-      email: portalEmail,
-      email_confirm: true,
-      app_metadata: { role: 'client' },
-    });
-    if (error) fail(`Could not create ${portalEmail}: ${error.message}`);
-    portalUser = data.user.id;
-    step(`created the data-only portal client ${portalEmail}`);
+  // 3. Portal clients behind the demo clients, so their Takip / Günlük / Mesajlar tabs have data
+  //    (Deniz from demo.sql, the others from supabase/demo/extra.sql). No password: nobody signs
+  //    in with them.
+  const portalIds = {};
+  for (const email of [portalEmail, ...EXTRA_PORTAL_EMAILS]) {
+    let id = await userId(email);
+    if (!id) {
+      const { data, error } = await auth.createUser({
+        email,
+        email_confirm: true,
+        app_metadata: { role: 'client' },
+      });
+      if (error) fail(`Could not create ${email}: ${error.message}`);
+      id = data.user.id;
+      step(`created the data-only portal client ${email}`);
+    }
+    portalIds[email] = id;
   }
 
-  // 4. Reset: empty every table visitors can change (accounts and rate limits stay).
-  if (reset) {
-    const tables = await sql`select tablename from pg_tables where schemaname = 'public'
-                             and tablename not in ('profiles', 'rate_limits') order by tablename`;
-    step(`emptying ${tables.length} tables`);
-    const list = tables.map((t) => `public."${t.tablename.replaceAll('"', '""')}"`).join(', ');
-    await sql.unsafe(`truncate ${list} restart identity cascade`);
+  // 4. Everything visitors can change is rebuilt by ONE stored statement: empty the tables
+  //    (accounts and rate limits stay), then public content, the demo practice and the extra
+  //    demo data. Kept in the database so pg_cron can run it every night.
+  const tables = await sql`select tablename from pg_tables where schemaname = 'public'
+                           and tablename not in ('profiles', 'rate_limits') order by tablename`;
+  const list = tables.map((t) => `public."${t.tablename.replaceAll('"', '""')}"`).join(', ');
+  const resetSql = [
+    `truncate ${list} restart identity cascade;`,
+    file('supabase', 'seed.sql'),
+    file('supabase', 'local', 'demo.sql').replaceAll(
+      '00000000-0000-4000-8000-000000000002',
+      portalIds[portalEmail],
+    ),
+    file('supabase', 'demo', 'extra.sql'),
+  ].join('\n');
+  await sql.unsafe(`
+    create schema if not exists demo_admin;
+    revoke all on schema demo_admin from public;
+    create table if not exists demo_admin.reset_sql (id int primary key, body text not null);
+    create or replace function demo_admin.reset() returns void language plpgsql as $fn$
+    begin
+      execute (select body from demo_admin.reset_sql where id = 1);
+    end $fn$;
+    revoke all on function demo_admin.reset() from public;
+  `);
+  for (const role of ['anon', 'authenticated', 'service_role']) {
+    await sql.unsafe(`revoke all on schema demo_admin from ${role}`);
+    await sql.unsafe(`revoke all on function demo_admin.reset() from ${role}`);
   }
+  await sql`insert into demo_admin.reset_sql (id, body) values (1, ${resetSql})
+            on conflict (id) do update set body = excluded.body`;
 
-  // 5. Public content (foods, recipes, guides, site settings) and the demo practice.
-  const [{ recipes }] = await sql`select count(*)::int as recipes from public.recipes`;
-  if (recipes === 0) {
-    step('public content (supabase/seed.sql)');
-    await sql.unsafe(file('supabase', 'seed.sql'));
-  }
+  // 5. Shared account, so: rebuild every night at 03:00 Türkiye (00:00 UTC), and every hour mark
+  //    the newest client message of recent threads unread again (someone opening the inbox
+  //    clears the badges for everyone).
+  await sql.unsafe(`create extension if not exists pg_cron`);
+  await sql`select cron.schedule('demo-nightly-reset', '0 0 * * *', 'select demo_admin.reset()')`;
+  await sql`select cron.schedule('demo-unread-refresh', '15 * * * *', ${UNREAD_REFRESH})`;
+  step('scheduled the nightly reset and the hourly unread refresh (pg_cron)');
+
+  // 6. Load now: on --reset, or when the practice is still empty.
   const [{ clients }] = await sql`select count(*)::int as clients from public.clients`;
-  if (clients === 0) {
-    step('demo practice (supabase/local/demo.sql)');
-    await sql.unsafe(
-      file('supabase', 'local', 'demo.sql').replaceAll(
-        '00000000-0000-4000-8000-000000000002',
-        portalUser,
-      ),
-    );
+  if (reset || clients === 0) {
+    step('loading public content, demo practice and extra demo data');
+    await sql`select demo_admin.reset()`;
   }
 
   const [c] = await sql`select (select count(*) from public.clients)::int as clients,
