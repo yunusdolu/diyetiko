@@ -93,7 +93,9 @@ try {
   // 2. The shared dietitian login. The FIRST profile is the dietitian (handle_new_user).
   let owner = await userId(adminEmail);
   if (!owner) {
-    if (!env.DEMO_ADMIN_PASSWORD) fail(`Create ${adminEmail} first, or set DEMO_ADMIN_PASSWORD.`);
+    const pw = env.DEMO_ADMIN_PASSWORD ?? '';
+    if (!pw || pw.includes('<')) fail(`Create ${adminEmail} first, or set DEMO_ADMIN_PASSWORD.`);
+    if (pw.length < 10) fail('DEMO_ADMIN_PASSWORD needs at least 10 characters.');
     const { data, error } = await auth.createUser({
       email: adminEmail,
       password: env.DEMO_ADMIN_PASSWORD,

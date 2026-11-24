@@ -283,3 +283,23 @@ danışana **hiçbir zaman** gösterilmez.
   aç. Panelde _Danışanlar → CSV indir_ danışan listesini, danışan sayfasındaki _Danışan verisini
   dışa aktar_ ise tek danışanın tüm verisini (panel kayıtları dahil, JSON) indirir — KVKK
   erişim talepleri için de bunu kullan.
+
+## Demo sitesi (ortak demo hesabı)
+
+Herkesin girip paneli denediği ayrı bir kopya: kendi Supabase projesi ve kendi Vercel projesi
+(`diyetiko-demo`), sahte verilerle. Canlı siteye ve gerçek hesaplara dokunmaz.
+
+- Ayarlar `.env.demo.local` dosyasında (git'e girmez). Vercel'deki `diyetiko-demo` projesine
+  aynı değerler girildi; `DEMO_ACCOUNTS` ortak hesabın e-postasıdır. Bu hesap şifre
+  değiştiremez ve iki adımlı doğrulama açamaz; Ayarlar'daki Güvenlik bölümü ona görünmez.
+- Ziyaretçiler veriyi dağıtırsa her şeyi baştan yükle (danışanlar, programlar, tarifler, ayarlar):
+
+  ```bash
+  node scripts/demo-db.mjs --reset
+  ```
+
+  Betik `.env.local`'deki canlı projeye bağlanmayı reddeder.
+
+- Ücretsiz Supabase projesi 7 gün kullanılmazsa duraklar; `.github/workflows/supabase-keepalive.yml`
+  her gün iki siteyi de yoklar. Çalışma başarısız olursa (GitHub e-posta atar) Supabase'te
+  projeyi _Restore_ et.

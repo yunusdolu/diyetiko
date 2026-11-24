@@ -15,7 +15,7 @@ permissions: {}
 
 env:
   # one site per Supabase project (space-separated)
-  SITES: https://diyetiko.vercel.app
+  SITES: https://diyetiko.vercel.app https://diyetiko-demo.vercel.app
   TOKEN: keepalive-ping-0000000000000000000000000000000
 
 jobs:
